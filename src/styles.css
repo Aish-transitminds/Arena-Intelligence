@@ -1,0 +1,189 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* ArenaIQ palette — real grass/turf green background, teal accent */
+  --background: oklch(0.28 0.09 142);
+  --foreground: oklch(0.98 0.01 110);
+
+  --card: oklch(0.24 0.07 142 / 72%);
+  --card-foreground: oklch(0.98 0.01 110);
+
+  --popover: oklch(0.22 0.07 142);
+  --popover-foreground: oklch(0.98 0.01 110);
+
+  /* Primary — deep teal #14B8A6 */
+  --primary: oklch(0.72 0.13 185);
+  --primary-foreground: oklch(0.15 0.03 200);
+  --primary-glow: oklch(0.82 0.14 190);
+
+  --secondary: oklch(0.30 0.07 142);
+  --secondary-foreground: oklch(0.98 0.01 110);
+
+  --muted: oklch(0.28 0.07 142);
+  --muted-foreground: oklch(0.78 0.03 120);
+
+  /* Accent — bright cyan #22D3EE */
+  --accent: oklch(0.82 0.13 210);
+  --accent-foreground: oklch(0.15 0.03 220);
+
+  --warning: oklch(0.78 0.16 70);
+  --warning-foreground: oklch(0.15 0.02 70);
+
+  --destructive: oklch(0.65 0.24 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --success: oklch(0.72 0.19 145);
+
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.72 0.13 185);
+
+  --chart-1: oklch(0.72 0.13 185);
+  --chart-2: oklch(0.82 0.13 210);
+  --chart-3: oklch(0.78 0.16 70);
+  --chart-4: oklch(0.72 0.19 145);
+  --chart-5: oklch(0.65 0.24 25);
+
+  --sidebar: oklch(0.20 0.08 142);
+  --sidebar-foreground: oklch(0.98 0.01 110);
+  --sidebar-primary: oklch(0.72 0.13 185);
+  --sidebar-primary-foreground: oklch(0.15 0.03 200);
+  --sidebar-accent: oklch(0.30 0.07 142);
+  --sidebar-accent-foreground: oklch(0.98 0.01 110);
+  --sidebar-border: oklch(1 0 0 / 6%);
+  --sidebar-ring: oklch(0.72 0.13 185);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.13 185), oklch(0.82 0.13 210));
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.60 0.16 145 / 0.45), transparent 60%),
+                   radial-gradient(ellipse at bottom right, oklch(0.45 0.12 185 / 0.22), transparent 55%);
+  --gradient-glass: linear-gradient(135deg, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02));
+  --shadow-glow: 0 0 44px oklch(0.72 0.13 185 / 0.45);
+  --shadow-elegant: 0 24px 60px -20px oklch(0 0 0 / 0.65);
+
+  /* Real grass — mowed stripes + blade texture, tiled and fixed so every route matches */
+  --grass-stripes: repeating-linear-gradient(
+    115deg,
+    oklch(0.30 0.10 142) 0px,
+    oklch(0.30 0.10 142) 46px,
+    oklch(0.26 0.09 142) 46px,
+    oklch(0.26 0.09 142) 92px
+  );
+  --grass-blades: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke-linecap='round'><path d='M8 150 Q10 120 6 92' stroke='%2334d399' stroke-opacity='0.18' stroke-width='1.4'/><path d='M22 152 Q26 118 20 88' stroke='%2310b981' stroke-opacity='0.22' stroke-width='1.6'/><path d='M40 150 Q44 122 38 96' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.2'/><path d='M60 152 Q64 118 58 88' stroke='%2334d399' stroke-opacity='0.20' stroke-width='1.5'/><path d='M78 150 Q82 120 74 92' stroke='%2310b981' stroke-opacity='0.18' stroke-width='1.6'/><path d='M96 152 Q100 118 92 90' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.3'/><path d='M114 150 Q118 122 112 96' stroke='%2334d399' stroke-opacity='0.22' stroke-width='1.5'/><path d='M132 152 Q136 118 128 88' stroke='%2310b981' stroke-opacity='0.18' stroke-width='1.6'/><path d='M150 150 Q154 122 146 94' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.3'/><path d='M14 100 Q18 74 12 50' stroke='%2334d399' stroke-opacity='0.14' stroke-width='1.2'/><path d='M52 96 Q56 68 48 44' stroke='%2310b981' stroke-opacity='0.16' stroke-width='1.4'/><path d='M90 98 Q94 70 86 46' stroke='%236ee7b7' stroke-opacity='0.12' stroke-width='1.2'/><path d='M128 96 Q132 68 122 44' stroke='%2334d399' stroke-opacity='0.16' stroke-width='1.4'/></g></svg>");
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: transparent;
+    color: var(--color-foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Fixed real-grass field behind every route */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: url("/__l5e/assets-v1/87432364-b5e9-421e-872a-e3933ab59870/grass.jpg");
+    background-size: 600px 600px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      /* top stadium-light glow */
+      radial-gradient(ellipse 1200px 600px at 50% -80px, oklch(0.55 0.14 145 / 0.18), transparent 65%),
+      /* bottom shadow for readability */
+      radial-gradient(ellipse 100% 55% at 50% 100%, oklch(0.12 0.07 142 / 0.38), transparent 70%),
+      /* subtle green tint wash so text remains legible */
+      linear-gradient(180deg, oklch(0.20 0.06 142 / 0.22), oklch(0.16 0.05 142 / 0.32));
+    pointer-events: none;
+  }
+}
+
+
+@utility glass {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 0.08);
+}
+
+@utility glass-strong {
+  background: linear-gradient(135deg, oklch(1 0 0 / 0.12), oklch(1 0 0 / 0.04));
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid oklch(1 0 0 / 0.12);
+}
+
+@utility text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glow {
+  box-shadow: var(--shadow-glow);
+}
