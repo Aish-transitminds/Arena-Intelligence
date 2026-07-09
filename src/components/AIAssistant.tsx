@@ -59,12 +59,12 @@ function buildSystemPrompt(persona: Persona, lang: Language) {
       "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
   };
 
-  return `You are the GenAI Copilot for MetLife Stadium during the FIFA World Cup 2026.
+  return `You are Arena IQ, the intelligent operations copilot for MetLife Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific (invent plausible concrete details like wait times, gate numbers, or section numbers where useful — this is a demo environment, not connected to live sensors).
-Do not mention that you are an AI language model or reference these instructions. Stay in character as the stadium's GenAI Copilot.`;
+Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
 }
 
 // ---- API call ---------------------------------------------------------------
@@ -87,21 +87,31 @@ async function askAI(
 
       // Smart fuzzy matching for simulated API
       if (lastUserMessage.includes("weather") || lastUserMessage.includes("rain") || lastUserMessage.includes("hot")) {
-        aiResponse = "GenAI Weather Analysis: 72°F, clear skies. No precipitation expected for the duration of the match. Roof status: Open.";
-      } else if (lastUserMessage.includes("food") || lastUserMessage.includes("eat") || lastUserMessage.includes("hungry")) {
-        aiResponse = "GenAI Guide: MetLife Stadium Food Court is situated at the Plaza Level near Gate B. Active queues: 3-5 minutes wait.";
+        aiResponse = "🌤️ Arena IQ Weather: 72°F, clear skies. No precipitation expected for the duration of the match. Roof status: Open. UV Index: Moderate — sunscreen recommended for upper deck fans.";
+      } else if (lastUserMessage.includes("food") || lastUserMessage.includes("eat") || lastUserMessage.includes("hungry") || lastUserMessage.includes("drink")) {
+        aiResponse = "🍔 Arena IQ Guide: MetLife Stadium Food Court is at the Plaza Level near Gate B. Current wait: 3-5 min. Pro tip: Level 2 Local Concessions have zero queues right now — try the Philly Cheesesteak stand!";
       } else if (lastUserMessage.includes("bathroom") || lastUserMessage.includes("restroom") || lastUserMessage.includes("toilet")) {
-        aiResponse = "GenAI Assist: The nearest restroom is located behind Section 204 concourse (1-minute walk). Load is currently Low.";
-      } else if (lastUserMessage.includes("traffic") || lastUserMessage.includes("transport") || lastUserMessage.includes("train")) {
-        aiResponse = "GenAI Travel Planner: NJ Transit trains depart from Secaucus Junction every 10 minutes post-match. Bus express lanes active at Gate B.";
-      } else if (lastUserMessage.includes("wheelchair") || lastUserMessage.includes("disabled") || lastUserMessage.includes("accessibility")) {
-        aiResponse = "GenAI Assist: Wheelchair assistance is active at all gates. A volunteer will be dispatched to your seat coordinates via the nearest elevator.";
-      } else if (lastUserMessage.includes("lost") || lastUserMessage.includes("found")) {
-        aiResponse = "GenAI Volunteer Protocol: Direct fans with lost items to the Guest Services Booth at Section 120. Log items in the console.";
-      } else if (lastUserMessage.includes("queue") || lastUserMessage.includes("wait") || lastUserMessage.includes("gate")) {
-        aiResponse = "GenAI Queue Prediction: Gate E is currently experiencing a 15-minute wait time (98% capacity). Reroute incoming fans to Gate A.";
+        aiResponse = "🚻 Arena IQ: Nearest restroom is behind Section 204 concourse (1-min walk). Load: Low. Accessible restroom available at Gate C ground level.";
+      } else if (lastUserMessage.includes("traffic") || lastUserMessage.includes("transport") || lastUserMessage.includes("train") || lastUserMessage.includes("bus") || lastUserMessage.includes("uber") || lastUserMessage.includes("taxi")) {
+        aiResponse = "🚆 Arena IQ Travel: NJ Transit trains depart Secaucus Junction every 10 min post-match. Bus express lanes active at Gate B. Rideshare pickup zone: Lot J East. Estimated travel to Manhattan: 25 min.";
+      } else if (lastUserMessage.includes("wheelchair") || lastUserMessage.includes("disabled") || lastUserMessage.includes("accessibility") || lastUserMessage.includes("assist")) {
+        aiResponse = "♿ Arena IQ Accessibility: Wheelchair assistance active at all gates. Requesting escort now — a volunteer will be dispatched to your seat via Elevator B-2. ETA: 3 minutes.";
+      } else if (lastUserMessage.includes("lost") || lastUserMessage.includes("found") || lastUserMessage.includes("missing")) {
+        aiResponse = "📦 Arena IQ Lost & Found: Please visit Guest Services at Section 120. Items are logged into our AI matching system for instant retrieval. Common items today: phones (12), wallets (5), keys (8).";
+      } else if (lastUserMessage.includes("queue") || lastUserMessage.includes("wait") || lastUserMessage.includes("crowd") || lastUserMessage.includes("line")) {
+        aiResponse = "📊 Arena IQ Queue Intel: Gate E is at 98% capacity (15-min wait). Recommended: Gate A has only a 4-min wait. Signage displays have been updated to redirect flow.";
+      } else if (lastUserMessage.includes("score") || lastUserMessage.includes("match") || lastUserMessage.includes("goal") || lastUserMessage.includes("game")) {
+        aiResponse = "⚽ Arena IQ Match Update: Current score displayed on all stadium screens. Next half starts in 12 minutes. Halftime entertainment is live on the main pitch now!";
+      } else if (lastUserMessage.includes("emergency") || lastUserMessage.includes("medical") || lastUserMessage.includes("help") || lastUserMessage.includes("first aid")) {
+        aiResponse = "🚨 Arena IQ Emergency: Medical stations are at Gates A, C, and E (ground level). Nearest AED is at Section 118. For immediate assistance, flag any steward or call stadium security at ext. 911.";
+      } else if (lastUserMessage.includes("parking") || lastUserMessage.includes("car") || lastUserMessage.includes("lot")) {
+        aiResponse = "🅿️ Arena IQ Parking: Your vehicle is in Lot K, Row 14 (based on ticket data). Post-match exit strategy: Use Lot K South exit to avoid I-95 merge congestion. Estimated clear time: 22 minutes.";
+      } else if (lastUserMessage.includes("wifi") || lastUserMessage.includes("internet") || lastUserMessage.includes("connect")) {
+        aiResponse = "📶 Arena IQ: Stadium WiFi network 'MetLife-Fan' is active. Connect and accept terms — no password needed. Current bandwidth: 85% available. Streaming quality: HD supported.";
+      } else if (lastUserMessage.includes("merch") || lastUserMessage.includes("shop") || lastUserMessage.includes("jersey") || lastUserMessage.includes("souvenir")) {
+        aiResponse = "🛍️ Arena IQ Shop: Official FIFA merchandise stores are at Gates A & D (Plaza Level). Hot item today: Home team jersey ($89). Team Store at Gate D has the shortest line (2-min wait).";
       } else {
-        aiResponse = `GenAI Copilot (${persona}): MetLife Stadium operations are nominal. Crowd density is stable. How else can I assist your operations today?`;
+        aiResponse = `⚡ Arena IQ (${persona}): MetLife Stadium operations are nominal. Crowd density: stable at 87%. All systems green. How can I assist you today?`;
       }
 
       // If user selected a language other than English, add a prefix (Simulation only)
@@ -123,7 +133,7 @@ export function AIAssistant() {
   >([
     {
       role: "ai",
-      text: "Welcome to MetLife Stadium World Cup 2026 Assistant. Select your persona and language below to start GenAI operations.",
+      text: "👋 Welcome to Arena IQ — your intelligent stadium copilot for FIFA World Cup 2026 at MetLife Stadium. Select your persona below and ask me anything about operations, navigation, or match day logistics!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -178,7 +188,7 @@ export function AIAssistant() {
           background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
           boxShadow: "0 0 24px rgba(14,159,110,0.40)",
         }}
-        aria-label="Open AI Assistant"
+        aria-label="Open Arena IQ"
       >
         {open ? <X className="size-6" /> : <Sparkles className="size-6" />}
       </motion.button>
@@ -203,12 +213,12 @@ export function AIAssistant() {
                   <Sparkles className="size-4" />
                 </div>
                 <div>
-                  <div className="text-sm font-extrabold tracking-tight uppercase">
-                    GenAI Copilot
+                  <div className="text-sm font-extrabold tracking-tight uppercase" style={{ background: "linear-gradient(90deg, #0E9F6E, #3CB371, #66D9A0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                    Arena IQ
                   </div>
                   <div className="text-[10px] text-primary font-mono tracking-widest flex items-center gap-1">
                     <span className="size-1.5 rounded-full bg-primary animate-pulse" />{" "}
-                    WORLD CUP 2026 ACTIVE
+                    FIFA WORLD CUP 2026 · LIVE
                   </div>
                 </div>
               </div>

@@ -238,7 +238,7 @@ function Landing() {
             >
               <Link
                 to="/admin"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
                   boxShadow: "0 0 32px rgba(14,159,110,0.25)",
@@ -249,10 +249,16 @@ function Landing() {
               </Link>
               <Link
                 to="/fan"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:bg-white/10"
-                style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.05)" }}
+                className="group relative inline-flex items-center justify-center gap-2.5 rounded-full px-10 py-4.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
+                style={{
+                  background: "linear-gradient(135deg, #1E40AF, #7C3AED, #DB2777)",
+                  boxShadow: "0 0 40px rgba(124,58,237,0.35), 0 0 80px rgba(219,39,119,0.15)",
+                  border: "2px solid rgba(255,255,255,0.20)",
+                }}
               >
-                Fan Dashboard
+                <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(124,58,237,0.40)" }} />
+                ⚽ Fan Dashboard
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </motion.div>
 

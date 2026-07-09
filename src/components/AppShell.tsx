@@ -188,10 +188,10 @@ export function AppShell({
               className="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
               style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
             >
-              AR
+              AI
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold truncate text-white">Alex Reyes</div>
+              <div className="text-sm font-semibold truncate text-white">Aishwarya</div>
               <div className="text-[10px] truncate uppercase tracking-[0.16em]" style={{ color: "#AAB8C2" }}>Ops Manager</div>
             </div>
             <button
