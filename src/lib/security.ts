@@ -1,8 +1,9 @@
 export type UserRole = "fan" | "admin" | "security" | "guest";
 
 const ROLE_STORAGE_KEY = "arena-role";
+import { getRoleFromToken, isTokenValid, issueToken, clearToken } from "./auth";
 const AUDIT_STORAGE_KEY = "arena-audit-events";
-const RATE_LIMIT_STORAGE_KEY = "arena-rate-limit";
+export const RATE_LIMIT_STORAGE_KEY = "arena-rate-limit";
 
 type RateLimitResult = {
   allowed: boolean;
@@ -32,17 +33,32 @@ export function isStrongPassword(input: string): boolean {
 }
 
 export function getStoredRole(): UserRole {
+  // Prefer token-based role if token valid
+  try {
+    if (isTokenValid()) {
+      const r = getRoleFromToken();
+      if (r === "admin" || r === "security" || r === "fan") return r;
+    }
+  } catch {}
+
   const storage = getStorage();
   const role = storage?.getItem(ROLE_STORAGE_KEY);
   return role === "admin" || role === "security" || role === "fan" ? role : "guest";
 }
 
 export function persistRole(role: UserRole): void {
+  // persist both token and fallback storage
+  try {
+    issueToken(role, 60 * 60); // 1 hour
+  } catch {}
   const storage = getStorage();
   if (storage) storage.setItem(ROLE_STORAGE_KEY, role);
 }
 
 export function clearStoredRole(): void {
+  try {
+    clearToken();
+  } catch {}
   const storage = getStorage();
   if (storage) storage.removeItem(ROLE_STORAGE_KEY);
 }
@@ -50,6 +66,8 @@ export function clearStoredRole(): void {
 export function canAccessRoute(pathname: string, role: UserRole): boolean {
   if (pathname.startsWith("/admin")) return role === "admin";
   if (pathname.startsWith("/emergency")) return role === "admin" || role === "security";
+  if (pathname.startsWith("/security")) return role === "admin";
+  if (pathname.startsWith("/audit")) return role === "admin";
   return true;
 }
 

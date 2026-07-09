@@ -36,6 +36,8 @@ const navSections: { label: string; items: NavItem[] }[] = [
       { to: "/admin", label: "Admin Console", icon: LayoutDashboard, hint: "Live KPIs" },
       { to: "/tournament", label: "Tournament", icon: Trophy, hint: "Fixtures" },
       { to: "/emergency", label: "Emergency", icon: ShieldAlert, hint: "SOS" },
+      { to: "/security", label: "Security", icon: Settings, hint: "Platform" },
+      { to: "/audit", label: "Audit", icon: Bell, hint: "Events" },
     ],
   },
 ];
