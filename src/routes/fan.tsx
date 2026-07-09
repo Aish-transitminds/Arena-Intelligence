@@ -648,6 +648,26 @@ function Modal3D({ onClose }: { onClose: () => void }) {
                   </svg>
                 </motion.div>
               )}
+
+              {/* 3D Billboard Seat Marker (Counter-rotates to perfectly face the camera) */}
+              <div
+                className="absolute top-[50%] right-[-10px] flex flex-col items-center justify-center z-50 pointer-events-none"
+                style={{
+                  transform: `translateZ(60px) rotateZ(${
+                    cameraAngle === "seats" ? 78 : cameraAngle === "sky" ? 0 : 12
+                  }deg) rotateX(-60deg) scale(1.5)`,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
+                  <div className="text-sm mb-1">Your Seat Area</div>
+                  <div className="text-[10px] font-bold opacity-100 tracking-widest text-white">Seat 7 • VIP Club</div>
+                </div>
+                <div className="relative flex items-center justify-center">
+                  <span className="absolute inset-0 size-10 bg-primary rounded-full animate-ping opacity-60" />
+                  <span className="size-4 bg-primary border-[3px] border-white rounded-full shadow-[0_0_20px_rgba(14,159,110,1)]" />
+                </div>
+              </div>
             </div>
 
             {/* WEST STAND */}
@@ -675,21 +695,6 @@ function Modal3D({ onClose }: { onClose: () => void }) {
               <div className="absolute inset-0 bg-black/40" /> {/* shading overlay */}
               <div className="h-full w-full relative flex items-center justify-center z-10">
                 <span className="text-[7px] font-mono tracking-widest text-[#64748B]/40 rotate-90 uppercase">EAST_STAND_SEC_204</span>
-                
-                {/* Selected seat indicator pin (tilted to face the high-angle camera and scaled massively) */}
-                <div
-                  className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20"
-                  style={{ transform: "translateZ(40px) rotateY(75deg) rotateX(-65deg) scale(2.5)" }}
-                >
-                  <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
-                    <div className="text-sm mb-1">Your Seat Area</div>
-                    <div className="text-[10px] font-bold opacity-100 tracking-widest text-white">Seat 7 • VIP Club</div>
-                  </div>
-                  <div className="relative flex items-center justify-center">
-                    <span className="absolute inset-0 size-10 bg-primary rounded-full animate-ping opacity-60" />
-                    <span className="size-4 bg-primary border-[3px] border-white rounded-full shadow-[0_0_20px_rgba(14,159,110,1)]" />
-                  </div>
-                </div>
               </div>
             </div>
 
