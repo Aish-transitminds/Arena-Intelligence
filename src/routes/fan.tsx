@@ -118,11 +118,22 @@ function FanPage() {
 
             {/* Verified badge */}
             <div
-              className="flex items-center justify-center gap-2 rounded-xl py-3 text-xs font-semibold group-hover:bg-primary/20 transition-colors"
-              style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)", color: "#0E9F6E" }}
+              className="flex items-center justify-center gap-1.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] mb-3"
+              style={{ color: "#0E9F6E" }}
             >
-              <Ticket className="size-3.5" />
-              Present at Gate B · Tap to view full ticket
+              <Ticket className="size-3" />
+              Present at Gate B · Verified by Arena Intelligence
+            </div>
+
+            {/* Prominent CTA Button */}
+            <div
+              className="w-full flex items-center justify-between p-3.5 rounded-xl transition-all shadow-lg group-hover:shadow-[0_0_30px_rgba(14,159,110,0.4)]"
+              style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", border: "1px solid rgba(255,255,255,0.2)" }}
+            >
+              <span className="text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2 group-hover:scale-105 transition-transform">
+                Click Here For Ticket
+              </span>
+              <ArrowRight className="size-5 text-white group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
 
