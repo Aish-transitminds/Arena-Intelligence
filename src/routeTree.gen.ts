@@ -16,6 +16,7 @@ import { Route as EmergencyRouteImport } from './routes/emergency'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FanTacticalRouteImport } from './routes/fan.tactical'
 
 const TournamentRoute = TournamentRouteImport.update({
   id: '/tournament',
@@ -52,24 +53,31 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FanTacticalRoute = FanTacticalRouteImport.update({
+  id: '/tactical',
+  path: '/tactical',
+  getParentRoute: () => FanRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
   '/emergency': typeof EmergencyRoute
-  '/fan': typeof FanRoute
+  '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/tournament': typeof TournamentRoute
+  '/fan/tactical': typeof FanTacticalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
   '/emergency': typeof EmergencyRoute
-  '/fan': typeof FanRoute
+  '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/tournament': typeof TournamentRoute
+  '/fan/tactical': typeof FanTacticalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +85,10 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
   '/emergency': typeof EmergencyRoute
-  '/fan': typeof FanRoute
+  '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/tournament': typeof TournamentRoute
+  '/fan/tactical': typeof FanTacticalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/fan'
     | '/login'
     | '/tournament'
+    | '/fan/tactical'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/fan'
     | '/login'
     | '/tournament'
+    | '/fan/tactical'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/fan'
     | '/login'
     | '/tournament'
+    | '/fan/tactical'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,7 +128,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AssistantRoute: typeof AssistantRoute
   EmergencyRoute: typeof EmergencyRoute
-  FanRoute: typeof FanRoute
+  FanRoute: typeof FanRouteWithChildren
   LoginRoute: typeof LoginRoute
   TournamentRoute: typeof TournamentRoute
 }
@@ -172,18 +184,45 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fan/tactical': {
+      id: '/fan/tactical'
+      path: '/tactical'
+      fullPath: '/fan/tactical'
+      preLoaderRoute: typeof FanTacticalRouteImport
+      parentRoute: typeof FanRoute
+    }
   }
 }
+
+interface FanRouteChildren {
+  FanTacticalRoute: typeof FanTacticalRoute
+}
+
+const FanRouteChildren: FanRouteChildren = {
+  FanTacticalRoute: FanTacticalRoute,
+}
+
+const FanRouteWithChildren = FanRoute._addFileChildren(FanRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AssistantRoute: AssistantRoute,
   EmergencyRoute: EmergencyRoute,
-  FanRoute: FanRoute,
+  FanRoute: FanRouteWithChildren,
   LoginRoute: LoginRoute,
   TournamentRoute: TournamentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

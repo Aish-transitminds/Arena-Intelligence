@@ -20,6 +20,16 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Local tooling artifacts
+.kombai/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

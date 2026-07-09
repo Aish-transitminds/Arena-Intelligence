@@ -47,134 +47,128 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --obsidian: #08111F;
+  --charcoal: #111827;
+  --silver: #F8FAFC;
+
+  --color-obsidian: var(--obsidian);
+  --color-charcoal: var(--charcoal);
+  --color-silver: var(--silver);
 }
 
 :root {
-  --radius: 1rem;
-
-  /* ArenaIQ palette — real grass/turf green background, teal accent */
-  --background: oklch(0.28 0.09 142);
-  --foreground: oklch(0.98 0.01 110);
-
-  --card: oklch(0.24 0.07 142 / 72%);
-  --card-foreground: oklch(0.98 0.01 110);
-
-  --popover: oklch(0.22 0.07 142);
-  --popover-foreground: oklch(0.98 0.01 110);
-
-  /* Primary — deep teal #14B8A6 */
-  --primary: oklch(0.72 0.13 185);
-  --primary-foreground: oklch(0.15 0.03 200);
-  --primary-glow: oklch(0.82 0.14 190);
-
-  --secondary: oklch(0.30 0.07 142);
-  --secondary-foreground: oklch(0.98 0.01 110);
-
-  --muted: oklch(0.28 0.07 142);
-  --muted-foreground: oklch(0.78 0.03 120);
-
-  /* Accent — bright cyan #22D3EE */
-  --accent: oklch(0.82 0.13 210);
-  --accent-foreground: oklch(0.15 0.03 220);
-
-  --warning: oklch(0.78 0.16 70);
-  --warning-foreground: oklch(0.15 0.02 70);
-
-  --destructive: oklch(0.65 0.24 25);
-  --destructive-foreground: oklch(0.99 0 0);
-
-  --success: oklch(0.72 0.19 145);
-
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.72 0.13 185);
-
-  --chart-1: oklch(0.72 0.13 185);
-  --chart-2: oklch(0.82 0.13 210);
-  --chart-3: oklch(0.78 0.16 70);
-  --chart-4: oklch(0.72 0.19 145);
-  --chart-5: oklch(0.65 0.24 25);
-
-  --sidebar: oklch(0.20 0.08 142);
-  --sidebar-foreground: oklch(0.98 0.01 110);
-  --sidebar-primary: oklch(0.72 0.13 185);
-  --sidebar-primary-foreground: oklch(0.15 0.03 200);
-  --sidebar-accent: oklch(0.30 0.07 142);
-  --sidebar-accent-foreground: oklch(0.98 0.01 110);
-  --sidebar-border: oklch(1 0 0 / 6%);
-  --sidebar-ring: oklch(0.72 0.13 185);
-
-  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.13 185), oklch(0.82 0.13 210));
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.60 0.16 145 / 0.45), transparent 60%),
-                   radial-gradient(ellipse at bottom right, oklch(0.45 0.12 185 / 0.22), transparent 55%);
-  --gradient-glass: linear-gradient(135deg, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02));
-  --shadow-glow: 0 0 44px oklch(0.72 0.13 185 / 0.45);
-  --shadow-elegant: 0 24px 60px -20px oklch(0 0 0 / 0.65);
-
-  /* Real grass — mowed stripes + blade texture, tiled and fixed so every route matches */
-  --grass-stripes: repeating-linear-gradient(
-    115deg,
-    oklch(0.30 0.10 142) 0px,
-    oklch(0.30 0.10 142) 46px,
-    oklch(0.26 0.09 142) 46px,
-    oklch(0.26 0.09 142) 92px
-  );
-  --grass-blades: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke-linecap='round'><path d='M8 150 Q10 120 6 92' stroke='%2334d399' stroke-opacity='0.18' stroke-width='1.4'/><path d='M22 152 Q26 118 20 88' stroke='%2310b981' stroke-opacity='0.22' stroke-width='1.6'/><path d='M40 150 Q44 122 38 96' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.2'/><path d='M60 152 Q64 118 58 88' stroke='%2334d399' stroke-opacity='0.20' stroke-width='1.5'/><path d='M78 150 Q82 120 74 92' stroke='%2310b981' stroke-opacity='0.18' stroke-width='1.6'/><path d='M96 152 Q100 118 92 90' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.3'/><path d='M114 150 Q118 122 112 96' stroke='%2334d399' stroke-opacity='0.22' stroke-width='1.5'/><path d='M132 152 Q136 118 128 88' stroke='%2310b981' stroke-opacity='0.18' stroke-width='1.6'/><path d='M150 150 Q154 122 146 94' stroke='%236ee7b7' stroke-opacity='0.14' stroke-width='1.3'/><path d='M14 100 Q18 74 12 50' stroke='%2334d399' stroke-opacity='0.14' stroke-width='1.2'/><path d='M52 96 Q56 68 48 44' stroke='%2310b981' stroke-opacity='0.16' stroke-width='1.4'/><path d='M90 98 Q94 70 86 46' stroke='%236ee7b7' stroke-opacity='0.12' stroke-width='1.2'/><path d='M128 96 Q132 68 122 44' stroke='%2334d399' stroke-opacity='0.16' stroke-width='1.4'/></g></svg>");
+  --radius: 1.25rem;
+  --background: #04070D;
+  --foreground: #F7FAFF;
+  --card: rgba(10, 15, 28, 0.86);
+  --card-foreground: #F7FAFF;
+  --popover: rgba(10, 15, 28, 0.96);
+  --popover-foreground: #F7FAFF;
+  --primary: #8B5CF6;
+  --primary-foreground: #FBF7FF;
+  --primary-glow: #22D3EE;
+  --secondary: #F472B6;
+  --secondary-foreground: #F7FAFF;
+  --muted: #94A3B8;
+  --muted-foreground: #94A3B8;
+  --accent: #38BDF8;
+  --accent-foreground: #F7FAFF;
+  --warning: #F59E0B;
+  --warning-foreground: #08131B;
+  --destructive: #EF4444;
+  --destructive-foreground: #F7FAFF;
+  --success: #22C55E;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #8B5CF6;
+  --chart-1: #8B5CF6;
+  --chart-2: #22D3EE;
+  --chart-3: #F472B6;
+  --chart-4: #38BDF8;
+  --chart-5: #22C55E;
+  --sidebar: rgba(7, 10, 20, 0.94);
+  --sidebar-foreground: #F7FAFF;
+  --sidebar-primary: #8B5CF6;
+  --sidebar-primary-foreground: #FBF7FF;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
+  --sidebar-accent-foreground: #F7FAFF;
+  --sidebar-border: rgba(255, 255, 255, 0.14);
+  --sidebar-ring: #8B5CF6;
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 55%, #F472B6 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(34, 211, 238, 0.12));
+  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.34);
+  --shadow-elevation: 0 24px 70px rgba(2, 6, 23, 0.48);
+  --glass-border: rgba(255, 255, 255, 0.16);
 }
 
 @layer base {
-  * {
+  *, *::before, *::after {
     border-color: var(--color-border);
+    box-sizing: border-box;
   }
 
   html, body {
-    background-color: transparent;
-    color: var(--color-foreground);
+    min-height: 100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(139, 92, 246, 0.22), transparent 24%),
+      radial-gradient(circle at 85% 8%, rgba(34, 211, 238, 0.16), transparent 20%),
+      radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.14), transparent 24%);
   }
 
-  /* Fixed real-grass field behind every route */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background-image: url("/__l5e/assets-v1/87432364-b5e9-421e-872a-e3933ab59870/grass.jpg");
-    background-size: 600px 600px;
-    background-repeat: repeat;
-    background-position: center;
-    opacity: 1;
-    pointer-events: none;
+  body {
+    position: relative;
+    overflow-x: hidden;
   }
 
+  body::before,
   body::after {
     content: "";
     position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-      /* top stadium-light glow */
-      radial-gradient(ellipse 1200px 600px at 50% -80px, oklch(0.55 0.14 145 / 0.18), transparent 65%),
-      /* bottom shadow for readability */
-      radial-gradient(ellipse 100% 55% at 50% 100%, oklch(0.12 0.07 142 / 0.38), transparent 70%),
-      /* subtle green tint wash so text remains legible */
-      linear-gradient(180deg, oklch(0.20 0.06 142 / 0.22), oklch(0.16 0.05 142 / 0.32));
     pointer-events: none;
+    z-index: -1;
+    filter: blur(80px);
+    opacity: 0.7;
+  }
+
+  body::before {
+    inset: -10% auto auto -15%;
+    width: 34rem;
+    height: 34rem;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+  }
+
+  body::after {
+    inset: auto -12% -18% auto;
+    width: 30rem;
+    height: 30rem;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 70%);
+  }
+
+  ::selection {
+    background: rgba(20, 184, 166, 0.24);
+    color: var(--foreground);
   }
 }
 
 
 @utility glass {
-  background: var(--gradient-glass);
-  backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid oklch(1 0 0 / 0.08);
+  background: linear-gradient(135deg, rgba(10, 16, 28, 0.84), rgba(12, 20, 34, 0.72));
+  backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 @utility glass-strong {
-  background: linear-gradient(135deg, oklch(1 0 0 / 0.12), oklch(1 0 0 / 0.04));
-  backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid oklch(1 0 0 / 0.12);
+  background: linear-gradient(135deg, rgba(9, 14, 26, 0.95), rgba(11, 18, 32, 0.86));
+  backdrop-filter: blur(30px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.35);
 }
 
 @utility text-gradient {
@@ -186,4 +180,71 @@
 
 @utility glow {
   box-shadow: var(--shadow-glow);
+}
+
+@utility blueprint-grid {
+  background-image: 
+    linear-gradient(rgba(20, 184, 166, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+@layer utilities {
+  @keyframes scan {
+    0% { left: -200px; }
+    100% { left: 100%; }
+  }
+
+  @keyframes dash-flow {
+    to { stroke-dashoffset: -1000; }
+  }
+
+  @keyframes arena-drift {
+    0% { background-position: 0% 50%, 0% 50%; }
+    100% { background-position: 100% 50%, 100% 50%; }
+  }
+
+  .animate-scan {
+    animation: scan 8s ease-in-out infinite;
+  }
+
+  .motion-arena-bg {
+    background-image:
+      linear-gradient(135deg, rgba(8, 12, 24, 0.82), rgba(11, 18, 32, 0.62)),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23040b14'/%3E%3Ccircle cx='400' cy='300' r='205' fill='none' stroke='%2314b8a6' stroke-opacity='0.22' stroke-width='3'/%3E%3Ccircle cx='400' cy='300' r='165' fill='none' stroke='%2338bdf8' stroke-opacity='0.16' stroke-width='2'/%3E%3Crect x='150' y='110' width='500' height='380' rx='80' fill='none' stroke='%23f8fafc' stroke-opacity='0.16' stroke-width='3'/%3E%3Cpath d='M260 140h280' stroke='%23f8fafc' stroke-opacity='0.14' stroke-width='2'/%3E%3Cpath d='M240 470h320' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M232 208c44-42 124-61 168-61s124 19 168 61' stroke='%238b5cf6' stroke-opacity='0.24' stroke-width='5' fill='none'/%3E%3Cpath d='M232 392c44 42 124 61 168 61s124-19 168-61' stroke='%2322d3ee' stroke-opacity='0.2' stroke-width='5' fill='none'/%3E%3Cpath d='M220 170v260' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M580 170v260' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M300 160v280' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='2'/%3E%3Cpath d='M500 160v280' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='2'/%3E%3Cpath d='M350 140v320' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='1.5'/%3E%3Cpath d='M450 140v320' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: cover, 140% 140%;
+    background-position: center;
+    animation: arena-drift 18s ease-in-out infinite alternate;
+  }
+
+  .motion-ticket-bg {
+    background-image:
+      linear-gradient(135deg, rgba(13, 20, 34, 0.95), rgba(7, 10, 20, 0.92)),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 420'%3E%3Crect width='700' height='420' fill='%2304070d'/%3E%3Crect x='120' y='60' width='460' height='300' rx='70' fill='none' stroke='%23f8fafc' stroke-opacity='0.12' stroke-width='3'/%3E%3Ccircle cx='350' cy='210' r='118' fill='none' stroke='%2314b8a6' stroke-opacity='0.2' stroke-width='3'/%3E%3Cpath d='M170 135c62-28 134-44 180-44s118 16 180 44' stroke='%238b5cf6' stroke-opacity='0.24' stroke-width='4' fill='none'/%3E%3Cpath d='M170 285c62 28 134 44 180 44s118-16 180-44' stroke='%2322d3ee' stroke-opacity='0.2' stroke-width='4' fill='none'/%3E%3C/svg%3E");
+    background-size: cover, 160% 160%;
+    background-position: center;
+    animation: arena-drift 14s ease-in-out infinite alternate;
+  }
+
+  .animate-dash-flow {
+    animation: dash-flow 40s linear infinite;
+  }
+
+  .glass-sidebar {
+    background: rgba(7, 12, 22, 0.88);
+    backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+
+  .glass-tooltip {
+    background: rgba(9, 16, 28, 0.94);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(20, 184, 166, 0.28);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
+  }
+
+  .glow-teal {
+    filter: drop-shadow(0 0 1rem rgba(20, 184, 166, 0.42));
+  }
 }

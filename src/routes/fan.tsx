@@ -1,11 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, Area, AreaChart, BarChart, Bar, CartesianGrid } from "recharts";
 import { AppShell } from "@/components/AppShell";
 import { StatCard } from "@/components/StatCard";
 import { crowdData, queueData, notifications } from "@/lib/mock-data";
-import { Users, Clock, MapPin, Ticket, CalendarDays, Bell } from "lucide-react";
+import { Users, Clock, MapPin, Ticket, CalendarDays, Bell, Crosshair } from "lucide-react";
 
 export const Route = createFileRoute("/fan")({
   head: () => ({
@@ -23,7 +23,7 @@ function FanPage() {
       <div className="grid lg:grid-cols-3 gap-5">
         {/* Digital Ticket */}
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-          className="glass-strong rounded-2xl p-6 lg:row-span-2 relative overflow-hidden">
+          className="motion-ticket-bg glass-strong rounded-2xl p-6 lg:row-span-2 relative overflow-hidden">
           <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-hero)" }} />
           <div className="relative">
             <div className="text-xs uppercase tracking-widest text-primary-glow">Digital Ticket</div>
@@ -152,12 +152,23 @@ function FanPage() {
             <div className="absolute inset-6 rounded-full border-2 border-accent/40" />
             <div className="absolute inset-16 rounded-full border-2 border-accent/30" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs text-muted-foreground">PITCH</div>
+            <div className="absolute left-5 top-7 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-glow">Merch Shops</div>
+            <div className="absolute right-4 bottom-10 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-accent">First Aid</div>
+            <div className="absolute left-1/3 top-5 rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.28em] text-slate-200">Food Court</div>
             <motion.div
               animate={{ scale: [1, 1.4, 1] }} transition={{ repeat: Infinity, duration: 2 }}
               className="absolute top-8 right-12 size-3 rounded-full bg-primary shadow-[0_0_20px_oklch(0.72_0.13_185)]"
             />
             <div className="absolute top-6 right-16 text-xs text-primary-glow">Your seat →</div>
             <div className="absolute bottom-4 left-4 text-xs glass rounded-lg px-3 py-1.5"><Ticket className="size-3 inline mr-1" /> 3 min walk from Gate B</div>
+            
+            <Link 
+              to={"/fan/tactical" as any} 
+              className="absolute top-4 left-4 group flex items-center gap-2 px-3 py-1.5 glass rounded-lg text-[10px] font-bold uppercase tracking-wider text-primary-glow hover:bg-primary/20 transition-all border border-primary/20"
+            >
+              <Crosshair className="size-3 group-hover:rotate-90 transition-transform duration-500" />
+              Launch Tactical View
+            </Link>
           </div>
         </div>
       </div>

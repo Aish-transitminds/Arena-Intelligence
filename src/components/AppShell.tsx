@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import {
   LayoutDashboard,
   ShieldAlert,
@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Logo } from "./Logo";
 import { AIAssistant } from "./AIAssistant";
+import { canAccessRoute, getStoredRole, persistRole } from "@/lib/security";
 
 type NavItem = {
   to: "/fan" | "/admin" | "/tournament" | "/emergency" | "/assistant";
@@ -53,13 +54,35 @@ export function AppShell({
 }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const activeItem = navSections.flatMap((s) => s.items).find((i) => pathname.startsWith(i.to));
+  const role = getStoredRole();
+
+  useEffect(() => {
+    if (role === "guest") {
+      persistRole("fan");
+    }
+  }, [role]);
+
+  if (!canAccessRoute(pathname, role)) {
+    return (
+      <div className="min-h-dvh flex items-center justify-center bg-background px-6 text-center">
+        <div className="glass-strong max-w-md rounded-3xl border border-destructive/20 p-8">
+          <p className="text-xs uppercase tracking-[0.32em] text-destructive">Access denied</p>
+          <h1 className="mt-4 text-2xl font-semibold text-white">You do not have permission to view this area.</h1>
+          <p className="mt-3 text-sm text-muted-foreground">Please sign in with the correct role to continue.</p>
+          <Link to="/login" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-black">
+            Return to sign in
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-dvh flex">
       {/* Sidebar */}
       <aside
         aria-label="Primary navigation"
-        className="hidden md:flex w-64 shrink-0 flex-col border-r border-sidebar-border bg-sidebar/70 backdrop-blur-xl sticky top-0 h-dvh"
+        className="hidden md:flex w-64 shrink-0 flex-col border-r border-sidebar-border bg-[linear-gradient(180deg,rgba(8,12,24,0.95),rgba(5,8,16,0.92))] backdrop-blur-2xl sticky top-0 h-dvh shadow-[18px_0_60px_rgba(2,6,23,0.22)]"
       >
         <div className="px-5 py-5 border-b border-sidebar-border">
           <Logo />
@@ -81,7 +104,7 @@ export function AppShell({
                         aria-current={active ? "page" : undefined}
                         className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all ${focusRing} ${
                           active
-                            ? "bg-primary/12 text-foreground"
+                            ? "bg-gradient-to-r from-primary/20 to-primary-glow/10 text-foreground shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
                             : "text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/70"
                         }`}
                       >
@@ -135,7 +158,7 @@ export function AppShell({
 
       {/* Main */}
       <div className="flex-1 min-w-0 flex flex-col">
-        <header className="sticky top-0 z-30 glass-strong border-b border-border">
+        <header className="sticky top-0 z-30 border-b border-border/70 bg-background/70 backdrop-blur-2xl shadow-[0_10px_40px_rgba(2,6,23,0.2)]">
           <div className="flex items-center gap-4 px-6 py-3.5">
             {/* Breadcrumb + title */}
             <div className="flex-1 min-w-0">
@@ -152,7 +175,7 @@ export function AppShell({
             </div>
 
             {/* Search */}
-            <label className="hidden lg:flex items-center gap-2 glass rounded-lg px-3 py-2 w-72 focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/30 transition">
+            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 border border-white/10 focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/30 transition">
               <Search className="size-4 text-muted-foreground" aria-hidden="true" />
               <span className="sr-only">Search</span>
               <input
@@ -167,7 +190,7 @@ export function AppShell({
             <button
               type="button"
               aria-label="Notifications, 1 unread"
-              className={`relative size-10 rounded-lg glass flex items-center justify-center hover:border-primary/40 transition ${focusRing}`}
+              className={`relative size-10 rounded-xl glass flex items-center justify-center hover:border-primary/40 transition ${focusRing}`}
             >
               <Bell className="size-4" aria-hidden="true" />
               <span

@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
 import { Heart, Shield, PhoneCall, Route as RouteIcon, Siren, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { checkRateLimit, recordAuditEvent } from "@/lib/security";
 
 export const Route = createFileRoute("/emergency")({
   head: () => ({
@@ -16,6 +17,22 @@ export const Route = createFileRoute("/emergency")({
 
 function Emergency() {
   const [sos, setSos] = useState(false);
+  const [status, setStatus] = useState("Stand by");
+  const cooldown = useMemo(() => 20, []);
+
+  const handleSos = () => {
+    const limit = checkRateLimit("emergency-sos", 1, 20000);
+    if (!limit.allowed) {
+      setStatus(`Cooldown active · ${Math.ceil((limit.resetAt - Date.now()) / 1000)}s`);
+      recordAuditEvent("emergency-rate-limit", "SOS trigger blocked");
+      return;
+    }
+
+    setSos(true);
+    setStatus("Dispatched");
+    recordAuditEvent("emergency-sos", "Stadium-wide emergency response triggered");
+  };
+
   return (
     <AppShell title="Emergency Center" subtitle="Coordinated response · Live dispatch">
       <div className="grid lg:grid-cols-3 gap-5">
@@ -31,7 +48,7 @@ function Emergency() {
               Dispatch medical, security, and evacuation teams simultaneously. All zone marshals will be notified in under 3 seconds.
             </p>
             <motion.button
-              onClick={() => setSos((v) => !v)}
+              onClick={handleSos}
               whileTap={{ scale: 0.95 }}
               animate={sos ? { scale: [1, 1.05, 1] } : {}}
               transition={sos ? { repeat: Infinity, duration: 1.2 } : {}}
@@ -47,6 +64,13 @@ function Emergency() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="mt-6 glass rounded-xl px-4 py-3 text-sm">
                 <span className="text-destructive font-semibold">Dispatched:</span> Medical team M-2 · Security squad S-4 · Zone marshals
+              </motion.div>
+            )}
+            <div className="mt-4 text-sm text-slate-400">{status}</div>
+            {sos && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                className="mt-2 glass rounded-xl px-4 py-3 text-sm">
+                <span className="text-destructive font-semibold">Cooldown:</span> {cooldown}s between confirmed triggers
               </motion.div>
             )}
           </div>

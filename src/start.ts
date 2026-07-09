@@ -1,10 +1,12 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
+import { setSecurityHeaders } from "./lib/security";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
-    return await next();
+    const response = await next();
+    return setSecurityHeaders(response);
   } catch (error) {
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;
