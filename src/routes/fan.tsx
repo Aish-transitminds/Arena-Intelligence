@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useState, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/fan")({
 });
 
 const fanNav = [
+  { icon: Ticket, label: "My Tickets", desc: "Manage & transfer", href: "/fan/tickets" },
   { icon: UtensilsCrossed, label: "Food Courts", desc: "4 nearby, 3-5 min walk" },
   { icon: ShoppingBag, label: "Adidas Official Store", desc: "0.2 km · Proceed North" },
   { icon: ShoppingBag, label: "FIFA Merch Zone", desc: "0.5 km · Near Gate C" },
@@ -30,6 +31,15 @@ const fanNav = [
 
 function FanPage() {
   const [is3DModalOpen, setIs3DModalOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on a child route like /fan/tickets
+  const isChildRoute = location.pathname !== '/fan';
+  
+  // If on a child route, render the outlet
+  if (isChildRoute) {
+    return <Outlet />;
+  }
 
   return (
     <AppShell title="Match Day" subtitle="Team A vs Team B · Gate B · Section 204, Row 12, Seat 7">
@@ -166,15 +176,8 @@ function FanPage() {
             <div className="grid grid-cols-2 gap-3">
               {fanNav.map((item) => {
               const Icon = item.icon;
-              return (
-                <button
-                  key={item.label}
-                  onClick={() => {
-                    // Quick nav items don't need a specific action yet since we pulled out 3D Modal
-                  }}
-                  className="flex items-center gap-3 rounded-xl p-4 text-left transition-all hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
-                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
-                >
+              const content = (
+                <>
                   <div
                     className="size-9 rounded-xl flex items-center justify-center shrink-0"
                     style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.20)" }}
@@ -185,6 +188,32 @@ function FanPage() {
                     <div className="text-sm font-semibold text-white truncate">{item.label}</div>
                     <div className="text-[10px] mt-0.5 truncate" style={{ color: "#AAB8C2" }}>{item.desc}</div>
                   </div>
+                </>
+              );
+              
+              if ("href" in item && item.href) {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    className="flex items-center gap-3 rounded-xl p-4 text-left transition-all hover:scale-[1.02] active:scale-[0.99]"
+                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
+                  >
+                    {content}
+                  </Link>
+                );
+              }
+              
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    // Quick nav items don't need a specific action yet since we pulled out 3D Modal
+                  }}
+                  className="flex items-center gap-3 rounded-xl p-4 text-left transition-all hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
+                >
+                  {content}
                 </button>
               );
             })}

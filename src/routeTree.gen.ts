@@ -18,6 +18,7 @@ import { Route as AuditRouteImport } from './routes/audit'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FanTicketsRouteImport } from './routes/fan.tickets'
 import { Route as FanTacticalRouteImport } from './routes/fan.tactical'
 
 const TournamentRoute = TournamentRouteImport.update({
@@ -65,6 +66,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FanTicketsRoute = FanTicketsRouteImport.update({
+  id: '/tickets',
+  path: '/tickets',
+  getParentRoute: () => FanRoute,
+} as any)
 const FanTacticalRoute = FanTacticalRouteImport.update({
   id: '/tactical',
   path: '/tactical',
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
+  '/fan/tickets': typeof FanTicketsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
+  '/fan/tickets': typeof FanTicketsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
+  '/fan/tickets': typeof FanTicketsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/tournament'
     | '/fan/tactical'
+    | '/fan/tickets'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/tournament'
     | '/fan/tactical'
+    | '/fan/tickets'
   id:
     | '__root__'
     | '/'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/tournament'
     | '/fan/tactical'
+    | '/fan/tickets'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -224,6 +236,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fan/tickets': {
+      id: '/fan/tickets'
+      path: '/tickets'
+      fullPath: '/fan/tickets'
+      preLoaderRoute: typeof FanTicketsRouteImport
+      parentRoute: typeof FanRoute
+    }
     '/fan/tactical': {
       id: '/fan/tactical'
       path: '/tactical'
@@ -236,10 +255,12 @@ declare module '@tanstack/react-router' {
 
 interface FanRouteChildren {
   FanTacticalRoute: typeof FanTacticalRoute
+  FanTicketsRoute: typeof FanTicketsRoute
 }
 
 const FanRouteChildren: FanRouteChildren = {
   FanTacticalRoute: FanTacticalRoute,
+  FanTicketsRoute: FanTicketsRoute,
 }
 
 const FanRouteWithChildren = FanRoute._addFileChildren(FanRouteChildren)
