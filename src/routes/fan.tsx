@@ -675,14 +675,19 @@ function Modal3D({ onClose }: { onClose: () => void }) {
               <div className="absolute inset-0 bg-black/40" /> {/* shading overlay */}
               <div className="h-full w-full relative flex items-center justify-center z-10">
                 <span className="text-[7px] font-mono tracking-widest text-[#64748B]/40 rotate-90 uppercase">EAST_STAND_SEC_204</span>
-                
-                {/* 3D Billboard Seat Marker */}
+              </div>
+              
+              {/* 3D Billboard Seat Marker */}
+              <div 
+                className="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+                style={{ transform: "rotateY(75deg)", transformStyle: "preserve-3d" }}
+              >
                 <div
-                  className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20 pointer-events-none"
+                  className="flex flex-col items-center justify-center"
                   style={{ 
-                    transform: `translateZ(15px) rotateY(75deg) rotateZ(${
+                    transform: `translateZ(40px) rotateZ(${
                       cameraAngle === "seats" ? -102 : cameraAngle === "sky" ? 0 : 12
-                    }deg) rotateX(-45deg) scale(1.8)`,
+                    }deg) rotateX(-45deg) scale(1.5)`,
                   }}
                 >
                   <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
