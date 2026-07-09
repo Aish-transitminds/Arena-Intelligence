@@ -509,7 +509,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
 
   const transformStyle = useMemo(() => {
     if (cameraAngle === "seats") {
-      return "perspective(1200px) rotateX(68deg) rotateY(0deg) rotateZ(-78deg) scale(1.15) translateZ(-40px)";
+      return "perspective(1200px) rotateX(68deg) rotateY(0deg) rotateZ(102deg) scale(1.15) translateZ(-40px)";
     }
     if (cameraAngle === "sky") {
       return "perspective(1200px) rotateX(25deg) rotateY(0deg) rotateZ(0deg) scale(0.85)";
@@ -681,8 +681,8 @@ function Modal3D({ onClose }: { onClose: () => void }) {
                   className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20 pointer-events-none"
                   style={{ 
                     transform: `translateZ(15px) rotateY(75deg) rotateZ(${
-                      cameraAngle === "seats" ? 78 : cameraAngle === "sky" ? 0 : 12
-                    }deg) rotateX(-65deg) scale(1.8)`,
+                      cameraAngle === "seats" ? -102 : cameraAngle === "sky" ? 0 : 12
+                    }deg) rotateX(-45deg) scale(1.8)`,
                   }}
                 >
                   <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
