@@ -30,26 +30,26 @@ export const revenueData = [
 ];
 
 export const fixtures = [
-  { id: 1, home: "Titans FC", away: "Nova Rangers", date: "Jul 12", time: "19:00", venue: "Arena One", status: "Upcoming" },
-  { id: 2, home: "Phoenix United", away: "Storm City", date: "Jul 13", time: "17:30", venue: "Arena Two", status: "Upcoming" },
-  { id: 3, home: "Iron Wolves", away: "Solar Knights", date: "Jul 14", time: "20:00", venue: "Arena One", status: "Upcoming" },
-  { id: 4, home: "Titans FC", away: "Phoenix United", date: "Jul 08", time: "19:00", venue: "Arena One", status: "Live", homeScore: 2, awayScore: 1 },
-  { id: 5, home: "Nova Rangers", away: "Iron Wolves", date: "Jul 05", time: "19:00", venue: "Arena Two", status: "Final", homeScore: 3, awayScore: 3 },
+  { id: 1, home: "USA", away: "England", date: "Jun 12", time: "19:00", venue: "MetLife Stadium", status: "Upcoming" },
+  { id: 2, home: "Mexico", away: "Brazil", date: "Jun 13", time: "17:30", venue: "MetLife Stadium", status: "Upcoming" },
+  { id: 3, home: "Canada", away: "France", date: "Jun 14", time: "20:00", venue: "BC Place", status: "Upcoming" },
+  { id: 4, home: "Argentina", away: "Germany", date: "Jun 08", time: "19:00", venue: "MetLife Stadium", status: "Live", homeScore: "2", awayScore: "1" },
+  { id: 5, home: "Brazil", away: "Spain", date: "Jun 05", time: "19:00", venue: "MetLife Stadium", status: "Final", homeScore: "3", awayScore: "0" },
 ];
 
 export const leaderboard = [
-  { rank: 1, team: "Titans FC", played: 12, won: 10, drawn: 1, lost: 1, points: 31 },
-  { rank: 2, team: "Phoenix United", played: 12, won: 8, drawn: 3, lost: 1, points: 27 },
-  { rank: 3, team: "Nova Rangers", played: 12, won: 7, drawn: 2, lost: 3, points: 23 },
-  { rank: 4, team: "Iron Wolves", played: 12, won: 6, drawn: 2, lost: 4, points: 20 },
-  { rank: 5, team: "Storm City", played: 12, won: 5, drawn: 3, lost: 4, points: 18 },
-  { rank: 6, team: "Solar Knights", played: 12, won: 3, drawn: 2, lost: 7, points: 11 },
+  { rank: 1, team: "Argentina", played: 3, won: 3, drawn: 0, lost: 0, points: 9 },
+  { rank: 2, team: "Germany", played: 3, won: 2, drawn: 0, lost: 1, points: 6 },
+  { rank: 3, team: "USA", played: 3, won: 2, drawn: 0, lost: 1, points: 6 },
+  { rank: 4, team: "Mexico", played: 3, won: 1, drawn: 1, lost: 1, points: 4 },
+  { rank: 5, team: "Brazil", played: 3, won: 1, drawn: 0, lost: 2, points: 3 },
+  { rank: 6, team: "France", played: 3, won: 0, drawn: 1, lost: 2, points: 1 },
 ];
 
 export const notifications = [
   { id: 1, type: "info", title: "Gate B experiencing delays", time: "2m ago" },
   { id: 2, type: "success", title: "Your seat upgrade was approved", time: "18m ago" },
-  { id: 3, type: "warning", title: "Weather advisory: light rain at 20:00", time: "1h ago" },
+  { id: 3, type: "warning", title: "Weather advisory: clear conditions forecast", time: "1h ago" },
 ];
 
 export const alerts = [

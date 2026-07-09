@@ -8,8 +8,8 @@ import { isStrongPassword, isValidEmail, persistRole, sanitizeText, checkRateLim
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — ArenaIQ AI" },
-      { name: "description", content: "Sign in to ArenaIQ AI to access your stadium operations console." },
+      { title: "Sign in — Arena Intelligence" },
+      { name: "description", content: "Sign in to Arena Intelligence to access your stadium operations console." },
     ],
   }),
   component: Login,
@@ -59,7 +59,7 @@ function Login() {
       >
         <div className="flex justify-center mb-6"><Logo size="lg" /></div>
         <h1 className="text-2xl font-semibold text-center">Welcome back</h1>
-        <p className="text-sm text-muted-foreground text-center mt-1">Sign in to your ArenaIQ workspace</p>
+        <p className="text-sm text-muted-foreground text-center mt-1">Sign in to your Arena Intelligence workspace</p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <div className="glass rounded-xl px-3.5 py-3 flex items-center gap-3">

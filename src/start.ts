@@ -6,7 +6,7 @@ import { setSecurityHeaders } from "./lib/security";
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
     const response = await next();
-    return setSecurityHeaders(response);
+    return setSecurityHeaders(response as any);
   } catch (error) {
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;

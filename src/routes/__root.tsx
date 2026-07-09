@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -36,7 +35,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Optional: Log errors to standard monitoring
   }, [error]);
 
   return (
@@ -63,20 +62,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ArenaIQ AI — Smart Stadium & Tournament Operations" },
-      { name: "description", content: "AI-powered stadium intelligence: crowd prediction, queue optimization, tournament ops, and emergency response." },
-      { name: "author", content: "ArenaIQ" },
-      { property: "og:title", content: "ArenaIQ AI — Smart Stadium Intelligence" },
-      { property: "og:description", content: "The operating system for smart stadiums." },
+      { title: "Arena Intelligence — Smart Stadium Operations Platform" },
+      { name: "description", content: "Arena Intelligence is the unified operations platform for crowd management, tournament coordination, emergency response and stadium analytics." },
+      { name: "author", content: "Arena Intelligence" },
+      { property: "og:title", content: "Arena Intelligence — Smart Stadium Operations Platform" },
+      { property: "og:description", content: "Official operations platform for crowd management, tournament coordination, and stadium analytics." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" },
     ],
   }),
   shellComponent: RootShell,

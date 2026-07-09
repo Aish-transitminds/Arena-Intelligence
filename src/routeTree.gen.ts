@@ -10,9 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TournamentRouteImport } from './routes/tournament'
+import { Route as SecurityRouteImport } from './routes/security'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as FanRouteImport } from './routes/fan'
 import { Route as EmergencyRouteImport } from './routes/emergency'
+import { Route as AuditRouteImport } from './routes/audit'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -21,6 +23,11 @@ import { Route as FanTacticalRouteImport } from './routes/fan.tactical'
 const TournamentRoute = TournamentRouteImport.update({
   id: '/tournament',
   path: '/tournament',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -36,6 +43,11 @@ const FanRoute = FanRouteImport.update({
 const EmergencyRoute = EmergencyRouteImport.update({
   id: '/emergency',
   path: '/emergency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssistantRoute = AssistantRouteImport.update({
@@ -63,9 +75,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
+  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
+  '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
 }
@@ -73,9 +87,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
+  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
+  '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
 }
@@ -84,9 +100,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/assistant': typeof AssistantRoute
+  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
+  '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
   '/fan/tactical': typeof FanTacticalRoute
 }
@@ -96,9 +114,11 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/assistant'
+    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
+    | '/security'
     | '/tournament'
     | '/fan/tactical'
   fileRoutesByTo: FileRoutesByTo
@@ -106,9 +126,11 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/assistant'
+    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
+    | '/security'
     | '/tournament'
     | '/fan/tactical'
   id:
@@ -116,9 +138,11 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/assistant'
+    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
+    | '/security'
     | '/tournament'
     | '/fan/tactical'
   fileRoutesById: FileRoutesById
@@ -127,9 +151,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   AssistantRoute: typeof AssistantRoute
+  AuditRoute: typeof AuditRoute
   EmergencyRoute: typeof EmergencyRoute
   FanRoute: typeof FanRouteWithChildren
   LoginRoute: typeof LoginRoute
+  SecurityRoute: typeof SecurityRoute
   TournamentRoute: typeof TournamentRoute
 }
 
@@ -140,6 +166,13 @@ declare module '@tanstack/react-router' {
       path: '/tournament'
       fullPath: '/tournament'
       preLoaderRoute: typeof TournamentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -161,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/emergency'
       fullPath: '/emergency'
       preLoaderRoute: typeof EmergencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assistant': {
@@ -208,9 +248,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AssistantRoute: AssistantRoute,
+  AuditRoute: AuditRoute,
   EmergencyRoute: EmergencyRoute,
   FanRoute: FanRouteWithChildren,
   LoginRoute: LoginRoute,
+  SecurityRoute: SecurityRoute,
   TournamentRoute: TournamentRoute,
 }
 export const routeTree = rootRouteImport

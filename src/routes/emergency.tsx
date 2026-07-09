@@ -1,112 +1,426 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
-import { Heart, Shield, PhoneCall, Route as RouteIcon, Siren, MapPin } from "lucide-react";
+import { Heart, Shield, PhoneCall, Route as RouteIcon, MapPin, Radio, Clock, AlertCircle, CheckCircle2, ChevronRight, ShieldAlert } from "lucide-react";
 import { useMemo, useState } from "react";
 import { checkRateLimit, recordAuditEvent } from "@/lib/security";
 
 export const Route = createFileRoute("/emergency")({
   head: () => ({
     meta: [
-      { title: "Emergency Center — ArenaIQ AI" },
-      { name: "description", content: "SOS, medical dispatch, security response, and evacuation routing." },
+      { title: "Emergency Center — Arena Intelligence" },
+      { name: "description", content: "SOS dispatch, medical response, security coordination, and evacuation routing." },
     ],
   }),
   component: Emergency,
 });
 
+const recentIncidents = [
+  { time: "19:58", type: "resolved", msg: "Medical unit M-2 cleared Section 12 incident. Zone back to normal." },
+  { time: "19:44", msg: "Security patrol S-4 completed sweep of concourse East.", type: "info" },
+  { time: "19:31", type: "alert", msg: "Elevated crowd density in Block 22 West. Security dispatched." },
+  { time: "19:20", type: "info", msg: "Gate B medical station restocked. All units operational." },
+];
+
 function Emergency() {
   const [sos, setSos] = useState(false);
-  const [status, setStatus] = useState("Stand by");
+  const [status, setStatus] = useState<string | null>(null);
   const cooldown = useMemo(() => 20, []);
+
+  const [selectedArea, setSelectedArea] = useState("Section 204");
+  const [incidentType, setIncidentType] = useState("Overcrowding");
+  const [description, setDescription] = useState("");
+  const [incList, setIncList] = useState(recentIncidents);
+  const [activeSosArea, setActiveSosArea] = useState<string | null>(null);
 
   const handleSos = () => {
     const limit = checkRateLimit("emergency-sos", 1, 20000);
     if (!limit.allowed) {
-      setStatus(`Cooldown active · ${Math.ceil((limit.resetAt - Date.now()) / 1000)}s`);
+      setStatus(`Cooldown active · ${Math.ceil((limit.resetAt - Date.now()) / 1000)}s remaining`);
       recordAuditEvent("emergency-rate-limit", "SOS trigger blocked");
       return;
     }
-
     setSos(true);
-    setStatus("Dispatched");
+    setStatus("Stadium-Wide Alarm — Medical M-2 · Security S-4 · Zone Marshals notified");
+    setIncList([
+      { time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), type: "alert", msg: "[SYSTEM SOS] Stadium-wide emergency alarm activated. Evacuation routing operational." },
+      ...incList
+    ]);
     recordAuditEvent("emergency-sos", "Stadium-wide emergency response triggered");
   };
 
+  const handleAreaSos = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedArea) return;
+
+    const limit = checkRateLimit("area-sos", 3, 20000);
+    if (!limit.allowed) {
+      setStatus(`Rate limit active. Please wait before submitting more reports.`);
+      return;
+    }
+
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    const typeLabel = incidentType.toUpperCase();
+    const detail = description.trim() ? `: "${description.trim()}"` : "";
+
+    setIncList([
+      {
+        time: timeStr,
+        type: "alert",
+        msg: `[SOS REPORT] ${typeLabel} at ${selectedArea}${detail}. Emergency responders dispatched.`,
+      },
+      ...incList,
+    ]);
+
+    setActiveSosArea(selectedArea);
+    setSos(true);
+    setStatus(`SOS Dispatched to ${selectedArea} · Responders deployed.`);
+    setDescription("");
+    recordAuditEvent("area-sos", `SOS report submitted for ${selectedArea} - ${incidentType}`);
+  };
+
+  // Dynamically update medical posts based on selected area
+  const dynamicMedicalPosts = useMemo(() => {
+    if (selectedArea.includes("102") || selectedArea.includes("Gate A")) {
+      return [
+        { name: "Gate A Medical Post", dist: "45m · 1 min walk", available: true },
+        { name: "Section 100 First Aid", dist: "95m · 1 min walk", available: true },
+        { name: "Mobile Unit M-1", dist: "180m · 2 min walk", available: true },
+      ];
+    }
+    return [
+      { name: "Gate B Medical Post", dist: "82m · 1 min walk", available: true },
+      { name: "Section 200 First Aid", dist: "140m · 2 min walk", available: true },
+      { name: "Mobile Unit M-4", dist: "210m · 3 min walk", available: false },
+    ];
+  }, [selectedArea]);
+
   return (
-    <AppShell title="Emergency Center" subtitle="Coordinated response · Live dispatch">
+    <AppShell title="Emergency Center" subtitle="Coordinated response · Live dispatch · All zones monitored">
       <div className="grid lg:grid-cols-3 gap-5">
-        <motion.div whileHover={{ scale: 1.01 }}
-          className="glass-strong rounded-3xl p-8 lg:col-span-2 relative overflow-hidden">
-          <div className="absolute inset-0" style={{
-            background: "radial-gradient(circle at center, oklch(0.65 0.23 25 / 0.25), transparent 70%)"
-          }} />
-          <div className="relative flex flex-col items-center text-center">
-            <div className="text-xs uppercase tracking-widest text-destructive">Emergency SOS</div>
-            <h2 className="text-3xl font-bold mt-2">Tap to trigger stadium-wide response</h2>
-            <p className="text-sm text-muted-foreground mt-2 max-w-md">
-              Dispatch medical, security, and evacuation teams simultaneously. All zone marshals will be notified in under 3 seconds.
-            </p>
-            <motion.button
-              onClick={handleSos}
-              whileTap={{ scale: 0.95 }}
-              animate={sos ? { scale: [1, 1.05, 1] } : {}}
-              transition={sos ? { repeat: Infinity, duration: 1.2 } : {}}
-              className="mt-8 size-40 rounded-full flex flex-col items-center justify-center text-primary-foreground font-bold text-lg"
-              style={{
-                background: sos ? "oklch(0.65 0.23 25)" : "var(--gradient-primary)",
-                boxShadow: sos ? "0 0 80px oklch(0.65 0.23 25 / 0.6)" : "var(--shadow-glow)"
-              }}>
-              <Siren className="size-10 mb-2" />
-              {sos ? "ACTIVE" : "SOS"}
-            </motion.button>
+
+        {/* ── SOS CONTROL PANEL ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="lg:col-span-2 rounded-2xl overflow-hidden relative"
+          style={{
+            background: "rgba(14,27,36,0.90)",
+            border: sos ? "1px solid rgba(217,45,32,0.30)" : "1px solid rgba(255,255,255,0.08)",
+          }}
+        >
+          {/* Header band */}
+          <div
+            className="px-7 py-5 flex items-center justify-between"
+            style={{
+              background: sos ? "rgba(217,45,32,0.10)" : "rgba(255,255,255,0.03)",
+              borderBottom: "1px solid rgba(255,255,255,0.07)",
+            }}
+          >
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-[0.24em]"
+                style={{ color: sos ? "#D92D20" : "#AAB8C2" }}
+              >
+                Emergency Dispatch &amp; Fan SOS
+              </p>
+              <h2 className="text-xl font-extrabold text-white mt-1">
+                {sos ? "Emergency Response Active" : "Stadium Emergency Hub"}
+              </h2>
+            </div>
             {sos && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                className="mt-6 glass rounded-xl px-4 py-3 text-sm">
-                <span className="text-destructive font-semibold">Dispatched:</span> Medical team M-2 · Security squad S-4 · Zone marshals
-              </motion.div>
+              <div className="flex items-center gap-2 rounded-full px-4 py-2" style={{ background: "rgba(217,45,32,0.12)", border: "1px solid rgba(217,45,32,0.28)" }}>
+                <Radio className="size-3.5 animate-pulse" style={{ color: "#D92D20" }} />
+                <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#D92D20" }}>Active</span>
+              </div>
             )}
-            <div className="mt-4 text-sm text-slate-400">{status}</div>
-            {sos && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                className="mt-2 glass rounded-xl px-4 py-3 text-sm">
-                <span className="text-destructive font-semibold">Cooldown:</span> {cooldown}s between confirmed triggers
-              </motion.div>
-            )}
+          </div>
+
+          <div className="p-8">
+            {/* Split layout: Global SOS vs localized Area report */}
+            <div className="grid md:grid-cols-2 gap-8 items-stretch">
+              
+              {/* Left Column: Global SOS button */}
+              <div className="flex flex-col items-center justify-center p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(255,255,255,0.04)" }}>
+                <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "#AAB8C2" }}>Stadium-Wide Alarm</p>
+                
+                <motion.button
+                  onClick={handleSos}
+                  whileTap={{ scale: 0.95 }}
+                  animate={sos ? { scale: [1, 1.04, 1] } : {}}
+                  transition={sos ? { repeat: Infinity, duration: 1.8, ease: "easeInOut" } : {}}
+                  disabled={sos}
+                  className="size-36 rounded-full flex flex-col items-center justify-center font-extrabold text-white cursor-pointer disabled:cursor-not-allowed relative"
+                  style={{
+                    background: sos
+                      ? "linear-gradient(145deg, #9B1E18, #D92D20)"
+                      : "linear-gradient(145deg, #D92D20, #FF4A3A)",
+                    boxShadow: sos
+                      ? "0 0 40px rgba(217,45,32,0.40)"
+                      : "0 0 20px rgba(217,45,32,0.25)",
+                  }}
+                >
+                  {sos && (
+                    <motion.div
+                      animate={{ scale: [1, 1.4], opacity: [0.4, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.8 }}
+                      className="absolute inset-0 rounded-full"
+                      style={{ background: "rgba(217,45,32,0.20)" }}
+                    />
+                  )}
+                  <ShieldAlert className="size-10 mb-1.5" />
+                  <span className="text-lg font-black tracking-wider">{sos ? "ACTIVE" : "SOS"}</span>
+                </motion.button>
+                <p className="text-[10px] mt-4 text-center max-w-[200px]" style={{ color: "#AAB8C2" }}>
+                  Triggers immediate warning signal across all screens and gates.
+                </p>
+              </div>
+
+              {/* Right Column: Localized SOS Reporting */}
+              <form onSubmit={handleAreaSos} className="flex flex-col text-left p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(255,255,255,0.04)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Report Localized Incident</h3>
+                
+                <div className="space-y-3.5 flex-1">
+                  <div>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>Select Location / Area</label>
+                    <select
+                      value={selectedArea}
+                      onChange={(e) => setSelectedArea(e.target.value)}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-white outline-none select-none"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                    >
+                      <option value="Section 204" className="bg-[#0E1B24]">Section 204 (East Stand)</option>
+                      <option value="Section 102" className="bg-[#0E1B24]">Section 102 (West Stand)</option>
+                      <option value="Gate B Concourse" className="bg-[#0E1B24]">Gate B Concourse Loop</option>
+                      <option value="Gate A Concourse" className="bg-[#0E1B24]">Gate A Concourse Loop</option>
+                      <option value="VIP Suite North" className="bg-[#0E1B24]">VIP Suite North</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>Incident Type</label>
+                    <select
+                      value={incidentType}
+                      onChange={(e) => setIncidentType(e.target.value)}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-white outline-none"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                    >
+                      <option value="Overcrowding" className="bg-[#0E1B24]">Overcrowding &amp; Flow Anomaly</option>
+                      <option value="Medical Emergency" className="bg-[#0E1B24]">Medical Emergency / First Aid</option>
+                      <option value="Security Alert" className="bg-[#0E1B24]">Security / Behavioral Alert</option>
+                      <option value="Hazard &amp; Safety" className="bg-[#0E1B24]">Hazard &amp; Safety Issue</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>Details / Description</label>
+                    <textarea
+                      placeholder="e.g. Sudden crowding spike at exits, stairs congested..."
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2.5 text-xs text-white outline-none h-16 resize-none transition"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(14,159,110,0.35)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.08)")}
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2.5 mt-5 rounded-xl text-xs font-bold uppercase tracking-wider text-white hover:opacity-90 active:scale-95 transition cursor-pointer"
+                  style={{ background: "linear-gradient(135deg, #D92D20, #9B1E18)" }}
+                >
+                  Send SOS Report
+                </button>
+              </form>
+
+            </div>
+
+            {/* Status message */}
+            <AnimatePresence>
+              {status && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 rounded-xl px-5 py-3.5 text-sm font-medium text-center max-w-xl mx-auto"
+                  style={{
+                    background: "rgba(217,45,32,0.08)",
+                    border: "1px solid rgba(217,45,32,0.20)",
+                    color: "#FF6B5B",
+                  }}
+                >
+                  {status}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
+        {/* ── RESPONSE TEAMS ── */}
         <div className="space-y-4">
-          <ResponseCard icon={Heart} title="Medical" count={4} status="On standby" tone="accent" />
-          <ResponseCard icon={Shield} title="Security" count={12} status="Patrolling" tone="primary" />
+          <ResponseCard icon={Heart} title="Medical" count={4} status="On standby — Gate A &amp; B" tone="danger" />
+          <ResponseCard icon={Shield} title="Security" count={12} status="Active patrol" tone="primary" />
           <ResponseCard icon={PhoneCall} title="Hotline" count={1} status="Live 24/7" tone="warning" />
+
+          {/* Nearest medical */}
+          <div
+            className="rounded-2xl p-5"
+            style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <MapPin className="size-4 text-primary" />
+              <h3 className="text-xs font-bold uppercase tracking-[0.20em] text-white">Nearest Medical Station</h3>
+            </div>
+            <div className="space-y-2">
+              {dynamicMedicalPosts.map((loc) => (
+                <div
+                  key={loc.name}
+                  className="flex items-center justify-between p-3 rounded-xl"
+                  style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
+                >
+                  <div>
+                    <p className="text-xs font-semibold text-white">{loc.name}</p>
+                    <p className="text-[10px] mt-0.5" style={{ color: "#AAB8C2" }}>{loc.dist}</p>
+                  </div>
+                  <span
+                    className="text-[9px] font-bold uppercase tracking-[0.16em] px-2 py-1 rounded-full"
+                    style={{
+                      background: loc.available ? "rgba(14,159,110,0.12)" : "rgba(170,184,194,0.08)",
+                      border: loc.available ? "1px solid rgba(14,159,110,0.22)" : "1px solid rgba(170,184,194,0.15)",
+                      color: loc.available ? "#0E9F6E" : "#AAB8C2",
+                    }}
+                  >
+                    {loc.available ? "Available" : "Deployed"}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Evacuation Route */}
-        <div className="glass rounded-2xl p-5 lg:col-span-3">
-          <div className="flex items-center gap-2 mb-3">
-            <RouteIcon className="size-4 text-primary-glow" />
-            <div className="text-sm font-semibold">Evacuation Routes</div>
-            <span className="ml-auto text-xs text-accent">All 6 routes clear</span>
+        {/* ── EVACUATION ROUTES ── */}
+        <div
+          className="rounded-2xl overflow-hidden lg:col-span-2"
+          style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div
+            className="px-6 py-4 flex items-center justify-between"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            <div className="flex items-center gap-2">
+              <RouteIcon className="size-4 text-primary" />
+              <h2 className="text-sm font-bold text-white">Evacuation Routes</h2>
+            </div>
+            <span
+              className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+              style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.20)", color: "#0E9F6E" }}
+            >
+              All Exit Routes Operational
+            </span>
           </div>
-          <div className="relative h-72 rounded-xl overflow-hidden border border-border" style={{
-            background: "radial-gradient(ellipse at center, oklch(0.55 0.12 150 / 0.28), oklch(0.20 0.06 140))"
-          }}>
-            <div className="absolute inset-8 rounded-full border-2 border-accent/40" />
-            <div className="absolute inset-20 rounded-full border-2 border-accent/30" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs text-muted-foreground">FIELD</div>
 
+          {/* Stadium blueprint */}
+          <div
+            className="relative h-72"
+            style={{ background: "radial-gradient(ellipse at center, rgba(14,159,110,0.10) 0%, rgba(7,20,28,0.97) 70%)" }}
+          >
+            {/* Rings */}
+            <div className="absolute inset-8 rounded-[42%] border-2" style={{ borderColor: "rgba(14,159,110,0.15)" }} />
+            <div className="absolute inset-20 rounded-[42%] border" style={{ borderColor: "rgba(14,159,110,0.10)" }} />
+
+            {/* Field */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-[0.22em]"
+              style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)", color: "#0E9F6E" }}
+            >
+              FIELD
+            </div>
+
+            {/* Exits */}
             {[
-              { pos: "top-4 left-8", label: "Exit A" },
-              { pos: "top-4 right-8", label: "Exit B" },
-              { pos: "bottom-4 left-8", label: "Exit C" },
-              { pos: "bottom-4 right-8", label: "Exit D" },
-              { pos: "top-1/2 left-2 -translate-y-1/2", label: "Exit E" },
-              { pos: "top-1/2 right-2 -translate-y-1/2", label: "Exit F" },
-            ].map((e) => (
-              <div key={e.label} className={`absolute ${e.pos} glass rounded-lg px-2 py-1 text-[11px] flex items-center gap-1.5`}>
-                <MapPin className="size-3 text-accent" />
-                {e.label}
+              { pos: "top-3 left-8", label: "Exit A", key: "A" },
+              { pos: "top-3 right-8", label: "Exit B", key: "B" },
+              { pos: "bottom-3 left-8", label: "Exit C", key: "C" },
+              { pos: "bottom-3 right-8", label: "Exit D", key: "D" },
+              { pos: "top-1/2 left-2 -translate-y-1/2", label: "Exit E", key: "E" },
+              { pos: "top-1/2 right-2 -translate-y-1/2", label: "Exit F", key: "F" },
+            ].map((e) => {
+              // Highlight routes matching targeted area selection
+              const isTargeted = (selectedArea.includes("102") || selectedArea.includes("Gate A"))
+                ? (e.key === "A" || e.key === "E")
+                : (e.key === "B" || e.key === "D");
+
+              return (
+                <div
+                  key={e.label}
+                  className={`absolute ${e.pos} rounded-lg px-2.5 py-1.5 text-[10px] flex items-center gap-1.5 font-bold transition-all duration-500`}
+                  style={{
+                    background: isTargeted ? "rgba(217,45,32,0.18)" : "rgba(14,159,110,0.12)",
+                    border: isTargeted ? "1px solid rgba(217,45,32,0.40)" : "1px solid rgba(14,159,110,0.25)",
+                    color: isTargeted ? "#FF6B5B" : "#0E9F6E",
+                    boxShadow: isTargeted ? "0 0 14px rgba(217,45,32,0.30)" : "none",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  <MapPin className="size-2.5" />
+                  {e.label}
+                  {isTargeted && <span className="size-1.5 rounded-full bg-red-500 animate-ping" />}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── INCIDENT FEED ── */}
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div
+            className="px-6 py-4 flex items-center justify-between"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-white">Incident Log</h3>
+            <div className="flex items-center gap-2">
+              <Radio className="size-3 text-primary animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Live</span>
+            </div>
+          </div>
+          <div className="p-4 space-y-2 max-h-72 overflow-y-auto">
+            {incList.map((inc, i) => (
+              <div
+                key={i}
+                className="flex gap-3 p-3 rounded-xl transition-all"
+                style={{
+                  background:
+                    inc.type === "alert"
+                      ? "rgba(217,45,32,0.06)"
+                      : inc.type === "resolved"
+                      ? "rgba(14,159,110,0.05)"
+                      : "rgba(255,255,255,0.02)",
+                  border:
+                    inc.type === "alert"
+                      ? "1px solid rgba(217,45,32,0.12)"
+                      : inc.type === "resolved"
+                      ? "1px solid rgba(14,159,110,0.12)"
+                      : "1px solid rgba(255,255,255,0.05)",
+                }}
+              >
+                <div
+                  className="size-1.5 rounded-full mt-1.5 shrink-0"
+                  style={{
+                    background:
+                      inc.type === "alert" ? "#D92D20" : inc.type === "resolved" ? "#0E9F6E" : "#AAB8C2",
+                  }}
+                />
+                <div>
+                  <p className="text-xs leading-5" style={{ color: inc.type === "alert" ? "#FF6B5B" : "#AAB8C2" }}>
+                    {inc.msg}
+                  </p>
+                  <p className="text-[10px] mt-0.5 font-mono" style={{ color: "rgba(170,184,194,0.45)" }}>{inc.time}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -116,22 +430,43 @@ function Emergency() {
   );
 }
 
-function ResponseCard({ icon: Icon, title, count, status, tone }: {
-  icon: React.ComponentType<{ className?: string; color?: string }>; title: string; count: number; status: string; tone: "accent" | "primary" | "warning";
+function ResponseCard({
+  icon: Icon,
+  title,
+  count,
+  status,
+  tone,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  count: number;
+  status: string;
+  tone: "danger" | "primary" | "warning";
 }) {
+  const colors = {
+    danger: { bg: "rgba(217,45,32,0.06)", border: "rgba(217,45,32,0.12)", text: "#D92D20" },
+    primary: { bg: "rgba(14,159,110,0.06)", border: "rgba(14,159,110,0.12)", text: "#0E9F6E" },
+    warning: { bg: "rgba(244,180,0,0.06)", border: "rgba(244,180,0,0.12)", text: "#F4B400" },
+  }[tone];
+
   return (
-    <div className="glass rounded-2xl p-5">
-      <div className="flex items-center gap-3">
-        <div className={`size-11 rounded-xl flex items-center justify-center`}
-             style={{ background: `oklch(from var(--${tone}) l c h / 0.15)`, border: `1px solid oklch(from var(--${tone}) l c h / 0.3)` }}>
-          <Icon className={`size-5`} color={`var(--${tone})`} />
+    <div
+      className="p-5 rounded-2xl flex items-center justify-between"
+      style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+    >
+      <div className="flex items-center gap-4">
+        <div
+          className="size-11 rounded-xl flex items-center justify-center"
+          style={{ background: colors.bg, border: `1px solid ${colors.border}`, color: colors.text }}
+        >
+          <Icon className="size-5" />
         </div>
-        <div className="flex-1">
-          <div className="text-sm font-semibold">{title}</div>
-          <div className="text-xs text-muted-foreground">{status}</div>
+        <div>
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider">{title}</h3>
+          <p className="text-xs mt-0.5" style={{ color: "#AAB8C2" }}>{status}</p>
         </div>
-        <div className="text-2xl font-bold">{count}</div>
       </div>
+      <div className="text-3xl font-extrabold text-white tracking-tight">{count}</div>
     </div>
   );
 }

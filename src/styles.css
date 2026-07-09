@@ -47,61 +47,87 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  --obsidian: #08111F;
-  --charcoal: #111827;
-  --silver: #F8FAFC;
-
-  --color-obsidian: var(--obsidian);
-  --color-charcoal: var(--charcoal);
-  --color-silver: var(--silver);
 }
 
+/* ===================================================
+   ARENA INTELLIGENCE — FIFA OPERATIONS PLATFORM
+   Stadium-grade color palette
+=================================================== */
 :root {
   --radius: 1.25rem;
-  --background: #04070D;
-  --foreground: #F7FAFF;
-  --card: rgba(10, 15, 28, 0.86);
-  --card-foreground: #F7FAFF;
-  --popover: rgba(10, 15, 28, 0.96);
-  --popover-foreground: #F7FAFF;
-  --primary: #8B5CF6;
-  --primary-foreground: #FBF7FF;
-  --primary-glow: #22D3EE;
-  --secondary: #F472B6;
-  --secondary-foreground: #F7FAFF;
-  --muted: #94A3B8;
-  --muted-foreground: #94A3B8;
-  --accent: #38BDF8;
-  --accent-foreground: #F7FAFF;
-  --warning: #F59E0B;
-  --warning-foreground: #08131B;
-  --destructive: #EF4444;
-  --destructive-foreground: #F7FAFF;
-  --success: #22C55E;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #8B5CF6;
-  --chart-1: #8B5CF6;
-  --chart-2: #22D3EE;
-  --chart-3: #F472B6;
-  --chart-4: #38BDF8;
-  --chart-5: #22C55E;
-  --sidebar: rgba(7, 10, 20, 0.94);
-  --sidebar-foreground: #F7FAFF;
-  --sidebar-primary: #8B5CF6;
-  --sidebar-primary-foreground: #FBF7FF;
-  --sidebar-accent: rgba(255, 255, 255, 0.08);
-  --sidebar-accent-foreground: #F7FAFF;
-  --sidebar-border: rgba(255, 255, 255, 0.14);
-  --sidebar-ring: #8B5CF6;
-  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 55%, #F472B6 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(34, 211, 238, 0.12));
-  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.34);
-  --shadow-elevation: 0 24px 70px rgba(2, 6, 23, 0.48);
-  --glass-border: rgba(255, 255, 255, 0.16);
+
+  /* Core Background Palette */
+  --background: #07141C;
+  --surface: #0E1B24;
+  --card-bg: #142430;
+
+  /* Foreground */
+  --foreground: #FFFFFF;
+  --card: rgba(14, 27, 36, 0.90);
+  --card-foreground: #FFFFFF;
+  --popover: rgba(14, 27, 36, 0.98);
+  --popover-foreground: #FFFFFF;
+
+  /* Brand Colors */
+  --primary: #0E9F6E;
+  --primary-foreground: #FFFFFF;
+  --primary-glow: #3CB371;
+  --secondary: #3CB371;
+  --secondary-foreground: #FFFFFF;
+
+  /* Accent — Gold */
+  --accent: #D4AF37;
+  --accent-foreground: #07141C;
+
+  /* Status */
+  --warning: #F4B400;
+  --warning-foreground: #07141C;
+  --destructive: #D92D20;
+  --destructive-foreground: #FFFFFF;
+  --success: #0E9F6E;
+
+  /* Text */
+  --muted: rgba(20, 36, 48, 0.80);
+  --muted-foreground: #AAB8C2;
+
+  /* Borders & Inputs */
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #0E9F6E;
+
+  /* Charts */
+  --chart-1: #0E9F6E;
+  --chart-2: #D4AF37;
+  --chart-3: #3CB371;
+  --chart-4: #F4B400;
+  --chart-5: #AAB8C2;
+
+  /* Sidebar */
+  --sidebar: rgba(7, 20, 28, 0.97);
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #0E9F6E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: rgba(14, 159, 110, 0.08);
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: #0E9F6E;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0E9F6E 0%, #3CB371 100%);
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4B400 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(14, 159, 110, 0.12), rgba(60, 179, 113, 0.06));
+  --gradient-hero: linear-gradient(180deg, rgba(7, 20, 28, 0) 0%, rgba(7, 20, 28, 0.85) 100%);
+
+  /* Shadows */
+  --shadow-glow: 0 0 30px rgba(14, 159, 110, 0.25);
+  --shadow-gold-glow: 0 0 30px rgba(212, 175, 55, 0.25);
+  --shadow-elevation: 0 20px 60px rgba(0, 0, 0, 0.40);
+  --glass-border: rgba(255, 255, 255, 0.09);
 }
 
+/* ===================================================
+   BASE STYLES
+=================================================== */
 @layer base {
   *, *::before, *::after {
     border-color: var(--color-border);
@@ -112,13 +138,10 @@
     min-height: 100%;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
-    background-image:
-      radial-gradient(circle at top left, rgba(139, 92, 246, 0.22), transparent 24%),
-      radial-gradient(circle at 85% 8%, rgba(34, 211, 238, 0.16), transparent 20%),
-      radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.14), transparent 24%);
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -126,49 +149,65 @@
     overflow-x: hidden;
   }
 
-  body::before,
+  /* Subtle grass texture with dark overlay — stadium floor effect */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: url("/grass-texture.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    filter: blur(1px) saturate(0.4);
+  }
+
+  /* Stadium floodlight radial glow from top corners */
   body::after {
     content: "";
     position: fixed;
-    pointer-events: none;
+    inset: 0;
     z-index: -1;
-    filter: blur(80px);
-    opacity: 0.7;
-  }
-
-  body::before {
-    inset: -10% auto auto -15%;
-    width: 34rem;
-    height: 34rem;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
-  }
-
-  body::after {
-    inset: auto -12% -18% auto;
-    width: 30rem;
-    height: 30rem;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.25), transparent 70%);
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 40% at 10% 0%, rgba(14, 159, 110, 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 0%, rgba(14, 159, 110, 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 60% at 50% 100%, rgba(0, 0, 0, 0.6) 0%, transparent 80%);
   }
 
   ::selection {
-    background: rgba(20, 184, 166, 0.24);
+    background: rgba(14, 159, 110, 0.22);
     color: var(--foreground);
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-
+/* ===================================================
+   GLASS UTILITIES
+=================================================== */
 @utility glass {
-  background: linear-gradient(135deg, rgba(10, 16, 28, 0.84), rgba(12, 20, 34, 0.72));
-  backdrop-filter: blur(24px) saturate(190%);
+  background: linear-gradient(135deg, rgba(14, 27, 36, 0.82), rgba(20, 36, 48, 0.70));
+  backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 @utility glass-strong {
-  background: linear-gradient(135deg, rgba(9, 14, 26, 0.95), rgba(11, 18, 32, 0.86));
-  backdrop-filter: blur(30px) saturate(220%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.35);
+  background: linear-gradient(135deg, rgba(11, 22, 30, 0.94), rgba(14, 27, 36, 0.88));
+  backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32);
+}
+
+@utility glass-card {
+  background: rgba(14, 27, 36, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.20);
 }
 
 @utility text-gradient {
@@ -178,18 +217,44 @@
   color: transparent;
 }
 
+@utility text-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @utility glow {
   box-shadow: var(--shadow-glow);
 }
 
-@utility blueprint-grid {
-  background-image: 
-    linear-gradient(rgba(20, 184, 166, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 184, 166, 0.06) 1px, transparent 1px);
-  background-size: 42px 42px;
+@utility glow-gold {
+  box-shadow: var(--shadow-gold-glow);
 }
 
+/* Premium stadium blueprint grid */
+@utility blueprint-grid {
+  background-image:
+    linear-gradient(rgba(14, 159, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 159, 110, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
 @layer utilities {
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(14, 159, 110, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(14, 159, 110, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(14, 159, 110, 0); }
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   @keyframes scan {
     0% { left: -200px; }
     100% { left: 100%; }
@@ -199,52 +264,83 @@
     to { stroke-dashoffset: -1000; }
   }
 
-  @keyframes arena-drift {
-    0% { background-position: 0% 50%, 0% 50%; }
-    100% { background-position: 100% 50%, 100% 50%; }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes floodlight-pulse {
+    0%, 100% { opacity: 0.06; }
+    50% { opacity: 0.09; }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
   }
 
   .animate-scan {
     animation: scan 8s ease-in-out infinite;
   }
 
-  .motion-arena-bg {
-    background-image:
-      linear-gradient(135deg, rgba(8, 12, 24, 0.82), rgba(11, 18, 32, 0.62)),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23040b14'/%3E%3Ccircle cx='400' cy='300' r='205' fill='none' stroke='%2314b8a6' stroke-opacity='0.22' stroke-width='3'/%3E%3Ccircle cx='400' cy='300' r='165' fill='none' stroke='%2338bdf8' stroke-opacity='0.16' stroke-width='2'/%3E%3Crect x='150' y='110' width='500' height='380' rx='80' fill='none' stroke='%23f8fafc' stroke-opacity='0.16' stroke-width='3'/%3E%3Cpath d='M260 140h280' stroke='%23f8fafc' stroke-opacity='0.14' stroke-width='2'/%3E%3Cpath d='M240 470h320' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M232 208c44-42 124-61 168-61s124 19 168 61' stroke='%238b5cf6' stroke-opacity='0.24' stroke-width='5' fill='none'/%3E%3Cpath d='M232 392c44 42 124 61 168 61s124-19 168-61' stroke='%2322d3ee' stroke-opacity='0.2' stroke-width='5' fill='none'/%3E%3Cpath d='M220 170v260' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M580 170v260' stroke='%23f8fafc' stroke-opacity='0.1' stroke-width='2'/%3E%3Cpath d='M300 160v280' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='2'/%3E%3Cpath d='M500 160v280' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='2'/%3E%3Cpath d='M350 140v320' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='1.5'/%3E%3Cpath d='M450 140v320' stroke='%23f8fafc' stroke-opacity='0.08' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-size: cover, 140% 140%;
-    background-position: center;
-    animation: arena-drift 18s ease-in-out infinite alternate;
-  }
-
-  .motion-ticket-bg {
-    background-image:
-      linear-gradient(135deg, rgba(13, 20, 34, 0.95), rgba(7, 10, 20, 0.92)),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 420'%3E%3Crect width='700' height='420' fill='%2304070d'/%3E%3Crect x='120' y='60' width='460' height='300' rx='70' fill='none' stroke='%23f8fafc' stroke-opacity='0.12' stroke-width='3'/%3E%3Ccircle cx='350' cy='210' r='118' fill='none' stroke='%2314b8a6' stroke-opacity='0.2' stroke-width='3'/%3E%3Cpath d='M170 135c62-28 134-44 180-44s118 16 180 44' stroke='%238b5cf6' stroke-opacity='0.24' stroke-width='4' fill='none'/%3E%3Cpath d='M170 285c62 28 134 44 180 44s118-16 180-44' stroke='%2322d3ee' stroke-opacity='0.2' stroke-width='4' fill='none'/%3E%3C/svg%3E");
-    background-size: cover, 160% 160%;
-    background-position: center;
-    animation: arena-drift 14s ease-in-out infinite alternate;
-  }
-
   .animate-dash-flow {
     animation: dash-flow 40s linear infinite;
   }
 
+  /* Sidebar glass */
   .glass-sidebar {
-    background: rgba(7, 12, 22, 0.88);
-    backdrop-filter: blur(32px);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    background: rgba(7, 20, 28, 0.96);
+    backdrop-filter: blur(32px) saturate(140%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
   }
 
+  /* Stadium card hover lift */
+  .card-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(14, 159, 110, 0.12);
+  }
+
+  /* Premium table rows */
+  .table-row-hover:hover {
+    background: rgba(14, 159, 110, 0.04);
+  }
+
+  /* Status dot active */
+  .status-live {
+    background: #0E9F6E;
+    box-shadow: 0 0 8px rgba(14, 159, 110, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .status-alert {
+    background: #D92D20;
+    box-shadow: 0 0 8px rgba(217, 45, 32, 0.6);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  /* Tooltip glass */
   .glass-tooltip {
-    background: rgba(9, 16, 28, 0.94);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(20, 184, 166, 0.28);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
+    background: rgba(11, 22, 30, 0.96);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(14, 159, 110, 0.22);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.40);
   }
 
-  .glow-teal {
-    filter: drop-shadow(0 0 1rem rgba(20, 184, 166, 0.42));
+  /* Motion backgrounds */
+  .motion-ticket-bg {
+    background:
+      linear-gradient(135deg, rgba(7, 20, 28, 0.96), rgba(14, 27, 36, 0.92)),
+      url("/grass-texture.png") center/cover;
+  }
+
+  .motion-arena-bg {
+    position: relative;
   }
 }

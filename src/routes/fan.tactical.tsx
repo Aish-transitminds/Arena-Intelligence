@@ -14,57 +14,91 @@ import {
   Thermometer,
   ChevronLeft,
   Flame,
+  Radio,
 } from "lucide-react";
 import { TacticalBlueprint } from "@/components/TacticalBlueprint";
+import { useState } from "react";
 
 export const Route = createFileRoute("/fan/tactical")({
+  head: () => ({
+    meta: [
+      { title: "Tactical Blueprint — Arena Intelligence" },
+      { name: "description", content: "Interactive stadium blueprint with crowd flow overlay, seat navigation, and operations metrics." },
+    ],
+  }),
   component: TacticalPage,
 });
 
 function TacticalPage() {
+  const [flowDynamics, setFlowDynamics] = useState(true);
+  const [thermalScan, setThermalScan] = useState(false);
+  const [heatmapOverlay, setHeatmapOverlay] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const handleToggle = (toggle: "flow" | "thermal" | "heatmap") => {
+    if (toggle === "flow") {
+      setFlowDynamics(!flowDynamics);
+    } else if (toggle === "thermal") {
+      setThermalScan(!thermalScan);
+      if (!thermalScan) setHeatmapOverlay(false);
+    } else if (toggle === "heatmap") {
+      setHeatmapOverlay(!heatmapOverlay);
+      if (!heatmapOverlay) setThermalScan(false);
+    }
+  };
+
   return (
-    <div className="w-full h-dvh bg-obsidian text-slate-100 font-sans relative overflow-hidden flex flex-col">
+    <div className="w-full h-dvh text-white font-sans relative overflow-hidden flex flex-col" style={{ background: "#07141C" }}>
       {/* Tactical Header */}
-      <header className="h-18 glass-sidebar flex items-center justify-between px-10 z-50 shrink-0 border-b border-white/5">
+      <header
+        className="h-18 flex items-center justify-between px-10 z-50 shrink-0"
+        style={{ background: "rgba(14,27,36,0.95)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+      >
         <div className="flex items-center gap-4">
           <Link to="/fan" className="p-2 hover:bg-white/5 rounded-lg transition-colors group mr-2">
             <ChevronLeft className="size-5 text-slate-500 group-hover:text-white transition-colors" />
           </Link>
-          <div className="size-11 bg-primary/10 border border-primary/30 rounded-lg flex items-center justify-center text-primary glow-teal">
+          <div className="size-11 rounded-lg flex items-center justify-center text-primary" style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.20)" }}>
             <ShieldCheck className="size-6" />
           </div>
           <div className="leading-tight">
-            <h1 className="text-xl font-black tracking-tight leading-none uppercase">
-              ARENA<span className="text-primary">INTEL</span>
+            <h1 className="text-lg font-black tracking-tight leading-none text-white uppercase">
+              ARENA<span className="text-primary">INTELLIGENCE</span>
             </h1>
-            <p className="text-[9px] text-slate-500 font-mono uppercase tracking-[0.3em] mt-0.5">
-              Tactical Command Center v4.1
+            <p className="text-[9px] font-mono uppercase tracking-[0.25em] mt-1" style={{ color: "#AAB8C2" }}>
+              Tactical Blueprint v4.2 · MetLife Stadium
             </p>
           </div>
         </div>
 
         <div className="flex-1 max-w-lg px-8">
           <div className="relative group">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-slate-600 group-focus-within:text-primary transition-colors" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-slate-500 group-focus-within:text-primary transition-colors" />
             <input
               type="text"
-              placeholder="QUERY COORDINATES OR SECTION_ID..."
-              className="w-full bg-black/40 border border-white/5 rounded-full py-2.5 pl-12 pr-6 text-[11px] text-white focus:outline-none focus:border-primary/50 transition-all font-mono placeholder:text-slate-700 uppercase tracking-widest"
+              placeholder="Query sector or gate coordinates..."
+              className="w-full rounded-full py-2.5 pl-12 pr-6 text-xs text-white focus:outline-none focus:border-primary/50 transition-all font-mono placeholder:text-slate-600 uppercase tracking-widest"
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
             />
           </div>
         </div>
 
         <div className="flex items-center gap-8">
-          <div className="hidden lg:flex items-center gap-2.5 px-4 py-1.5 bg-primary/5 border border-primary/20 rounded-full">
-            <span className="size-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#14B8A6]" />
-            <span className="text-[10px] text-white font-mono font-bold tracking-wider">LIVE_STREAM: ACTIVE</span>
+          <div className="hidden lg:flex items-center gap-2 rounded-full px-4 py-1.5" style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)" }}>
+            <Radio className="size-3 text-primary animate-pulse" />
+            <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-primary">Live stream active</span>
           </div>
           <div className="text-right hidden md:block select-none">
-            <p className="text-[10px] text-slate-400 font-mono font-bold uppercase tracking-tight">T: 18:42:05:22</p>
-            <p className="text-[9px] text-slate-600 font-mono tracking-tighter">COORDS: 40.7128N 74.0060W</p>
+            <p className="text-[10px] font-mono font-bold uppercase tracking-tight" style={{ color: "#AAB8C2" }}>T: 18:42:05:22</p>
+             <p className="text-[9px] font-mono tracking-tighter" style={{ color: "rgba(170,184,194,0.40)" }}>COORDS: MetLife Stadium, Gate B</p>
           </div>
-          <div className="size-10 rounded-full border border-white/10 bg-slate-900 flex items-center justify-center cursor-pointer hover:border-primary/50 transition-colors">
-            <User className="size-5 text-slate-300" />
+          <div
+            className="size-10 rounded-full flex items-center justify-center cursor-pointer transition-colors"
+            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.30)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
+          >
+            <User className="size-5" style={{ color: "#AAB8C2" }} />
           </div>
         </div>
       </header>
@@ -72,40 +106,49 @@ function TacticalPage() {
       {/* Main Content Area */}
       <div className="flex-1 relative flex overflow-hidden">
         {/* Main Viewport */}
-        <main className="flex-1 relative bg-obsidian">
-          <TacticalBlueprint />
+        <main className="flex-1 relative" style={{ background: "#07141C" }}>
+          <TacticalBlueprint
+            flowDynamics={flowDynamics}
+            thermalScan={thermalScan}
+            heatmapOverlay={heatmapOverlay}
+          />
 
           {/* Timeline / Playback Overlay */}
           <motion.div
             initial={{ y: 100, x: "-50%" }}
             animate={{ y: 0, x: "-50%" }}
-            className="absolute bottom-10 left-1/2 w-full max-w-[640px] h-16 glass-sidebar rounded-full flex items-center px-8 gap-6 z-40 border border-white/10 shadow-2xl"
+            className="absolute bottom-10 left-1/2 w-full max-w-[640px] h-16 rounded-full flex items-center px-8 gap-6 z-40 shadow-2xl"
+            style={{ background: "rgba(14,27,36,0.92)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(16px)" }}
           >
             <div className="flex items-center gap-4">
-              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer">
+              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer outline-none">
                 <SkipBack className="size-5" />
               </button>
-              <button className="size-10 bg-primary rounded-full flex items-center justify-center text-black shadow-glow hover:scale-110 transition-transform cursor-pointer">
-                <Play className="size-5 fill-current ml-0.5" />
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="size-10 bg-primary rounded-full flex items-center justify-center text-white transition-transform hover:scale-105 active:scale-95 cursor-pointer outline-none"
+                style={{ boxShadow: "0 0 16px rgba(14,159,110,0.30)" }}
+              >
+                {isPlaying ? <span className="text-xs font-bold text-black uppercase tracking-wider">II</span> : <Play className="size-4 text-black fill-current ml-0.5" />}
               </button>
-              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer">
+              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer outline-none">
                 <SkipForward className="size-5" />
               </button>
             </div>
 
             <div className="flex-1 flex flex-col gap-1 select-none">
-              <div className="flex justify-between text-[8px] text-slate-500 font-mono font-bold uppercase tracking-widest">
+              <div className="flex justify-between text-[8px] font-mono font-bold uppercase tracking-widest" style={{ color: "#AAB8C2" }}>
                 <span>-01:45:00</span>
-                <span className="text-primary tracking-[0.2em]">LIVE_STATUS: NOMINAL</span>
+                <span className="text-primary tracking-[0.2em]">{isPlaying ? "LIVE SIMULATION RUNNING" : "SIMULATION PAUSED"}</span>
               </div>
-              <div className="relative h-1 bg-white/5 rounded-full overflow-hidden group cursor-pointer">
-                <div className="absolute left-0 top-0 h-full bg-primary/20 w-[82%]" />
-                <div className="absolute left-[82%] top-0 h-full w-0.5 bg-primary shadow-glow z-10" />
+              <div className="relative h-1 rounded-full overflow-hidden cursor-pointer" style={{ background: "rgba(255,255,255,0.08)" }}>
+                <div className="absolute left-0 top-0 h-full w-[82%]" style={{ background: "rgba(14,159,110,0.25)" }} />
+                <div className="absolute left-[82%] top-0 h-full w-0.5 bg-primary z-10" />
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] text-slate-300 font-mono font-bold">
+              <div className="px-3 py-1 rounded text-[10px] font-mono font-bold" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "#AAB8C2" }}>
                 1.0X
               </div>
               <Maximize2 className="size-4 text-slate-500 hover:text-white cursor-pointer transition-colors" />
@@ -114,59 +157,76 @@ function TacticalPage() {
         </main>
 
         {/* Intelligence Sidebar */}
-        <aside className="w-[380px] glass-sidebar h-full p-8 flex flex-col z-40 border-l border-white/5 shrink-0 overflow-y-auto custom-scrollbar shadow-[-20px_0_40px_rgba(0,0,0,0.4)]">
-          <div className="mb-10 text-left">
+        <aside
+          className="w-[380px] h-full p-8 flex flex-col z-40 shrink-0 overflow-y-auto custom-scrollbar shadow-2xl"
+          style={{ background: "rgba(14,27,36,0.95)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          <div className="mb-8 text-left">
             <div className="flex items-center gap-2.5 mb-3 text-slate-400">
-              <div className="w-1 h-4 bg-primary rounded-full shadow-glow" />
+              <div className="w-1 h-4 bg-primary rounded-full" />
               <h2 className="text-[10px] font-mono uppercase font-bold tracking-[0.25em]">Operational Overview</h2>
             </div>
-            <h3 className="text-white text-4xl font-black mb-1.5 tracking-tight uppercase">
-              LEVEL_02 <span className="text-primary/30 text-2xl font-semibold tracking-tighter">/ WING_B</span>
+            <h3 className="text-white text-3xl font-extrabold mb-1.5 tracking-tight uppercase">
+              LEVEL_02 <span className="text-slate-600 text-xl font-semibold tracking-tighter">/ STAND 204</span>
             </h3>
-            <p className="text-slate-500 text-xs font-mono font-bold uppercase tracking-wider">
-              Active Pathfinding: <span className="text-slate-300">00:04:12</span> Remaining
+            <p className="text-xs font-mono font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>
+              Active Route Pathfinding: <span className="text-primary font-bold">00:03m Walk</span>
             </p>
           </div>
 
           {/* Metrics Grid */}
-          <div className="grid grid-cols-2 gap-5 mb-10">
-            <div className="bg-white/5 border border-white/5 rounded-2xl p-5 transition-all hover:bg-white/10 hover:border-primary/20 group text-left">
-              <p className="text-slate-500 text-[10px] font-mono uppercase font-bold mb-1.5 tracking-wider">
-                TOTAL_FLOW
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)")}>
+              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#AAB8C2" }}>
+                FLOW RATE
               </p>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-white text-3xl font-black font-mono tracking-tighter">12.4</span>
-                <span className="text-xs text-slate-500 font-mono font-bold">m/s</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-white text-2xl font-black font-mono tracking-tighter">1.2</span>
+                <span className="text-[10px] font-mono font-bold" style={{ color: "#AAB8C2" }}>m/s</span>
               </div>
-              <div className="mt-3 text-[10px] text-primary font-mono flex items-center gap-1.5 font-bold">
-                <TrendingUp className="size-3.5" /> +2.1% <span className="text-slate-600">H-1</span>
+              <div className="mt-3 text-[9px] text-primary font-mono flex items-center gap-1 font-bold">
+                <TrendingUp className="size-3.5" /> +2.1% <span style={{ color: "rgba(170,184,194,0.40)" }}>vs average</span>
               </div>
             </div>
-            <div className="bg-white/5 border border-white/5 rounded-2xl p-5 transition-all hover:bg-white/10 hover:border-amber-500/20 group text-left">
-              <p className="text-slate-500 text-[10px] font-mono uppercase font-bold mb-1.5 tracking-wider">ANOMALIES</p>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-amber-500 text-3xl font-black font-mono tracking-tighter">02</span>
-                <span className="text-xs text-slate-500 font-mono font-bold">PNT</span>
+            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)")}>
+              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#AAB8C2" }}>STAND DENSITY</p>
+              <div className="flex items-baseline gap-1">
+                <span className="text-primary text-2xl font-black font-mono tracking-tighter">0.32</span>
+                <span className="text-[10px] font-mono font-bold" style={{ color: "#AAB8C2" }}>p/m²</span>
               </div>
-              <div className="mt-3 text-[10px] text-slate-500 font-mono flex items-center gap-1.5 font-bold uppercase tracking-wider">
-                <Info className="size-3.5" /> Monitoring
+              <div className="mt-3 text-[9px] font-mono flex items-center gap-1 font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>
+                <Info className="size-3.5" /> Stable
               </div>
             </div>
           </div>
 
           {/* Feature Toggles */}
-          <div className="space-y-5 mb-10 border-y border-white/5 py-8">
-            <ToggleItem icon={<Activity className="size-4" />} label="Flow Dynamics" active={true} />
-            <ToggleItem icon={<Thermometer className="size-4" />} label="Thermal Scan" active={false} />
-            <ToggleItem icon={<Flame className="size-4" />} label="Heatmap Overlay" active={false} />
+          <div className="space-y-4 mb-8 border-y py-6" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+            <ToggleItem
+              icon={<Activity className="size-4" />}
+              label="Flow Dynamics"
+              active={flowDynamics}
+              onChange={() => handleToggle("flow")}
+            />
+            <ToggleItem
+              icon={<Thermometer className="size-4" />}
+              label="Thermal Scan"
+              active={thermalScan}
+              onChange={() => handleToggle("thermal")}
+            />
+            <ToggleItem
+              icon={<Flame className="size-4" />}
+              label="Heatmap Overlay"
+              active={heatmapOverlay}
+              onChange={() => handleToggle("heatmap")}
+            />
           </div>
 
-          {/* Cinematic Inset (Security Feed) */}
-          <div className="mt-auto pt-6">
-            <div className="bg-black border border-white/10 rounded-2xl overflow-hidden relative group aspect-video shadow-2xl">
-              <div className="absolute top-4 left-4 z-10 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-[9px] text-white font-mono flex items-center gap-2 border border-white/10 tracking-[0.1em] font-bold uppercase">
-                <span className="size-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_8px_#ef4444]" /> REC:
-                CAM_08_WEST
+          {/* Live Video Feed */}
+          <div className="mt-auto pt-4">
+            <div className="bg-black border rounded-xl overflow-hidden relative group aspect-video shadow-2xl" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+              <div className="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[8px] text-white font-mono flex items-center gap-1.5 border tracking-wider font-bold uppercase" style={{ borderColor: "rgba(255,255,255,0.10)" }}>
+                <span className="size-1.5 bg-red-500 rounded-full animate-pulse" /> LIVE: CAM_204_EAST
               </div>
               <video
                 className="w-full h-full object-cover grayscale brightness-50 transition-all group-hover:grayscale-0 group-hover:brightness-90 duration-700"
@@ -177,18 +237,13 @@ function TacticalPage() {
                 src="https://videos.pexels.com/video-files/6233170/6233170-uhd_2560_1440_25fps.mp4"
                 poster="https://images.pexels.com/videos/6233170/pexels-photo-6233170.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"
               />
-              <div className="absolute inset-0 bg-primary/5 pointer-events-none mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700" />
-
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center text-[8px] text-white/50 font-mono uppercase tracking-[0.2em] font-bold">
-                <span>LAT: 40.712N</span>
-                <span>LNG: 74.006W</span>
-              </div>
+              <div className="absolute inset-0 bg-[#0E9F6E]/5 pointer-events-none mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700" />
             </div>
-            <div className="mt-4 flex justify-between items-center px-1">
-              <span className="text-[10px] text-slate-500 font-mono font-bold uppercase tracking-widest">
+            <div className="mt-3 flex justify-between items-center px-1">
+              <span className="text-[9px] font-bold uppercase tracking-widest font-mono" style={{ color: "#AAB8C2" }}>
                 Signal Integrity
               </span>
-              <span className="text-[10px] text-primary font-mono font-bold uppercase tracking-widest">99.84%</span>
+              <span className="text-[9px] text-primary font-bold uppercase tracking-widest font-mono">99.84%</span>
             </div>
           </div>
         </aside>
@@ -197,14 +252,25 @@ function TacticalPage() {
   );
 }
 
-function ToggleItem({ icon, label, active }: { icon: React.ReactNode; label: string; active: boolean }) {
+function ToggleItem({
+  icon,
+  label,
+  active,
+  onChange,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  active: boolean;
+  onChange: () => void;
+}) {
   return (
     <div
-      className={`flex items-center justify-between group cursor-pointer transition-all duration-300 ${active ? "opacity-100" : "opacity-40 hover:opacity-70"}`}
+      onClick={onChange}
+      className={`flex items-center justify-between group cursor-pointer transition-all duration-300 ${active ? "opacity-100" : "opacity-45 hover:opacity-85"}`}
     >
       <div className="flex items-center gap-4 text-slate-300">
         <div
-          className={`size-10 rounded-xl flex items-center justify-center transition-all duration-300 ${active ? "bg-primary/10 text-primary border border-primary/30 shadow-glow" : "bg-white/5 text-slate-500 border border-transparent"}`}
+          className={`size-10 rounded-xl flex items-center justify-center transition-all duration-300 ${active ? "bg-primary/10 text-primary border border-primary/30" : "bg-white/5 text-slate-500 border border-transparent"}`}
         >
           {icon}
         </div>
@@ -216,7 +282,7 @@ function ToggleItem({ icon, label, active }: { icon: React.ReactNode; label: str
         <motion.div
           animate={{ x: active ? 24 : 0 }}
           transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          className={`size-4 rounded-full transition-shadow duration-300 ${active ? "bg-primary shadow-glow" : "bg-white/30"}`}
+          className={`size-4 rounded-full transition-shadow duration-300 ${active ? "bg-primary" : "bg-white/30"}`}
         />
       </div>
     </div>

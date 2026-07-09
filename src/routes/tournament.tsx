@@ -1,100 +1,165 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { fixtures, leaderboard } from "@/lib/mock-data";
-import { Trophy, Plus } from "lucide-react";
+import { Trophy, Plus, Radio } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/tournament")({
   head: () => ({
     meta: [
-      { title: "Tournament — ArenaIQ AI" },
+      { title: "Tournament — Arena Intelligence" },
       { name: "description", content: "Fixtures, leaderboard, live scores and team registration." },
     ],
   }),
   component: Tournament,
 });
 
+const tabs = ["fixtures", "leaderboard", "live", "register"] as const;
+
 function Tournament() {
-  const [tab, setTab] = useState<"fixtures" | "leaderboard" | "live" | "register">("fixtures");
+  const [tab, setTab] = useState<(typeof tabs)[number]>("fixtures");
+
   return (
-    <AppShell title="Summer Cup 2026" subtitle="12 teams · Round 8 of 12">
-      <div className="flex flex-wrap gap-2 mb-6">
-        {(["fixtures", "leaderboard", "live", "register"] as const).map((t) => (
-          <button key={t} onClick={() => setTab(t)}
-            className={`px-4 py-2 rounded-xl text-sm capitalize transition ${
-              tab === t ? "text-primary-foreground" : "glass text-muted-foreground hover:text-foreground"
-            }`}
-            style={tab === t ? { background: "var(--gradient-primary)" } : undefined}>
+    <AppShell title="FIFA World Cup 2026" subtitle="48 teams · Group Stage · FIFA Official Workspace">
+      {/* Tab bar */}
+      <div
+        className="flex flex-wrap gap-2 mb-6 p-1.5 rounded-2xl"
+        style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        {tabs.map((t) => (
+          <button
+            key={t}
+            onClick={() => setTab(t)}
+            className="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.18em] transition-all"
+            style={
+              tab === t
+                ? {
+                    background: "linear-gradient(135deg, rgba(14,159,110,0.18), rgba(60,179,113,0.10))",
+                    color: "#fff",
+                    border: "1px solid rgba(14,159,110,0.25)",
+                  }
+                : { color: "#AAB8C2" }
+            }
+          >
             {t === "register" ? "Team Registration" : t === "live" ? "Live Scores" : t}
           </button>
         ))}
       </div>
 
+      {/* Fixtures */}
       {tab === "fixtures" && (
-        <div className="glass rounded-2xl overflow-hidden">
-          <div className="p-5 border-b border-border font-semibold text-sm">Upcoming Fixtures</div>
-          <div className="divide-y divide-border">
-            {fixtures.map((f) => (
-              <div key={f.id} className="p-4 flex items-center gap-4 hover:bg-secondary/30 transition">
-                <div className="w-16 text-center">
-                  <div className="text-xs text-muted-foreground">{f.date}</div>
-                  <div className="text-sm font-semibold">{f.time}</div>
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div
+            className="px-6 py-4 font-bold text-sm text-white"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.02)" }}
+          >
+            Upcoming Fixtures
+          </div>
+          <div>
+            {fixtures.map((f, i) => (
+              <div
+                key={f.id}
+                className="flex items-center gap-5 px-6 py-4 transition-colors cursor-default"
+                style={{ borderBottom: i < fixtures.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(14,159,110,0.03)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+              >
+                <div className="w-16 text-center shrink-0">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: "#AAB8C2" }}>{f.date}</div>
+                  <div className="text-sm font-extrabold text-white mt-0.5">{f.time}</div>
                 </div>
-                <div className="flex-1 grid grid-cols-3 items-center gap-2">
-                  <div className="text-right font-medium">{f.home}</div>
+                <div className="flex-1 grid grid-cols-3 items-center gap-3">
+                  <div className="text-right font-semibold text-white">{f.home}</div>
                   <div className="text-center">
                     {f.homeScore !== undefined ? (
-                      <div className="text-lg font-bold">{f.homeScore} <span className="text-muted-foreground">–</span> {f.awayScore}</div>
+                      <div className="text-xl font-extrabold text-white tracking-tight">
+                        {f.homeScore} <span style={{ color: "#AAB8C2" }}>—</span> {f.awayScore}
+                      </div>
                     ) : (
-                      <div className="text-xs text-muted-foreground">vs</div>
+                      <div className="text-xs uppercase tracking-[0.16em]" style={{ color: "#AAB8C2" }}>vs</div>
                     )}
-                    <div className="text-[10px] text-muted-foreground mt-0.5">{f.venue}</div>
+                    <div className="text-[10px] mt-0.5" style={{ color: "#AAB8C2" }}>{f.venue}</div>
                   </div>
-                  <div className="text-left font-medium">{f.away}</div>
+                  <div className="font-semibold text-white">{f.away}</div>
                 </div>
-                <div className={`text-xs px-2.5 py-1 rounded-full ${
-                  f.status === "Live" ? "bg-destructive/20 text-destructive border border-destructive/30"
-                  : f.status === "Final" ? "glass" : "bg-primary/15 text-primary-glow border border-primary/25"
-                }`}>{f.status}</div>
+                <div>
+                  <span
+                    className="text-[10px] px-3 py-1.5 rounded-full font-bold uppercase tracking-[0.16em]"
+                    style={
+                      f.status === "Live"
+                        ? { background: "rgba(217,45,32,0.15)", color: "#D92D20", border: "1px solid rgba(217,45,32,0.28)" }
+                        : f.status === "Final"
+                        ? { background: "rgba(255,255,255,0.06)", color: "#AAB8C2", border: "1px solid rgba(255,255,255,0.10)" }
+                        : { background: "rgba(14,159,110,0.12)", color: "#0E9F6E", border: "1px solid rgba(14,159,110,0.22)" }
+                    }
+                  >
+                    {f.status}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       )}
 
+      {/* Leaderboard */}
       {tab === "leaderboard" && (
-        <div className="glass rounded-2xl overflow-hidden">
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+        >
           <table className="w-full text-sm">
-            <thead className="text-xs text-muted-foreground uppercase tracking-wider">
-              <tr className="border-b border-border">
-                <th className="text-left p-4">#</th>
-                <th className="text-left p-4">Team</th>
-                <th className="text-center p-4">P</th>
-                <th className="text-center p-4">W</th>
-                <th className="text-center p-4">D</th>
-                <th className="text-center p-4">L</th>
-                <th className="text-right p-4">Pts</th>
+            <thead>
+              <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.02)" }}>
+                {["#", "Team", "P", "W", "D", "L", "Pts"].map((h) => (
+                  <th
+                    key={h}
+                    className={`px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] ${h === "#" || h === "P" || h === "W" || h === "D" || h === "L" || h === "Pts" ? "text-center" : "text-left"}`}
+                    style={{ color: "#AAB8C2" }}
+                  >
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-border">
-              {leaderboard.map((r) => (
-                <tr key={r.rank} className="hover:bg-secondary/30 transition">
-                  <td className="p-4">
-                    <div className={`size-7 rounded-lg flex items-center justify-center text-xs font-semibold ${
-                      r.rank === 1 ? "bg-warning/20 text-warning border border-warning/30"
-                      : r.rank <= 3 ? "bg-accent/20 text-accent border border-accent/30"
-                      : "glass"
-                    }`}>{r.rank}</div>
+            <tbody>
+              {leaderboard.map((r, i) => (
+                <tr
+                  key={r.rank}
+                  className="transition-colors cursor-default"
+                  style={{ borderBottom: i < leaderboard.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(14,159,110,0.03)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                >
+                  <td className="px-5 py-4 text-center">
+                    <div
+                      className="size-7 rounded-lg flex items-center justify-center text-xs font-bold mx-auto"
+                      style={
+                        r.rank === 1
+                          ? { background: "rgba(212,175,55,0.15)", color: "#D4AF37", border: "1px solid rgba(212,175,55,0.28)" }
+                          : r.rank <= 3
+                          ? { background: "rgba(14,159,110,0.12)", color: "#0E9F6E", border: "1px solid rgba(14,159,110,0.22)" }
+                          : { background: "rgba(255,255,255,0.05)", color: "#AAB8C2", border: "1px solid rgba(255,255,255,0.08)" }
+                      }
+                    >
+                      {r.rank}
+                    </div>
                   </td>
-                  <td className="p-4 font-medium flex items-center gap-2">
-                    {r.rank === 1 && <Trophy className="size-4 text-warning" />}
-                    {r.team}
+                  <td className="px-5 py-4">
+                    <div className="flex items-center gap-2 font-semibold text-white">
+                      {r.rank === 1 && <Trophy className="size-3.5" style={{ color: "#D4AF37" }} />}
+                      {r.team}
+                    </div>
                   </td>
-                  <td className="p-4 text-center text-muted-foreground">{r.played}</td>
-                  <td className="p-4 text-center text-accent">{r.won}</td>
-                  <td className="p-4 text-center text-muted-foreground">{r.drawn}</td>
-                  <td className="p-4 text-center text-destructive">{r.lost}</td>
-                  <td className="p-4 text-right font-bold">{r.points}</td>
+                  <td className="px-5 py-4 text-center" style={{ color: "#AAB8C2" }}>{r.played}</td>
+                  <td className="px-5 py-4 text-center font-semibold" style={{ color: "#0E9F6E" }}>{r.won}</td>
+                  <td className="px-5 py-4 text-center" style={{ color: "#AAB8C2" }}>{r.drawn}</td>
+                  <td className="px-5 py-4 text-center" style={{ color: "#D92D20" }}>{r.lost}</td>
+                  <td className="px-5 py-4 text-center font-extrabold text-white">{r.points}</td>
                 </tr>
               ))}
             </tbody>
@@ -102,50 +167,95 @@ function Tournament() {
         </div>
       )}
 
+      {/* Live Scores */}
       {tab === "live" && (
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-5">
           {fixtures.filter((f) => f.status === "Live").map((f) => (
-            <div key={f.id} className="glass-strong rounded-2xl p-6">
-              <div className="flex items-center gap-2 text-xs">
-                <span className="size-2 rounded-full bg-destructive animate-pulse" />
-                <span className="text-destructive font-semibold uppercase tracking-wider">Live · 68'</span>
+            <div
+              key={f.id}
+              className="rounded-2xl p-6 relative overflow-hidden"
+              style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(217,45,32,0.20)" }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "radial-gradient(ellipse at top right, rgba(217,45,32,0.06), transparent 60%)" }}
+              />
+              <div className="relative">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="size-2 rounded-full bg-destructive" style={{ boxShadow: "0 0 6px rgba(217,45,32,0.70)" }}>
+                    <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 1.2 }} className="block size-full rounded-full bg-destructive" />
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-[0.22em]" style={{ color: "#D92D20" }}>
+                    Live · 68'
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 items-center gap-4">
+                  <div className="text-right">
+                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "#AAB8C2" }}>Home</div>
+                    <div className="text-lg font-bold text-white mt-1">{f.home}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-5xl font-extrabold text-white tracking-tight">
+                      {f.homeScore} <span style={{ color: "#AAB8C2" }}>—</span> {f.awayScore}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "#AAB8C2" }}>Away</div>
+                    <div className="text-lg font-bold text-white mt-1">{f.away}</div>
+                  </div>
+                </div>
+                <div className="mt-5 text-xs text-center" style={{ color: "#AAB8C2" }}>
+                  {f.venue} · Attendance 24,812
+                </div>
               </div>
-              <div className="mt-4 grid grid-cols-3 items-center gap-4">
-                <div className="text-right">
-                  <div className="text-sm text-muted-foreground">Home</div>
-                  <div className="text-lg font-bold mt-1">{f.home}</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold tracking-tight">{f.homeScore} <span className="text-muted-foreground">–</span> {f.awayScore}</div>
-                </div>
-                <div className="text-left">
-                  <div className="text-sm text-muted-foreground">Away</div>
-                  <div className="text-lg font-bold mt-1">{f.away}</div>
-                </div>
-              </div>
-              <div className="mt-6 text-xs text-muted-foreground text-center">{f.venue} · Attendance 24,812</div>
             </div>
           ))}
         </div>
       )}
 
+      {/* Register */}
       {tab === "register" && (
-        <div className="glass rounded-2xl p-6 max-w-2xl">
-          <h3 className="text-lg font-semibold flex items-center gap-2"><Plus className="size-5 text-primary-glow" /> Register a Team</h3>
-          <p className="text-sm text-muted-foreground mt-1">Add your team to the Summer Cup 2026 roster.</p>
-          <form className="mt-6 space-y-4">
+        <div
+          className="rounded-2xl p-7 max-w-2xl"
+          style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div
+              className="size-10 rounded-xl flex items-center justify-center"
+              style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.20)" }}
+            >
+              <Plus className="size-5 text-primary" />
+            </div>
+            <h3 className="text-lg font-extrabold text-white">Register Operations Squad</h3>
+          </div>
+          <p className="text-sm mb-7" style={{ color: "#AAB8C2" }}>Register your volunteer or staff squad for the MetLife Stadium matches.</p>
+          <form className="space-y-4">
             {[
-              { label: "Team Name", placeholder: "Titans FC" },
-              { label: "Captain", placeholder: "Alex Reyes" },
-              { label: "Contact Email", placeholder: "captain@team.io" },
-              { label: "Home City", placeholder: "San Jose, CA" },
+              { label: "Squad Name", placeholder: "Volunteer Crew Alpha" },
+              { label: "Lead Coordinator", placeholder: "Alex Reyes" },
+              { label: "Contact Email", placeholder: "squad@arena.dev" },
+              { label: "Operation Zone", placeholder: "Gate B / Section 204" },
             ].map((f) => (
               <div key={f.label}>
-                <label className="text-xs text-muted-foreground">{f.label}</label>
-                <input placeholder={f.placeholder} className="mt-1.5 w-full glass rounded-xl px-3.5 py-3 text-sm bg-transparent outline-none focus:border-primary/40" />
+                <label className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#AAB8C2" }}>
+                  {f.label}
+                </label>
+                <input
+                  placeholder={f.placeholder}
+                  className="mt-2 w-full rounded-xl px-4 py-3 text-sm text-white bg-transparent outline-none transition"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.09)",
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = "rgba(14,159,110,0.40)")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.09)")}
+                />
               </div>
             ))}
-            <button className="w-full py-3 rounded-xl text-primary-foreground font-medium" style={{ background: "var(--gradient-primary)" }}>
+            <button
+              className="w-full py-3.5 rounded-xl text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90 active:scale-[0.99] mt-2"
+              style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 0 24px rgba(14,159,110,0.20)" }}
+            >
               Submit Registration
             </button>
           </form>

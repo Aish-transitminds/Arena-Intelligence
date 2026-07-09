@@ -64,10 +64,7 @@ export function clearStoredRole(): void {
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {
-  if (pathname.startsWith("/admin")) return role === "admin";
-  if (pathname.startsWith("/emergency")) return role === "admin" || role === "security";
-  if (pathname.startsWith("/security")) return role === "admin";
-  if (pathname.startsWith("/audit")) return role === "admin";
+  // Demo mode: All routes are visible to everyone without requiring login
   return true;
 }
 
@@ -129,18 +126,34 @@ export function readAuditEvents(): string[] {
 }
 
 export function setSecurityHeaders(response: Response): Response {
-  const headers = new Headers(response.headers);
-  headers.set("X-Content-Type-Options", "nosniff");
-  headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  headers.set("X-Frame-Options", "DENY");
-  headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
-  headers.set(
-    "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';",
-  );
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
+  if (!response || !(response instanceof Response)) {
+    return response;
+  }
+
+  try {
+    response.headers.set("X-Content-Type-Options", "nosniff");
+    response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    response.headers.set("X-Frame-Options", "DENY");
+    response.headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+    response.headers.set(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
+    );
+    return response;
+  } catch {
+    const headers = new Headers(response.headers);
+    headers.set("X-Content-Type-Options", "nosniff");
+    headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    headers.set("X-Frame-Options", "DENY");
+    headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+    headers.set(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
+    );
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
+  }
 }

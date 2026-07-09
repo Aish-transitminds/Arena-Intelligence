@@ -5,18 +5,19 @@ import {
   ShieldAlert,
   Trophy,
   User,
-  Sparkles,
   Settings,
   Bell,
   Search,
   Home,
+  Radio,
+  FileText,
 } from "lucide-react";
 import { Logo } from "./Logo";
 import { AIAssistant } from "./AIAssistant";
 import { canAccessRoute, getStoredRole, persistRole } from "@/lib/security";
 
 type NavItem = {
-  to: "/fan" | "/admin" | "/tournament" | "/emergency" | "/assistant";
+  to: "/fan" | "/admin" | "/tournament" | "/emergency" | "/assistant" | "/security" | "/audit";
   label: string;
   icon: typeof User;
   hint?: string;
@@ -24,10 +25,9 @@ type NavItem = {
 
 const navSections: { label: string; items: NavItem[] }[] = [
   {
-    label: "Experience",
+    label: "Fan Experience",
     items: [
       { to: "/fan", label: "Fan Dashboard", icon: User, hint: "Ticket & seat" },
-      { to: "/assistant", label: "AI Assistant", icon: Sparkles, hint: "AI advisor" },
     ],
   },
   {
@@ -35,9 +35,9 @@ const navSections: { label: string; items: NavItem[] }[] = [
     items: [
       { to: "/admin", label: "Admin Console", icon: LayoutDashboard, hint: "Live KPIs" },
       { to: "/tournament", label: "Tournament", icon: Trophy, hint: "Fixtures" },
-      { to: "/emergency", label: "Emergency", icon: ShieldAlert, hint: "SOS" },
+      { to: "/emergency", label: "Emergency Center", icon: ShieldAlert, hint: "SOS" },
       { to: "/security", label: "Security", icon: Settings, hint: "Platform" },
-      { to: "/audit", label: "Audit", icon: Bell, hint: "Events" },
+      { to: "/audit", label: "Audit Log", icon: FileText, hint: "Events" },
     ],
   },
 ];
@@ -68,10 +68,10 @@ export function AppShell({
     return (
       <div className="min-h-dvh flex items-center justify-center bg-background px-6 text-center">
         <div className="glass-strong max-w-md rounded-3xl border border-destructive/20 p-8">
-          <p className="text-xs uppercase tracking-[0.32em] text-destructive">Access denied</p>
+          <p className="text-xs uppercase tracking-[0.32em] text-destructive">Access Denied</p>
           <h1 className="mt-4 text-2xl font-semibold text-white">You do not have permission to view this area.</h1>
-          <p className="mt-3 text-sm text-muted-foreground">Please sign in with the correct role to continue.</p>
-          <Link to="/login" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-black">
+          <p className="mt-3 text-sm" style={{ color: "#AAB8C2" }}>Please sign in with the correct role to continue.</p>
+          <Link to="/login" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white">
             Return to sign in
           </Link>
         </div>
@@ -84,16 +84,31 @@ export function AppShell({
       {/* Sidebar */}
       <aside
         aria-label="Primary navigation"
-        className="hidden md:flex w-64 shrink-0 flex-col border-r border-sidebar-border bg-[linear-gradient(180deg,rgba(8,12,24,0.95),rgba(5,8,16,0.92))] backdrop-blur-2xl sticky top-0 h-dvh shadow-[18px_0_60px_rgba(2,6,23,0.22)]"
+        className="hidden md:flex w-[260px] shrink-0 flex-col glass-sidebar sticky top-0 h-dvh"
       >
-        <div className="px-5 py-5 border-b border-sidebar-border">
+        {/* Logo area */}
+        <div className="px-5 py-5 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
           <Logo />
         </div>
 
-        <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-6" aria-label="Sections">
+        {/* Live status ticker */}
+        <div className="px-5 py-3 border-b flex items-center gap-2.5" style={{ borderColor: "rgba(255,255,255,0.04)", background: "rgba(14,159,110,0.05)" }}>
+          <Radio className="size-3 text-primary animate-pulse" />
+          <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#0E9F6E" }}>
+            Live Operations
+          </span>
+          <span className="ml-auto text-[10px]" style={{ color: "#AAB8C2" }}>
+            12:10 IST
+          </span>
+        </div>
+
+        <nav className="flex-1 overflow-y-auto px-3 py-5 space-y-6" aria-label="Sections">
           {navSections.map((section) => (
             <div key={section.label}>
-              <div className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground/70">
+              <div
+                className="px-3 pb-2.5 text-[9px] font-bold uppercase tracking-[0.22em]"
+                style={{ color: "rgba(170,184,194,0.50)" }}
+              >
                 {section.label}
               </div>
               <ul className="space-y-0.5">
@@ -104,28 +119,37 @@ export function AppShell({
                       <Link
                         to={to}
                         aria-current={active ? "page" : undefined}
-                        className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all ${focusRing} ${
+                        className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${focusRing} ${
                           active
-                            ? "bg-gradient-to-r from-primary/20 to-primary-glow/10 text-foreground shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
-                            : "text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/70"
+                            ? "text-white"
+                            : "hover:text-white"
                         }`}
+                        style={
+                          active
+                            ? {
+                                background: "linear-gradient(135deg, rgba(14,159,110,0.15), rgba(60,179,113,0.08))",
+                                border: "1px solid rgba(14,159,110,0.18)",
+                              }
+                            : { color: "#AAB8C2" }
+                        }
                       >
-                        {/* active rail */}
+                        {/* Active indicator rail */}
                         <span
                           aria-hidden="true"
-                          className={`absolute left-0 top-1/2 -translate-y-1/2 h-6 w-[3px] rounded-r-full bg-primary transition-opacity ${
-                            active ? "opacity-100" : "opacity-0"
-                          }`}
+                          className={`absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-r-full transition-opacity`}
+                          style={{
+                            background: "#0E9F6E",
+                            opacity: active ? 1 : 0,
+                          }}
                         />
                         <Icon
-                          className={`size-4 shrink-0 transition-colors ${
-                            active ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
-                          }`}
+                          className="size-4 shrink-0 transition-colors"
+                          style={{ color: active ? "#0E9F6E" : undefined }}
                           aria-hidden="true"
                         />
                         <span className="flex-1 font-medium">{label}</span>
                         {hint && (
-                          <span className="text-[10px] text-muted-foreground/60 group-hover:text-muted-foreground">
+                          <span className="text-[10px] transition-colors" style={{ color: "rgba(170,184,194,0.50)" }}>
                             {hint}
                           </span>
                         )}
@@ -138,19 +162,24 @@ export function AppShell({
           ))}
         </nav>
 
-        <div className="p-3 border-t border-sidebar-border">
+        {/* User card at bottom */}
+        <div className="p-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
           <div className="glass rounded-xl p-3 flex items-center gap-3">
-            <div className="size-9 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-sm font-semibold text-primary-foreground">
+            <div
+              className="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
+              style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
+            >
               AR
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-medium truncate">Alex Reyes</div>
-              <div className="text-xs text-muted-foreground truncate">Ops Manager</div>
+              <div className="text-sm font-semibold truncate text-white">Alex Reyes</div>
+              <div className="text-[10px] truncate uppercase tracking-[0.16em]" style={{ color: "#AAB8C2" }}>Ops Manager</div>
             </div>
             <button
               type="button"
               aria-label="Account settings"
-              className={`size-8 rounded-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-sidebar-accent ${focusRing}`}
+              className={`size-8 rounded-md flex items-center justify-center transition-colors hover:text-white ${focusRing}`}
+              style={{ color: "#AAB8C2" }}
             >
               <Settings className="size-4" aria-hidden="true" />
             </button>
@@ -158,46 +187,55 @@ export function AppShell({
         </div>
       </aside>
 
-      {/* Main */}
+      {/* Main content area */}
       <div className="flex-1 min-w-0 flex flex-col">
-        <header className="sticky top-0 z-30 border-b border-border/70 bg-background/70 backdrop-blur-2xl shadow-[0_10px_40px_rgba(2,6,23,0.2)]">
+        <header
+          className="sticky top-0 z-30 backdrop-blur-2xl"
+          style={{
+            background: "rgba(7,20,28,0.85)",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.20)",
+          }}
+        >
           <div className="flex items-center gap-4 px-6 py-3.5">
             {/* Breadcrumb + title */}
             <div className="flex-1 min-w-0">
-              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-foreground ${focusRing}`}>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs" style={{ color: "#AAB8C2" }}>
+                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-white transition-colors ${focusRing}`}>
                   <Home className="size-3" aria-hidden="true" />
-                  <span>ArenaIQ</span>
+                  <span>Arena Intelligence</span>
                 </Link>
                 <span aria-hidden="true">/</span>
-                <span className="text-foreground/80">{activeItem?.label ?? title}</span>
+                <span className="text-white/80">{activeItem?.label ?? title}</span>
               </nav>
-              <h1 className="mt-0.5 text-xl font-semibold tracking-tight truncate">{title}</h1>
-              {subtitle && <p className="text-xs text-muted-foreground mt-0.5 truncate">{subtitle}</p>}
+              <h1 className="mt-0.5 text-xl font-bold tracking-tight truncate text-white">{title}</h1>
+              {subtitle && <p className="text-xs mt-0.5 truncate" style={{ color: "#AAB8C2" }}>{subtitle}</p>}
             </div>
 
             {/* Search */}
-            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 border border-white/10 focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/30 transition">
-              <Search className="size-4 text-muted-foreground" aria-hidden="true" />
+            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 transition" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <Search className="size-4 shrink-0" style={{ color: "#AAB8C2" }} aria-hidden="true" />
               <span className="sr-only">Search</span>
               <input
                 type="search"
                 placeholder="Search fixtures, sections, alerts…"
-                className="bg-transparent text-sm outline-none flex-1 placeholder:text-muted-foreground"
+                className="bg-transparent text-sm outline-none flex-1 placeholder:text-[#AAB8C2]/60 text-white"
               />
-              <kbd className="text-[10px] px-1.5 py-0.5 rounded border border-border text-muted-foreground">⌘K</kbd>
+              <kbd className="text-[10px] px-1.5 py-0.5 rounded" style={{ border: "1px solid rgba(255,255,255,0.10)", color: "#AAB8C2" }}>⌘K</kbd>
             </label>
 
             {/* Notifications */}
             <button
               type="button"
               aria-label="Notifications, 1 unread"
-              className={`relative size-10 rounded-xl glass flex items-center justify-center hover:border-primary/40 transition ${focusRing}`}
+              className={`relative size-10 rounded-xl glass flex items-center justify-center transition ${focusRing}`}
+              style={{ color: "#AAB8C2" }}
             >
               <Bell className="size-4" aria-hidden="true" />
               <span
                 aria-hidden="true"
-                className="absolute top-2 right-2 size-2 rounded-full bg-destructive ring-2 ring-background"
+                className="absolute top-2 right-2 size-2 rounded-full"
+                style={{ background: "#D92D20", boxShadow: "0 0 6px rgba(217,45,32,0.60)", outline: "2px solid #07141C" }}
               />
             </button>
           </div>
@@ -214,11 +252,12 @@ export function AppShell({
                   key={to}
                   to={to}
                   aria-current={active ? "page" : undefined}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition ${focusRing} ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition ${focusRing}`}
+                  style={
                     active
-                      ? "bg-primary/15 text-foreground border border-primary/40"
-                      : "text-muted-foreground border border-transparent hover:text-foreground hover:bg-sidebar-accent"
-                  }`}
+                      ? { background: "rgba(14,159,110,0.15)", color: "#fff", border: "1px solid rgba(14,159,110,0.30)" }
+                      : { color: "#AAB8C2", border: "1px solid transparent" }
+                  }
                 >
                   <Icon className="size-3.5" aria-hidden="true" />
                   {label}

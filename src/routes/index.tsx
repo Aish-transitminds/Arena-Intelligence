@@ -3,80 +3,114 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   ShieldCheck,
-  Cpu,
+  Users,
   Globe,
-  Zap,
-  Network,
-  Bot,
   Activity,
   Ticket,
   MapPin,
   ShieldAlert,
   BarChart3,
   CalendarDays,
+  Radio,
+  TrendingUp,
+  Clock,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Arena Intelligence — Smart Stadium Command Platform" },
+      { title: "Arena Intelligence — Official FIFA World Cup 2026 operations" },
       {
         name: "description",
         content:
-          "Arena Intelligence unifies stadium operations, fan experiences, predictive crowd analytics, and emergency control in a premium command workspace.",
+          "Arena Intelligence is the unified operations platform for crowd management, tournament coordination, emergency response, and stadium analytics at MetLife Stadium for the FIFA World Cup 2026.",
       },
     ],
   }),
   component: Landing,
 });
 
-const mono = "font-mono text-[10px] uppercase tracking-[0.24em]";
 
 const modules = [
-  { icon: Ticket, title: "Fan Dashboard", desc: "Digital ticketing, live match status, crowd flow, and queue intelligence." },
-  { icon: Activity, title: "AI Crowd Prediction", desc: "Predictive recommendations, load balancing, and risk signals." },
-  { icon: MapPin, title: "Interactive Stadium Map", desc: "Seat navigation, gates, amenities, and medical wayfinding." },
-  { icon: BarChart3, title: "Admin Analytics", desc: "Revenue, attendance, security alerts, and operations visibility." },
-  { icon: ShieldAlert, title: "Emergency Center", desc: "SOS, evacuation routes, medical triage, and incident control." },
-  { icon: CalendarDays, title: "Tournament Management", desc: "Fixtures, leaderboards, registrations, and live score control." },
+  {
+    icon: Ticket,
+    title: "Fan Dashboard",
+    desc: "Digital ticketing, live match status, crowd flow, and real-time queue intelligence.",
+    to: "/fan",
+    tag: "Live",
+  },
+  {
+    icon: Activity,
+    title: "Crowd Management",
+    desc: "Live occupancy, flow analysis, capacity status, and operational recommendations.",
+    to: "/admin",
+    tag: "Live",
+  },
+  {
+    icon: MapPin,
+    title: "Seat Navigation",
+    desc: "Premium stadium blueprint with gates, amenities, routes and medical wayfinding.",
+    to: "/fan",
+    tag: "Live",
+  },
+  {
+    icon: BarChart3,
+    title: "Admin Analytics",
+    desc: "Revenue, attendance, security alerts, and full operations visibility.",
+    to: "/admin",
+    tag: "Live",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Emergency Center",
+    desc: "SOS dispatch, evacuation routes, medical triage, and live incident control.",
+    to: "/emergency",
+    tag: "Live",
+  },
+  {
+    icon: CalendarDays,
+    title: "Tournament Management",
+    desc: "Fixtures, leaderboards, team registrations, and live score control.",
+    to: "/tournament",
+    tag: "Live",
+  },
 ];
 
-const benefits = [
-  {
-    title: "Designed for operators",
-    desc: "One interface for operational control, fan experience, and safety escalation.",
-    icon: Cpu,
-  },
-  {
-    title: "Built for stadium scale",
-    desc: "Real-time telemetry, crowd intelligence, and rapid decision workflows.",
-    icon: Network,
-  },
-  {
-    title: "Delivers confidence",
-    desc: "Clear alerts, predictive insights, and actionable emergency response.",
-    icon: ShieldCheck,
-  },
+const kpis = [
+  { label: "Live Attendance", value: "52,840", icon: Users },
+  { label: "Gate Status", value: "All Clear", icon: ShieldCheck },
+  { label: "Avg Queue Time", value: "4 min", icon: Clock },
+  { label: "Ops Score", value: "97.4%", icon: TrendingUp },
 ];
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-[#05050B] text-slate-100 selection:bg-primary/25 selection:text-white font-sans antialiased overflow-x-hidden">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#05050B]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1536px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
-          <div className="flex items-center gap-6">
+    <div
+      className="min-h-screen text-white selection:bg-primary/20 selection:text-white font-sans antialiased overflow-x-hidden"
+      style={{ background: "#07141C" }}
+    >
+      {/* ── HEADER ── */}
+      <header
+        className="sticky top-0 z-40 backdrop-blur-xl"
+        style={{
+          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          background: "rgba(7,20,28,0.90)",
+        }}
+      >
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
+          <div className="flex items-center gap-8">
             <Logo size="md" />
-            <nav className="hidden xl:flex items-center gap-8 text-slate-400">
+            <nav className="hidden xl:flex items-center gap-8" style={{ color: "#AAB8C2" }}>
               {[
                 { label: "Overview", href: "#overview" },
                 { label: "Modules", href: "#modules" },
-                { label: "Why", href: "#why" },
+                { label: "Operations", href: "#operations" },
               ].map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="transition hover:text-white hover:tracking-[0.28em]"
+                  className="text-sm font-medium transition-colors hover:text-white"
                 >
                   {item.label}
                 </a>
@@ -84,174 +118,251 @@ function Landing() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Live status pill */}
+            <div
+              className="hidden sm:flex items-center gap-2 rounded-full px-4 py-2"
+              style={{
+                background: "rgba(14,159,110,0.08)",
+                border: "1px solid rgba(14,159,110,0.20)",
+              }}
+            >
+              <Radio className="size-3 text-primary animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.20em] text-primary">
+                Live — Match Day
+              </span>
+            </div>
+
             <Link
               to="/fan"
-              className="hidden rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.32em] text-slate-200 transition hover:bg-white/10"
+              className="hidden rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.20em] transition-colors hover:text-white sm:inline-flex items-center"
+              style={{ color: "#AAB8C2" }}
             >
               Fan Portal
             </Link>
             <Link
               to="/admin"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-black shadow-[0_0_20px_rgba(20,184,166,0.18)] transition hover:brightness-105"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.20em] text-white transition"
+              style={{
+                background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                boxShadow: "0 0 20px rgba(14,159,110,0.22)",
+              }}
             >
-              Control Nexus
-              <ArrowUpRight className="size-4" />
+              Launch Dashboard
+              <ArrowUpRight className="size-3.5" />
             </Link>
           </div>
         </div>
       </header>
 
       <main>
-        <section id="overview" className="relative overflow-hidden border-b border-white/10 pt-24 pb-28 lg:pt-32 lg:pb-36">
-          <div className="absolute inset-x-0 top-8 h-72 bg-gradient-to-b from-primary/15 to-transparent blur-3xl opacity-70" />
-          <div className="mx-auto grid max-w-[1536px] grid-cols-1 gap-12 px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-10">
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-[11px] uppercase tracking-[0.38em] text-primary">
-                <span className="size-2 rounded-full bg-primary" />
-                Product-first command platform
-              </div>
+        {/* ── HERO ── */}
+        <section
+          id="overview"
+          className="relative overflow-hidden"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          {/* Hero background — stadium at night */}
+          <div className="absolute inset-0">
+            <img
+              src="/stadium-hero.png"
+              alt="Football stadium at night"
+              className="w-full h-full object-cover"
+              style={{ opacity: 0.28 }}
+            />
+            {/* Dark gradient overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(7,20,28,0.55) 0%, rgba(7,20,28,0.75) 50%, rgba(7,20,28,0.97) 100%)",
+              }}
+            />
+            {/* Floodlight glows */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.09) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.09) 0%, transparent 60%)",
+              }}
+            />
+          </div>
 
-              <h1 className="mt-10 text-[clamp(3rem,5vw,5.75rem)] font-black leading-[0.9] tracking-[-0.04em] text-white">
-                Smart stadium operations for every fan, team, and event.
-              </h1>
+          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pt-28 pb-32 lg:pt-36 lg:pb-40 lg:px-10">
+            {/* Tag */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 mb-8"
+              style={{
+                background: "rgba(14,159,110,0.08)",
+                border: "1px solid rgba(14,159,110,0.22)",
+              }}
+            >
+              <span className="size-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">
+                Official FIFA World Cup 2026 Operations Platform
+              </span>
+            </motion.div>
 
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
-                Arena Intelligence unifies fan experience, crowd intelligence, security, and event operations in one premium command layer for modern stadiums.
-              </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white max-w-4xl"
+            >
+              Arena Intelligence
+            </motion.h1>
 
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                <Link
-                  to="/admin"
-                  className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.28em] text-black shadow-[0_0_30px_rgba(20,184,166,0.18)] transition hover:brightness-105"
-                >
-                  Open control center
-                </Link>
-                <Link
-                  to="/fan"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold uppercase tracking-[0.28em] text-white transition hover:bg-white/10"
-                >
-                  View fan dashboard
-                </Link>
-              </div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              className="mt-5 text-xl font-medium leading-relaxed max-w-2xl"
+              style={{ color: "#AAB8C2" }}
+            >
+              Smart Stadium Operations Platform
+            </motion.p>
 
-              <div className="mt-16 grid gap-4 sm:grid-cols-3">
-                {[
-                  { label: "Live crowd insights", value: "real-time" },
-                  { label: "Predictive routing", value: "AI-driven" },
-                  { label: "Event readiness", value: "actionable" },
-                ].map((item) => (
-                  <div key={item.label} className="glass rounded-3xl border-white/10 px-6 py-5">
-                    <div className="text-xs uppercase tracking-[0.32em] text-slate-500">{item.label}</div>
-                    <div className="mt-4 text-2xl font-black text-white">{item.value}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="mt-4 text-base leading-8 max-w-xl"
+              style={{ color: "rgba(170,184,194,0.75)" }}
+            >
+              Unified operations platform for crowd management, tournament coordination,
+              emergency response and stadium analytics.
+            </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="motion-arena-bg relative rounded-[2.5rem] border border-white/10 bg-[#070A14]/80 p-6 shadow-[0_40px_120px_rgba(0,0,0,0.35)] backdrop-blur-3xl"
+              transition={{ duration: 0.6, delay: 0.32 }}
+              className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,_rgba(20,184,166,0.24),_transparent_35%)]" />
-              <div className="glass absolute inset-0 rounded-[2rem] border border-primary/20" />
-              <div className="relative z-10 grid gap-6">
-                <div className="flex items-center justify-between gap-4 rounded-3xl bg-[#02050C]/90 px-5 py-4 text-slate-300">
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.32em] text-slate-500">Stadium status</div>
-                    <div className="mt-2 text-2xl font-black text-white">Gate B green</div>
-                  </div>
-                  <div className="rounded-2xl bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-primary">
-                    92% capacity
-                  </div>
-                </div>
+              <Link
+                to="/admin"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
+                style={{
+                  background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                  boxShadow: "0 0 32px rgba(14,159,110,0.25)",
+                }}
+              >
+                Launch Dashboard
+                <ArrowUpRight className="size-4" />
+              </Link>
+              <Link
+                to="/fan"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:bg-white/10"
+                style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.05)" }}
+              >
+                View Operations
+              </Link>
+            </motion.div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {[
-                    { label: "Live tickets", value: "12,824" },
-                    { label: "Alerts", value: "3 active" },
-                    { label: "Queue time", value: "4 min" },
-                    { label: "AI forecast", value: "stable" },
-                  ].map((item) => (
-                    <div key={item.label} className="glass rounded-3xl border-white/10 px-5 py-5">
-                      <div className="text-[11px] uppercase tracking-[0.32em] text-slate-500">{item.label}</div>
-                      <div className="mt-3 text-3xl font-black text-white">{item.value}</div>
+            {/* Live KPI Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.44 }}
+              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+            >
+              {kpis.map((kpi) => {
+                const Icon = kpi.icon;
+                return (
+                  <div
+                    key={kpi.label}
+                    className="rounded-2xl p-5 card-lift"
+                    style={{
+                      background: "rgba(14,27,36,0.85)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      backdropFilter: "blur(20px)",
+                    }}
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon className="size-4" style={{ color: "#0E9F6E" }} />
+                      <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#AAB8C2" }}>
+                        {kpi.label}
+                      </span>
                     </div>
-                  ))}
-                </div>
-
-                <div className="glass rounded-[2rem] border-white/10 p-5">
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <div>
-                      <div className="text-[11px] uppercase tracking-[0.32em] text-slate-500">Stadium map</div>
-                      <div className="mt-2 text-sm text-slate-300">Gate access, concourse flow, amenities.</div>
-                    </div>
-                    <div className="rounded-full bg-primary/10 px-3 py-1 text-xs uppercase tracking-[0.32em] text-primary">Live</div>
+                    <div className="text-2xl font-extrabold text-white tracking-tight">{kpi.value}</div>
                   </div>
-                  <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#08111F]/70 p-4">
-                    <div className="absolute inset-x-0 top-0 h-px bg-primary/10" />
-                    <div className="grid grid-cols-3 gap-3 text-[11px] text-slate-500">
-                      <div className="rounded-3xl bg-[#0D1320]/80 p-3">Gate A</div>
-                      <div className="rounded-3xl bg-[#0D1320]/80 p-3">Concourse</div>
-                      <div className="rounded-3xl bg-[#0D1320]/80 p-3">Medical</div>
-                    </div>
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      {['Sector 01', 'VIP Lounge', 'FOOD', 'MERCH', 'FIRST AID'].map((area) => (
-                        <span key={area} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-slate-300">
-                          {area}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </motion.div>
           </div>
         </section>
 
-        <section id="modules" className="border-b border-white/10 bg-[#05050B] py-24 lg:py-32">
-          <div className="mx-auto max-w-[1536px] px-6 lg:px-10">
-            <div className="max-w-3xl">
-              <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-primary">
-                Product roadmap
+        {/* ── MODULES ── */}
+        <section
+          id="modules"
+          className="py-24 lg:py-32"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+        >
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
+            <div className="max-w-2xl mb-14">
+              <span
+                className="inline-flex rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-primary mb-5"
+                style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)" }}
+              >
+                Platform Modules
               </span>
-              <h2 className="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl">
-                Seven modules. One command surface.
+              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                Six modules. One command surface.
               </h2>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+              <p className="mt-5 text-lg leading-8" style={{ color: "#AAB8C2" }}>
                 From ticketing to emergency control, every module is designed to be fast to understand and even faster to act on.
               </p>
             </div>
 
-            <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
-              <div className="hidden border-b border-white/10 px-6 py-4 text-[11px] uppercase tracking-[0.32em] text-slate-500 md:grid md:grid-cols-[1.2fr_1.4fr_0.4fr]">
+            {/* Modules table */}
+            <div
+              className="overflow-hidden rounded-2xl"
+              style={{ border: "1px solid rgba(255,255,255,0.07)", background: "rgba(14,27,36,0.70)" }}
+            >
+              {/* Table header */}
+              <div
+                className="hidden md:grid md:grid-cols-[1.4fr_1.6fr_0.5fr] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.22em]"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", color: "#AAB8C2" }}
+              >
                 <span>Module</span>
-                <span>Outcome</span>
+                <span>Operational Scope</span>
                 <span>Status</span>
               </div>
-              {modules.map((module) => {
-                const Icon = module.icon;
+              {modules.map((mod, i) => {
+                const Icon = mod.icon;
                 return (
                   <motion.div
-                    key={module.title}
-                    whileHover={{ y: -3, scale: 1.01 }}
-                    className="grid gap-4 border-b border-white/10 px-6 py-5 transition-all last:border-b-0 md:grid-cols-[1.2fr_1.4fr_0.4fr] md:items-center"
+                    key={mod.title}
+                    whileHover={{ backgroundColor: "rgba(14,159,110,0.04)" }}
+                    className="grid gap-4 px-6 py-5 transition-all last:border-b-0 md:grid-cols-[1.4fr_1.6fr_0.5fr] md:items-center cursor-default"
+                    style={{ borderBottom: i < modules.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                        <Icon className="size-5" />
+                    <div className="flex items-center gap-4">
+                      <div
+                        className="inline-flex size-11 items-center justify-center rounded-xl shrink-0"
+                        style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)" }}
+                      >
+                        <Icon className="size-5 text-primary" />
                       </div>
                       <div>
-                        <div className="text-base font-semibold text-white">{module.title}</div>
-                        <div className="text-xs uppercase tracking-[0.28em] text-slate-500">Core module</div>
+                        <div className="text-sm font-bold text-white">{mod.title}</div>
+                        <div className="text-[10px] uppercase tracking-[0.18em] mt-0.5" style={{ color: "#AAB8C2" }}>
+                          Core Module
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm leading-7 text-slate-400">{module.desc}</p>
-                    <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
-                      <span>Live</span>
-                      <ArrowUpRight className="size-3" />
+                    <p className="text-sm leading-7" style={{ color: "#AAB8C2" }}>{mod.desc}</p>
+                    <div>
+                      <Link
+                        to={mod.to as any}
+                        className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary hover:underline"
+                      >
+                        {mod.tag}
+                        <ArrowUpRight className="size-3" />
+                      </Link>
                     </div>
                   </motion.div>
                 );
@@ -260,31 +371,79 @@ function Landing() {
           </div>
         </section>
 
-        <section id="why" className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[1536px] px-6 lg:px-10">
-            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        {/* ── WHY SECTION ── */}
+        <section id="operations" className="py-24 lg:py-32">
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
+            <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
               <div>
-                <span className="inline-flex rounded-full bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-slate-300">
+                <span
+                  className="inline-flex rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] mb-6"
+                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)", color: "#AAB8C2" }}
+                >
                   Why Arena Intelligence
                 </span>
-                <h2 className="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl">
+                <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                   Built for operators who need clarity under pressure.
                 </h2>
-                <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
-                  The platform turns crowd data, venue topology, and operational signals into one shared view so teams can respond faster with confidence.
+                <p className="mt-6 text-lg leading-8" style={{ color: "#AAB8C2" }}>
+                  The platform turns crowd data, venue topology, and operational signals into one shared view so teams can respond faster with confidence during the biggest events.
                 </p>
+                <div className="mt-10">
+                  <Link
+                    to="/admin"
+                    className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
+                    style={{
+                      background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                      boxShadow: "0 0 24px rgba(14,159,110,0.22)",
+                    }}
+                  >
+                    Open Operations Console
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-2">
-                {benefits.map((item) => {
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  {
+                    icon: Users,
+                    title: "Crowd Management",
+                    desc: "Real-time occupancy tracking, flow analysis, and capacity recommendations.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Safety Operations",
+                    desc: "Incident response, emergency routing and security coordination.",
+                  },
+                  {
+                    icon: Globe,
+                    title: "Tournament Scale",
+                    desc: "Supports 100,000+ capacity venues across multiple concurrent events.",
+                  },
+                  {
+                    icon: Activity,
+                    title: "Live Analytics",
+                    desc: "Operational dashboards updating every 30 seconds for decision support.",
+                  },
+                ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="glass rounded-[2rem] border border-white/10 p-7">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
-                        <Icon className="size-5" />
+                    <div
+                      key={item.title}
+                      className="rounded-2xl p-6 card-lift"
+                      style={{
+                        background: "rgba(14,27,36,0.85)",
+                        border: "1px solid rgba(255,255,255,0.07)",
+                      }}
+                    >
+                      <div
+                        className="inline-flex size-11 items-center justify-center rounded-xl mb-4"
+                        style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)" }}
+                      >
+                        <Icon className="size-5 text-primary" />
                       </div>
-                      <h3 className="mt-5 text-xl font-black text-white">{item.title}</h3>
-                      <p className="mt-3 text-sm leading-7 text-slate-400">{item.desc}</p>
+                      <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-sm leading-7" style={{ color: "#AAB8C2" }}>{item.desc}</p>
                     </div>
                   );
                 })}
@@ -294,41 +453,59 @@ function Landing() {
         </section>
       </main>
 
-      <section className="border-t border-white/10 px-6 py-20 lg:px-10">
-        <div className="mx-auto flex max-w-[1536px] flex-col gap-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-primary/10 via-white/[0.03] to-transparent p-8 shadow-[0_30px_80px_rgba(0,0,0,0.22)] lg:flex-row lg:items-end lg:justify-between lg:p-10">
-          <div className="max-w-2xl">
-            <div className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-[11px] uppercase tracking-[0.32em] text-primary">
-              Next step
-            </div>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
-              Start with the core platform and scale from there.
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-400">
-              Send the link and we begin with Module 1, then expand the experience into a full operating system.
-            </p>
-          </div>
-          <Link
-            to="/admin"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.28em] text-black transition hover:brightness-105"
+      {/* ── CTA BANNER ── */}
+      <section style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(14,27,36,0.50)" }}>
+        <div className="mx-auto max-w-[1440px] px-6 py-20 lg:px-10">
+          <div
+            className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 rounded-2xl p-8 lg:p-10"
+            style={{
+              background: "linear-gradient(135deg, rgba(14,159,110,0.10) 0%, rgba(14,27,36,0.50) 100%)",
+              border: "1px solid rgba(14,159,110,0.15)",
+            }}
           >
-            Start with Module 1
-            <ArrowUpRight className="size-4" />
-          </Link>
+            <div className="max-w-2xl">
+              <span
+                className="inline-flex rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-primary mb-5"
+                style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)" }}
+              >
+                Get Started
+              </span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                Ready for match day operations?
+              </h2>
+              <p className="mt-4 text-lg leading-8" style={{ color: "#AAB8C2" }}>
+                Access the full operations console and experience arena-grade management for your next event.
+              </p>
+            </div>
+            <Link
+              to="/admin"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
+              style={{
+                background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                boxShadow: "0 0 32px rgba(14,159,110,0.25)",
+              }}
+            >
+              Launch Dashboard
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#05050B] py-16">
-        <div className="mx-auto flex max-w-[1536px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+      {/* ── FOOTER ── */}
+      <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "#07141C" }}>
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
             <Logo />
-            <p className="mt-4 max-w-md text-sm leading-7 text-slate-500">
+            <p className="mt-4 max-w-md text-sm leading-7" style={{ color: "#AAB8C2" }}>
               Arena Intelligence is the enterprise-grade stadium operations layer for fan experience, security, and event command.
             </p>
           </div>
-          <div className="flex flex-wrap gap-6 text-sm text-slate-500">
+          <div className="flex flex-wrap gap-6 text-sm" style={{ color: "#AAB8C2" }}>
             <span>© 2026 Arena Intelligence</span>
-            <span>Terms</span>
-            <span>Privacy</span>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
         </div>
       </footer>
