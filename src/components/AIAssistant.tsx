@@ -186,10 +186,10 @@ export function AIAssistant() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[420px] max-w-[calc(100vw-1.5rem)] h-[70vh] sm:h-[580px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl border text-white font-sans text-left"
+            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[420px] max-w-[calc(100vw-1.5rem)] h-[70vh] sm:h-[580px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl border text-slate-900 font-sans text-left"
             style={{
               background: "rgba(14,27,36,0.96)",
-              borderColor: "rgba(255,255,255,0.08)",
+              borderColor: "rgba(0,0,0,0.08)",
               backdropFilter: "blur(20px)",
             }}
           >
@@ -215,7 +215,7 @@ export function AIAssistant() {
                 <select
                   value={lang}
                   onChange={(e) => setLang(e.target.value as Language)}
-                  className="bg-transparent text-[10px] text-white font-bold outline-none border-none cursor-pointer uppercase font-mono"
+                  className="bg-transparent text-[10px] text-slate-900 font-bold outline-none border-none cursor-pointer uppercase font-mono"
                 >
                   <option value="en" className="bg-[#0E1B24]">EN</option>
                   <option value="es" className="bg-[#0E1B24]">ES</option>
@@ -236,7 +236,7 @@ export function AIAssistant() {
                   onClick={() => setPersona(p)}
                   className={`px-3 py-1.5 rounded-lg text-[9px] font-mono uppercase font-bold tracking-wider transition ${persona === p
                       ? "bg-primary/15 text-primary border border-primary/25"
-                      : "text-slate-400 hover:text-white"
+                      : "text-slate-400 hover:text-slate-900"
                     } border border-transparent cursor-pointer`}
                 >
                   {p}
@@ -295,7 +295,7 @@ export function AIAssistant() {
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="text-[10px] px-3 py-1.5 rounded-full bg-white/5 border border-white/8 hover:border-primary/40 hover:bg-primary/5 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer font-bold tracking-wide"
+                    className="text-[10px] px-3 py-1.5 rounded-full bg-white/5 border border-white/8 hover:border-primary/40 hover:bg-primary/5 text-slate-300 hover:text-slate-900 whitespace-nowrap transition cursor-pointer font-bold tracking-wide"
                   >
                     {s}
                   </button>
@@ -313,7 +313,7 @@ export function AIAssistant() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={`Ask GenAI as ${persona}...`}
-                  className="flex-1 bg-transparent text-xs text-white outline-none placeholder:text-slate-600 font-medium"
+                  className="flex-1 bg-transparent text-xs text-slate-900 outline-none placeholder:text-slate-600 font-medium"
                 />
                 <button
                   type="submit"

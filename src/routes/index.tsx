@@ -87,21 +87,21 @@ const kpis = [
 function Landing() {
   return (
     <div
-      className="min-h-screen text-white selection:bg-primary/20 selection:text-white font-sans antialiased overflow-x-hidden"
-      style={{ background: "#07141C" }}
+      className="min-h-screen text-slate-900 selection:bg-primary/20 selection:text-slate-900 font-sans antialiased overflow-x-hidden"
+      style={{ background: "#F8FAFC" }}
     >
       {/* ── HEADER ── */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl"
         style={{
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
-          background: "rgba(7,20,28,0.90)",
+          borderBottom: "1px solid rgba(0,0,0,0.06)",
+          background: "rgba(255,255,255,0.85)",
         }}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-4 lg:px-10">
           <div className="flex items-center gap-8">
             <Logo size="md" />
-            <nav className="hidden xl:flex items-center gap-8" style={{ color: "#AAB8C2" }}>
+            <nav className="hidden xl:flex items-center gap-8" style={{ color: "#64748B" }}>
               {[
                 { label: "Overview", href: "#overview" },
                 { label: "Modules", href: "#modules" },
@@ -110,7 +110,7 @@ function Landing() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium transition-colors hover:text-white"
+                  className="text-sm font-medium transition-colors hover:text-slate-900"
                 >
                   {item.label}
                 </a>
@@ -135,8 +135,8 @@ function Landing() {
 
             <Link
               to="/fan"
-              className="hidden rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.20em] transition-colors hover:text-white sm:inline-flex items-center"
-              style={{ color: "#AAB8C2" }}
+              className="hidden rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.20em] transition-colors hover:text-slate-900 sm:inline-flex items-center"
+              style={{ color: "#64748B" }}
             >
               Fan Portal
             </Link>
@@ -160,9 +160,9 @@ function Landing() {
         <section
           id="overview"
           className="relative overflow-hidden"
-          style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+          style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
         >
-          {/* Hero background — stadium at night */}
+          {/* Hero background — stadium at night (now with light frosted glass over it) */}
           <div className="absolute inset-0">
             <div
               className="absolute inset-0 scale-[1.04]"
@@ -170,22 +170,22 @@ function Landing() {
                 backgroundImage: 'url("/stadium-hero.png")',
                 backgroundSize: "cover",
                 backgroundPosition: "center 22%",
-                opacity: 0.35,
-                filter: "saturate(1.08) contrast(1.06)",
+                opacity: 0.80,
+                filter: "saturate(1.1) contrast(0.95) brightness(1.4)",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(7,20,28,0.55) 0%, rgba(7,20,28,0.78) 50%, rgba(7,20,28,0.97) 100%)",
+                  "linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.70) 50%, rgba(248,250,252,0.97) 100%)",
               }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.14) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.14) 0%, transparent 58%)",
+                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.08) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.08) 0%, transparent 58%)",
               }}
             />
           </div>
@@ -212,7 +212,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white max-w-4xl"
+              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-slate-900 max-w-4xl"
             >
               Arena Intelligence
             </motion.h1>
@@ -222,7 +222,7 @@ function Landing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
               className="mt-5 text-xl font-medium leading-relaxed max-w-2xl"
-              style={{ color: "#AAB8C2" }}
+              style={{ color: "#64748B" }}
             >
               Smart Stadium Operations Platform
             </motion.p>
@@ -232,7 +232,7 @@ function Landing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.24 }}
               className="mt-4 text-base leading-8 max-w-xl"
-              style={{ color: "rgba(170,184,194,0.75)" }}
+              style={{ color: "rgba(100,116,139,0.75)" }}
             >
               Unified operations platform for crowd management, tournament coordination,
               emergency response and stadium analytics.
@@ -260,8 +260,8 @@ function Landing() {
                 className="group relative inline-flex items-center justify-center gap-2.5 rounded-full px-10 py-4.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
                 style={{
                   background: "linear-gradient(135deg, #1E40AF, #7C3AED, #DB2777)",
-                  boxShadow: "0 0 40px rgba(124,58,237,0.35), 0 0 80px rgba(219,39,119,0.15)",
-                  border: "2px solid rgba(255,255,255,0.20)",
+                  boxShadow: "0 0 40px rgba(124,58,237,0.25), 0 0 80px rgba(219,39,119,0.15)",
+                  border: "2px solid rgba(255,255,255,0.50)",
                 }}
               >
                 <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(124,58,237,0.40)" }} />
@@ -284,18 +284,19 @@ function Landing() {
                     key={kpi.label}
                     className="rounded-2xl p-5 card-lift"
                     style={{
-                      background: "rgba(14,27,36,0.85)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "rgba(255,255,255,0.85)",
+                      border: "1px solid rgba(0,0,0,0.06)",
                       backdropFilter: "blur(20px)",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
                     }}
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <Icon className="size-4" style={{ color: "#0E9F6E" }} />
-                      <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#AAB8C2" }}>
+                      <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#64748B" }}>
                         {kpi.label}
                       </span>
                     </div>
-                    <div className="text-2xl font-extrabold text-white tracking-tight">{kpi.value}</div>
+                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight">{kpi.value}</div>
                   </div>
                 );
               })}
@@ -306,8 +307,8 @@ function Landing() {
         {/* ── MODULES ── */}
         <section
           id="modules"
-          className="py-24 lg:py-32"
-          style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+          className="py-24 lg:py-32 bg-white"
+          style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
         >
           <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
             <div className="max-w-2xl mb-14">
@@ -317,10 +318,10 @@ function Landing() {
               >
                 Platform Modules
               </span>
-              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                 Six modules. One command surface.
               </h2>
-              <p className="mt-5 text-lg leading-8" style={{ color: "#AAB8C2" }}>
+              <p className="mt-5 text-lg leading-8" style={{ color: "#64748B" }}>
                 From ticketing to emergency control, every module is designed to be fast to understand and even faster to act on.
               </p>
             </div>
@@ -328,12 +329,12 @@ function Landing() {
             {/* Modules table */}
             <div
               className="overflow-hidden rounded-2xl"
-              style={{ border: "1px solid rgba(255,255,255,0.07)", background: "rgba(14,27,36,0.70)" }}
+              style={{ border: "1px solid rgba(0,0,0,0.08)", background: "#F8FAFC" }}
             >
               {/* Table header */}
               <div
                 className="hidden md:grid md:grid-cols-[1.4fr_1.6fr_0.5fr] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.22em]"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", color: "#AAB8C2" }}
+                style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", color: "#64748B" }}
               >
                 <span>Module</span>
                 <span>Operational Scope</span>
@@ -346,7 +347,7 @@ function Landing() {
                     key={mod.title}
                     whileHover={{ backgroundColor: "rgba(14,159,110,0.04)" }}
                     className="grid gap-4 px-6 py-5 transition-all last:border-b-0 md:grid-cols-[1.4fr_1.6fr_0.5fr] md:items-center cursor-default"
-                    style={{ borderBottom: i < modules.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
+                    style={{ borderBottom: i < modules.length - 1 ? "1px solid rgba(0,0,0,0.05)" : "none" }}
                   >
                     <div className="flex items-center gap-4">
                       <div
@@ -356,13 +357,13 @@ function Landing() {
                         <Icon className="size-5 text-primary" />
                       </div>
                       <div>
-                        <div className="text-sm font-bold text-white">{mod.title}</div>
-                        <div className="text-[10px] uppercase tracking-[0.18em] mt-0.5" style={{ color: "#AAB8C2" }}>
+                        <div className="text-sm font-bold text-slate-900">{mod.title}</div>
+                        <div className="text-[10px] uppercase tracking-[0.18em] mt-0.5" style={{ color: "#64748B" }}>
                           Core Module
                         </div>
                       </div>
                     </div>
-                    <p className="text-sm leading-7" style={{ color: "#AAB8C2" }}>{mod.desc}</p>
+                    <p className="text-sm leading-7" style={{ color: "#64748B" }}>{mod.desc}</p>
                     <div>
                       <Link
                         to={mod.to as any}
@@ -386,14 +387,14 @@ function Landing() {
               <div>
                 <span
                   className="inline-flex rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] mb-6"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)", color: "#AAB8C2" }}
+                  style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}
                 >
                   Why Arena Intelligence
                 </span>
-                <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                   Built for operators who need clarity under pressure.
                 </h2>
-                <p className="mt-6 text-lg leading-8" style={{ color: "#AAB8C2" }}>
+                <p className="mt-6 text-lg leading-8" style={{ color: "#64748B" }}>
                   The platform turns crowd data, venue topology, and operational signals into one shared view so teams can respond faster with confidence during the biggest events.
                 </p>
                 <div className="mt-10">
@@ -438,10 +439,10 @@ function Landing() {
                   return (
                     <div
                       key={item.title}
-                      className="rounded-2xl p-6 card-lift"
+                      className="rounded-2xl p-6 card-lift bg-white"
                       style={{
-                        background: "rgba(14,27,36,0.85)",
-                        border: "1px solid rgba(255,255,255,0.07)",
+                        border: "1px solid rgba(0,0,0,0.06)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.03)",
                       }}
                     >
                       <div
@@ -450,8 +451,8 @@ function Landing() {
                       >
                         <Icon className="size-5 text-primary" />
                       </div>
-                      <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-sm leading-7" style={{ color: "#AAB8C2" }}>{item.desc}</p>
+                      <h3 className="text-base font-bold text-slate-900 mb-2">{item.title}</h3>
+                      <p className="text-sm leading-7" style={{ color: "#64748B" }}>{item.desc}</p>
                     </div>
                   );
                 })}
@@ -462,13 +463,14 @@ function Landing() {
       </main>
 
       {/* ── CTA BANNER ── */}
-      <section style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(14,27,36,0.50)" }}>
+      <section style={{ borderTop: "1px solid rgba(0,0,0,0.06)", background: "#F1F5F9" }}>
         <div className="mx-auto max-w-[1440px] px-6 py-20 lg:px-10">
           <div
             className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 rounded-2xl p-8 lg:p-10"
             style={{
-              background: "linear-gradient(135deg, rgba(14,159,110,0.10) 0%, rgba(14,27,36,0.50) 100%)",
+              background: "linear-gradient(135deg, rgba(14,159,110,0.05) 0%, rgba(255,255,255,0.90) 100%)",
               border: "1px solid rgba(14,159,110,0.15)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.03)",
             }}
           >
             <div className="max-w-2xl">
@@ -478,16 +480,16 @@ function Landing() {
               >
                 Get Started
               </span>
-              <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                 Ready for match day operations?
               </h2>
-              <p className="mt-4 text-lg leading-8" style={{ color: "#AAB8C2" }}>
+              <p className="mt-4 text-lg leading-8" style={{ color: "#64748B" }}>
                 Access the full operations console and experience arena-grade management for your next event.
               </p>
             </div>
             <Link
               to="/admin"
-              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
+              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
               style={{
                 background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
                 boxShadow: "0 0 32px rgba(14,159,110,0.25)",
@@ -501,19 +503,19 @@ function Landing() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "#07141C" }}>
+      <footer style={{ borderTop: "1px solid rgba(0,0,0,0.06)", background: "#FFFFFF" }}>
         <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
             <Logo />
-            <p className="mt-4 max-w-md text-sm leading-7" style={{ color: "#AAB8C2" }}>
+            <p className="mt-4 max-w-md text-sm leading-7" style={{ color: "#64748B" }}>
               Arena Intelligence is the enterprise-grade stadium operations layer for fan experience, security, and event command.
             </p>
           </div>
-          <div className="flex flex-wrap gap-6 text-sm" style={{ color: "#AAB8C2" }}>
+          <div className="flex flex-wrap gap-6 text-sm" style={{ color: "#64748B" }}>
             <span>© 2026 Arena Intelligence</span>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Security</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Terms</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Security</a>
           </div>
         </div>
       </footer>

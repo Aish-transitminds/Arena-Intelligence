@@ -24,12 +24,12 @@ export function StatCard({
       transition={{ delay: index * 0.06, duration: 0.4 }}
       className="rounded-2xl p-5 relative overflow-hidden card-lift group"
       style={{
-        background: "rgba(14,27,36,0.90)",
-        border: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255,255,255,0.90)",
+        border: "1px solid rgba(0,0,0,0.06)",
       }}
     >
       <div className="flex items-start justify-between mb-4">
-        <div className="text-[10px] font-bold uppercase tracking-[0.20em]" style={{ color: "#AAB8C2" }}>
+        <div className="text-[10px] font-bold uppercase tracking-[0.20em]" style={{ color: "#64748B" }}>
           {label}
         </div>
         {icon && (
@@ -46,12 +46,12 @@ export function StatCard({
         )}
       </div>
 
-      <div className="text-3xl font-extrabold tracking-tight text-white">{value}</div>
+      <div className="text-3xl font-extrabold tracking-tight text-slate-900">{value}</div>
 
       {delta && (
         <div
           className="text-xs mt-2 font-semibold"
-          style={{ color: isPositive ? "#0E9F6E" : positive ? "#D92D20" : "#AAB8C2" }}
+          style={{ color: isPositive ? "#0E9F6E" : positive ? "#D92D20" : "#64748B" }}
         >
           {delta} vs last week
         </div>
