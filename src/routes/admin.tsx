@@ -59,7 +59,6 @@ const sectionOccupancy = [
 ];
 
 function Admin() {
-  const [activeTab, setActiveTab] = useState("Overview");
   const [isRedirected, setIsRedirected] = useState(false);
   const [restrooms, setRestrooms] = useState([
     { id: "A-North", location: "Concourse North (Gate A)", load: "High", wait: "5 min", status: "Clean", cleanStatus: "Idle" },
@@ -107,32 +106,7 @@ function Admin() {
 
   return (
     <AppShell title="Operations Console" subtitle="FIFA World Cup 2026 · MetLife Stadium · Match Day Operations">
-      {/* ── SUB-HEADER TAB NAVIGATION ── */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-        <div className="flex items-center gap-1.5 p-1 rounded-xl" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-          {["Overview", "Analytics", "Security", "Logistics"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className="px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-[0.18em] transition-all relative"
-              style={
-                activeTab === tab
-                  ? { background: "rgba(14,159,110,0.15)", color: "#fff", border: "1px solid rgba(14,159,110,0.20)" }
-                  : { color: "#AAB8C2" }
-              }
-            >
-              {tab}
-              {activeTab === tab && (
-                <motion.div
-                  layoutId="admin-tab-indicator"
-                  className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
-                />
-              )}
-            </button>
-          ))}
-        </div>
-
-        {/* Status indicators */}
+      <div className="flex flex-wrap items-center justify-end gap-4 mb-8">        {/* Status indicators */}
         <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-[#AAB8C2]">
           <div className="flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-primary" style={{ boxShadow: "0 0 6px rgba(14,159,110,0.60)" }} />

@@ -244,7 +244,7 @@ function Landing() {
                   boxShadow: "0 0 32px rgba(14,159,110,0.25)",
                 }}
               >
-                Launch Dashboard
+                Admin Console
                 <ArrowUpRight className="size-4" />
               </Link>
               <Link
@@ -252,7 +252,7 @@ function Landing() {
                 className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:bg-white/10"
                 style={{ border: "1px solid rgba(255,255,255,0.15)", background: "rgba(255,255,255,0.05)" }}
               >
-                View Operations
+                Fan Dashboard
               </Link>
             </motion.div>
 
