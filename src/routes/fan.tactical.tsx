@@ -48,24 +48,24 @@ function TacticalPage() {
   };
 
   return (
-    <div className="w-full h-dvh text-white font-sans relative overflow-hidden flex flex-col" style={{ background: "#07141C" }}>
+    <div className="w-full h-dvh text-slate-900 font-sans relative overflow-hidden flex flex-col" style={{ background: "#07141C" }}>
       {/* Tactical Header */}
       <header
         className="h-18 flex items-center justify-between px-10 z-50 shrink-0"
-        style={{ background: "rgba(14,27,36,0.95)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+        style={{ background: "rgba(255,255,255,0.95)", borderBottom: "1px solid rgba(0,0,0,0.06)" }}
       >
         <div className="flex items-center gap-4">
           <Link to="/fan" className="p-2 hover:bg-white/5 rounded-lg transition-colors group mr-2">
-            <ChevronLeft className="size-5 text-slate-500 group-hover:text-white transition-colors" />
+            <ChevronLeft className="size-5 text-slate-500 group-hover:text-slate-900 transition-colors" />
           </Link>
           <div className="size-11 rounded-lg flex items-center justify-center text-primary" style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.20)" }}>
             <ShieldCheck className="size-6" />
           </div>
           <div className="leading-tight">
-            <h1 className="text-lg font-black tracking-tight leading-none text-white uppercase">
+            <h1 className="text-lg font-black tracking-tight leading-none text-slate-900 uppercase">
               ARENA<span className="text-primary">INTELLIGENCE</span>
             </h1>
-            <p className="text-[9px] font-mono uppercase tracking-[0.25em] mt-1" style={{ color: "#AAB8C2" }}>
+            <p className="text-[9px] font-mono uppercase tracking-[0.25em] mt-1" style={{ color: "#64748B" }}>
               Tactical Blueprint v4.2 · MetLife Stadium
             </p>
           </div>
@@ -77,8 +77,8 @@ function TacticalPage() {
             <input
               type="text"
               placeholder="Query sector or gate coordinates..."
-              className="w-full rounded-full py-2.5 pl-12 pr-6 text-xs text-white focus:outline-none focus:border-primary/50 transition-all font-mono placeholder:text-slate-600 uppercase tracking-widest"
-              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+              className="w-full rounded-full py-2.5 pl-12 pr-6 text-xs text-slate-900 focus:outline-none focus:border-primary/50 transition-all font-mono placeholder:text-slate-600 uppercase tracking-widest"
+              style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)" }}
             />
           </div>
         </div>
@@ -89,16 +89,16 @@ function TacticalPage() {
             <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-primary">Live stream active</span>
           </div>
           <div className="text-right hidden md:block select-none">
-            <p className="text-[10px] font-mono font-bold uppercase tracking-tight" style={{ color: "#AAB8C2" }}>T: 18:42:05:22</p>
+            <p className="text-[10px] font-mono font-bold uppercase tracking-tight" style={{ color: "#64748B" }}>T: 18:42:05:22</p>
              <p className="text-[9px] font-mono tracking-tighter" style={{ color: "rgba(170,184,194,0.40)" }}>COORDS: MetLife Stadium, Gate B</p>
           </div>
           <div
             className="size-10 rounded-full flex items-center justify-center cursor-pointer transition-colors"
-            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+            style={{ background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.08)" }}
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.30)")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.08)")}
           >
-            <User className="size-5" style={{ color: "#AAB8C2" }} />
+            <User className="size-5" style={{ color: "#64748B" }} />
           </div>
         </div>
       </header>
@@ -118,40 +118,40 @@ function TacticalPage() {
             initial={{ y: 100, x: "-50%" }}
             animate={{ y: 0, x: "-50%" }}
             className="absolute bottom-10 left-1/2 w-full max-w-[640px] h-16 rounded-full flex items-center px-8 gap-6 z-40 shadow-2xl"
-            style={{ background: "rgba(14,27,36,0.92)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(16px)" }}
+            style={{ background: "rgba(14,27,36,0.92)", border: "1px solid rgba(0,0,0,0.08)", backdropFilter: "blur(16px)" }}
           >
             <div className="flex items-center gap-4">
-              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer outline-none">
+              <button className="text-slate-500 hover:text-slate-900 transition-colors cursor-pointer outline-none">
                 <SkipBack className="size-5" />
               </button>
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="size-10 bg-primary rounded-full flex items-center justify-center text-white transition-transform hover:scale-105 active:scale-95 cursor-pointer outline-none"
+                className="size-10 bg-primary rounded-full flex items-center justify-center text-slate-900 transition-transform hover:scale-105 active:scale-95 cursor-pointer outline-none"
                 style={{ boxShadow: "0 0 16px rgba(14,159,110,0.30)" }}
               >
                 {isPlaying ? <span className="text-xs font-bold text-black uppercase tracking-wider">II</span> : <Play className="size-4 text-black fill-current ml-0.5" />}
               </button>
-              <button className="text-slate-500 hover:text-white transition-colors cursor-pointer outline-none">
+              <button className="text-slate-500 hover:text-slate-900 transition-colors cursor-pointer outline-none">
                 <SkipForward className="size-5" />
               </button>
             </div>
 
             <div className="flex-1 flex flex-col gap-1 select-none">
-              <div className="flex justify-between text-[8px] font-mono font-bold uppercase tracking-widest" style={{ color: "#AAB8C2" }}>
+              <div className="flex justify-between text-[8px] font-mono font-bold uppercase tracking-widest" style={{ color: "#64748B" }}>
                 <span>-01:45:00</span>
                 <span className="text-primary tracking-[0.2em]">{isPlaying ? "LIVE SIMULATION RUNNING" : "SIMULATION PAUSED"}</span>
               </div>
-              <div className="relative h-1 rounded-full overflow-hidden cursor-pointer" style={{ background: "rgba(255,255,255,0.08)" }}>
+              <div className="relative h-1 rounded-full overflow-hidden cursor-pointer" style={{ background: "rgba(0,0,0,0.08)" }}>
                 <div className="absolute left-0 top-0 h-full w-[82%]" style={{ background: "rgba(14,159,110,0.25)" }} />
                 <div className="absolute left-[82%] top-0 h-full w-0.5 bg-primary z-10" />
               </div>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="px-3 py-1 rounded text-[10px] font-mono font-bold" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "#AAB8C2" }}>
+              <div className="px-3 py-1 rounded text-[10px] font-mono font-bold" style={{ background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}>
                 1.0X
               </div>
-              <Maximize2 className="size-4 text-slate-500 hover:text-white cursor-pointer transition-colors" />
+              <Maximize2 className="size-4 text-slate-500 hover:text-slate-900 cursor-pointer transition-colors" />
             </div>
           </motion.div>
         </main>
@@ -159,49 +159,49 @@ function TacticalPage() {
         {/* Intelligence Sidebar */}
         <aside
           className="w-[380px] h-full p-8 flex flex-col z-40 shrink-0 overflow-y-auto custom-scrollbar shadow-2xl"
-          style={{ background: "rgba(14,27,36,0.95)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}
+          style={{ background: "rgba(255,255,255,0.95)", borderLeft: "1px solid rgba(0,0,0,0.06)" }}
         >
           <div className="mb-8 text-left">
             <div className="flex items-center gap-2.5 mb-3 text-slate-400">
               <div className="w-1 h-4 bg-primary rounded-full" />
               <h2 className="text-[10px] font-mono uppercase font-bold tracking-[0.25em]">Operational Overview</h2>
             </div>
-            <h3 className="text-white text-3xl font-extrabold mb-1.5 tracking-tight uppercase">
+            <h3 className="text-slate-900 text-3xl font-extrabold mb-1.5 tracking-tight uppercase">
               LEVEL_02 <span className="text-slate-600 text-xl font-semibold tracking-tighter">/ STAND 204</span>
             </h3>
-            <p className="text-xs font-mono font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>
+            <p className="text-xs font-mono font-bold uppercase tracking-wider" style={{ color: "#64748B" }}>
               Active Route Pathfinding: <span className="text-primary font-bold">00:03m Walk</span>
             </p>
           </div>
 
           {/* Metrics Grid */}
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)")}>
-              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#AAB8C2" }}>
+            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)")}>
+              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#64748B" }}>
                 FLOW RATE
               </p>
               <div className="flex items-baseline gap-1">
-                <span className="text-white text-2xl font-black font-mono tracking-tighter">1.2</span>
-                <span className="text-[10px] font-mono font-bold" style={{ color: "#AAB8C2" }}>m/s</span>
+                <span className="text-slate-900 text-2xl font-black font-mono tracking-tighter">1.2</span>
+                <span className="text-[10px] font-mono font-bold" style={{ color: "#64748B" }}>m/s</span>
               </div>
               <div className="mt-3 text-[9px] text-primary font-mono flex items-center gap-1 font-bold">
                 <TrendingUp className="size-3.5" /> +2.1% <span style={{ color: "rgba(170,184,194,0.40)" }}>vs average</span>
               </div>
             </div>
-            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)")}>
-              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#AAB8C2" }}>STAND DENSITY</p>
+            <div className="rounded-2xl p-5 transition-all text-left" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(14,159,110,0.18)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(0,0,0,0.06)")}>
+              <p className="text-[9px] font-mono uppercase font-bold mb-1.5 tracking-wider" style={{ color: "#64748B" }}>STAND DENSITY</p>
               <div className="flex items-baseline gap-1">
                 <span className="text-primary text-2xl font-black font-mono tracking-tighter">0.32</span>
-                <span className="text-[10px] font-mono font-bold" style={{ color: "#AAB8C2" }}>p/m²</span>
+                <span className="text-[10px] font-mono font-bold" style={{ color: "#64748B" }}>p/m²</span>
               </div>
-              <div className="mt-3 text-[9px] font-mono flex items-center gap-1 font-bold uppercase tracking-wider" style={{ color: "#AAB8C2" }}>
+              <div className="mt-3 text-[9px] font-mono flex items-center gap-1 font-bold uppercase tracking-wider" style={{ color: "#64748B" }}>
                 <Info className="size-3.5" /> Stable
               </div>
             </div>
           </div>
 
           {/* Feature Toggles */}
-          <div className="space-y-4 mb-8 border-y py-6" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+          <div className="space-y-4 mb-8 border-y py-6" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
             <ToggleItem
               icon={<Activity className="size-4" />}
               label="Flow Dynamics"
@@ -224,8 +224,8 @@ function TacticalPage() {
 
           {/* Live Video Feed */}
           <div className="mt-auto pt-4">
-            <div className="bg-black border rounded-xl overflow-hidden relative group aspect-video shadow-2xl" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-              <div className="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[8px] text-white font-mono flex items-center gap-1.5 border tracking-wider font-bold uppercase" style={{ borderColor: "rgba(255,255,255,0.10)" }}>
+            <div className="bg-black border rounded-xl overflow-hidden relative group aspect-video shadow-2xl" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+              <div className="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur-md px-2.5 py-1 rounded-md text-[8px] text-slate-900 font-mono flex items-center gap-1.5 border tracking-wider font-bold uppercase" style={{ borderColor: "rgba(0,0,0,0.10)" }}>
                 <span className="size-1.5 bg-red-500 rounded-full animate-pulse" /> LIVE: CAM_204_EAST
               </div>
               <video
@@ -240,7 +240,7 @@ function TacticalPage() {
               <div className="absolute inset-0 bg-[#0E9F6E]/5 pointer-events-none mix-blend-overlay group-hover:opacity-0 transition-opacity duration-700" />
             </div>
             <div className="mt-3 flex justify-between items-center px-1">
-              <span className="text-[9px] font-bold uppercase tracking-widest font-mono" style={{ color: "#AAB8C2" }}>
+              <span className="text-[9px] font-bold uppercase tracking-widest font-mono" style={{ color: "#64748B" }}>
                 Signal Integrity
               </span>
               <span className="text-[9px] text-primary font-bold uppercase tracking-widest font-mono">99.84%</span>

@@ -65,14 +65,14 @@ function FanPage() {
             style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
           >
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-slate-900/80">Digital Ticket</p>
-              <p className="text-sm font-extrabold text-slate-900 mt-0.5">Concept Event Night</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/90">Digital Ticket</p>
+              <p className="text-sm font-extrabold text-white mt-0.5">Concept Event Night</p>
             </div>
             <div
               className="size-10 rounded-xl flex items-center justify-center"
-              style={{ background: "rgba(255,255,255,0.15)" }}
+              style={{ background: "rgba(255,255,255,0.25)" }}
             >
-              <Ticket className="size-5 text-slate-900" />
+              <Ticket className="size-5 text-white" />
             </div>
           </div>
 
@@ -130,10 +130,10 @@ function FanPage() {
               className="w-full flex items-center justify-between p-3.5 rounded-xl transition-all shadow-lg group-hover:shadow-[0_0_30px_rgba(14,159,110,0.4)]"
               style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", border: "1px solid rgba(255,255,255,0.2)" }}
             >
-              <span className="text-sm font-extrabold uppercase tracking-wider text-slate-900 flex items-center gap-2 group-hover:scale-105 transition-transform">
+              <span className="text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2 group-hover:scale-105 transition-transform">
                 Click Here For Ticket
               </span>
-              <ArrowRight className="size-5 text-slate-900 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="size-5 text-white group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
 

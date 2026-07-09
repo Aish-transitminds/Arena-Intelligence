@@ -197,7 +197,7 @@ function FanTicketsPage() {
       },
       used: {
         bg: "rgba(170,184,194,0.10)",
-        text: "#AAB8C2",
+        text: "#64748B",
         label: "Used",
         icon: <CheckCircle2 className="size-3.5" />,
       },
@@ -232,10 +232,10 @@ function FanTicketsPage() {
             {MOCK_FAN_PROFILE.name.charAt(0)}
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white mb-1">
+            <h2 className="text-2xl font-bold text-slate-900 mb-1">
               {MOCK_FAN_PROFILE.name}
             </h2>
-            <p className="text-sm mb-2" style={{ color: "#AAB8C2" }}>
+            <p className="text-sm mb-2" style={{ color: "#64748B" }}>
               {MOCK_FAN_PROFILE.email}
             </p>
             <div className="flex items-center gap-3">
@@ -270,7 +270,7 @@ function FanTicketsPage() {
               >
                 {MOCK_FAN_PROFILE.memberLevel} member
               </span>
-              <span style={{ color: "#AAB8C2" }} className="text-xs">
+              <span style={{ color: "#64748B" }} className="text-xs">
                 Since {MOCK_FAN_PROFILE.joinDate}
               </span>
             </div>
@@ -282,56 +282,56 @@ function FanTicketsPage() {
           <div
             className="rounded-xl p-4 text-center"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-slate-900">
               {MOCK_FAN_PROFILE.upcomingEvents}
             </div>
-            <div className="text-xs mt-1" style={{ color: "#AAB8C2" }}>
+            <div className="text-xs mt-1" style={{ color: "#64748B" }}>
               Upcoming Events
             </div>
           </div>
           <div
             className="rounded-xl p-4 text-center"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-slate-900">
               {MOCK_FAN_PROFILE.totalTickets}
             </div>
-            <div className="text-xs mt-1" style={{ color: "#AAB8C2" }}>
+            <div className="text-xs mt-1" style={{ color: "#64748B" }}>
               Total Tickets
             </div>
           </div>
           <div
             className="rounded-xl p-4 text-center"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-slate-900">
               ${MOCK_FAN_PROFILE.totalSpent}
             </div>
-            <div className="text-xs mt-1" style={{ color: "#AAB8C2" }}>
+            <div className="text-xs mt-1" style={{ color: "#64748B" }}>
               Total Spent
             </div>
           </div>
           <div
             className="rounded-xl p-4 text-center"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.08)",
             }}
           >
-            <div className="text-sm font-bold text-white">
+            <div className="text-sm font-bold text-slate-900">
               {MOCK_FAN_PROFILE.favoriteVenue}
             </div>
-            <div className="text-xs mt-1" style={{ color: "#AAB8C2" }}>
+            <div className="text-xs mt-1" style={{ color: "#64748B" }}>
               Favorite Venue
             </div>
           </div>
@@ -346,10 +346,10 @@ function FanTicketsPage() {
         className="mb-6 flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between"
       >
         <div>
-          <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "#AAB8C2" }}>
+          <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "#64748B" }}>
             Member ID
           </p>
-          <p className="text-lg font-mono font-bold text-white">
+          <p className="text-lg font-mono font-bold text-slate-900">
             {MOCK_FAN_PROFILE.memberId}
           </p>
         </div>
@@ -372,7 +372,7 @@ function FanTicketsPage() {
           {/* Tab Navigation */}
           <div
             className="flex gap-1 rounded-xl p-1.5"
-            style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
             {(["active", "upcoming", "history"] as const).map((tab) => (
               <button
@@ -380,8 +380,8 @@ function FanTicketsPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all uppercase tracking-wider ${
                   activeTab === tab
-                    ? "text-white"
-                    : "text-slate-400 hover:text-slate-300"
+                    ? "text-primary"
+                    : "text-slate-500 hover:text-slate-700"
                 }`}
                 style={
                   activeTab === tab
@@ -426,10 +426,10 @@ function FanTicketsPage() {
                     style={{
                       background: isSelected
                         ? "rgba(14,159,110,0.1)"
-                        : "rgba(14,27,36,0.90)",
+                        : "rgba(255,255,255,0.90)",
                       border: isSelected
                         ? "1px solid rgba(14,159,110,0.4)"
-                        : "1px solid rgba(255,255,255,0.07)",
+                        : "1px solid rgba(0,0,0,0.06)",
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -444,12 +444,12 @@ function FanTicketsPage() {
                           >
                             <Ticket className="size-4 text-green-400" />
                           </div>
-                          <h3 className="font-bold text-white text-sm leading-tight">
+                          <h3 className="font-bold text-slate-900 text-sm leading-tight">
                             {ticket.event}
                           </h3>
                         </div>
 
-                        <div className="text-xs space-y-1 mb-3" style={{ color: "#AAB8C2" }}>
+                        <div className="text-xs space-y-1 mb-3" style={{ color: "#64748B" }}>
                           <p>📅 {ticket.date} · {ticket.time}</p>
                           <p>📍 {ticket.venue}</p>
                           <p className="font-mono">
@@ -468,7 +468,7 @@ function FanTicketsPage() {
                             {statusConfig.icon}
                             {statusConfig.label}
                           </span>
-                          <span className="text-xs font-bold text-white">
+                          <span className="text-xs font-bold text-slate-900">
                             ${ticket.price}
                           </span>
                         </div>
@@ -498,8 +498,8 @@ function FanTicketsPage() {
             transition={{ duration: 0.3 }}
             className="rounded-2xl overflow-hidden"
             style={{
-              background: "rgba(14,27,36,0.90)",
-              border: "1px solid rgba(255,255,255,0.09)",
+              background: "rgba(255,255,255,0.90)",
+              border: "1px solid rgba(0,0,0,0.09)",
             }}
           >
             {/* Header */}
@@ -508,7 +508,7 @@ function FanTicketsPage() {
               style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
             >
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/90">
                   Ticket Details
                 </p>
                 <p className="text-sm font-extrabold text-white mt-0.5">
@@ -517,7 +517,7 @@ function FanTicketsPage() {
               </div>
               <div
                 className="size-10 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(255,255,255,0.15)" }}
+                style={{ background: "rgba(255,255,255,0.25)" }}
               >
                 <Ticket className="size-5 text-white" />
               </div>
@@ -528,23 +528,23 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-4"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(0,0,0,0.03)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span style={{ color: "#AAB8C2", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <span style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
                       Ticket Owner
                     </span>
-                    <p className="text-white font-bold text-lg mt-1">
+                    <p className="text-slate-900 font-bold text-lg mt-1">
                       {selectedTicket.ownerName}
                     </p>
                   </div>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Ticket Type</span>
-                    <span className="text-white font-semibold">{selectedTicket.ticketType}</span>
+                    <span style={{ color: "#64748B" }}>Ticket Type</span>
+                    <span className="text-slate-900 font-semibold">{selectedTicket.ticketType}</span>
                   </div>
                 </div>
               </div>
@@ -567,37 +567,37 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-4"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(0,0,0,0.03)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
                 <div className="space-y-2.5 text-sm">
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Event</span>
-                    <span className="text-white font-semibold">
+                    <span style={{ color: "#64748B" }}>Event</span>
+                    <span className="text-slate-900 font-semibold">
                       {selectedTicket.event}
                     </span>
                   </div>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Date</span>
-                    <span className="text-white font-semibold">
+                    <span style={{ color: "#64748B" }}>Date</span>
+                    <span className="text-slate-900 font-semibold">
                       {selectedTicket.date}
                     </span>
                   </div>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Event Time</span>
-                    <span className="text-white font-semibold">
+                    <span style={{ color: "#64748B" }}>Event Time</span>
+                    <span className="text-slate-900 font-semibold">
                       {selectedTicket.time}
                     </span>
                   </div>
                   {selectedTicket.entryTime && (
                     <>
-                      <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                      <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                       <div className="flex justify-between">
-                        <span style={{ color: "#AAB8C2" }}>Entry Time</span>
-                        <span className="text-white font-semibold">
+                        <span style={{ color: "#64748B" }}>Entry Time</span>
+                        <span className="text-slate-900 font-semibold">
                           {selectedTicket.entryTime}
                         </span>
                       </div>
@@ -605,19 +605,19 @@ function FanTicketsPage() {
                   )}
                   {selectedTicket.exitTime && (
                     <>
-                      <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                      <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                       <div className="flex justify-between">
-                        <span style={{ color: "#AAB8C2" }}>Exit Time</span>
-                        <span className="text-white font-semibold">
+                        <span style={{ color: "#64748B" }}>Exit Time</span>
+                        <span className="text-slate-900 font-semibold">
                           {selectedTicket.exitTime}
                         </span>
                       </div>
                     </>
                   )}
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Venue</span>
-                    <span className="text-white font-semibold text-right">
+                    <span style={{ color: "#64748B" }}>Venue</span>
+                    <span className="text-slate-900 font-semibold text-right">
                       {selectedTicket.venue}
                     </span>
                   </div>
@@ -628,28 +628,28 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-4"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(0,0,0,0.03)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div>
-                    <p style={{ color: "#AAB8C2", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
                       Section
                     </p>
-                    <p className="text-white font-bold text-lg mt-1">{selectedTicket.section}</p>
+                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.section}</p>
                   </div>
-                  <div style={{ borderLeft: "1px solid rgba(255,255,255,0.07)", borderRight: "1px solid rgba(255,255,255,0.07)" }}>
-                    <p style={{ color: "#AAB8C2", fontSize: "11px" }} className="uppercase tracking-wider">
+                  <div style={{ borderLeft: "1px solid rgba(0,0,0,0.06)", borderRight: "1px solid rgba(0,0,0,0.06)" }}>
+                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
                       Row
                     </p>
-                    <p className="text-white font-bold text-lg mt-1">{selectedTicket.row}</p>
+                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.row}</p>
                   </div>
                   <div>
-                    <p style={{ color: "#AAB8C2", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
                       Seat
                     </p>
-                    <p className="text-white font-bold text-lg mt-1">{selectedTicket.seat}</p>
+                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.seat}</p>
                   </div>
                 </div>
               </div>
@@ -658,24 +658,24 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-4"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(0,0,0,0.03)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
                 <div className="space-y-2.5 text-sm">
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Price</span>
-                    <span className="text-white font-bold text-base">${selectedTicket.price}</span>
+                    <span style={{ color: "#64748B" }}>Price</span>
+                    <span className="text-slate-900 font-bold text-base">${selectedTicket.price}</span>
                   </div>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Transaction ID</span>
-                    <span className="text-white font-mono text-xs">{selectedTicket.transactionId}</span>
+                    <span style={{ color: "#64748B" }}>Transaction ID</span>
+                    <span className="text-slate-900 font-mono text-xs">{selectedTicket.transactionId}</span>
                   </div>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}></div>
+                  <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#AAB8C2" }}>Purchase Date</span>
-                    <span className="text-white font-semibold text-xs">{selectedTicket.purchaseDate}</span>
+                    <span style={{ color: "#64748B" }}>Purchase Date</span>
+                    <span className="text-slate-900 font-semibold text-xs">{selectedTicket.purchaseDate}</span>
                   </div>
                 </div>
               </div>
@@ -684,14 +684,14 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-4 text-center"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "rgba(0,0,0,0.03)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
-                <p style={{ color: "#AAB8C2", fontSize: "11px" }} className="uppercase tracking-wider mb-3">
+                <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider mb-3">
                   Barcode
                 </p>
-                <p className="text-white font-mono text-lg letter-spacing-wide tracking-widest">
+                <p className="text-slate-900 font-mono text-lg letter-spacing-wide tracking-widest">
                   {selectedTicket.barcode}
                 </p>
               </div>
@@ -762,7 +762,7 @@ function FanTicketsPage() {
                 <button
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
+                    background: "rgba(0,0,0,0.08)",
                     border: "1px solid rgba(255,255,255,0.12)",
                     color: "#fff",
                   }}
@@ -776,9 +776,9 @@ function FanTicketsPage() {
               <div
                 className="rounded-xl p-3 text-center text-xs font-mono"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  color: "#AAB8C2",
+                  background: "rgba(0,0,0,0.04)",
+                  border: "1px solid rgba(0,0,0,0.06)",
+                  color: "#64748B",
                 }}
               >
                 ID: {selectedTicket.id}
@@ -804,7 +804,7 @@ function FanTicketsPage() {
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
               className="rounded-3xl p-8"
-              style={{ background: "rgba(14,27,36,0.95)", border: "1px solid rgba(255,255,255,0.10)" }}
+              style={{ background: "rgba(255,255,255,0.95)", border: "1px solid rgba(0,0,0,0.10)" }}
             >
               <div className="flex flex-col items-center gap-6">
                 <div
@@ -814,12 +814,12 @@ function FanTicketsPage() {
                   <QRCodeSVG value={selectedTicket?.qrCode || ""} size={280} />
                 </div>
                 <div className="text-center">
-                  <p className="text-sm text-white font-semibold">
+                  <p className="text-sm text-slate-900 font-semibold">
                     Present this QR code at the gate
                   </p>
                   <p
                     className="text-xs mt-1"
-                    style={{ color: "#AAB8C2" }}
+                    style={{ color: "#64748B" }}
                   >
                     {selectedTicket?.qrCode}
                   </p>
