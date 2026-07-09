@@ -89,14 +89,14 @@ export function AppShell({
             backgroundImage: 'url("/stadium-hero.png")',
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.80,
-            filter: "saturate(1.1) contrast(0.95) brightness(1.4)",
+            opacity: 1,
+            filter: "saturate(1.2) contrast(1.1) brightness(1.6)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.90) 100%)",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.60) 45%, rgba(255,255,255,0.85) 100%)",
             backdropFilter: "blur(2px)",
           }}
         />

@@ -170,15 +170,15 @@ function Landing() {
                 backgroundImage: 'url("/stadium-hero.png")',
                 backgroundSize: "cover",
                 backgroundPosition: "center 22%",
-                opacity: 0.80,
-                filter: "saturate(1.1) contrast(0.95) brightness(1.4)",
+                opacity: 1,
+                filter: "saturate(1.2) contrast(1.1) brightness(1.6)",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.70) 50%, rgba(248,250,252,0.97) 100%)",
+                  "linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.55) 50%, rgba(248,250,252,0.95) 100%)",
               }}
             />
             <div
