@@ -164,12 +164,6 @@ function Landing() {
         >
           {/* Hero background — stadium at night */}
           <div className="absolute inset-0">
-            <img
-              src="/stadium-hero.png"
-              alt="Football stadium at night"
-              className="w-full h-full object-cover"
-              style={{ opacity: 0.28 }}
-            />
             {/* Dark gradient overlay */}
             <div
               className="absolute inset-0"

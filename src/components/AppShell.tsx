@@ -80,7 +80,26 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-dvh flex">
+    <div className="min-h-dvh flex relative bg-background">
+      {/* Global Stadium Backdrop */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <img
+          src="/stadium-hero.png"
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ opacity: 0.18, mixBlendMode: "luminosity" }}
+        />
+        {/* Dark radial gradient overlay for focus and text readability */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 50% 0%, rgba(7,20,28,0.75) 0%, rgba(7,20,28,0.95) 80%, rgba(7,20,28,0.98) 100%)",
+            backdropFilter: "blur(3px)",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 flex w-full">
       {/* Sidebar */}
       <aside
         aria-label="Primary navigation"
@@ -269,8 +288,10 @@ export function AppShell({
 
         <main className="flex-1 min-w-0 p-6 lg:p-8">{children}</main>
       </div>
+      </div>
 
       <AIAssistant />
     </div>
   );
 }
+
