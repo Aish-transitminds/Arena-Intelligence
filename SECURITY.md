@@ -11,3 +11,4 @@
 - Store secrets in environment variables and never in frontend code.
 - Add server-side audit persistence and real MFA enforcement for admin accounts.
 - Use HTTPS and enforce backend authorization on every protected API.
+- Ensure the frontend does not expose API documentation or unsecured endpoints.

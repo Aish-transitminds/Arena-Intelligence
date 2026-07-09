@@ -355,7 +355,6 @@ function Admin() {
             <a href="#" className="hover:text-primary transition-all duration-300 hover:tracking-[0.4em]">Privacy_Protocols</a>
             <a href="#" className="hover:text-primary transition-all duration-300 hover:tracking-[0.4em]">Nexus_Terminal</a>
             <a href="#" className="hover:text-primary transition-all duration-300 hover:tracking-[0.4em]">Emergency_Overrides</a>
-            <a href="#" className="hover:text-primary transition-all duration-300 hover:tracking-[0.4em]">API_Documentation</a>
           </div>
 
           <div className="flex items-center gap-6">
