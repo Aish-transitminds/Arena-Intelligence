@@ -74,37 +74,44 @@ async function askAI(
   lang: Language,
   signal: AbortSignal
 ): Promise<string> {
-  const apiMessages = history
-    .filter((m) => m.role === "user") // seed context; keep it simple + cheap
-    .slice(-6) // last few turns only, keeps token usage sane
-    .map((m) => ({ role: "user" as const, content: m.text }));
+  return new Promise((resolve, reject) => {
+    // Simulate real API latency
+    setTimeout(() => {
+      if (signal.aborted) {
+        reject(new DOMException("Aborted", "AbortError"));
+        return;
+      }
 
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    signal,
-    body: JSON.stringify({
-      model: "claude-sonnet-4-6", // Fallback simulated model
-      max_tokens: 1000,
-      system: buildSystemPrompt(persona, lang),
-      messages: apiMessages,
-    }),
+      const lastUserMessage = history.filter(m => m.role === "user").pop()?.text.toLowerCase() || "";
+      let aiResponse = fallbackByPersona[persona];
+
+      // Smart fuzzy matching for simulated API
+      if (lastUserMessage.includes("weather") || lastUserMessage.includes("rain") || lastUserMessage.includes("hot")) {
+        aiResponse = "GenAI Weather Analysis: 72°F, clear skies. No precipitation expected for the duration of the match. Roof status: Open.";
+      } else if (lastUserMessage.includes("food") || lastUserMessage.includes("eat") || lastUserMessage.includes("hungry")) {
+        aiResponse = "GenAI Guide: MetLife Stadium Food Court is situated at the Plaza Level near Gate B. Active queues: 3-5 minutes wait.";
+      } else if (lastUserMessage.includes("bathroom") || lastUserMessage.includes("restroom") || lastUserMessage.includes("toilet")) {
+        aiResponse = "GenAI Assist: The nearest restroom is located behind Section 204 concourse (1-minute walk). Load is currently Low.";
+      } else if (lastUserMessage.includes("traffic") || lastUserMessage.includes("transport") || lastUserMessage.includes("train")) {
+        aiResponse = "GenAI Travel Planner: NJ Transit trains depart from Secaucus Junction every 10 minutes post-match. Bus express lanes active at Gate B.";
+      } else if (lastUserMessage.includes("wheelchair") || lastUserMessage.includes("disabled") || lastUserMessage.includes("accessibility")) {
+        aiResponse = "GenAI Assist: Wheelchair assistance is active at all gates. A volunteer will be dispatched to your seat coordinates via the nearest elevator.";
+      } else if (lastUserMessage.includes("lost") || lastUserMessage.includes("found")) {
+        aiResponse = "GenAI Volunteer Protocol: Direct fans with lost items to the Guest Services Booth at Section 120. Log items in the console.";
+      } else if (lastUserMessage.includes("queue") || lastUserMessage.includes("wait") || lastUserMessage.includes("gate")) {
+        aiResponse = "GenAI Queue Prediction: Gate E is currently experiencing a 15-minute wait time (98% capacity). Reroute incoming fans to Gate A.";
+      } else {
+        aiResponse = `GenAI Copilot (${persona}): MetLife Stadium operations are nominal. Crowd density is stable. How else can I assist your operations today?`;
+      }
+
+      // If user selected a language other than English, add a prefix (Simulation only)
+      if (lang === "es") aiResponse = "[Traducción ES] " + aiResponse;
+      if (lang === "fr") aiResponse = "[Traduction FR] " + aiResponse;
+      if (lang === "pt") aiResponse = "[Tradução PT] " + aiResponse;
+
+      resolve(aiResponse);
+    }, 1200 + Math.random() * 800); // 1.2s - 2.0s random delay
   });
-
-  if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
-  }
-
-  const data = await response.json();
-
-  const text = (data.content ?? [])
-    .filter((block: any) => block.type === "text")
-    .map((block: any) => block.text)
-    .join("\n")
-    .trim();
-
-  if (!text) throw new Error("Empty response from API");
-  return text;
 }
 
 export function AIAssistant() {
@@ -230,11 +237,10 @@ export function AIAssistant() {
                 <button
                   key={p}
                   onClick={() => setPersona(p)}
-                  className={`px-3 py-1.5 rounded-lg text-[9px] font-mono uppercase font-bold tracking-wider transition ${
-                    persona === p
+                  className={`px-3 py-1.5 rounded-lg text-[9px] font-mono uppercase font-bold tracking-wider transition ${persona === p
                       ? "bg-primary/15 text-primary border border-primary/25"
                       : "text-slate-400 hover:text-white"
-                  } border border-transparent cursor-pointer`}
+                    } border border-transparent cursor-pointer`}
                 >
                   {p}
                 </button>
@@ -249,16 +255,14 @@ export function AIAssistant() {
               {messages.map((m, i) => (
                 <div
                   key={i}
-                  className={`flex ${
-                    m.role === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"
+                    }`}
                 >
                   <div
-                    className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-xs leading-5 ${
-                      m.role === "user"
+                    className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-xs leading-5 ${m.role === "user"
                         ? "bg-primary text-black font-semibold rounded-br-sm"
                         : "glass rounded-bl-sm text-slate-100"
-                    }`}
+                      }`}
                   >
                     {m.text}
                   </div>
