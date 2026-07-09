@@ -676,10 +676,10 @@ function Modal3D({ onClose }: { onClose: () => void }) {
               <div className="h-full w-full relative flex items-center justify-center z-10">
                 <span className="text-[7px] font-mono tracking-widest text-[#64748B]/40 rotate-90 uppercase">EAST_STAND_SEC_204</span>
                 
-                {/* Selected seat indicator pin (counter-rotated to face camera) */}
+                {/* Selected seat indicator pin (tilted to face the high-angle camera and scaled massively) */}
                 <div
                   className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20"
-                  style={{ transform: "translateZ(15px) rotateY(75deg)" }}
+                  style={{ transform: "translateZ(40px) rotateY(75deg) rotateX(-65deg) scale(2.5)" }}
                 >
                   <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
                     <div className="text-sm mb-1">Your Seat Area</div>
