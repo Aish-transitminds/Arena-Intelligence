@@ -381,14 +381,14 @@ function FanTicketsPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all uppercase tracking-wider ${
                   activeTab === tab
-                    ? "text-primary"
-                    : "text-slate-500 hover:text-slate-700"
+                    ? "text-white shadow-md"
+                    : "text-slate-500 hover:text-slate-700 hover:bg-black/5"
                 }`}
                 style={
                   activeTab === tab
                     ? {
-                        background: "linear-gradient(135deg, rgba(14,159,110,0.2), rgba(60,179,177,0.1))",
-                        border: "1px solid rgba(14,159,110,0.3)",
+                        background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                        border: "1px solid rgba(14,159,110,0.4)",
                       }
                     : {}
                 }
