@@ -21,7 +21,7 @@ function Tournament() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("fixtures");
 
   return (
-    <AppShell title="FIFA World Cup 2026" subtitle="48 teams · Group Stage · FIFA Official Workspace">
+    <AppShell title="Mega-Event Tournament" subtitle="48 teams · Group Stage · Concept Operations Workspace">
       {/* Tab bar */}
       <div
         className="flex flex-wrap gap-2 mb-6 p-1.5 rounded-2xl"
@@ -228,7 +228,7 @@ function Tournament() {
             </div>
             <h3 className="text-lg font-extrabold text-white">Register Operations Squad</h3>
           </div>
-          <p className="text-sm mb-7" style={{ color: "#AAB8C2" }}>Register your volunteer or staff squad for the MetLife Stadium matches.</p>
+          <p className="text-sm mb-7" style={{ color: "#AAB8C2" }}>Register your volunteer or staff squad for the Stadium Alpha matches.</p>
           <form className="space-y-4">
             {[
               { label: "Squad Name", placeholder: "Volunteer Crew Alpha" },

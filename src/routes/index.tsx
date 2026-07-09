@@ -20,11 +20,11 @@ import { Logo } from "@/components/Logo";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Arena Intelligence — Official FIFA World Cup 2026 operations" },
+      { title: "Arena Intelligence — Concept Ops Platform" },
       {
         name: "description",
         content:
-          "Arena Intelligence is the unified operations platform for crowd management, tournament coordination, emergency response, and stadium analytics at MetLife Stadium for the FIFA World Cup 2026.",
+          "Arena Intelligence is a fictional operations platform for crowd management, tournament coordination, emergency response, and stadium analytics for a mega-event venue.",
       },
     ],
   }),
@@ -164,20 +164,28 @@ function Landing() {
         >
           {/* Hero background — stadium at night */}
           <div className="absolute inset-0">
-            {/* Dark gradient overlay */}
+            <div
+              className="absolute inset-0 scale-[1.04]"
+              style={{
+                backgroundImage: 'url("/stadium-hero.png")',
+                backgroundSize: "cover",
+                backgroundPosition: "center 22%",
+                opacity: 0.35,
+                filter: "saturate(1.08) contrast(1.06)",
+              }}
+            />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(7,20,28,0.55) 0%, rgba(7,20,28,0.75) 50%, rgba(7,20,28,0.97) 100%)",
+                  "linear-gradient(180deg, rgba(7,20,28,0.55) 0%, rgba(7,20,28,0.78) 50%, rgba(7,20,28,0.97) 100%)",
               }}
             />
-            {/* Floodlight glows */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.09) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.09) 0%, transparent 60%)",
+                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.14) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.14) 0%, transparent 58%)",
               }}
             />
           </div>
@@ -196,7 +204,7 @@ function Landing() {
             >
               <span className="size-2 rounded-full bg-primary animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">
-                Official FIFA World Cup 2026 Operations Platform
+                Concept Ops Platform for Mega-Events
               </span>
             </motion.div>
 

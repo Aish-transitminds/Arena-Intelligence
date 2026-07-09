@@ -83,18 +83,27 @@ export function AppShell({
     <div className="min-h-dvh flex relative bg-background">
       {/* Global Stadium Backdrop */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img
-          src="/stadium-hero.png"
-          alt=""
-          className="w-full h-full object-cover"
-          style={{ opacity: 0.18, mixBlendMode: "luminosity" }}
+        <div
+          className="absolute inset-0 scale-[1.04]"
+          style={{
+            backgroundImage: 'url("/stadium-hero.png")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.32,
+            filter: "saturate(1.08) contrast(1.06)",
+          }}
         />
-        {/* Dark radial gradient overlay for focus and text readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at 50% 0%, rgba(7,20,28,0.75) 0%, rgba(7,20,28,0.95) 80%, rgba(7,20,28,0.98) 100%)",
-            backdropFilter: "blur(3px)",
+            background: "linear-gradient(135deg, rgba(7,20,28,0.72) 0%, rgba(7,20,28,0.86) 45%, rgba(7,20,28,0.96) 100%)",
+            backdropFilter: "blur(2px)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 50% 0%, rgba(14,159,110,0.14) 0%, transparent 48%, transparent 100%)",
           }}
         />
       </div>

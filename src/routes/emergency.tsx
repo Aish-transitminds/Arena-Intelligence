@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
 import { Heart, Shield, PhoneCall, Route as RouteIcon, MapPin, Radio, Clock, AlertCircle, CheckCircle2, ChevronRight, ShieldAlert } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { checkRateLimit, recordAuditEvent } from "@/lib/security";
+import { generateEmergencyPlan } from "@/lib/ai";
 
 export const Route = createFileRoute("/emergency")({
   head: () => ({
@@ -32,6 +33,9 @@ function Emergency() {
   const [description, setDescription] = useState("");
   const [incList, setIncList] = useState(recentIncidents);
   const [activeSosArea, setActiveSosArea] = useState<string | null>(null);
+  const [aiBusy, setAiBusy] = useState(false);
+  const [aiPlan, setAiPlan] = useState<Awaited<ReturnType<typeof generateEmergencyPlan>> | null>(null);
+  const [showAiReasoning, setShowAiReasoning] = useState(false);
 
   const handleSos = () => {
     const limit = checkRateLimit("emergency-sos", 1, 20000);
@@ -49,7 +53,7 @@ function Emergency() {
     recordAuditEvent("emergency-sos", "Stadium-wide emergency response triggered");
   };
 
-  const handleAreaSos = (e: React.FormEvent) => {
+  const handleAreaSos = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedArea) return;
 
@@ -77,6 +81,23 @@ function Emergency() {
     setSos(true);
     setStatus(`SOS Dispatched to ${selectedArea} · Responders deployed.`);
     setDescription("");
+    setAiBusy(true);
+
+    try {
+      const result = await generateEmergencyPlan(
+        description.trim() || `Localized ${incidentType.toLowerCase()} report at ${selectedArea}`,
+        selectedArea,
+        76 + Math.round(Math.random() * 16),
+        72 + Math.round(Math.random() * 12),
+      );
+      setAiPlan(result);
+      setShowAiReasoning(true);
+    } catch {
+      setAiPlan(null);
+    } finally {
+      setAiBusy(false);
+    }
+
     recordAuditEvent("area-sos", `SOS report submitted for ${selectedArea} - ${incidentType}`);
   };
 
@@ -95,6 +116,13 @@ function Emergency() {
       { name: "Mobile Unit M-4", dist: "210m · 3 min walk", available: false },
     ];
   }, [selectedArea]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setStatus((current) => current ? current : null);
+    }, 1000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <AppShell title="Emergency Center" subtitle="Coordinated response · Live dispatch · All zones monitored">
@@ -255,6 +283,60 @@ function Emergency() {
                 </motion.div>
               )}
             </AnimatePresence>
+
+            <div className="mt-6 rounded-2xl border p-5" style={{ background: "rgba(255,255,255,0.02)", borderColor: "rgba(255,255,255,0.08)" }}>
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: "#AAB8C2" }}>AI-Generated Response Plan</p>
+                  <h3 className="text-sm font-bold text-white">Live incident analysis</h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAiReasoning((v) => !v)}
+                  className="rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white"
+                  style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.22)" }}
+                >
+                  {showAiReasoning ? "Hide AI reasoning" : "Show AI reasoning"}
+                </button>
+              </div>
+
+              {aiBusy ? (
+                <p className="text-sm" style={{ color: "#AAB8C2" }}>Generating live response plan…</p>
+              ) : aiPlan ? (
+                <div className="space-y-3">
+                  <div className="rounded-xl p-3" style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.16)" }}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-[0.18em] text-white">Severity</span>
+                      <span className="text-xs font-semibold" style={{ color: "#0E9F6E" }}>{aiPlan.plan.severity}</span>
+                    </div>
+                    <ul className="mt-2 space-y-1 text-sm" style={{ color: "#AAB8C2" }}>
+                      {aiPlan.plan.recommendedActions.map((action) => <li key={action}>• {action}</li>)}
+                    </ul>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-3 text-sm">
+                    <div className="rounded-xl p-3" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#AAB8C2" }}>Alert Teams</p>
+                      <p className="text-white">{aiPlan.plan.alertTeams.join(", ")}</p>
+                    </div>
+                    <div className="rounded-xl p-3" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#AAB8C2" }}>Alert Gates</p>
+                      <p className="text-white">{aiPlan.plan.alertGates.join(", ")}</p>
+                    </div>
+                  </div>
+                  {showAiReasoning && (
+                    <div className="rounded-xl p-3 text-sm" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#AAB8C2" }}>Prompt / Response</p>
+                      <p className="text-white font-semibold">Prompt</p>
+                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#AAB8C2" }}>{aiPlan.prompt}</pre>
+                      <p className="mt-3 text-white font-semibold">Raw Response</p>
+                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#AAB8C2" }}>{aiPlan.rawResponse}</pre>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <p className="text-sm" style={{ color: "#AAB8C2" }}>Submit an incident to generate a live AI plan.</p>
+              )}
+            </div>
           </div>
         </motion.div>
 

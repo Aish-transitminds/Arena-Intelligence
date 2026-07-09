@@ -32,7 +32,7 @@ function FanPage() {
   const [is3DModalOpen, setIs3DModalOpen] = useState(false);
 
   return (
-    <AppShell title="Match Day" subtitle="Argentina vs Germany · Gate B · Section 204, Row 12, Seat 7">
+    <AppShell title="Match Day" subtitle="Team A vs Team B · Gate B · Section 204, Row 12, Seat 7">
       <div className="grid lg:grid-cols-3 gap-5">
 
         {/* ── DIGITAL TICKET ── */}
@@ -53,7 +53,7 @@ function FanPage() {
           >
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Digital Ticket</p>
-              <p className="text-sm font-extrabold text-white mt-0.5">FIFA World Cup 2026</p>
+              <p className="text-sm font-extrabold text-white mt-0.5">Concept Event Night</p>
             </div>
             <div
               className="size-10 rounded-xl flex items-center justify-center"
@@ -67,14 +67,14 @@ function FanPage() {
             {/* Match info */}
             <div className="mb-5 pb-5" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
               <div className="text-xl font-extrabold text-white tracking-tight">
-                Argentina <span style={{ color: "#AAB8C2" }}>vs</span> Germany
+                Team A <span style={{ color: "#AAB8C2" }}>vs</span> Team B
               </div>
               <div className="text-sm mt-1.5 flex items-center gap-3" style={{ color: "#AAB8C2" }}>
                 <span>Today</span>
                 <span style={{ color: "rgba(170,184,194,0.30)" }}>·</span>
                 <span>19:00 EST</span>
                 <span style={{ color: "rgba(170,184,194,0.30)" }}>·</span>
-                <span>MetLife Stadium</span>
+                <span>Stadium Alpha</span>
               </div>
             </div>
 
@@ -148,7 +148,7 @@ function FanPage() {
               </div>
               <div className="text-left text-white">
                 <div className="text-lg font-extrabold tracking-tight">Launch 3D Seat Viewer</div>
-                <div className="text-xs text-white/90 font-medium">Interactive MetLife Stadium Preview</div>
+                <div className="text-xs text-white/90 font-medium">Interactive Stadium Alpha Preview</div>
               </div>
             </div>
             <div className="size-10 rounded-full bg-black/20 flex items-center justify-center shrink-0 transition-transform group-hover:translate-x-1">
@@ -279,9 +279,9 @@ function FanPage() {
           </div>
           <div className="space-y-2">
             {[
-              { t: "Today 19:00", m: "Argentina vs Germany", v: "MetLife Stadium", live: true },
-              { t: "Sat 17:30", m: "USA vs England", v: "MetLife Stadium" },
-              { t: "Sun 20:00", m: "Mexico vs Brazil", v: "MetLife Stadium" },
+              { t: "Today 19:00", m: "Team A vs Team B", v: "Stadium Alpha", live: true },
+              { t: "Sat 17:30", m: "Team C vs Team D", v: "Stadium Alpha" },
+              { t: "Sun 20:00", m: "Team E vs Team F", v: "Stadium Alpha" },
             ].map((m) => (
               <div
                 key={m.m}

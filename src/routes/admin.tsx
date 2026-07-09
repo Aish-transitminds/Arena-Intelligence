@@ -7,10 +7,11 @@ import {
   Bell, ChevronDown, MoreHorizontal, Target, Radio,
   Thermometer, Zap, ArrowUp, ArrowDown,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
+import { generateAdminRecommendation } from "@/lib/ai";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -67,6 +68,14 @@ function Admin() {
   ]);
   const [incidentList, setIncidentList] = useState(incidents);
   const [newIncidentMsg, setNewIncidentMsg] = useState("");
+  const [liveAttendance, setLiveAttendance] = useState(52840);
+  const [occupiedSeats, setOccupiedSeats] = useState(97.8);
+  const [avgQueueTime, setAvgQueueTime] = useState(4.2);
+  const [opsScore, setOpsScore] = useState(97.4);
+  const [recommendation, setRecommendation] = useState("Elevated queue detected at Gate D. Redirect fans from Sector 14 ingress to Gate A to reduce peak load by an estimated 38%.");
+  const [recommendationBusy, setRecommendationBusy] = useState(false);
+  const [showRecommendationReasoning, setShowRecommendationReasoning] = useState(false);
+  const [recommendationMeta, setRecommendationMeta] = useState<{prompt:string; rawResponse:string} | null>(null);
 
   const handleAddIncident = (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,7 +103,7 @@ function Admin() {
     ]);
   };
 
-  const handleDeployRedirect = () => {
+  const handleDeployRedirect = async () => {
     setIsRedirected(true);
     const now = new Date();
     const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
@@ -102,10 +111,45 @@ function Admin() {
       { time: timeStr, type: "success", msg: `Gate D redirect signal deployed. Ingress traffic rerouting to Gate A.` },
       ...incidentList,
     ]);
+    setRecommendationBusy(true);
+    try {
+      const result = await generateAdminRecommendation(
+        [
+          { gate: "Gate A", wait: 3 + Math.round(Math.random() * 2), capacity: 40 + Math.round(Math.random() * 10) },
+          { gate: "Gate D", wait: 8 + Math.round(Math.random() * 4), capacity: 70 + Math.round(Math.random() * 12) },
+        ],
+        [
+          { name: "North", value: 90 + Math.round(Math.random() * 6) },
+          { name: "East", value: 94 + Math.round(Math.random() * 4) },
+        ],
+      );
+      setRecommendation(result.recommendation);
+      setRecommendationMeta({ prompt: result.prompt, rawResponse: result.rawResponse });
+      setShowRecommendationReasoning(true);
+    } catch {
+      setRecommendation("Rebalance ingress toward Gate A and reduce the load around the East stand to maintain stable flow.");
+    } finally {
+      setRecommendationBusy(false);
+    }
   };
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setLiveAttendance((current) => Math.max(50000, Math.min(54500, current + Math.round((Math.random() - 0.5) * 220))));
+      setOccupiedSeats((current) => Math.max(94.5, Math.min(99.2, current + (Math.random() - 0.5) * 0.7)));
+      setAvgQueueTime((current) => Math.max(2.4, Math.min(7.5, current + (Math.random() - 0.5) * 0.6)));
+      setOpsScore((current) => Math.max(95.5, Math.min(99.1, current + (Math.random() - 0.5) * 0.35)));
+    }, 1800);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const liveAttendanceLabel = useMemo(() => liveAttendance.toLocaleString(), [liveAttendance]);
+  const occupiedSeatsLabel = useMemo(() => `${occupiedSeats.toFixed(1)}%`, [occupiedSeats]);
+  const avgQueueTimeLabel = useMemo(() => `${avgQueueTime.toFixed(1)}m`, [avgQueueTime]);
+  const opsScoreLabel = useMemo(() => `${opsScore.toFixed(1)}%`, [opsScore]);
+
   return (
-    <AppShell title="Operations Console" subtitle="FIFA World Cup 2026 · MetLife Stadium · Match Day Operations">
+    <AppShell title="Operations Console" subtitle="Concept Ops Platform · Stadium Alpha · Match Day Operations">
       <div className="flex flex-wrap items-center justify-end gap-4 mb-8">        {/* Status indicators */}
         <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-[#AAB8C2]">
           <div className="flex items-center gap-2">
@@ -124,30 +168,30 @@ function Admin() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
           <KPICard
             label="Live Attendance"
-            value="52,840"
+            value={liveAttendanceLabel}
             sub="Capacity: 54,000"
-            delta="+4.2%"
+            delta="Live"
             trend="up"
             icon={<Users className="size-5" />}
             highlight
           />
           <KPICard
             label="Occupied Seats"
-            value="97.8%"
+            value={occupiedSeatsLabel}
             sub="Normal occupancy flow"
             delta="Optimal"
             icon={<Target className="size-5" />}
           />
           <KPICard
             label="Avg Queue Time"
-            value="04m 12s"
+            value={avgQueueTimeLabel}
             sub="Across 12 active gates"
             delta="Stable"
             icon={<Clock className="size-5" />}
           />
           <KPICard
             label="Operations Score"
-            value="97.4%"
+            value={opsScoreLabel}
             sub="All systems nominal"
             delta="Active"
             icon={<ShieldCheck className="size-5" />}
@@ -362,10 +406,25 @@ function Admin() {
                 </div>
               </div>
               <p className="text-sm leading-7 mb-5" style={{ color: "#AAB8C2" }}>
-                Elevated queue detected at <span className="text-white font-semibold">Gate D</span>. Redirect fans from{" "}
-                <span style={{ color: "#D92D20", fontWeight: 700 }}>Sector 14</span> ingress to{" "}
-                <span className="text-primary font-semibold">Gate A</span> to reduce peak load by an estimated 38%.
+                {recommendationBusy ? "Generating an AI recommendation from live gate and occupancy data…" : recommendation}
               </p>
+              <button
+                type="button"
+                onClick={() => setShowRecommendationReasoning((v) => !v)}
+                className="mb-4 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white"
+                style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.22)" }}
+              >
+                {showRecommendationReasoning ? "Hide AI reasoning" : "Show AI reasoning"}
+              </button>
+              {showRecommendationReasoning && recommendationMeta && (
+                <div className="mb-4 rounded-xl p-3 text-sm" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#AAB8C2" }}>Prompt / Response</p>
+                  <p className="text-white font-semibold">Prompt</p>
+                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#AAB8C2" }}>{recommendationMeta.prompt}</pre>
+                  <p className="mt-3 text-white font-semibold">Raw Response</p>
+                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#AAB8C2" }}>{recommendationMeta.rawResponse}</pre>
+                </div>
+              )}
               {isRedirected ? (
                 <div className="space-y-3">
                   <div
