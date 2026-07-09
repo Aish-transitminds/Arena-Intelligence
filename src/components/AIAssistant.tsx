@@ -67,61 +67,48 @@ Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific (i
 Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
 }
 
-// ---- API call ---------------------------------------------------------------
+// ---- Groq API call ----------------------------------------------------------
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || "";
+
 async function askAI(
   history: { role: "user" | "ai"; text: string }[],
   persona: Persona,
   lang: Language,
   signal: AbortSignal
 ): Promise<string> {
-  return new Promise((resolve, reject) => {
-    // Simulate real API latency
-    setTimeout(() => {
-      if (signal.aborted) {
-        reject(new DOMException("Aborted", "AbortError"));
-        return;
-      }
+  const apiMessages = history
+    .slice(-8) // keep recent context only
+    .map((m) => ({
+      role: m.role === "ai" ? ("assistant" as const) : ("user" as const),
+      content: m.text,
+    }));
 
-      const lastUserMessage = history.filter(m => m.role === "user").pop()?.text.toLowerCase() || "";
-      let aiResponse = fallbackByPersona[persona];
-
-      // Smart fuzzy matching for simulated API
-      if (lastUserMessage.includes("weather") || lastUserMessage.includes("rain") || lastUserMessage.includes("hot")) {
-        aiResponse = "🌤️ Arena IQ Weather: 72°F, clear skies. No precipitation expected for the duration of the match. Roof status: Open. UV Index: Moderate — sunscreen recommended for upper deck fans.";
-      } else if (lastUserMessage.includes("food") || lastUserMessage.includes("eat") || lastUserMessage.includes("hungry") || lastUserMessage.includes("drink")) {
-        aiResponse = "🍔 Arena IQ Guide: MetLife Stadium Food Court is at the Plaza Level near Gate B. Current wait: 3-5 min. Pro tip: Level 2 Local Concessions have zero queues right now — try the Philly Cheesesteak stand!";
-      } else if (lastUserMessage.includes("bathroom") || lastUserMessage.includes("restroom") || lastUserMessage.includes("toilet")) {
-        aiResponse = "🚻 Arena IQ: Nearest restroom is behind Section 204 concourse (1-min walk). Load: Low. Accessible restroom available at Gate C ground level.";
-      } else if (lastUserMessage.includes("traffic") || lastUserMessage.includes("transport") || lastUserMessage.includes("train") || lastUserMessage.includes("bus") || lastUserMessage.includes("uber") || lastUserMessage.includes("taxi")) {
-        aiResponse = "🚆 Arena IQ Travel: NJ Transit trains depart Secaucus Junction every 10 min post-match. Bus express lanes active at Gate B. Rideshare pickup zone: Lot J East. Estimated travel to Manhattan: 25 min.";
-      } else if (lastUserMessage.includes("wheelchair") || lastUserMessage.includes("disabled") || lastUserMessage.includes("accessibility") || lastUserMessage.includes("assist")) {
-        aiResponse = "♿ Arena IQ Accessibility: Wheelchair assistance active at all gates. Requesting escort now — a volunteer will be dispatched to your seat via Elevator B-2. ETA: 3 minutes.";
-      } else if (lastUserMessage.includes("lost") || lastUserMessage.includes("found") || lastUserMessage.includes("missing")) {
-        aiResponse = "📦 Arena IQ Lost & Found: Please visit Guest Services at Section 120. Items are logged into our AI matching system for instant retrieval. Common items today: phones (12), wallets (5), keys (8).";
-      } else if (lastUserMessage.includes("queue") || lastUserMessage.includes("wait") || lastUserMessage.includes("crowd") || lastUserMessage.includes("line")) {
-        aiResponse = "📊 Arena IQ Queue Intel: Gate E is at 98% capacity (15-min wait). Recommended: Gate A has only a 4-min wait. Signage displays have been updated to redirect flow.";
-      } else if (lastUserMessage.includes("score") || lastUserMessage.includes("match") || lastUserMessage.includes("goal") || lastUserMessage.includes("game")) {
-        aiResponse = "⚽ Arena IQ Match Update: Current score displayed on all stadium screens. Next half starts in 12 minutes. Halftime entertainment is live on the main pitch now!";
-      } else if (lastUserMessage.includes("emergency") || lastUserMessage.includes("medical") || lastUserMessage.includes("help") || lastUserMessage.includes("first aid")) {
-        aiResponse = "🚨 Arena IQ Emergency: Medical stations are at Gates A, C, and E (ground level). Nearest AED is at Section 118. For immediate assistance, flag any steward or call stadium security at ext. 911.";
-      } else if (lastUserMessage.includes("parking") || lastUserMessage.includes("car") || lastUserMessage.includes("lot")) {
-        aiResponse = "🅿️ Arena IQ Parking: Your vehicle is in Lot K, Row 14 (based on ticket data). Post-match exit strategy: Use Lot K South exit to avoid I-95 merge congestion. Estimated clear time: 22 minutes.";
-      } else if (lastUserMessage.includes("wifi") || lastUserMessage.includes("internet") || lastUserMessage.includes("connect")) {
-        aiResponse = "📶 Arena IQ: Stadium WiFi network 'MetLife-Fan' is active. Connect and accept terms — no password needed. Current bandwidth: 85% available. Streaming quality: HD supported.";
-      } else if (lastUserMessage.includes("merch") || lastUserMessage.includes("shop") || lastUserMessage.includes("jersey") || lastUserMessage.includes("souvenir")) {
-        aiResponse = "🛍️ Arena IQ Shop: Official FIFA merchandise stores are at Gates A & D (Plaza Level). Hot item today: Home team jersey ($89). Team Store at Gate D has the shortest line (2-min wait).";
-      } else {
-        aiResponse = `⚡ Arena IQ (${persona}): MetLife Stadium operations are nominal. Crowd density: stable at 87%. All systems green. How can I assist you today?`;
-      }
-
-      // If user selected a language other than English, add a prefix (Simulation only)
-      if (lang === "es") aiResponse = "[Traducción ES] " + aiResponse;
-      if (lang === "fr") aiResponse = "[Traduction FR] " + aiResponse;
-      if (lang === "pt") aiResponse = "[Tradução PT] " + aiResponse;
-
-      resolve(aiResponse);
-    }, 1200 + Math.random() * 800); // 1.2s - 2.0s random delay
+  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${GROQ_API_KEY}`,
+    },
+    signal,
+    body: JSON.stringify({
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        { role: "system", content: buildSystemPrompt(persona, lang) },
+        ...apiMessages,
+      ],
+      max_tokens: 300,
+      temperature: 0.7,
+    }),
   });
+
+  if (!response.ok) {
+    throw new Error(`Groq API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const text = data.choices?.[0]?.message?.content?.trim();
+  if (!text) throw new Error("Empty response from Groq");
+  return text;
 }
 
 export function AIAssistant() {
