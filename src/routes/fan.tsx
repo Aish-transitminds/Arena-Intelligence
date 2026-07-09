@@ -681,13 +681,13 @@ function Modal3D({ onClose }: { onClose: () => void }) {
                   className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20"
                   style={{ transform: "translateZ(15px) rotateY(75deg)" }}
                 >
-                  <div className="bg-primary text-white text-[9px] font-black px-2.5 py-1.5 rounded-lg shadow-[0_8px_16px_rgba(14,159,110,0.6)] mb-1 whitespace-nowrap animate-bounce uppercase tracking-wider text-center">
-                    <div className="mb-0.5">Your Seat Area</div>
-                    <div className="text-[7px] font-bold opacity-90 tracking-widest text-white/90">Seat 7 • VIP Club</div>
+                  <div className="bg-primary text-white text-xs font-black px-4 py-2 rounded-xl shadow-[0_12px_24px_rgba(14,159,110,0.8)] mb-2 whitespace-nowrap animate-bounce uppercase tracking-widest text-center border-2 border-white/20">
+                    <div className="text-sm mb-1">Your Seat Area</div>
+                    <div className="text-[10px] font-bold opacity-100 tracking-widest text-white">Seat 7 • VIP Club</div>
                   </div>
                   <div className="relative flex items-center justify-center">
-                    <span className="absolute inset-0 size-7 bg-primary rounded-full animate-ping opacity-60" />
-                    <span className="size-3 bg-primary border-2 border-white rounded-full shadow-[0_0_15px_rgba(14,159,110,1)]" />
+                    <span className="absolute inset-0 size-10 bg-primary rounded-full animate-ping opacity-60" />
+                    <span className="size-4 bg-primary border-[3px] border-white rounded-full shadow-[0_0_20px_rgba(14,159,110,1)]" />
                   </div>
                 </div>
               </div>
