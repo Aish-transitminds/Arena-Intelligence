@@ -186,7 +186,7 @@ export function AIAssistant() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 w-[420px] max-w-[calc(100vw-2rem)] h-[580px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl border text-white font-sans text-left"
+            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[420px] max-w-[calc(100vw-1.5rem)] h-[70vh] sm:h-[580px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl border text-white font-sans text-left"
             style={{
               background: "rgba(14,27,36,0.96)",
               borderColor: "rgba(255,255,255,0.08)",

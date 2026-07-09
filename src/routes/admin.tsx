@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, BarChart, Bar } from "recharts";
+import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Users, Activity, Clock, ShieldCheck,
@@ -235,7 +235,7 @@ function Admin() {
                   </button>
                 </div>
               </div>
-              <div className="h-64 w-full">
+              <div className="h-48 sm:h-64 w-full">
                 <ResponsiveContainer>
                   <AreaChart data={attendanceTrend}>
                     <defs>
@@ -265,6 +265,54 @@ function Admin() {
               </div>
             </div>
 
+            {/* Gate Queue Bar Chart */}
+            <div
+              className="rounded-2xl p-7"
+              style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
+            >
+              <div className="flex items-center justify-between mb-7">
+                <div>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-white">Gate Wait Times</h2>
+                  <p className="text-xs mt-1" style={{ color: "#AAB8C2" }}>Visual comparison · Live</p>
+                </div>
+                <span
+                  className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+                  style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.20)", color: "#0E9F6E" }}
+                >
+                  Live
+                </span>
+              </div>
+              <div className="h-48 sm:h-56 w-full">
+                <ResponsiveContainer>
+                  <BarChart data={gateQueues} layout="vertical" barCategoryGap="20%">
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" horizontal={false} />
+                    <XAxis type="number" stroke="#AAB8C2" fontSize={10} axisLine={false} tickLine={false} unit=" min" />
+                    <YAxis type="category" dataKey="gate" stroke="#AAB8C2" fontSize={10} axisLine={false} tickLine={false} width={110} />
+                    <Tooltip
+                      contentStyle={{
+                        background: "rgba(11,22,30,0.97)",
+                        border: "1px solid rgba(14,159,110,0.25)",
+                        borderRadius: 12,
+                        backdropFilter: "blur(20px)",
+                        padding: "10px 14px",
+                      }}
+                      itemStyle={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase" }}
+                      labelStyle={{ fontSize: 10, color: "#AAB8C2", marginBottom: 6 }}
+                      formatter={(value: number) => [`${value} min`, "Wait Time"]}
+                    />
+                    <Bar dataKey="wait" radius={[0, 6, 6, 0]} animationDuration={1400}>
+                      {gateQueues.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={entry.wait > 10 ? "#D92D20" : entry.wait > 6 ? "#F4B400" : "#0E9F6E"}
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
             {/* Section Occupancy */}
             <div
               className="rounded-2xl p-7"
@@ -279,36 +327,77 @@ function Admin() {
                   <MoreHorizontal className="size-4" />
                 </button>
               </div>
-              <div className="space-y-4">
-                {sectionOccupancy.map((s) => (
-                  <div key={s.name}>
-                    <div className="flex justify-between text-xs mb-2">
-                      <span className="font-semibold text-white">{s.name} Stand</span>
-                      <span
-                        className="font-bold"
-                        style={{ color: s.value >= 95 ? "#D92D20" : s.value >= 85 ? "#F4B400" : "#0E9F6E" }}
+
+              {/* Donut chart + progress bars side by side */}
+              <div className="flex flex-col lg:flex-row gap-6">
+                {/* Donut Chart */}
+                <div className="w-full lg:w-48 h-48 shrink-0">
+                  <ResponsiveContainer>
+                    <PieChart>
+                      <Pie
+                        data={sectionOccupancy}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={50}
+                        outerRadius={75}
+                        paddingAngle={3}
+                        dataKey="value"
+                        animationDuration={1500}
+                        stroke="none"
                       >
-                        {s.value}%
-                      </span>
-                    </div>
-                    <div className="h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${s.value}%` }}
-                        transition={{ duration: 1.2, delay: 0.1, ease: "easeOut" }}
-                        className="h-full rounded-full"
-                        style={{
-                          background:
-                            s.value >= 95
-                              ? "linear-gradient(90deg, #D92D20, #FF4D3D)"
-                              : s.value >= 85
-                              ? "linear-gradient(90deg, #F4B400, #FFC72C)"
-                              : "linear-gradient(90deg, #0E9F6E, #3CB371)",
+                        {sectionOccupancy.map((entry, index) => (
+                          <Cell
+                            key={`pie-${index}`}
+                            fill={entry.value >= 95 ? "#D92D20" : entry.value >= 85 ? "#F4B400" : "#0E9F6E"}
+                          />
+                        ))}
+                      </Pie>
+                      <Tooltip
+                        contentStyle={{
+                          background: "rgba(11,22,30,0.97)",
+                          border: "1px solid rgba(14,159,110,0.25)",
+                          borderRadius: 12,
+                          padding: "8px 12px",
                         }}
+                        itemStyle={{ fontSize: 11, fontWeight: 700 }}
+                        formatter={(value: number, name: string) => [`${value}%`, `${name} Stand`]}
                       />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Progress Bars */}
+                <div className="flex-1 space-y-4">
+                  {sectionOccupancy.map((s) => (
+                    <div key={s.name}>
+                      <div className="flex justify-between text-xs mb-2">
+                        <span className="font-semibold text-white">{s.name} Stand</span>
+                        <span
+                          className="font-bold"
+                          style={{ color: s.value >= 95 ? "#D92D20" : s.value >= 85 ? "#F4B400" : "#0E9F6E" }}
+                        >
+                          {s.value}%
+                        </span>
+                      </div>
+                      <div className="h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${s.value}%` }}
+                          transition={{ duration: 1.2, delay: 0.1, ease: "easeOut" }}
+                          className="h-full rounded-full"
+                          style={{
+                            background:
+                              s.value >= 95
+                                ? "linear-gradient(90deg, #D92D20, #FF4D3D)"
+                                : s.value >= 85
+                                ? "linear-gradient(90deg, #F4B400, #FFC72C)"
+                                : "linear-gradient(90deg, #0E9F6E, #3CB371)",
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
