@@ -178,7 +178,7 @@ function Landing() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.65) 50%, rgba(248,250,252,0.95) 100%)",
+                  "linear-gradient(180deg, rgba(15,23,42,0.70) 0%, rgba(15,23,42,0.30) 40%, rgba(248,250,252,0.95) 80%, rgba(248,250,252,1) 100%)",
               }}
             />
             <div
@@ -212,7 +212,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-slate-900 max-w-4xl"
+              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white max-w-4xl"
             >
               Arena Intelligence
             </motion.h1>
@@ -221,8 +221,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
-              className="mt-5 text-xl font-medium leading-relaxed max-w-2xl"
-              style={{ color: "#64748B" }}
+              className="mt-5 text-xl font-medium leading-relaxed max-w-2xl text-slate-200"
             >
               Smart Stadium Operations Platform
             </motion.p>
@@ -231,8 +230,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.24 }}
-              className="mt-4 text-base leading-8 max-w-xl"
-              style={{ color: "rgba(100,116,139,0.75)" }}
+              className="mt-4 text-base leading-8 max-w-xl text-slate-300"
             >
               Unified operations platform for crowd management, tournament coordination,
               emergency response and stadium analytics.
