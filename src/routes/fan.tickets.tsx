@@ -426,10 +426,10 @@ function FanTicketsPage() {
                     }`}
                     style={{
                       background: isSelected
-                        ? "rgba(14,159,110,0.1)"
+                        ? "rgba(240, 253, 244, 0.95)"
                         : "rgba(255,255,255,0.90)",
                       border: isSelected
-                        ? "1px solid rgba(14,159,110,0.4)"
+                        ? "2px solid rgba(14,159,110,0.6)"
                         : "1px solid rgba(0,0,0,0.06)",
                     }}
                   >
