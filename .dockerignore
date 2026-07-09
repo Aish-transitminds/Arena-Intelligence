@@ -1,0 +1,14 @@
+node_modules
+.output
+.wrangler
+.nitro
+.tanstack
+.env
+.env.*
+npm-debug.log*
+yarn-error.log*
+.git
+.gitignore
+Dockerfile
+README.md
+*.md
