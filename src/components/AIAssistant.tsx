@@ -115,27 +115,49 @@ export function AIAssistant() {
     { role: "ai", text: "Welcome to MetLife Stadium World Cup 2026 Assistant. Select your persona and language below to start GenAI operations." },
   ]);
   const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   const activeSuggestions = useMemo(() => suggestions[persona], [persona]);
 
   function send(text: string) {
     if (!text.trim()) return;
 
-    let aiResponse = aiAnswers.default[lang];
-    // Check if prompt matches suggestions
-    const matchingKey = Object.keys(aiAnswers).find(
-      (k) => k.toLowerCase() === text.toLowerCase().trim()
-    );
-    if (matchingKey) {
-      aiResponse = aiAnswers[matchingKey][lang];
-    }
-
-    setMessages((m) => [
-      ...m,
-      { role: "user", text },
-      { role: "ai", text: aiResponse },
-    ]);
+    setMessages((m) => [...m, { role: "user", text }]);
     setInput("");
+    setIsTyping(true);
+
+    // Simulate network delay and GenAI processing time
+    setTimeout(() => {
+      let aiResponse = aiAnswers.default[lang];
+      const lower = text.toLowerCase().trim();
+      
+      // Smart fuzzy matching logic
+      if (lower.includes("weather") || lower.includes("rain") || lower.includes("hot")) {
+        aiResponse = "GenAI Weather Analysis: 72°F, clear skies. No precipitation expected for the duration of the match. Roof status: Open.";
+      } else if (lower.includes("food") || lower.includes("eat") || lower.includes("hungry") || lower.includes("burger")) {
+        aiResponse = aiAnswers["Where is Food Court?"][lang] || aiAnswers["Where is Food Court?"].en;
+      } else if (lower.includes("bathroom") || lower.includes("restroom") || lower.includes("toilet")) {
+        aiResponse = aiAnswers["Find nearest restroom"][lang] || aiAnswers["Find nearest restroom"].en;
+      } else if (lower.includes("traffic") || lower.includes("transport") || lower.includes("train") || lower.includes("bus")) {
+        aiResponse = aiAnswers["Transport to NYC"][lang] || aiAnswers["Transport to NYC"].en;
+      } else if (lower.includes("wheelchair") || lower.includes("disabled") || lower.includes("accessibility")) {
+        aiResponse = aiAnswers["How to get wheelchair help?"][lang] || aiAnswers["How to get wheelchair help?"].en;
+      } else if (lower.includes("lost") || lower.includes("found") || lower.includes("missing")) {
+        aiResponse = aiAnswers["Lost and Found protocol"][lang] || aiAnswers["Lost and Found protocol"].en;
+      } else if (lower.includes("queue") || lower.includes("wait") || lower.includes("gate") || lower.includes("crowd")) {
+        aiResponse = aiAnswers["Gate E queue status"][lang] || aiAnswers["Gate E queue status"].en;
+      } else if (lower.includes("trash") || lower.includes("waste") || lower.includes("garbage") || lower.includes("clean")) {
+        aiResponse = aiAnswers["Concourse waste alert"][lang] || aiAnswers["Concourse waste alert"].en;
+      } else if (lower.includes("pa ") || lower.includes("announcement") || lower.includes("broadcast")) {
+        aiResponse = aiAnswers["Draft multilingual PA alert"][lang] || aiAnswers["Draft multilingual PA alert"].en;
+      } else {
+        const matchingKey = Object.keys(aiAnswers).find((k) => k.toLowerCase() === lower);
+        if (matchingKey) aiResponse = aiAnswers[matchingKey][lang] || aiAnswers[matchingKey].en;
+      }
+
+      setMessages((m) => [...m, { role: "ai", text: aiResponse }]);
+      setIsTyping(false);
+    }, 1200 + Math.random() * 800); // 1.2s - 2.0s random typing delay
   }
 
   return (
@@ -226,6 +248,15 @@ export function AIAssistant() {
                   </div>
                 </div>
               ))}
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="px-3.5 py-3 rounded-2xl glass rounded-bl-sm flex items-center gap-1.5">
+                    <span className="size-1.5 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="size-1.5 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="size-1.5 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Suggestions & Input area */}
