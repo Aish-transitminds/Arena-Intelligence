@@ -8,7 +8,7 @@ export const Route = createFileRoute("/assistant")({
   head: () => ({
     meta: [
       { title: "AI Assistant — ArenaIQ AI" },
-      { name: "description", content: "Ask the ArenaIQ copilot anything about your stadium operations." },
+      { name: "description", content: "Ask the ArenaIQ assistant anything about your stadium operations." },
     ],
   }),
   component: Assistant,
@@ -35,7 +35,7 @@ function Assistant() {
   }
 
   return (
-    <AppShell title="ArenaIQ Copilot" subtitle="Multimodal AI trained on 3 seasons of operations data">
+    <AppShell title="ArenaIQ AI" subtitle="Multimodal AI trained on 3 seasons of operations data">
       <div className="grid lg:grid-cols-4 gap-5 h-[calc(100vh-10rem)]">
         <div className="lg:col-span-3 glass-strong rounded-2xl flex flex-col overflow-hidden">
           <div className="flex-1 overflow-y-auto p-6 space-y-4">

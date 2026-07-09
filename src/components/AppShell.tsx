@@ -27,7 +27,7 @@ const navSections: { label: string; items: NavItem[] }[] = [
     label: "Experience",
     items: [
       { to: "/fan", label: "Fan Dashboard", icon: User, hint: "Ticket & seat" },
-      { to: "/assistant", label: "AI Assistant", icon: Sparkles, hint: "Copilot" },
+      { to: "/assistant", label: "AI Assistant", icon: Sparkles, hint: "AI advisor" },
     ],
   },
   {
