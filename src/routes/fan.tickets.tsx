@@ -217,8 +217,9 @@ function FanTicketsPage() {
         transition={{ duration: 0.4 }}
         className="mb-6 rounded-2xl p-6 grid lg:grid-cols-4 gap-6"
         style={{
-          background: "linear-gradient(135deg, rgba(14,159,110,0.12) 0%, rgba(60,179,177,0.08) 100%)",
-          border: "1px solid rgba(14,159,110,0.25)",
+          background: "rgba(255,255,255,0.90)",
+          border: "1px solid rgba(0,0,0,0.08)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
         }}
       >
         {/* Fan Profile Info */}
