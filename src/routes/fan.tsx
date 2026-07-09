@@ -530,19 +530,19 @@ function Modal3D({ onClose }: { onClose: () => void }) {
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 15 }}
         className="w-full max-w-4xl h-[680px] rounded-2xl flex flex-col overflow-hidden text-slate-900 border text-left shadow-2xl relative"
-        style={{ background: "rgba(14,27,36,0.96)", borderColor: "rgba(0,0,0,0.08)" }}
+        style={{ background: "rgba(255,255,255,0.96)", borderColor: "rgba(0,0,0,0.08)" }}
       >
         {/* Header */}
-        <div className="px-6 py-4 flex items-center justify-between border-b border-white/5 bg-black/20 z-10 shrink-0">
+        <div className="px-6 py-4 flex items-center justify-between border-b border-black/5 bg-black/5 z-10 shrink-0">
           <div>
             <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-900">3D Virtual MetLife Seat Preview</h2>
             <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>Tap the pitch to shoot/kick the soccer ball to the stands!</p>
           </div>
           <button
             onClick={onClose}
-            className="size-8 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 transition active:scale-95 cursor-pointer outline-none"
+            className="size-8 rounded-full flex items-center justify-center bg-black/5 border border-black/10 hover:bg-black/10 transition active:scale-95 cursor-pointer outline-none"
           >
-            <span className="text-sm font-extrabold">✕</span>
+            <span className="text-sm font-extrabold text-slate-900">✕</span>
           </button>
         </div>
 
@@ -681,8 +681,9 @@ function Modal3D({ onClose }: { onClose: () => void }) {
                   className="absolute top-[38%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-default z-20"
                   style={{ transform: "translateZ(15px) rotateY(75deg)" }}
                 >
-                  <div className="bg-primary text-slate-900 text-[9px] font-black px-2 py-1 rounded shadow-[0_4px_12px_rgba(14,159,110,0.5)] mb-1 whitespace-nowrap animate-bounce uppercase tracking-wider">
-                    Your Seat
+                  <div className="bg-primary text-white text-[9px] font-black px-2.5 py-1.5 rounded-lg shadow-[0_8px_16px_rgba(14,159,110,0.6)] mb-1 whitespace-nowrap animate-bounce uppercase tracking-wider text-center">
+                    <div className="mb-0.5">Your Seat Area</div>
+                    <div className="text-[7px] font-bold opacity-90 tracking-widest text-white/90">Seat 7 • VIP Club</div>
                   </div>
                   <div className="relative flex items-center justify-center">
                     <span className="absolute inset-0 size-7 bg-primary rounded-full animate-ping opacity-60" />
@@ -719,7 +720,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Control & Telemetry Panel */}
-        <div className="p-6 border-t border-white/5 bg-black/25 flex flex-wrap items-center justify-between gap-6 shrink-0 z-10">
+        <div className="p-6 border-t border-black/5 bg-black/5 flex flex-wrap items-center justify-between gap-6 shrink-0 z-10">
           {/* Camera Controls */}
           <div className="space-y-1.5 text-left">
             <label className="text-[9px] font-mono font-bold uppercase tracking-widest" style={{ color: "#64748B" }}>3D Camera Perspective</label>
@@ -743,11 +744,11 @@ function Modal3D({ onClose }: { onClose: () => void }) {
 
           {/* Seat Telemetry info */}
           <div className="flex gap-6 items-center">
-            <div className="text-left font-mono border-r border-white/5 pr-6">
+            <div className="text-left font-mono border-r border-black/10 pr-6">
               <p className="text-[9px] uppercase tracking-wider text-[#64748B] font-bold">Selected Seat</p>
               <p className="text-xs text-slate-900 font-extrabold mt-0.5">Section 204, Row 12, Seat 7</p>
             </div>
-            <div className="text-left font-mono border-r border-white/5 pr-6">
+            <div className="text-left font-mono border-r border-black/10 pr-6">
               <p className="text-[9px] uppercase tracking-wider text-[#64748B] font-bold">Field View</p>
               <p className="text-xs text-primary font-extrabold mt-0.5">100% Unobstructed</p>
             </div>
