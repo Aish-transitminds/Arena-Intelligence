@@ -63,16 +63,16 @@ function Tournament() {
             {fixtures.map((f, i) => (
               <div
                 key={f.id}
-                className="flex items-center gap-5 px-6 py-4 transition-colors cursor-default"
+                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 px-6 py-4 transition-colors cursor-default"
                 style={{ borderBottom: i < fixtures.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(14,159,110,0.03)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
               >
-                <div className="w-16 text-center shrink-0">
+                <div className="flex sm:block justify-between items-center sm:w-16 sm:text-center shrink-0">
                   <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: "#AAB8C2" }}>{f.date}</div>
                   <div className="text-sm font-extrabold text-white mt-0.5">{f.time}</div>
                 </div>
-                <div className="flex-1 grid grid-cols-3 items-center gap-3">
+                <div className="w-full sm:flex-1 grid grid-cols-3 items-center gap-2 sm:gap-3">
                   <div className="text-right font-semibold text-white">{f.home}</div>
                   <div className="text-center">
                     {f.homeScore !== undefined ? (
@@ -86,7 +86,7 @@ function Tournament() {
                   </div>
                   <div className="font-semibold text-white">{f.away}</div>
                 </div>
-                <div>
+                <div className="text-center sm:text-right mt-2 sm:mt-0">
                   <span
                     className="text-[10px] px-3 py-1.5 rounded-full font-bold uppercase tracking-[0.16em]"
                     style={
@@ -112,7 +112,8 @@ function Tournament() {
           className="rounded-2xl overflow-hidden"
           style={{ background: "rgba(14,27,36,0.90)", border: "1px solid rgba(255,255,255,0.07)" }}
         >
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
             <thead>
               <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.02)" }}>
                 {["#", "Team", "P", "W", "D", "L", "Pts"].map((h) => (
@@ -164,6 +165,7 @@ function Tournament() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
@@ -195,7 +197,7 @@ function Tournament() {
                     <div className="text-lg font-bold text-white mt-1">{f.home}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-5xl font-extrabold text-white tracking-tight">
+                    <div className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                       {f.homeScore} <span style={{ color: "#AAB8C2" }}>—</span> {f.awayScore}
                     </div>
                   </div>

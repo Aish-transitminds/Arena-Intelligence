@@ -46,20 +46,23 @@ function FanPage() {
       <div className="grid lg:grid-cols-3 gap-5">
 
         {/* ── DIGITAL TICKET ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="lg:row-span-2 rounded-2xl overflow-hidden relative"
+        <Link
+          to="/fan/tickets"
+          className="block lg:row-span-2 rounded-2xl overflow-hidden relative transition-transform hover:scale-[1.02] hover:shadow-2xl cursor-pointer group"
           style={{
             background: "rgba(14,27,36,0.90)",
             border: "1px solid rgba(255,255,255,0.09)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
           }}
         >
+          {/* Ticket Notches */}
+          <div className="absolute top-[80px] -left-3 size-6 bg-background rounded-full border-r border-white/10 z-10" />
+          <div className="absolute top-[80px] -right-3 size-6 bg-background rounded-full border-l border-white/10 z-10" />
+
           {/* Green header band */}
           <div
             className="px-6 py-4 flex items-center justify-between"
-            style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", borderRadius: "0" }}
+            style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
           >
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Digital Ticket</p>
@@ -115,14 +118,17 @@ function FanPage() {
 
             {/* Verified badge */}
             <div
-              className="flex items-center justify-center gap-2 rounded-xl py-3 text-xs font-semibold"
+              className="flex items-center justify-center gap-2 rounded-xl py-3 text-xs font-semibold group-hover:bg-primary/20 transition-colors"
               style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)", color: "#0E9F6E" }}
             >
               <Ticket className="size-3.5" />
-              Present at Gate B · Verified by Arena Intelligence
+              Present at Gate B · Tap to view full ticket
             </div>
           </div>
-        </motion.div>
+
+          {/* Perforation line */}
+          <div className="absolute top-[92px] left-4 right-4 h-px border-t-2 border-dashed border-white/10 z-0" />
+        </Link>
 
         {/* ── STAT CARDS ── */}
         <StatCard
@@ -149,19 +155,19 @@ function FanPage() {
           {/* Big CTA for Find My Seat */}
           <button
             onClick={() => setIs3DModalOpen(true)}
-            className="w-full flex items-center justify-between p-4 rounded-xl transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-lg"
-            style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 8px 32px rgba(14,159,110,0.25)" }}
+            className="group w-full flex items-center justify-between p-4 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-lg hover:shadow-[0_0_40px_rgba(14,159,110,0.4)]"
+            style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", border: "1px solid rgba(255,255,255,0.2)" }}
           >
             <div className="flex items-center gap-4">
-              <div className="size-12 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <div className="size-12 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors">
                 <MapPin className="size-6 text-white" />
               </div>
               <div className="text-left text-white">
-                <div className="text-lg font-extrabold tracking-tight">Launch 3D Seat Viewer</div>
+                <div className="text-lg font-extrabold tracking-tight group-hover:text-white transition-colors">Launch 3D Seat Viewer</div>
                 <div className="text-xs text-white/90 font-medium">Interactive Stadium Alpha Preview</div>
               </div>
             </div>
-            <div className="size-10 rounded-full bg-black/20 flex items-center justify-center shrink-0 transition-transform group-hover:translate-x-1">
+            <div className="size-10 rounded-full bg-black/20 flex items-center justify-center shrink-0 transition-all group-hover:translate-x-2 group-hover:bg-black/30">
               <ArrowRight className="size-5 text-white" />
             </div>
           </button>
