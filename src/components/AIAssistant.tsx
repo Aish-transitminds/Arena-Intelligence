@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Send, X, Globe, UserCheck } from "lucide-react";
 
@@ -45,8 +45,7 @@ const languageNames: Record<Language, string> = {
 const fallbackByPersona: Record<Persona, string> = {
   staff:
     "I couldn't reach the live AI service just now, but stadium operations are nominal. Please try your question again in a moment.",
-  fan:
-    "I'm having trouble connecting right now. For urgent help, please visit the nearest Guest Services booth or ask any staff member.",
+  fan: "I'm having trouble connecting right now. For urgent help, please visit the nearest Guest Services booth or ask any staff member.",
   volunteer:
     "Connection issue on my end — please check with your shift coordinator for immediate guidance, and I'll be back online shortly.",
 };
@@ -55,17 +54,16 @@ function buildSystemPrompt(persona: Persona, lang: Language) {
   const personaContext: Record<Persona, string> = {
     staff:
       "You are speaking to stadium OPERATIONS STAFF. Be concise, operational, and action-oriented. Include concrete numbers, gate/section references, and next steps when relevant (e.g. dispatch, reroute, alert).",
-    fan:
-      "You are speaking to a FAN attending the match. Be warm, brief, and practical — directions, wait times, amenities, and accessibility help.",
+    fan: "You are speaking to a FAN attending the match. Be warm, brief, and practical — directions, wait times, amenities, and accessibility help.",
     volunteer:
       "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
   };
 
-  return `You are Arena IQ, the intelligent operations assistant for Narendra Modi FIFA Stadium during the FIFA World Cup 2026.
+  return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
-Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific (invent plausible concrete details like wait times, gate numbers, or section numbers where useful — this is a demo environment, not connected to live sensors).
+Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific. Use only the provided stadium and live-data facts; say when information is unavailable.
 Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
 }
 
@@ -75,23 +73,15 @@ export function AIAssistant() {
   const [open, setOpen] = useState(false);
   const [persona, setPersona] = useState<Persona>("fan");
   const [lang, setLang] = useState<Language>("en");
-  const [messages, setMessages] = useState<
-    { role: "user" | "ai"; text: string }[]
-  >([
+  const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
     {
       role: "ai",
-      text: "👋 Welcome to Arena IQ — your intelligent stadium assistant for FIFA World Cup 2026 at Narendra Modi FIFA Stadium. Select your persona below and ask me anything about operations, navigation, or match day logistics!",
+      text: "Welcome to Arena IQ — your intelligent stadium assistant for FIFA World Cup 2026 at Arena Intelligence Stadium. Select your persona below and ask about operations, navigation, or match-day logistics.",
     },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    return () => abortRef.current?.abort();
-  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -107,19 +97,14 @@ export function AIAssistant() {
     setInput("");
     setIsTyping(true);
 
-    abortRef.current?.abort();
-    const controller = new AbortController();
-    abortRef.current = controller;
-
     try {
-      const { answer, sources } = await askGeminiRAG({ data: { message: text, personaContext: buildSystemPrompt(persona, lang), lang } });
+      const { answer } = await askGeminiRAG({
+        data: { message: text, personaContext: buildSystemPrompt(persona, lang), lang },
+      });
       setMessages((m) => [...m, { role: "ai", text: answer }]);
-    } catch (err: any) {
-      if (err?.name === "AbortError") return;
-      setMessages((m) => [
-        ...m,
-        { role: "ai", text: fallbackByPersona[persona] },
-      ]);
+    } catch (error: unknown) {
+      console.error("AI Error:", error);
+      setMessages((m) => [...m, { role: "ai", text: fallbackByPersona[persona] }]);
     } finally {
       setIsTyping(false);
     }
@@ -265,11 +250,24 @@ export function AIAssistant() {
                 <div className="flex justify-start">
                   <div
                     className="px-4 py-3 rounded-2xl flex items-center gap-2"
-                    style={{ background: "#1A2E3D", border: "1px solid rgba(255,255,255,0.10)", borderBottomLeftRadius: "4px" }}
+                    style={{
+                      background: "#1A2E3D",
+                      border: "1px solid rgba(255,255,255,0.10)",
+                      borderBottomLeftRadius: "4px",
+                    }}
                   >
-                    <span className="size-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="size-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="size-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                    <span
+                      className="size-2 bg-emerald-400 rounded-full animate-bounce"
+                      style={{ animationDelay: "0ms" }}
+                    />
+                    <span
+                      className="size-2 bg-emerald-400 rounded-full animate-bounce"
+                      style={{ animationDelay: "150ms" }}
+                    />
+                    <span
+                      className="size-2 bg-emerald-400 rounded-full animate-bounce"
+                      style={{ animationDelay: "300ms" }}
+                    />
                   </div>
                 </div>
               )}

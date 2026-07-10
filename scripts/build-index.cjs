@@ -61,6 +61,8 @@ function recordToText(fileName, record) {
       return `Q: ${record.question} A: ${record.answer} (Category: ${record.category})`;
     case "announcements.json":
       return `Announcement (${record.priority}) at ${record.timestamp}: ${record.message}`;
+    case "guest_services.json":
+      return `Guest service ${record.name} (${record.id}) is ${record.location}. Hours: ${record.hours}. Services: ${record.services.join(", ")}.`;
     case "ticketing.json":
       return `Ticketing info: tiers are ${record.tiers.map((t) => `${t.name} (${t.priceRange})`).join(", ")}. Refund policy: ${record.refundPolicy} Transfer policy: ${record.transferPolicy}`;
     case "accessibility.json":
@@ -89,7 +91,7 @@ async function embedBatch(texts) {
           content: { parts: [{ text }] },
         })),
       }),
-    }
+    },
   );
   if (!res.ok) throw new Error(`Embedding API error: ${res.status} ${await res.text()}`);
   const data = await res.json();
@@ -98,7 +100,9 @@ async function embedBatch(texts) {
 
 // ---------- Build the index ----------
 async function main() {
-  const files = fs.readdirSync(DATA_DIR).filter((f) => f.endsWith(".json") && f !== "vector-index.json");
+  const files = fs
+    .readdirSync(DATA_DIR)
+    .filter((f) => f.endsWith(".json") && f !== "vector-index.json");
   const chunks = [];
 
   for (const file of files) {
@@ -118,7 +122,9 @@ async function main() {
     }
   }
 
-  console.log(`Prepared ${chunks.length} chunks. Embedding (this calls the API ${chunks.length} times)...`);
+  console.log(
+    `Prepared ${chunks.length} chunks. Embedding (this calls the API ${chunks.length} times)...`,
+  );
 
   const indexed = [];
   const BATCH = 90;
@@ -126,7 +132,9 @@ async function main() {
     const batch = chunks.slice(i, i + BATCH);
     const vectors = await embedBatch(batch.map((c) => c.text));
     batch.forEach((c, j) => indexed.push({ ...c, vector: vectors[j] }));
-    console.log(`  embedded ${Math.min(i + BATCH, chunks.length)}/${chunks.length}. Waiting 60s for rate limit...`);
+    console.log(
+      `  embedded ${Math.min(i + BATCH, chunks.length)}/${chunks.length}. Waiting 60s for rate limit...`,
+    );
     if (i + BATCH < chunks.length) {
       await new Promise((resolve) => setTimeout(resolve, 62000));
     }

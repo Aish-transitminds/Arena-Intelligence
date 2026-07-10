@@ -1,0 +1,16 @@
+[
+  {
+    "id": "GS001",
+    "name": "Guest Services - Main Concourse",
+    "location": "Level 1, beside Gate 1",
+    "hours": "From gates open until 30 minutes after the event",
+    "services": ["lost and found", "accessibility assistance", "family reunification", "venue directions"]
+  },
+  {
+    "id": "GS002",
+    "name": "Guest Services - East Plaza",
+    "location": "Level 1, near Gate 7 and East Food Court",
+    "hours": "From gates open until the end of the event",
+    "services": ["ticket support", "translation assistance", "sensory room check-in", "venue directions"]
+  }
+]

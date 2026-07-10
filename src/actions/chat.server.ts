@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
-import fs from "fs";
 import { getLiveSnapshot, getRelevantLiveData } from "../lib/liveData";
+import { retrieveTopChunks, validateRAGRequest, type VectorChunk } from "../lib/rag";
 import { sanitizeText } from "../lib/security";
 import vectorIndexData from "../../stadium-data/vector-index.json";
 
@@ -10,54 +10,40 @@ function checkServerRateLimit(ip: string): boolean {
   const now = Date.now();
   const limit = 50; // 50 requests per minute
   const windowMs = 60000;
-  
+
   const record = rateLimitMap.get(ip);
   if (!record || record.resetAt <= now) {
     rateLimitMap.set(ip, { count: 1, resetAt: now + windowMs });
     return true;
   }
-  
+
   if (record.count >= limit) return false;
-  
+
   record.count += 1;
   rateLimitMap.set(ip, record);
   return true;
 }
 
 function getGeminiKey() {
-  return process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY || (import.meta as any).env?.GEMINI_API_KEY;
+  return process.env.GEMINI_API_KEY;
 }
 
 function getGroqKey() {
-  return process.env.GROQ_API_KEY || (import.meta as any).env?.VITE_GROQ_API_KEY || (import.meta as any).env?.GROQ_API_KEY;
+  return process.env.GROQ_API_KEY;
 }
 
 const EMBED_MODEL = "gemini-embedding-2";
 const CHAT_MODEL = "llama-3.3-70b-versatile"; // Groq model
 const TOP_K = 8;
 
-let cachedIndex: any = null;
-function loadIndex() {
+let cachedIndex: VectorChunk[] | undefined;
+function loadIndex(): VectorChunk[] {
   if (cachedIndex) return cachedIndex;
-  try {
-    cachedIndex = vectorIndexData;
-  } catch (e) {
-    cachedIndex = [];
-  }
+  cachedIndex = Array.isArray(vectorIndexData) ? (vectorIndexData as VectorChunk[]) : [];
   return cachedIndex;
 }
 
-function cosineSimilarity(a: number[], b: number[]) {
-  let dot = 0, normA = 0, normB = 0;
-  for (let i = 0; i < a.length; i++) {
-    dot += a[i] * b[i];
-    normA += a[i] * a[i];
-    normB += b[i] * b[i];
-  }
-  return dot / (Math.sqrt(normA) * Math.sqrt(normB));
-}
-
-async function embedQuery(text: string) {
+async function embedQuery(text: string): Promise<number[]> {
   const key = getGeminiKey();
   if (!key) throw new Error("Gemini API key is missing");
   const res = await fetch(
@@ -69,27 +55,30 @@ async function embedQuery(text: string) {
         model: `models/${EMBED_MODEL}`,
         content: { parts: [{ text }] },
       }),
-    }
+    },
   );
   if (!res.ok) throw new Error(`Embedding error: ${res.status} ${await res.text()}`);
-  const data = await res.json();
+  const data = (await res.json()) as { embedding?: { values?: unknown } };
+  if (
+    !Array.isArray(data.embedding?.values) ||
+    !data.embedding.values.every((value) => typeof value === "number")
+  ) {
+    throw new Error("Embedding response did not include a numeric vector");
+  }
   return data.embedding.values;
 }
 
-function retrieveTopChunks(queryVector: number[], index: any[], k: number) {
-  const scored = index.map((chunk) => ({
-    ...chunk,
-    score: cosineSimilarity(queryVector, chunk.vector),
-  }));
-  scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, k);
-}
-
-async function askGroq(question: string, staticContext: string, liveContext: any, personaContext: string, lang: string) {
+async function askGroq(
+  question: string,
+  staticContext: string,
+  liveContext: unknown,
+  personaContext: string,
+  lang: string,
+) {
   const key = getGroqKey();
   if (!key) throw new Error("Groq API key is missing");
-  
-  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Narendra Modi FIFA Stadium during the FIFA World Cup 2026.
+
+  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
 ${personaContext}
 
 Respond ONLY in ${lang}, regardless of what language the question is asked in.
@@ -122,20 +111,17 @@ ${JSON.stringify(liveContext, null, 2)}`;
   });
 
   if (!res.ok) throw new Error(`Groq error: ${res.status} ${await res.text()}`);
-  const data = await res.json();
+  const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
   return data.choices?.[0]?.message?.content || "I couldn't generate a response.";
 }
 
 export const askGeminiRAG = createServerFn({ method: "POST" })
-  .validator((data: { message: string; personaContext: string; lang: string }) => data)
+  .validator(validateRAGRequest)
   .handler(async ({ data }) => {
     try {
-      const { message, personaContext, lang } = data;
-      if (!message || typeof message !== "string") {
-        throw new Error("Missing 'message' in request");
-      }
-      
-      const ip = "client-ip"; 
+      const { message, personaContext, lang } = validateRAGRequest(data);
+
+      const ip = "client-ip";
       if (!checkServerRateLimit(ip)) {
         throw new Error("Rate limit exceeded. Please try again later.");
       }
@@ -147,11 +133,11 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
 
       const index = loadIndex();
       let staticContext = "";
-      let topChunks: any[] = [];
-      
+      let topChunks: Array<VectorChunk & { score: number }> = [];
+
       if (index.length > 0) {
         const queryVector = await embedQuery(cleanMessage);
-        topChunks = retrieveTopChunks(queryVector, index, TOP_K);
+        topChunks = retrieveTopChunks(queryVector, index as VectorChunk[], TOP_K);
         staticContext = topChunks.map((c) => `- ${c.text}`).join("\n");
       } else {
         staticContext = "No static data indexed yet.";
@@ -164,13 +150,18 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
 
       return {
         answer,
-        sources: topChunks.map((c) => ({ id: c.id, source: c.source, score: Number(c.score.toFixed(3)) })),
+        sources: topChunks.map((c) => ({
+          id: c.id,
+          source: c.source,
+          score: Number(c.score.toFixed(3)),
+        })),
       };
-    } catch (e: any) {
-      console.error("askGeminiRAG server error:", e);
+    } catch (error: unknown) {
+      console.error("askGeminiRAG server error:", error);
+      const message = error instanceof Error ? error.message : "Unknown server error";
       return {
-        answer: `[Server Error] ${e.message} (HasGemini: ${!!getGeminiKey()}, HasGroq: ${!!getGroqKey()})`,
-        sources: []
+        answer: `[Server Error] ${message} (HasGemini: ${!!getGeminiKey()}, HasGroq: ${!!getGroqKey()})`,
+        sources: [],
       };
     }
   });
