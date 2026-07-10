@@ -64,7 +64,7 @@
   --radius: 1.25rem;
 
   /* Core Background Palette */
-  --background: #F8FAFC;
+  --background: #F7F9FC;
   --surface: #F1F5F9;
   --card-bg: #FFFFFF;
 
@@ -76,10 +76,10 @@
   --popover-foreground: #0F172A;
 
   /* Brand Colors */
-  --primary: #0E9F6E;
+  --primary: #635BFF;
   --primary-foreground: #FFFFFF;
-  --primary-glow: #3CB371;
-  --secondary: #3CB371;
+  --primary-glow: #635BFF;
+  --secondary: #0A2540;
   --secondary-foreground: #FFFFFF;
 
   /* Accent — Gold */
@@ -98,9 +98,9 @@
   --muted-foreground: #64748B;
 
   /* Borders & Inputs */
-  --border: rgba(0, 0, 0, 0.08);
-  --input: rgba(0, 0, 0, 0.08);
-  --ring: #0E9F6E;
+  --border: rgba(0, 0, 0, 0.04);
+  --input: rgba(0, 0, 0, 0.04);
+  --ring: #635BFF;
 
   /* Charts */
   --chart-1: #0E9F6E;
@@ -112,24 +112,24 @@
   /* Sidebar */
   --sidebar: rgba(255, 255, 255, 0.97);
   --sidebar-foreground: #0F172A;
-  --sidebar-primary: #0E9F6E;
+  --sidebar-primary: #635BFF;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: rgba(14, 159, 110, 0.08);
+  --sidebar-accent: rgba(99, 91, 255, 0.06);
   --sidebar-accent-foreground: #0F172A;
-  --sidebar-border: rgba(0, 0, 0, 0.06);
-  --sidebar-ring: #0E9F6E;
+  --sidebar-border: rgba(0, 0, 0, 0.04);
+  --sidebar-ring: #635BFF;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #0E9F6E 0%, #3CB371 100%);
+  --gradient-primary: linear-gradient(135deg, #635BFF 0%, #0A2540 100%);
   --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4B400 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-  --gradient-hero: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  --gradient-hero: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
 
   /* Shadows */
-  --shadow-glow: 0 0 30px rgba(14, 159, 110, 0.25);
+  --shadow-glow: 0 0 40px rgba(99, 91, 255, 0.15);
   --shadow-gold-glow: 0 0 30px rgba(212, 175, 55, 0.25);
-  --shadow-elevation: 0 20px 60px rgba(0, 0, 0, 0.08);
-  --glass-border: rgba(0, 0, 0, 0.06);
+  --shadow-elevation: 0 12px 30px rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.04);
 }
 
 /* ===================================================
@@ -149,7 +149,7 @@
     min-height: 100%;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -210,8 +210,8 @@
 @utility glass-strong {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.94));
   backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
 }
 
 @utility glass-card {

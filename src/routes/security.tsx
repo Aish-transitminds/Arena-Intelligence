@@ -109,12 +109,12 @@ function Security() {
           {/* Camera Zones Grid */}
           <div
             className="rounded-2xl p-7"
-            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-white">Camera Zones</h2>
-                <p className="text-xs mt-1" style={{ color: "#94A3B8" }}>Live surveillance feed status</p>
+                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Camera Zones</h2>
+                <p className="text-xs mt-1" style={{ color: "#64748B" }}>Live surveillance feed status</p>
               </div>
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-primary" style={{ boxShadow: "0 0 6px rgba(14,159,110,0.60)" }} />
@@ -132,8 +132,8 @@ function Security() {
                   transition={{ delay: i * 0.08 }}
                   className="rounded-xl p-4 relative overflow-hidden"
                   style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: `1px solid ${cam.status === "warning" ? "rgba(244,180,0,0.25)" : "rgba(255,255,255,0.10)"}`,
+                    background: "rgba(0,0,0,0.03)",
+                    border: `1px solid ${cam.status === "warning" ? "rgba(244,180,0,0.25)" : "rgba(0,0,0,0.06)"}`,
                   }}
                 >
                   {/* Simulated feed placeholder */}
@@ -141,15 +141,15 @@ function Security() {
                     className="h-24 rounded-lg mb-3 flex items-center justify-center"
                     style={{
                       background: "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.80))",
-                      border: "1px solid rgba(255,255,255,0.05)",
+                      border: "1px solid rgba(0,0,0,0.04)",
                     }}
                   >
                     <Camera className="size-8" style={{ color: "rgba(100,116,139,0.20)" }} />
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-bold text-white">{cam.zone}</p>
-                      <p className="text-[10px] font-mono mt-0.5" style={{ color: "#94A3B8" }}>{cam.id}</p>
+                      <p className="text-xs font-bold text-slate-900">{cam.zone}</p>
+                      <p className="text-[10px] font-mono mt-0.5" style={{ color: "#64748B" }}>{cam.id}</p>
                     </div>
                     <span
                       className="text-[9px] font-bold uppercase tracking-[0.16em] px-2.5 py-1 rounded-full"
@@ -175,12 +175,12 @@ function Security() {
           {/* Active Patrols */}
           <div
             className="rounded-2xl overflow-hidden"
-            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
-            <div className="px-7 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}>
+            <div className="px-7 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
               <div>
-                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-white">Active Patrols</h2>
-                <p className="text-xs mt-1" style={{ color: "#94A3B8" }}>Security team deployment</p>
+                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Active Patrols</h2>
+                <p className="text-xs mt-1" style={{ color: "#64748B" }}>Security team deployment</p>
               </div>
               <div className="flex items-center gap-1.5">
                 <Radio className="size-3 text-primary animate-pulse" />
@@ -192,11 +192,11 @@ function Security() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                    <th className="text-left px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#94A3B8" }}>Zone</th>
-                    <th className="text-left px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#94A3B8" }}>Team</th>
-                    <th className="text-center px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#94A3B8" }}>Status</th>
-                    <th className="text-right px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#94A3B8" }}>ETA</th>
+                  <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
+                    <th className="text-left px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Zone</th>
+                    <th className="text-left px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Team</th>
+                    <th className="text-center px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Status</th>
+                    <th className="text-right px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>ETA</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -204,15 +204,15 @@ function Security() {
                     <tr
                       key={p.team}
                       className="transition-colors"
-                      style={{ borderBottom: i < patrols.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
+                      style={{ borderBottom: i < patrols.length - 1 ? "1px solid rgba(0,0,0,0.04)" : "none" }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(14,159,110,0.04)")}
                       onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                     >
-                      <td className="px-7 py-4 font-medium text-white flex items-center gap-2">
+                      <td className="px-7 py-4 font-medium text-slate-900 flex items-center gap-2">
                         <MapPin className="size-3.5 text-primary" />
                         {p.zone}
                       </td>
-                      <td className="px-4 py-4" style={{ color: "#94A3B8" }}>{p.team}</td>
+                      <td className="px-4 py-4" style={{ color: "#64748B" }}>{p.team}</td>
                       <td className="px-4 py-4 text-center">
                         <span
                           className="text-[10px] font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full"
@@ -222,7 +222,7 @@ function Security() {
                                 ? "rgba(14,159,110,0.12)"
                                 : p.status === "Responding"
                                 ? "rgba(244,180,0,0.12)"
-                                : "rgba(255,255,255,0.08)",
+                                : "rgba(0,0,0,0.05)",
                             border: `1px solid ${
                               p.status === "On Patrol"
                                 ? "rgba(14,159,110,0.25)"
@@ -258,14 +258,14 @@ function Security() {
           {/* Threat Gauge */}
           <div
             className="rounded-2xl p-7"
-            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
-            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-white mb-1">Threat Assessment</h3>
-            <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "#94A3B8" }}>Current security posture</p>
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900 mb-1">Threat Assessment</h3>
+            <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "#64748B" }}>Current security posture</p>
             <div className="flex items-center justify-center py-4">
               <div className="relative size-44">
                 <svg className="size-full -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="43" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="7" />
+                  <circle cx="50" cy="50" r="43" fill="none" stroke="rgba(0,0,0,0.04)" strokeWidth="7" />
                   <motion.circle
                     initial={{ strokeDashoffset: 270 }}
                     animate={{ strokeDashoffset: 270 * 0.85 }}
@@ -281,8 +281,8 @@ function Security() {
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <ShieldCheck className="size-8 text-primary mb-1" />
-                  <span className="text-2xl font-extrabold text-white tabular-nums tracking-tight tabular-nums">SAFE</span>
-                  <span className="text-[10px] uppercase tracking-[0.20em] mt-1" style={{ color: "#94A3B8" }}>All Clear</span>
+                  <span className="text-2xl font-extrabold text-slate-900 tabular-nums tracking-tight tabular-nums">SAFE</span>
+                  <span className="text-[10px] uppercase tracking-[0.20em] mt-1" style={{ color: "#64748B" }}>All Clear</span>
                 </div>
               </div>
             </div>
@@ -291,33 +291,33 @@ function Security() {
           {/* Access Control */}
           <div
             className="rounded-2xl p-6"
-            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
             <div className="flex items-center gap-2 mb-4">
               <Lock className="size-4 text-primary" />
-              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-white">Access Control</h3>
+              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Access Control</h3>
             </div>
             <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}>
+              <div className="flex items-center justify-between p-3 rounded-xl" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
-                  <p className="text-xs font-bold text-white">Role</p>
-                  <p className="text-[10px] mt-0.5" style={{ color: "#94A3B8" }}>Current session</p>
+                  <p className="text-xs font-bold text-slate-900">Role</p>
+                  <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>Current session</p>
                 </div>
                 <span className="text-sm font-bold uppercase px-3 py-1 rounded-full" style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.25)", color: "#0E9F6E" }}>
                   {role}
                 </span>
               </div>
-              <div className="flex items-center justify-between p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}>
+              <div className="flex items-center justify-between p-3 rounded-xl" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
-                  <p className="text-xs font-bold text-white">Rate Limit Buckets</p>
-                  <p className="text-[10px] mt-0.5" style={{ color: "#94A3B8" }}>Active session limits</p>
+                  <p className="text-xs font-bold text-slate-900">Rate Limit Buckets</p>
+                  <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>Active session limits</p>
                 </div>
-                <span className="text-sm font-bold text-white">{buckets.length}</span>
+                <span className="text-sm font-bold text-slate-900">{buckets.length}</span>
               </div>
             </div>
             <button
               onClick={handleClearRole}
-              className="w-full mt-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
+              className="w-full mt-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.18em] text-slate-900 transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
               style={{ background: "linear-gradient(135deg, #D92D20, #FF4D3D)", boxShadow: "0 0 16px rgba(217,45,32,0.20)" }}
             >
               Clear Role Token
@@ -327,11 +327,11 @@ function Security() {
           {/* Security Protocols */}
           <div
             className="rounded-2xl p-6"
-            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
+            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
           >
             <div className="flex items-center gap-2 mb-4">
               <Eye className="size-4 text-primary" />
-              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-white">Active Protocols</h3>
+              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Active Protocols</h3>
             </div>
             <div className="space-y-2">
               {[
@@ -341,13 +341,13 @@ function Security() {
                 { name: "Facial Recognition", status: "Standby" },
                 { name: "Evacuation Protocol", status: "Standby" },
               ].map((p) => (
-                <div key={p.name} className="flex items-center justify-between py-2 px-1" style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                  <span className="text-xs text-white">{p.name}</span>
+                <div key={p.name} className="flex items-center justify-between py-2 px-1" style={{ borderBottom: "1px solid rgba(0,0,0,0.04)" }}>
+                  <span className="text-xs text-slate-900">{p.name}</span>
                   <span
                     className="text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 rounded-full"
                     style={{
-                      background: p.status === "Active" ? "rgba(14,159,110,0.12)" : "rgba(255,255,255,0.08)",
-                      border: `1px solid ${p.status === "Active" ? "rgba(14,159,110,0.22)" : "rgba(255,255,255,0.12)"}`,
+                      background: p.status === "Active" ? "rgba(14,159,110,0.12)" : "rgba(0,0,0,0.05)",
+                      border: `1px solid ${p.status === "Active" ? "rgba(14,159,110,0.22)" : "rgba(0,0,0,0.08)"}`,
                       color: p.status === "Active" ? "#0E9F6E" : "#64748B",
                     }}
                   >
@@ -388,12 +388,12 @@ function SecurityKPI({
       whileHover={{ y: -3 }}
       className="rounded-2xl p-6 relative overflow-hidden"
       style={{
-        background: "rgba(2,6,23,0.70)",
-        border: "1px solid rgba(255,255,255,0.10)",
+        background: "rgba(255,255,255,0.90)",
+        border: "1px solid rgba(0,0,0,0.06)",
       }}
     >
       <div className="flex items-start justify-between mb-6">
-        <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#94A3B8" }}>
+        <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#64748B" }}>
           {label}
         </span>
         <div
@@ -403,7 +403,7 @@ function SecurityKPI({
           {icon}
         </div>
       </div>
-      <span className="text-3xl font-extrabold text-white tracking-tight tabular-nums leading-none">{value}</span>
+      <span className="text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums leading-none">{value}</span>
       <p className="text-[10px] uppercase tracking-[0.16em] mt-2" style={{ color: "rgba(100,116,139,0.60)" }}>{sub}</p>
     </motion.div>
   );

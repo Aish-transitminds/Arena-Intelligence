@@ -80,7 +80,7 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-dvh flex relative bg-slate-950 text-slate-200">
+    <div className="min-h-dvh flex relative bg-background">
       {/* Global Stadium Backdrop */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div
@@ -96,8 +96,8 @@ export function AppShell({
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(2,6,23,0.70) 0%, rgba(2,6,23,0.90) 100%)",
-            backdropFilter: "blur(8px)",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.75) 100%)",
+            backdropFilter: "blur(2px)",
           }}
         />
         <div
@@ -112,20 +112,20 @@ export function AppShell({
       {/* Sidebar */}
       <aside
         aria-label="Primary navigation"
-        className="hidden md:flex w-[260px] shrink-0 flex-col sticky top-0 h-dvh bg-slate-950/50 backdrop-blur-md border-r border-white/5"
+        className="hidden md:flex w-[260px] shrink-0 flex-col glass-sidebar sticky top-0 h-dvh"
       >
         {/* Logo area */}
-        <div className="px-5 py-5 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="px-5 py-5 border-b" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
           <Logo />
         </div>
 
         {/* Live status ticker */}
-        <div className="px-5 py-3 border-b flex items-center gap-2.5" style={{ borderColor: "rgba(255,255,255,0.06)", background: "rgba(14,159,110,0.15)" }}>
+        <div className="px-5 py-3 border-b flex items-center gap-2.5" style={{ borderColor: "rgba(0,0,0,0.04)", background: "rgba(14,159,110,0.05)" }}>
           <Radio className="size-3 text-primary animate-pulse" />
           <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#0E9F6E" }}>
             Live Operations
           </span>
-          <span className="ml-auto text-[10px]" style={{ color: "#94A3B8" }}>
+          <span className="ml-auto text-[10px]" style={{ color: "#64748B" }}>
             12:10 IST
           </span>
         </div>
@@ -135,7 +135,7 @@ export function AppShell({
             <div key={section.label}>
               <div
                 className="px-3 pb-2.5 text-[9px] font-bold uppercase tracking-[0.22em]"
-                style={{ color: "rgba(255,255,255,0.50)" }}
+                style={{ color: "rgba(100,116,139,0.50)" }}
               >
                 {section.label}
               </div>
@@ -149,16 +149,16 @@ export function AppShell({
                         aria-current={active ? "page" : undefined}
                         className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${focusRing} ${
                           active
-                              ? "text-white"
-                              : "hover:text-white"
-                          }`}
+                            ? "text-slate-900"
+                            : "hover:text-slate-900"
+                        }`}
                         style={
                           active
                             ? {
                                 background: "linear-gradient(135deg, rgba(14,159,110,0.15), rgba(60,179,113,0.08))",
                                 border: "1px solid rgba(14,159,110,0.18)",
                               }
-                            : { color: "#94A3B8" }
+                            : { color: "#64748B" }
                         }
                       >
                         {/* Active indicator rail */}
@@ -177,7 +177,7 @@ export function AppShell({
                         />
                         <span className="flex-1 font-medium">{label}</span>
                         {hint && (
-                          <span className="text-[10px] transition-colors" style={{ color: "rgba(255,255,255,0.40)" }}>
+                          <span className="text-[10px] transition-colors" style={{ color: "rgba(100,116,139,0.50)" }}>
                             {hint}
                           </span>
                         )}
@@ -191,7 +191,7 @@ export function AppShell({
         </nav>
 
         {/* User card at bottom */}
-        <div className="p-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="p-3 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
           <div className="glass rounded-xl p-3 flex items-center gap-3">
             <div
               className="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
@@ -200,14 +200,14 @@ export function AppShell({
               AI
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold truncate text-white">Aishwarya</div>
-              <div className="text-[10px] truncate uppercase tracking-[0.16em]" style={{ color: "#94A3B8" }}>Ops Manager</div>
+              <div className="text-sm font-semibold truncate text-slate-900">Aishwarya</div>
+              <div className="text-[10px] truncate uppercase tracking-[0.16em]" style={{ color: "#64748B" }}>Ops Manager</div>
             </div>
             <button
               type="button"
               aria-label="Account settings"
-              className={`size-8 rounded-md flex items-center justify-center transition-colors hover:text-white ${focusRing}`}
-              style={{ color: "#94A3B8" }}
+              className={`size-8 rounded-md flex items-center justify-center transition-colors hover:text-slate-900 ${focusRing}`}
+              style={{ color: "#64748B" }}
             >
               <Settings className="size-4" aria-hidden="true" />
             </button>
@@ -220,36 +220,36 @@ export function AppShell({
         <header
           className="sticky top-0 z-30 backdrop-blur-2xl"
           style={{
-            background: "rgba(2,6,23,0.85)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.20)",
+            background: "rgba(255,255,255,0.85)",
+            borderBottom: "1px solid rgba(0,0,0,0.06)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.05)",
           }}
         >
           <div className="flex items-center gap-4 px-6 py-3.5">
             {/* Breadcrumb + title */}
             <div className="flex-1 min-w-0">
-              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs" style={{ color: "#94A3B8" }}>
-                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-white transition-colors ${focusRing}`}>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs" style={{ color: "#64748B" }}>
+                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-slate-900 transition-colors ${focusRing}`}>
                   <Home className="size-3" aria-hidden="true" />
                   <span>Arena Intelligence</span>
                 </Link>
                 <span aria-hidden="true">/</span>
-                <span className="text-slate-300">{activeItem?.label ?? title}</span>
+                <span className="text-slate-700">{activeItem?.label ?? title}</span>
               </nav>
-              <h1 className="mt-0.5 text-xl font-bold tracking-tight truncate text-white">{title}</h1>
-              {subtitle && <p className="text-xs mt-0.5 truncate" style={{ color: "#94A3B8" }}>{subtitle}</p>}
+              <h1 className="mt-0.5 text-xl font-bold tracking-tight truncate text-slate-900">{title}</h1>
+              {subtitle && <p className="text-xs mt-0.5 truncate" style={{ color: "#64748B" }}>{subtitle}</p>}
             </div>
 
             {/* Search */}
-            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 transition" style={{ border: "1px solid rgba(255,255,255,0.1)" }}>
-              <Search className="size-4 shrink-0" style={{ color: "#94A3B8" }} aria-hidden="true" />
+            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 transition" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
+              <Search className="size-4 shrink-0" style={{ color: "#64748B" }} aria-hidden="true" />
               <span className="sr-only">Search</span>
               <input
                 type="search"
                 placeholder="Search fixtures, sections, alerts…"
-                className="bg-transparent text-sm outline-none flex-1 placeholder:text-slate-500 text-white"
+                className="bg-transparent text-sm outline-none flex-1 placeholder:text-slate-400 text-slate-900"
               />
-              <kbd className="text-[10px] px-1.5 py-0.5 rounded" style={{ border: "1px solid rgba(255,255,255,0.15)", color: "#94A3B8" }}>⌘K</kbd>
+              <kbd className="text-[10px] px-1.5 py-0.5 rounded" style={{ border: "1px solid rgba(0,0,0,0.10)", color: "#64748B" }}>⌘K</kbd>
             </label>
 
             {/* Notifications */}
@@ -257,7 +257,7 @@ export function AppShell({
               type="button"
               aria-label="Notifications, 1 unread"
               className={`relative size-10 rounded-xl glass flex items-center justify-center transition ${focusRing}`}
-              style={{ color: "#94A3B8" }}
+              style={{ color: "#64748B" }}
             >
               <Bell className="size-4" aria-hidden="true" />
               <span
