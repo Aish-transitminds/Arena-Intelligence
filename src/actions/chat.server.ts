@@ -1,8 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import fs from "fs";
-import path from "path";
 import { getLiveSnapshot, getRelevantLiveData } from "../lib/liveData";
 import { sanitizeText } from "../lib/security";
+import vectorIndexData from "../../stadium-data/vector-index.json";
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -39,9 +39,11 @@ const TOP_K = 8;
 let cachedIndex: any = null;
 function loadIndex() {
   if (cachedIndex) return cachedIndex;
-  const indexPath = path.join(process.cwd(), "stadium-data", "vector-index.json");
-  if (!fs.existsSync(indexPath)) return []; // Return empty if not generated yet
-  cachedIndex = JSON.parse(fs.readFileSync(indexPath, "utf-8"));
+  try {
+    cachedIndex = vectorIndexData;
+  } catch (e) {
+    cachedIndex = [];
+  }
   return cachedIndex;
 }
 
