@@ -21,7 +21,14 @@ function getStorage(): Storage | null {
 }
 
 export function sanitizeText(input: string, maxLength = 140): string {
-  return input.replace(/[<>]/g, "").trim().slice(0, maxLength);
+  if (!input) return "";
+  const sanitized = input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+  return sanitized.trim().slice(0, maxLength);
 }
 
 export function isValidEmail(input: string): boolean {
@@ -64,7 +71,16 @@ export function clearStoredRole(): void {
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {
-  // Demo mode: All routes are visible to everyone without requiring login
+  if (pathname.startsWith("/admin") || pathname.startsWith("/security") || pathname.startsWith("/audit") || pathname.startsWith("/tournament") || pathname.startsWith("/emergency")) {
+    return role === "admin" || role === "security";
+  }
+  if (pathname.startsWith("/fan")) {
+    return role === "fan" || role === "admin" || role === "security";
+  }
+  if (pathname.startsWith("/assistant")) {
+    return role === "admin" || role === "security" || role === "fan";
+  }
+  // Public routes (e.g. index, /login)
   return true;
 }
 
@@ -139,6 +155,7 @@ export function setSecurityHeaders(response: Response): Response {
       "Content-Security-Policy",
       "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
     );
+    response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
     return response;
   } catch {
     const headers = new Headers(response.headers);
@@ -150,6 +167,7 @@ export function setSecurityHeaders(response: Response): Response {
       "Content-Security-Policy",
       "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
     );
+    headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
     return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,

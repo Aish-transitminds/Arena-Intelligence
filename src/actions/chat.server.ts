@@ -2,6 +2,27 @@ import { createServerFn } from "@tanstack/react-start";
 import fs from "fs";
 import path from "path";
 import { getLiveSnapshot, getRelevantLiveData } from "../lib/liveData";
+import { sanitizeText } from "../lib/security";
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function checkServerRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const limit = 20; // 20 requests per minute
+  const windowMs = 60000;
+  
+  const record = rateLimitMap.get(ip);
+  if (!record || record.resetAt <= now) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + windowMs });
+    return true;
+  }
+  
+  if (record.count >= limit) return false;
+  
+  record.count += 1;
+  rateLimitMap.set(ip, record);
+  return true;
+}
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
@@ -100,12 +121,23 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
       throw new Error("Missing 'message' in request");
     }
 
+    // Basic server-side rate limit (using a mock IP for now since TanStack Start doesn't expose it easily in standard createServerFn without context)
+    const ip = "client-ip"; 
+    if (!checkServerRateLimit(ip)) {
+      throw new Error("Rate limit exceeded. Please try again later.");
+    }
+
+    const cleanMessage = sanitizeText(message);
+    if (!cleanMessage) {
+      throw new Error("Invalid or empty message after sanitization.");
+    }
+
     const index = loadIndex();
     let staticContext = "";
     let topChunks: any[] = [];
     
     if (index.length > 0) {
-      const queryVector = await embedQuery(message);
+      const queryVector = await embedQuery(cleanMessage);
       topChunks = retrieveTopChunks(queryVector, index, TOP_K);
       staticContext = topChunks.map((c) => `- ${c.text}`).join("\n");
     } else {
@@ -113,9 +145,9 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
     }
 
     const liveSnapshot = getLiveSnapshot();
-    const liveContext = getRelevantLiveData(message, liveSnapshot);
+    const liveContext = getRelevantLiveData(cleanMessage, liveSnapshot);
 
-    const answer = await askGroq(message, staticContext, liveContext, personaContext, lang);
+    const answer = await askGroq(cleanMessage, staticContext, liveContext, personaContext, lang);
 
     return {
       answer,
