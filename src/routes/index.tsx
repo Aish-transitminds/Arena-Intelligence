@@ -254,19 +254,7 @@ function Landing() {
                 Admin Console
                 <ArrowUpRight className="size-4" />
               </Link>
-              <Link
-                to="/fan"
-                className="group relative inline-flex items-center justify-center gap-2.5 rounded-full px-10 py-4.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
-                style={{
-                  background: "linear-gradient(135deg, #1E40AF, #7C3AED, #DB2777)",
-                  boxShadow: "0 0 40px rgba(124,58,237,0.25), 0 0 80px rgba(219,39,119,0.15)",
-                  border: "2px solid rgba(255,255,255,0.50)",
-                }}
-              >
-                <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(124,58,237,0.40)" }} />
-                ⚽ Fan Dashboard
-                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
+
               <Link
                 to="/assistant"
                 className="group relative inline-flex items-center justify-center gap-2.5 rounded-full px-10 py-4.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
@@ -311,7 +299,7 @@ function Landing() {
                         {kpi.label}
                       </span>
                     </div>
-                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight">{kpi.value}</div>
+                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight tabular-nums">{kpi.value}</div>
                   </div>
                 );
               })}

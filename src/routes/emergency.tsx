@@ -134,16 +134,16 @@ function Emergency() {
           animate={{ opacity: 1, y: 0 }}
           className="lg:col-span-2 rounded-2xl overflow-hidden relative"
           style={{
-            background: "rgba(255,255,255,0.90)",
-            border: sos ? "1px solid rgba(217,45,32,0.30)" : "1px solid rgba(0,0,0,0.08)",
+            background: "rgba(2,6,23,0.70)",
+            border: sos ? "1px solid rgba(217,45,32,0.30)" : "1px solid rgba(255,255,255,0.12)",
           }}
         >
           {/* Header band */}
           <div
             className="px-7 py-5 flex items-center justify-between"
             style={{
-              background: sos ? "rgba(217,45,32,0.10)" : "rgba(0,0,0,0.03)",
-              borderBottom: "1px solid rgba(0,0,0,0.06)",
+              background: sos ? "rgba(217,45,32,0.10)" : "rgba(255,255,255,0.04)",
+              borderBottom: "1px solid rgba(255,255,255,0.10)",
             }}
           >
             <div>
@@ -153,7 +153,7 @@ function Emergency() {
               >
                 Emergency Dispatch &amp; Fan SOS
               </p>
-              <h2 className="text-xl font-extrabold text-slate-900 mt-1">
+              <h2 className="text-xl font-extrabold text-white mt-1">
                 {sos ? "Emergency Response Active" : "Stadium Emergency Hub"}
               </h2>
             </div>
@@ -170,8 +170,8 @@ function Emergency() {
             <div className="grid md:grid-cols-2 gap-8 items-stretch">
               
               {/* Left Column: Global SOS button */}
-              <div className="flex flex-col items-center justify-center p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(0,0,0,0.04)" }}>
-                <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "#64748B" }}>Stadium-Wide Alarm</p>
+              <div className="flex flex-col items-center justify-center p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(255,255,255,0.05)" }}>
+                <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "#94A3B8" }}>Stadium-Wide Alarm</p>
                 
                 <motion.button
                   onClick={handleSos}
@@ -200,23 +200,23 @@ function Emergency() {
                   <ShieldAlert className="size-10 mb-1.5" />
                   <span className="text-lg font-black tracking-wider">{sos ? "ACTIVE" : "SOS"}</span>
                 </motion.button>
-                <p className="text-[10px] mt-4 text-center max-w-[200px]" style={{ color: "#64748B" }}>
+                <p className="text-[10px] mt-4 text-center max-w-[200px]" style={{ color: "#94A3B8" }}>
                   Triggers immediate warning signal across all screens and gates.
                 </p>
               </div>
 
               {/* Right Column: Localized SOS Reporting */}
-              <form onSubmit={handleAreaSos} className="flex flex-col text-left p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(0,0,0,0.04)" }}>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">Report Localized Incident</h3>
+              <form onSubmit={handleAreaSos} className="flex flex-col text-left p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(255,255,255,0.05)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">Report Localized Incident</h3>
                 
                 <div className="space-y-3.5 flex-1">
                   <div>
-                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#64748B" }}>Select Location / Area</label>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#94A3B8" }}>Select Location / Area</label>
                     <select
                       value={selectedArea}
                       onChange={(e) => setSelectedArea(e.target.value)}
-                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-slate-900 outline-none select-none"
-                      style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)" }}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-white outline-none select-none"
+                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}
                     >
                       <option value="Section 204" className="bg-[#0E1B24]">Section 204 (East Stand)</option>
                       <option value="Section 102" className="bg-[#0E1B24]">Section 102 (West Stand)</option>
@@ -227,12 +227,12 @@ function Emergency() {
                   </div>
 
                   <div>
-                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#64748B" }}>Incident Type</label>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#94A3B8" }}>Incident Type</label>
                     <select
                       value={incidentType}
                       onChange={(e) => setIncidentType(e.target.value)}
-                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-slate-900 outline-none"
-                      style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)" }}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2 text-xs text-white outline-none"
+                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}
                     >
                       <option value="Overcrowding" className="bg-[#0E1B24]">Overcrowding &amp; Flow Anomaly</option>
                       <option value="Medical Emergency" className="bg-[#0E1B24]">Medical Emergency / First Aid</option>
@@ -242,15 +242,15 @@ function Emergency() {
                   </div>
 
                   <div>
-                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#64748B" }}>Details / Description</label>
+                    <label className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "#94A3B8" }}>Details / Description</label>
                     <textarea
                       placeholder="e.g. Sudden crowding spike at exits, stairs congested..."
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
-                      className="mt-1.5 w-full rounded-xl px-3 py-2.5 text-xs text-slate-900 outline-none h-16 resize-none transition"
-                      style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)" }}
+                      className="mt-1.5 w-full rounded-xl px-3 py-2.5 text-xs text-white outline-none h-16 resize-none transition"
+                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)" }}
                       onFocus={(e) => (e.target.style.borderColor = "rgba(14,159,110,0.35)")}
-                      onBlur={(e) => (e.target.style.borderColor = "rgba(0,0,0,0.08)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
                     />
                   </div>
                 </div>
@@ -284,16 +284,16 @@ function Emergency() {
               )}
             </AnimatePresence>
 
-            <div className="mt-6 rounded-2xl border p-5" style={{ background: "rgba(0,0,0,0.02)", borderColor: "rgba(0,0,0,0.08)" }}>
+            <div className="mt-6 rounded-2xl border p-5" style={{ background: "rgba(0,0,0,0.02)", borderColor: "rgba(255,255,255,0.12)" }}>
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: "#64748B" }}>AI-Generated Response Plan</p>
-                  <h3 className="text-sm font-bold text-slate-900">Live incident analysis</h3>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: "#94A3B8" }}>AI-Generated Response Plan</p>
+                  <h3 className="text-sm font-bold text-white">Live incident analysis</h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setShowAiReasoning((v) => !v)}
-                  className="rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900"
+                  className="rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white"
                   style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.22)" }}
                 >
                   {showAiReasoning ? "Hide AI reasoning" : "Show AI reasoning"}
@@ -301,40 +301,40 @@ function Emergency() {
               </div>
 
               {aiBusy ? (
-                <p className="text-sm" style={{ color: "#64748B" }}>Generating live response plan…</p>
+                <p className="text-sm" style={{ color: "#94A3B8" }}>Generating live response plan…</p>
               ) : aiPlan ? (
                 <div className="space-y-3">
                   <div className="rounded-xl p-3" style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.16)" }}>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-900">Severity</span>
+                      <span className="text-xs font-bold uppercase tracking-[0.18em] text-white">Severity</span>
                       <span className="text-xs font-semibold" style={{ color: "#0E9F6E" }}>{aiPlan.plan.severity}</span>
                     </div>
-                    <ul className="mt-2 space-y-1 text-sm" style={{ color: "#64748B" }}>
+                    <ul className="mt-2 space-y-1 text-sm" style={{ color: "#94A3B8" }}>
                       {aiPlan.plan.recommendedActions.map((action) => <li key={action}>• {action}</li>)}
                     </ul>
                   </div>
                   <div className="grid md:grid-cols-2 gap-3 text-sm">
-                    <div className="rounded-xl p-3" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#64748B" }}>Alert Teams</p>
-                      <p className="text-slate-900">{aiPlan.plan.alertTeams.join(", ")}</p>
+                    <div className="rounded-xl p-3" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#94A3B8" }}>Alert Teams</p>
+                      <p className="text-white">{aiPlan.plan.alertTeams.join(", ")}</p>
                     </div>
-                    <div className="rounded-xl p-3" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#64748B" }}>Alert Gates</p>
-                      <p className="text-slate-900">{aiPlan.plan.alertGates.join(", ")}</p>
+                    <div className="rounded-xl p-3" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#94A3B8" }}>Alert Gates</p>
+                      <p className="text-white">{aiPlan.plan.alertGates.join(", ")}</p>
                     </div>
                   </div>
                   {showAiReasoning && (
-                    <div className="rounded-xl p-3 text-sm" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#64748B" }}>Prompt / Response</p>
-                      <p className="text-slate-900 font-semibold">Prompt</p>
-                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#64748B" }}>{aiPlan.prompt}</pre>
-                      <p className="mt-3 text-slate-900 font-semibold">Raw Response</p>
-                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#64748B" }}>{aiPlan.rawResponse}</pre>
+                    <div className="rounded-xl p-3 text-sm" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#94A3B8" }}>Prompt / Response</p>
+                      <p className="text-white font-semibold">Prompt</p>
+                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#94A3B8" }}>{aiPlan.prompt}</pre>
+                      <p className="mt-3 text-white font-semibold">Raw Response</p>
+                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#94A3B8" }}>{aiPlan.rawResponse}</pre>
                     </div>
                   )}
                 </div>
               ) : (
-                <p className="text-sm" style={{ color: "#64748B" }}>Submit an incident to generate a live AI plan.</p>
+                <p className="text-sm" style={{ color: "#94A3B8" }}>Submit an incident to generate a live AI plan.</p>
               )}
             </div>
           </div>
@@ -349,22 +349,22 @@ function Emergency() {
           {/* Nearest medical */}
           <div
             className="rounded-2xl p-5"
-            style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+            style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
           >
             <div className="flex items-center gap-2 mb-3">
               <MapPin className="size-4 text-primary" />
-              <h3 className="text-xs font-bold uppercase tracking-[0.20em] text-slate-900">Nearest Medical Station</h3>
+              <h3 className="text-xs font-bold uppercase tracking-[0.20em] text-white">Nearest Medical Station</h3>
             </div>
             <div className="space-y-2">
               {dynamicMedicalPosts.map((loc) => (
                 <div
                   key={loc.name}
                   className="flex items-center justify-between p-3 rounded-xl"
-                  style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)" }}
                 >
                   <div>
-                    <p className="text-xs font-semibold text-slate-900">{loc.name}</p>
-                    <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>{loc.dist}</p>
+                    <p className="text-xs font-semibold text-white">{loc.name}</p>
+                    <p className="text-[10px] mt-0.5" style={{ color: "#94A3B8" }}>{loc.dist}</p>
                   </div>
                   <span
                     className="text-[9px] font-bold uppercase tracking-[0.16em] px-2 py-1 rounded-full"
@@ -385,15 +385,15 @@ function Emergency() {
         {/* ── EVACUATION ROUTES ── */}
         <div
           className="rounded-2xl overflow-hidden lg:col-span-2"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
         >
           <div
             className="px-6 py-4 flex items-center justify-between"
-            style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}
           >
             <div className="flex items-center gap-2">
               <RouteIcon className="size-4 text-primary" />
-              <h2 className="text-sm font-bold text-slate-900">Evacuation Routes</h2>
+              <h2 className="text-sm font-bold text-white">Evacuation Routes</h2>
             </div>
             <span
               className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
@@ -458,13 +458,13 @@ function Emergency() {
         {/* ── INCIDENT FEED ── */}
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
         >
           <div
             className="px-6 py-4 flex items-center justify-between"
-            style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.10)" }}
           >
-            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Incident Log</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-white">Incident Log</h3>
             <div className="flex items-center gap-2">
               <Radio className="size-3 text-primary animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Live</span>
@@ -487,7 +487,7 @@ function Emergency() {
                       ? "1px solid rgba(217,45,32,0.12)"
                       : inc.type === "resolved"
                       ? "1px solid rgba(14,159,110,0.12)"
-                      : "1px solid rgba(0,0,0,0.05)",
+                      : "1px solid rgba(255,255,255,0.08)",
                 }}
               >
                 <div
@@ -534,7 +534,7 @@ function ResponseCard({
   return (
     <div
       className="p-5 rounded-2xl flex items-center justify-between"
-      style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+      style={{ background: "rgba(2,6,23,0.70)", border: "1px solid rgba(255,255,255,0.10)" }}
     >
       <div className="flex items-center gap-4">
         <div
@@ -544,11 +544,11 @@ function ResponseCard({
           <Icon className="size-5" />
         </div>
         <div>
-          <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">{title}</h3>
-          <p className="text-xs mt-0.5" style={{ color: "#64748B" }}>{status}</p>
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider">{title}</h3>
+          <p className="text-xs mt-0.5" style={{ color: "#94A3B8" }}>{status}</p>
         </div>
       </div>
-      <div className="text-3xl font-extrabold text-slate-900 tracking-tight">{count}</div>
+      <div className="text-3xl font-extrabold text-white tracking-tight tabular-nums">{count}</div>
     </div>
   );
 }
