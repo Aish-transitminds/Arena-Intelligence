@@ -83,7 +83,7 @@ const MOCK_TICKETS: TicketItem[] = [
     event: "Championship Finals",
     date: "Next Friday",
     time: "20:30 EST",
-    venue: "MetLife Stadium · Gate C",
+    venue: "Narendra Modi FIFA Stadium · Gate C",
     section: "108",
     row: "5",
     seat: "12",

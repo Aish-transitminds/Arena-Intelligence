@@ -55,7 +55,7 @@ function retrieveTopChunks(queryVector: number[], index: any[], k: number) {
 }
 
 async function askGroq(question: string, staticContext: string, liveContext: any, personaContext: string, lang: string) {
-  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for MetLife Stadium during the FIFA World Cup 2026.
+  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Narendra Modi FIFA Stadium during the FIFA World Cup 2026.
 ${personaContext}
 
 Respond ONLY in ${lang}, regardless of what language the question is asked in.

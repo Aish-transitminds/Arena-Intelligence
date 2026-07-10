@@ -277,7 +277,10 @@ function Landing() {
                 }}
               >
                 <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(14,159,110,0.40)" }} />
-                🤖 Smarty Arena Helper
+                <span className="absolute inset-0 rounded-full overflow-hidden">
+                  <span className="absolute inset-y-0 -inset-x-[100%] w-[100%] animate-glitter-sweep bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]" />
+                </span>
+                Arena IQ AI
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </motion.div>

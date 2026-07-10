@@ -401,6 +401,27 @@ function Admin() {
               </div>
             </div>
 
+            {/* Crowd Density Heatmap */}
+            <div
+              className="rounded-2xl p-7"
+              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+            >
+              <div className="flex items-center justify-between mb-7">
+                <div>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Live Crowd Heatmap</h2>
+                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Top-down density visualization</p>
+                </div>
+                <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest font-bold">
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#0E9F6E" }}/> <span style={{ color: "#64748B" }}>Optimal</span></div>
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#F4B400" }}/> <span style={{ color: "#64748B" }}>High</span></div>
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#D92D20" }}/> <span style={{ color: "#64748B" }}>Critical</span></div>
+                </div>
+              </div>
+              <div className="w-full flex items-center justify-center py-6">
+                <CrowdHeatmap data={sectionOccupancy} />
+              </div>
+            </div>
+
             {/* Gate Queue Table */}
             <div
               className="rounded-2xl overflow-hidden"
@@ -797,64 +818,128 @@ function KPICard({
         <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#64748B" }}>
           {label}
         </span>
-        <div
-          className="size-10 rounded-xl flex items-center justify-center transition-all group-hover:scale-110"
-          style={{
-            background: "rgba(14,159,110,0.10)",
-            border: "1px solid rgba(14,159,110,0.18)",
-            color: "#0E9F6E",
-          }}
-        >
+        <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,0,0,0.03)", color: "#64748B" }}>
           {icon}
         </div>
       </div>
-      <div className="flex items-baseline gap-3 mb-3">
-        <span className="text-4xl font-extrabold text-slate-900 tracking-tight leading-none">{value}</span>
-        <span
-          className="text-[10px] font-bold uppercase tracking-[0.16em] px-2.5 py-1 rounded-full"
-          style={{
-            background: trend === "up" ? "rgba(14,159,110,0.12)" : "rgba(0,0,0,0.06)",
-            border: trend === "up" ? "1px solid rgba(14,159,110,0.20)" : "1px solid rgba(0,0,0,0.08)",
-            color: trend === "up" ? "#0E9F6E" : "#64748B",
-          }}
-        >
-          {trend === "up" && <ArrowUpRight className="size-2.5 inline -mt-0.5 mr-0.5" />}
-          {delta}
-        </span>
+      <div>
+        <div className="text-3xl font-extrabold text-slate-900 tracking-tight">{value}</div>
+        <div className="flex items-center gap-3 mt-3">
+          <span
+            className="text-[10px] font-bold uppercase tracking-[0.16em] px-2 py-1 rounded-md"
+            style={{
+              background: trend === "down" ? "rgba(217,45,32,0.10)" : "rgba(14,159,110,0.10)",
+              color: trend === "down" ? "#D92D20" : "#0E9F6E",
+            }}
+          >
+            {trend === "up" && <ArrowUp className="size-3 inline mr-1" />}
+            {trend === "down" && <ArrowDown className="size-3 inline mr-1" />}
+            {delta}
+          </span>
+          <span className="text-[10px] uppercase tracking-[0.12em]" style={{ color: "#64748B" }}>
+            {sub}
+          </span>
+        </div>
       </div>
-      <p className="text-[10px] uppercase tracking-[0.16em]" style={{ color: "rgba(100,116,139,0.60)" }}>{sub}</p>
     </motion.div>
   );
 }
 
-/* ── Alert Pill ── */
-function AlertPill({
-  icon,
-  label,
-  value,
-  tone,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  tone: "success" | "warning" | "info";
-}) {
+function AlertPill({ icon, label, value, tone }: { icon: React.ReactNode; label: string; value: string; tone: "success" | "warning" | "critical" | "info" }) {
   const colors = {
-    success: { bg: "rgba(14,159,110,0.08)", border: "rgba(14,159,110,0.18)", text: "#0E9F6E" },
-    warning: { bg: "rgba(217,45,32,0.08)", border: "rgba(217,45,32,0.18)", text: "#D92D20" },
-    info: { bg: "rgba(244,180,0,0.08)", border: "rgba(244,180,0,0.18)", text: "#F4B400" },
-  }[tone];
-
+    success: { bg: "rgba(14,159,110,0.10)", text: "#0E9F6E", border: "rgba(14,159,110,0.20)" },
+    warning: { bg: "rgba(244,180,0,0.10)", text: "#F4B400", border: "rgba(244,180,0,0.20)" },
+    critical: { bg: "rgba(217,45,32,0.10)", text: "#D92D20", border: "rgba(217,45,32,0.20)" },
+    info: { bg: "rgba(59,130,246,0.10)", text: "#3B82F6", border: "rgba(59,130,246,0.20)" },
+  };
+  const c = colors[tone];
   return (
     <div
-      className="flex items-center gap-3 rounded-xl px-5 py-4"
-      style={{ background: colors.bg, border: `1px solid ${colors.border}` }}
+      className="flex items-center justify-between p-4 rounded-xl"
+      style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
     >
-      <div style={{ color: colors.text }}>{icon}</div>
-      <div>
-        <p className="text-[10px] uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>{label}</p>
-        <p className="text-sm font-bold text-slate-900 mt-0.5">{value}</p>
+      <div className="flex items-center gap-3">
+        <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: c.bg, color: c.text }}>
+          {icon}
+        </div>
+        <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-900">{label}</span>
       </div>
+      <span className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: c.text }}>{value}</span>
+    </div>
+  );
+}
+
+function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
+  const getColor = (val: number) => {
+    if (val >= 95) return "rgba(217,45,32,0.9)";
+    if (val >= 85) return "rgba(244,180,0,0.9)";
+    return "rgba(14,159,110,0.9)";
+  };
+
+  const getSection = (name: string) => data.find(d => d.name === name)?.value || 0;
+
+  return (
+    <div className="relative size-64 sm:size-80 flex items-center justify-center p-8 bg-slate-50 rounded-full border border-slate-200 shadow-inner">
+      {/* Pitch */}
+      <div className="absolute w-24 h-40 border-2 border-emerald-400 rounded-lg bg-emerald-100 flex items-center justify-center shadow-md">
+         <div className="w-16 h-16 border-2 border-emerald-400 rounded-full flex items-center justify-center" />
+         <div className="absolute top-0 w-12 h-6 border-b-2 border-l-2 border-r-2 border-emerald-400" />
+         <div className="absolute bottom-0 w-12 h-6 border-t-2 border-l-2 border-r-2 border-emerald-400" />
+      </div>
+
+      {/* North Stand */}
+      <motion.div 
+        className="absolute top-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white shadow-lg"
+        animate={{ backgroundColor: getColor(getSection("North")) }}
+        transition={{ duration: 1.5 }}
+      >
+        NORTH ({getSection("North").toFixed(1)}%)
+      </motion.div>
+
+      {/* South Stand */}
+      <motion.div 
+        className="absolute bottom-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white shadow-lg"
+        animate={{ backgroundColor: getColor(getSection("South")) }}
+        transition={{ duration: 1.5 }}
+      >
+        SOUTH ({getSection("South").toFixed(1)}%)
+      </motion.div>
+
+      {/* West Stand */}
+      <motion.div 
+        className="absolute left-2 w-8 h-32 rounded-full flex items-center justify-center shadow-lg"
+        animate={{ backgroundColor: getColor(getSection("West")) }}
+        transition={{ duration: 1.5 }}
+      >
+        <span className="-rotate-90 text-[10px] font-bold text-white whitespace-nowrap">WEST ({getSection("West").toFixed(1)}%)</span>
+      </motion.div>
+
+      {/* East Stand */}
+      <motion.div 
+        className="absolute right-2 w-8 h-32 rounded-full flex items-center justify-center shadow-lg"
+        animate={{ backgroundColor: getColor(getSection("East")) }}
+        transition={{ duration: 1.5 }}
+      >
+        <span className="rotate-90 text-[10px] font-bold text-white whitespace-nowrap">EAST ({getSection("East").toFixed(1)}%)</span>
+      </motion.div>
+
+      {/* VIP Stand */}
+      <motion.div 
+        className="absolute top-6 right-6 w-16 h-8 rounded-full flex items-center justify-center shadow-lg rotate-45"
+        animate={{ backgroundColor: getColor(getSection("VIP")) }}
+        transition={{ duration: 1.5 }}
+      >
+        <span className="text-[8px] font-bold text-white whitespace-nowrap">VIP ({getSection("VIP").toFixed(1)}%)</span>
+      </motion.div>
+      
+      {/* Press Stand */}
+      <motion.div 
+        className="absolute bottom-6 left-6 w-16 h-8 rounded-full flex items-center justify-center shadow-lg rotate-45"
+        animate={{ backgroundColor: getColor(getSection("Press")) }}
+        transition={{ duration: 1.5 }}
+      >
+        <span className="text-[8px] font-bold text-white whitespace-nowrap">PRESS ({getSection("Press").toFixed(1)}%)</span>
+      </motion.div>
     </div>
   );
 }

@@ -299,7 +299,7 @@ export function AppShell({
       </div>
       </div>
 
-      <AIAssistant />
+      {pathname !== "/assistant" && <AIAssistant />}
     </div>
   );
 }

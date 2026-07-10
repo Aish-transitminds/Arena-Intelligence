@@ -56,7 +56,7 @@ Arena Intelligence is a comprehensive stadium operations dashboard built for FIF
 - **Multi-Persona** — Staff, Fan, and Volunteer modes
 - **Multilingual** — English, Spanish, French, Portuguese
 - **Powered by Groq** — Llama 3.3 70B for lightning-fast responses
-- **Context-Aware** — Stadium-specific knowledge about MetLife Stadium
+- **Context-Aware** — Stadium-specific knowledge about Narendra Modi FIFA Stadium
 
 ### 🚨 Emergency Center
 - **Emergency Protocols** — Predefined response plans

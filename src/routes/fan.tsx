@@ -535,7 +535,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
         {/* Header */}
         <div className="px-6 py-4 flex items-center justify-between border-b border-black/5 bg-black/5 z-10 shrink-0">
           <div>
-            <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-900">3D Virtual MetLife Seat Preview</h2>
+            <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-900">3D Virtual Narendra Modi Seat Preview</h2>
             <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>Tap the pitch to shoot/kick the soccer ball to the stands!</p>
           </div>
           <button

@@ -66,7 +66,7 @@ function Security() {
   }
 
   return (
-    <AppShell title="Security Dashboard" subtitle="Stadium Security Operations · MetLife Stadium">
+    <AppShell title="Security Dashboard" subtitle="Stadium Security Operations · Narendra Modi FIFA Stadium">
 
       {/* ── THREAT LEVEL + ACCESS STATS ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">

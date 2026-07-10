@@ -9,7 +9,7 @@ export const Route = createFileRoute("/assistant")({
   head: () => ({
     meta: [
       { title: "Arena IQ Operations — Arena Intelligence" },
-      { name: "description", content: "World Cup 2026 operations intelligence assistant at MetLife Stadium. Persona-driven real-time coordination." },
+      { name: "description", content: "World Cup 2026 operations intelligence assistant at Narendra Modi FIFA Stadium. Persona-driven real-time coordination." },
     ],
   }),
   component: Assistant,
@@ -66,7 +66,7 @@ function buildSystemPrompt(persona: Persona, lang: Language) {
     volunteer: "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
   };
 
-  return `You are Arena IQ, the intelligent operations assistant for MetLife Stadium during the FIFA World Cup 2026.
+  return `You are Arena IQ, the intelligent operations assistant for Narendra Modi FIFA Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
@@ -78,7 +78,7 @@ function Assistant() {
   const [persona, setPersona] = useState<Persona>("staff");
   const [lang, setLang] = useState<Language>("en");
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
-    { role: "ai", text: "Welcome to MetLife Stadium World Cup 2026 Arena IQ. Select your persona in the tabs and preferred language in the header to coordinate real-time crowd dynamics." },
+    { role: "ai", text: "Welcome to Narendra Modi FIFA Stadium World Cup 2026 Arena IQ. Select your persona in the tabs and preferred language in the header to coordinate real-time crowd dynamics." },
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -128,7 +128,7 @@ function Assistant() {
   }
 
   return (
-    <AppShell title="Arena IQ Workspace" subtitle="Multimodal neural model trained on MetLife Stadium events and telemetry data">
+    <AppShell title="Arena IQ Workspace" subtitle="Multimodal neural model trained on Narendra Modi FIFA Stadium events and telemetry data">
       <div className="grid lg:grid-cols-4 gap-5 h-[calc(100vh-10rem)]">
         
         {/* Main Chat Panel */}
