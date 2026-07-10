@@ -67,49 +67,7 @@ Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific (i
 Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
 }
 
-// ---- Groq API call ----------------------------------------------------------
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || "";
-
-async function askAI(
-  history: { role: "user" | "ai"; text: string }[],
-  persona: Persona,
-  lang: Language,
-  signal: AbortSignal
-): Promise<string> {
-  const apiMessages = history
-    .slice(-8) // keep recent context only
-    .map((m) => ({
-      role: m.role === "ai" ? ("assistant" as const) : ("user" as const),
-      content: m.text,
-    }));
-
-  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${GROQ_API_KEY}`,
-    },
-    signal,
-    body: JSON.stringify({
-      model: "llama-3.3-70b-versatile",
-      messages: [
-        { role: "system", content: buildSystemPrompt(persona, lang) },
-        ...apiMessages,
-      ],
-      max_tokens: 300,
-      temperature: 0.7,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Groq API error: ${response.status}`);
-  }
-
-  const data = await response.json();
-  const text = data.choices?.[0]?.message?.content?.trim();
-  if (!text) throw new Error("Empty response from Groq");
-  return text;
-}
+import { askGeminiRAG } from "../actions/chat";
 
 export function AIAssistant() {
   const [open, setOpen] = useState(false);
@@ -150,8 +108,9 @@ export function AIAssistant() {
     abortRef.current = controller;
 
     try {
-      const reply = await askAI(nextHistory, persona, lang, controller.signal);
-      setMessages((m) => [...m, { role: "ai", text: reply }]);
+      const { answer, sources } = await askGeminiRAG({ data: { message: text, personaContext: buildSystemPrompt(persona, lang), lang } });
+      // We ignore sources right now but can display them later!
+      setMessages((m) => [...m, { role: "ai", text: answer }]);
     } catch (err: any) {
       if (err?.name === "AbortError") return; // superseded by a newer request
       setMessages((m) => [

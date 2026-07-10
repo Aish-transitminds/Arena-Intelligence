@@ -16,6 +16,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { AIAssistant } from "@/components/AIAssistant";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -517,6 +518,7 @@ function Landing() {
           </div>
         </div>
       </footer>
+      <AIAssistant />
     </div>
   );
 }
