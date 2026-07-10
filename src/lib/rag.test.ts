@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cosineSimilarity, retrieveTopChunks, validateRAGRequest } from "./rag";
+import { buildRAGContext, cosineSimilarity, retrieveTopChunks, validateRAGRequest } from "./rag";
 
 describe("RAG helpers", () => {
   it("validates and normalizes chat requests", () => {
@@ -25,5 +25,19 @@ describe("RAG helpers", () => {
     ];
 
     expect(retrieveTopChunks([1, 0], chunks, 2).map(({ id }) => id)).toEqual(["best", "other"]);
+  });
+
+  it("caps and labels RAG context before it is sent to a model", () => {
+    const context = buildRAGContext(
+      [
+        { source: "gates.json", text: "Gate details".repeat(300) },
+        { source: "parking.json", text: "Parking details".repeat(300) },
+      ],
+      2_000,
+    );
+
+    expect(context.length).toBeLessThanOrEqual(2_000);
+    expect(context).toContain("[gates.json]");
+    expect(context).toContain("…");
   });
 });

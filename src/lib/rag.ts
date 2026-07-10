@@ -13,6 +13,8 @@ export type RAGRequest = {
 
 export const DEFAULT_LANGUAGE = "English";
 export const MAX_MESSAGE_LENGTH = 1_000;
+export const MAX_RAG_CONTEXT_CHARACTERS = 6_000;
+const MAX_CHUNK_CHARACTERS = 1_800;
 
 export function validateRAGRequest(data: unknown): Required<RAGRequest> {
   if (!data || typeof data !== "object") {
@@ -64,4 +66,32 @@ export function retrieveTopChunks(
     .filter((chunk) => Number.isFinite(chunk.score) && chunk.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, Math.max(0, limit));
+}
+
+/**
+ * Keeps retrieved context below the upstream model's token-rate budget.  The
+ * source label survives clipping so answers remain grounded and debuggable.
+ */
+export function buildRAGContext(
+  chunks: Array<Pick<VectorChunk, "source" | "text">>,
+  maxCharacters = MAX_RAG_CONTEXT_CHARACTERS,
+): string {
+  if (maxCharacters <= 0) return "";
+
+  const lines: string[] = [];
+  let remaining = maxCharacters;
+
+  for (const chunk of chunks) {
+    if (remaining <= 0) break;
+
+    const text = chunk.text.trim();
+    if (!text) continue;
+    const clippedText = text.slice(0, MAX_CHUNK_CHARACTERS);
+    const suffix = clippedText.length < text.length ? "…" : "";
+    const line = `- [${chunk.source}] ${clippedText}${suffix}`;
+    lines.push(line.slice(0, remaining));
+    remaining -= line.length + 1;
+  }
+
+  return lines.join("\n");
 }

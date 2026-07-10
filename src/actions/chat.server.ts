@@ -1,6 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getLiveSnapshot, getRelevantLiveData } from "../lib/liveData";
-import { retrieveTopChunks, validateRAGRequest, type VectorChunk } from "../lib/rag";
+import {
+  buildRAGContext,
+  retrieveTopChunks,
+  validateRAGRequest,
+  type VectorChunk,
+} from "../lib/rag";
 import { sanitizeText } from "../lib/security";
 import vectorIndexData from "../../stadium-data/vector-index.json";
 
@@ -138,7 +143,7 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
       if (index.length > 0) {
         const queryVector = await embedQuery(cleanMessage);
         topChunks = retrieveTopChunks(queryVector, index as VectorChunk[], TOP_K);
-        staticContext = topChunks.map((c) => `- ${c.text}`).join("\n");
+        staticContext = buildRAGContext(topChunks);
       } else {
         staticContext = "No static data indexed yet.";
       }
