@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Arena Intelligence is a fictional operations platform for crowd management, tournament coordination, emergency response, and stadium analytics for a mega-event venue.",
+          "Arena Intelligence is a concept operations platform for crowd management, tournament coordination, emergency response, and stadium analytics for a mega-event venue.",
       },
     ],
   }),
@@ -523,7 +523,7 @@ function Landing() {
           <div>
             <Logo />
             <p className="mt-4 max-w-md text-sm leading-7" style={{ color: "#64748B" }}>
-              Arena Intelligence is the enterprise-grade stadium operations layer for fan experience, security, and event command.
+              Arena Intelligence is a concept operations layer for fan experience, security, and event command.
             </p>
           </div>
           <div className="flex flex-wrap gap-6 text-sm" style={{ color: "#64748B" }}>
