@@ -4,10 +4,10 @@
  * without a real IoT feed. Static data (from stadium-data/*.json) stays in the
  * vector index; THIS data is looked up fresh on every request.
  */
-import fs from "fs";
-import path from "path";
-
-const DATA_DIR = path.join(process.cwd(), "stadium-data");
+import foodCourtsData from "../../stadium-data/food_courts.json";
+import parkingData from "../../stadium-data/parking.json";
+import washroomsData from "../../stadium-data/washrooms.json";
+import gatesData from "../../stadium-data/gates.json";
 
 function jitter(value: number, min: number, max: number) {
   const delta = Math.round((Math.random() - 0.5) * (max - min) * 0.2);
@@ -16,10 +16,10 @@ function jitter(value: number, min: number, max: number) {
 
 // Returns freshly-jittered live values for food courts, parking, and washrooms.
 export function getLiveSnapshot() {
-  const foodCourts = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "food_courts.json"), "utf-8"));
-  const parking = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "parking.json"), "utf-8"));
-  const washrooms = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "washrooms.json"), "utf-8"));
-  const gates = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "gates.json"), "utf-8"));
+  const foodCourts = foodCourtsData;
+  const parking = parkingData;
+  const washrooms = washroomsData;
+  const gates = gatesData;
 
   return {
     foodCourts: foodCourts.map((fc: any) => ({
