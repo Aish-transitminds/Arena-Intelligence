@@ -1,0 +1,4802 @@
+[
+  {
+    "id": "NAV001",
+    "from": "G4",
+    "to": "ST039",
+    "distanceMeters": 338,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV002",
+    "from": "G9",
+    "to": "ST011",
+    "distanceMeters": 174,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV003",
+    "from": "G8",
+    "to": "ST025",
+    "distanceMeters": 39,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV004",
+    "from": "G5",
+    "to": "ST024",
+    "distanceMeters": 255,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV005",
+    "from": "G7",
+    "to": "ST009",
+    "distanceMeters": 343,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV006",
+    "from": "G7",
+    "to": "ST021",
+    "distanceMeters": 191,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV007",
+    "from": "G1",
+    "to": "ST025",
+    "distanceMeters": 45,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV008",
+    "from": "G7",
+    "to": "ST008",
+    "distanceMeters": 61,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV009",
+    "from": "G12",
+    "to": "ST008",
+    "distanceMeters": 133,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV010",
+    "from": "G3",
+    "to": "ST019",
+    "distanceMeters": 201,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV011",
+    "from": "G8",
+    "to": "ST002",
+    "distanceMeters": 399,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV012",
+    "from": "G5",
+    "to": "ST037",
+    "distanceMeters": 108,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV013",
+    "from": "G10",
+    "to": "ST030",
+    "distanceMeters": 54,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV014",
+    "from": "G2",
+    "to": "ST001",
+    "distanceMeters": 45,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV015",
+    "from": "G6",
+    "to": "ST013",
+    "distanceMeters": 228,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV016",
+    "from": "G9",
+    "to": "ST030",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV017",
+    "from": "G12",
+    "to": "ST016",
+    "distanceMeters": 383,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV018",
+    "from": "G8",
+    "to": "ST014",
+    "distanceMeters": 50,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV019",
+    "from": "G11",
+    "to": "ST011",
+    "distanceMeters": 237,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV020",
+    "from": "G6",
+    "to": "ST010",
+    "distanceMeters": 194,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV021",
+    "from": "G7",
+    "to": "ST020",
+    "distanceMeters": 332,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV022",
+    "from": "G10",
+    "to": "ST010",
+    "distanceMeters": 150,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV023",
+    "from": "G8",
+    "to": "ST033",
+    "distanceMeters": 40,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV024",
+    "from": "G2",
+    "to": "ST007",
+    "distanceMeters": 194,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV025",
+    "from": "G10",
+    "to": "ST039",
+    "distanceMeters": 244,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV026",
+    "from": "G3",
+    "to": "ST030",
+    "distanceMeters": 306,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV027",
+    "from": "G9",
+    "to": "ST038",
+    "distanceMeters": 350,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV028",
+    "from": "G1",
+    "to": "ST010",
+    "distanceMeters": 297,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV029",
+    "from": "G2",
+    "to": "ST007",
+    "distanceMeters": 201,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV030",
+    "from": "G10",
+    "to": "ST012",
+    "distanceMeters": 340,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV031",
+    "from": "G10",
+    "to": "ST021",
+    "distanceMeters": 41,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV032",
+    "from": "G6",
+    "to": "ST034",
+    "distanceMeters": 377,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV033",
+    "from": "G3",
+    "to": "ST024",
+    "distanceMeters": 81,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV034",
+    "from": "G2",
+    "to": "ST040",
+    "distanceMeters": 398,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV035",
+    "from": "G2",
+    "to": "ST017",
+    "distanceMeters": 92,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV036",
+    "from": "G5",
+    "to": "ST023",
+    "distanceMeters": 151,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV037",
+    "from": "G12",
+    "to": "ST012",
+    "distanceMeters": 273,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV038",
+    "from": "G5",
+    "to": "ST024",
+    "distanceMeters": 377,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV039",
+    "from": "G4",
+    "to": "ST027",
+    "distanceMeters": 164,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV040",
+    "from": "G1",
+    "to": "ST031",
+    "distanceMeters": 83,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV041",
+    "from": "G11",
+    "to": "ST013",
+    "distanceMeters": 325,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV042",
+    "from": "G11",
+    "to": "ST025",
+    "distanceMeters": 146,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV043",
+    "from": "G8",
+    "to": "ST030",
+    "distanceMeters": 162,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV044",
+    "from": "G7",
+    "to": "ST013",
+    "distanceMeters": 234,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV045",
+    "from": "G5",
+    "to": "ST007",
+    "distanceMeters": 123,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV046",
+    "from": "G8",
+    "to": "ST002",
+    "distanceMeters": 90,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV047",
+    "from": "G12",
+    "to": "ST024",
+    "distanceMeters": 81,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV048",
+    "from": "G2",
+    "to": "ST031",
+    "distanceMeters": 160,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV049",
+    "from": "G1",
+    "to": "ST023",
+    "distanceMeters": 121,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV050",
+    "from": "G3",
+    "to": "ST008",
+    "distanceMeters": 123,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV051",
+    "from": "G9",
+    "to": "ST031",
+    "distanceMeters": 250,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV052",
+    "from": "G12",
+    "to": "ST025",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV053",
+    "from": "G12",
+    "to": "ST036",
+    "distanceMeters": 176,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV054",
+    "from": "G8",
+    "to": "ST018",
+    "distanceMeters": 255,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV055",
+    "from": "G5",
+    "to": "ST023",
+    "distanceMeters": 163,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV056",
+    "from": "G2",
+    "to": "ST020",
+    "distanceMeters": 41,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV057",
+    "from": "G10",
+    "to": "ST002",
+    "distanceMeters": 235,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV058",
+    "from": "G11",
+    "to": "ST002",
+    "distanceMeters": 283,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV059",
+    "from": "G6",
+    "to": "ST008",
+    "distanceMeters": 257,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV060",
+    "from": "G4",
+    "to": "ST008",
+    "distanceMeters": 261,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV061",
+    "from": "G6",
+    "to": "ST002",
+    "distanceMeters": 210,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV062",
+    "from": "G2",
+    "to": "ST031",
+    "distanceMeters": 268,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV063",
+    "from": "G10",
+    "to": "ST023",
+    "distanceMeters": 351,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV064",
+    "from": "G3",
+    "to": "ST030",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV065",
+    "from": "G6",
+    "to": "ST028",
+    "distanceMeters": 50,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV066",
+    "from": "G11",
+    "to": "ST019",
+    "distanceMeters": 300,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV067",
+    "from": "G11",
+    "to": "ST026",
+    "distanceMeters": 369,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV068",
+    "from": "G2",
+    "to": "ST026",
+    "distanceMeters": 97,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV069",
+    "from": "G9",
+    "to": "ST024",
+    "distanceMeters": 32,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV070",
+    "from": "G2",
+    "to": "ST020",
+    "distanceMeters": 143,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV071",
+    "from": "G3",
+    "to": "ST025",
+    "distanceMeters": 183,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV072",
+    "from": "G5",
+    "to": "ST023",
+    "distanceMeters": 241,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV073",
+    "from": "G4",
+    "to": "ST023",
+    "distanceMeters": 90,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV074",
+    "from": "G8",
+    "to": "ST016",
+    "distanceMeters": 242,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV075",
+    "from": "G5",
+    "to": "ST013",
+    "distanceMeters": 254,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV076",
+    "from": "G1",
+    "to": "ST014",
+    "distanceMeters": 119,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV077",
+    "from": "G8",
+    "to": "ST038",
+    "distanceMeters": 113,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV078",
+    "from": "G6",
+    "to": "ST021",
+    "distanceMeters": 225,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV079",
+    "from": "G8",
+    "to": "ST019",
+    "distanceMeters": 210,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV080",
+    "from": "G4",
+    "to": "ST002",
+    "distanceMeters": 199,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV081",
+    "from": "G10",
+    "to": "ST013",
+    "distanceMeters": 267,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV082",
+    "from": "G7",
+    "to": "ST029",
+    "distanceMeters": 189,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV083",
+    "from": "G8",
+    "to": "ST038",
+    "distanceMeters": 321,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV084",
+    "from": "G12",
+    "to": "ST032",
+    "distanceMeters": 63,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV085",
+    "from": "G7",
+    "to": "ST008",
+    "distanceMeters": 76,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV086",
+    "from": "G6",
+    "to": "ST026",
+    "distanceMeters": 105,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV087",
+    "from": "G10",
+    "to": "ST028",
+    "distanceMeters": 354,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV088",
+    "from": "G12",
+    "to": "ST002",
+    "distanceMeters": 282,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV089",
+    "from": "G3",
+    "to": "ST035",
+    "distanceMeters": 55,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV090",
+    "from": "G2",
+    "to": "ST019",
+    "distanceMeters": 145,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV091",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV092",
+    "from": "G6",
+    "to": "ST001",
+    "distanceMeters": 286,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV093",
+    "from": "G11",
+    "to": "ST036",
+    "distanceMeters": 282,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV094",
+    "from": "G7",
+    "to": "ST031",
+    "distanceMeters": 137,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV095",
+    "from": "G12",
+    "to": "ST003",
+    "distanceMeters": 51,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV096",
+    "from": "G2",
+    "to": "ST003",
+    "distanceMeters": 244,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV097",
+    "from": "G5",
+    "to": "ST030",
+    "distanceMeters": 172,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV098",
+    "from": "G2",
+    "to": "ST003",
+    "distanceMeters": 347,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV099",
+    "from": "G2",
+    "to": "ST028",
+    "distanceMeters": 253,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV100",
+    "from": "G8",
+    "to": "ST004",
+    "distanceMeters": 395,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV101",
+    "from": "G3",
+    "to": "ST029",
+    "distanceMeters": 263,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV102",
+    "from": "G10",
+    "to": "ST007",
+    "distanceMeters": 315,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV103",
+    "from": "G11",
+    "to": "ST032",
+    "distanceMeters": 62,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV104",
+    "from": "G3",
+    "to": "ST014",
+    "distanceMeters": 86,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV105",
+    "from": "G1",
+    "to": "ST031",
+    "distanceMeters": 64,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV106",
+    "from": "G10",
+    "to": "ST027",
+    "distanceMeters": 319,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV107",
+    "from": "G4",
+    "to": "ST005",
+    "distanceMeters": 291,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV108",
+    "from": "G9",
+    "to": "ST004",
+    "distanceMeters": 252,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV109",
+    "from": "G3",
+    "to": "ST012",
+    "distanceMeters": 72,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV110",
+    "from": "G1",
+    "to": "ST018",
+    "distanceMeters": 234,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV111",
+    "from": "G1",
+    "to": "ST005",
+    "distanceMeters": 263,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV112",
+    "from": "G6",
+    "to": "ST031",
+    "distanceMeters": 331,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV113",
+    "from": "G6",
+    "to": "ST015",
+    "distanceMeters": 175,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV114",
+    "from": "G1",
+    "to": "ST040",
+    "distanceMeters": 132,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV115",
+    "from": "G1",
+    "to": "ST023",
+    "distanceMeters": 248,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV116",
+    "from": "G6",
+    "to": "ST023",
+    "distanceMeters": 268,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV117",
+    "from": "G4",
+    "to": "ST009",
+    "distanceMeters": 349,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV118",
+    "from": "G6",
+    "to": "ST021",
+    "distanceMeters": 179,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV119",
+    "from": "G12",
+    "to": "ST036",
+    "distanceMeters": 30,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV120",
+    "from": "G11",
+    "to": "ST031",
+    "distanceMeters": 249,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV121",
+    "from": "G4",
+    "to": "ST005",
+    "distanceMeters": 63,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV122",
+    "from": "G3",
+    "to": "ST040",
+    "distanceMeters": 326,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV123",
+    "from": "G5",
+    "to": "ST022",
+    "distanceMeters": 190,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV124",
+    "from": "G10",
+    "to": "ST035",
+    "distanceMeters": 339,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV125",
+    "from": "G11",
+    "to": "ST008",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV126",
+    "from": "G1",
+    "to": "ST003",
+    "distanceMeters": 354,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV127",
+    "from": "G4",
+    "to": "ST029",
+    "distanceMeters": 333,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV128",
+    "from": "G2",
+    "to": "ST008",
+    "distanceMeters": 351,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV129",
+    "from": "G8",
+    "to": "ST022",
+    "distanceMeters": 66,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV130",
+    "from": "G7",
+    "to": "ST020",
+    "distanceMeters": 40,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV131",
+    "from": "G11",
+    "to": "ST018",
+    "distanceMeters": 38,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV132",
+    "from": "G4",
+    "to": "ST004",
+    "distanceMeters": 280,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV133",
+    "from": "G10",
+    "to": "ST039",
+    "distanceMeters": 396,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV134",
+    "from": "G4",
+    "to": "ST036",
+    "distanceMeters": 43,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV135",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 83,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV136",
+    "from": "G4",
+    "to": "ST012",
+    "distanceMeters": 151,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV137",
+    "from": "G11",
+    "to": "ST004",
+    "distanceMeters": 381,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV138",
+    "from": "G9",
+    "to": "ST009",
+    "distanceMeters": 339,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV139",
+    "from": "G11",
+    "to": "ST011",
+    "distanceMeters": 277,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV140",
+    "from": "G12",
+    "to": "ST017",
+    "distanceMeters": 255,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV141",
+    "from": "G10",
+    "to": "ST007",
+    "distanceMeters": 159,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV142",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV143",
+    "from": "G11",
+    "to": "ST005",
+    "distanceMeters": 253,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV144",
+    "from": "G11",
+    "to": "ST015",
+    "distanceMeters": 198,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV145",
+    "from": "G10",
+    "to": "ST019",
+    "distanceMeters": 179,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV146",
+    "from": "G4",
+    "to": "ST030",
+    "distanceMeters": 373,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV147",
+    "from": "G1",
+    "to": "ST038",
+    "distanceMeters": 61,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV148",
+    "from": "G3",
+    "to": "ST040",
+    "distanceMeters": 107,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV149",
+    "from": "G8",
+    "to": "ST032",
+    "distanceMeters": 195,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV150",
+    "from": "G6",
+    "to": "ST023",
+    "distanceMeters": 369,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV151",
+    "from": "G4",
+    "to": "ST028",
+    "distanceMeters": 324,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV152",
+    "from": "G1",
+    "to": "ST010",
+    "distanceMeters": 236,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV153",
+    "from": "G9",
+    "to": "ST025",
+    "distanceMeters": 210,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV154",
+    "from": "G1",
+    "to": "ST027",
+    "distanceMeters": 327,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV155",
+    "from": "G12",
+    "to": "ST018",
+    "distanceMeters": 227,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV156",
+    "from": "G10",
+    "to": "ST017",
+    "distanceMeters": 227,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV157",
+    "from": "G12",
+    "to": "ST004",
+    "distanceMeters": 39,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV158",
+    "from": "G3",
+    "to": "ST002",
+    "distanceMeters": 226,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV159",
+    "from": "G6",
+    "to": "ST031",
+    "distanceMeters": 183,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV160",
+    "from": "G3",
+    "to": "ST018",
+    "distanceMeters": 92,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV161",
+    "from": "G8",
+    "to": "ST038",
+    "distanceMeters": 269,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV162",
+    "from": "G10",
+    "to": "ST022",
+    "distanceMeters": 293,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV163",
+    "from": "G9",
+    "to": "ST010",
+    "distanceMeters": 394,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV164",
+    "from": "G2",
+    "to": "ST014",
+    "distanceMeters": 360,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV165",
+    "from": "G11",
+    "to": "ST035",
+    "distanceMeters": 398,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV166",
+    "from": "G2",
+    "to": "ST012",
+    "distanceMeters": 115,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV167",
+    "from": "G10",
+    "to": "ST018",
+    "distanceMeters": 64,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV168",
+    "from": "G7",
+    "to": "ST017",
+    "distanceMeters": 96,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV169",
+    "from": "G5",
+    "to": "ST027",
+    "distanceMeters": 176,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV170",
+    "from": "G11",
+    "to": "ST020",
+    "distanceMeters": 369,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV171",
+    "from": "G2",
+    "to": "ST036",
+    "distanceMeters": 164,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV172",
+    "from": "G1",
+    "to": "ST027",
+    "distanceMeters": 320,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV173",
+    "from": "G2",
+    "to": "ST040",
+    "distanceMeters": 363,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV174",
+    "from": "G10",
+    "to": "ST031",
+    "distanceMeters": 111,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV175",
+    "from": "G10",
+    "to": "ST009",
+    "distanceMeters": 324,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV176",
+    "from": "G5",
+    "to": "ST013",
+    "distanceMeters": 45,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV177",
+    "from": "G10",
+    "to": "ST015",
+    "distanceMeters": 235,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV178",
+    "from": "G9",
+    "to": "ST003",
+    "distanceMeters": 247,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV179",
+    "from": "G12",
+    "to": "ST036",
+    "distanceMeters": 97,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV180",
+    "from": "G9",
+    "to": "ST040",
+    "distanceMeters": 386,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV181",
+    "from": "G7",
+    "to": "ST022",
+    "distanceMeters": 167,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV182",
+    "from": "G2",
+    "to": "ST018",
+    "distanceMeters": 89,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV183",
+    "from": "G1",
+    "to": "ST036",
+    "distanceMeters": 93,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV184",
+    "from": "G6",
+    "to": "ST030",
+    "distanceMeters": 30,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV185",
+    "from": "G7",
+    "to": "ST019",
+    "distanceMeters": 168,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV186",
+    "from": "G10",
+    "to": "ST018",
+    "distanceMeters": 205,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV187",
+    "from": "G6",
+    "to": "ST018",
+    "distanceMeters": 115,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV188",
+    "from": "G7",
+    "to": "ST024",
+    "distanceMeters": 153,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV189",
+    "from": "G8",
+    "to": "ST035",
+    "distanceMeters": 295,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV190",
+    "from": "G9",
+    "to": "ST022",
+    "distanceMeters": 164,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV191",
+    "from": "G10",
+    "to": "ST014",
+    "distanceMeters": 154,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV192",
+    "from": "G2",
+    "to": "ST011",
+    "distanceMeters": 155,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV193",
+    "from": "G9",
+    "to": "ST026",
+    "distanceMeters": 200,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV194",
+    "from": "G1",
+    "to": "ST016",
+    "distanceMeters": 330,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV195",
+    "from": "G1",
+    "to": "ST040",
+    "distanceMeters": 192,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV196",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 296,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV197",
+    "from": "G8",
+    "to": "ST002",
+    "distanceMeters": 55,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV198",
+    "from": "G1",
+    "to": "ST037",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV199",
+    "from": "G3",
+    "to": "ST001",
+    "distanceMeters": 396,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV200",
+    "from": "G3",
+    "to": "ST018",
+    "distanceMeters": 160,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV201",
+    "from": "G1",
+    "to": "ST009",
+    "distanceMeters": 244,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV202",
+    "from": "G2",
+    "to": "ST004",
+    "distanceMeters": 241,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV203",
+    "from": "G12",
+    "to": "ST022",
+    "distanceMeters": 276,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV204",
+    "from": "G4",
+    "to": "ST034",
+    "distanceMeters": 77,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV205",
+    "from": "G7",
+    "to": "ST003",
+    "distanceMeters": 206,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV206",
+    "from": "G1",
+    "to": "ST018",
+    "distanceMeters": 323,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV207",
+    "from": "G9",
+    "to": "ST014",
+    "distanceMeters": 177,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV208",
+    "from": "G8",
+    "to": "ST038",
+    "distanceMeters": 372,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV209",
+    "from": "G11",
+    "to": "ST003",
+    "distanceMeters": 116,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV210",
+    "from": "G4",
+    "to": "ST005",
+    "distanceMeters": 119,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV211",
+    "from": "G3",
+    "to": "ST007",
+    "distanceMeters": 310,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV212",
+    "from": "G12",
+    "to": "ST025",
+    "distanceMeters": 306,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV213",
+    "from": "G8",
+    "to": "ST001",
+    "distanceMeters": 317,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV214",
+    "from": "G5",
+    "to": "ST022",
+    "distanceMeters": 356,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV215",
+    "from": "G1",
+    "to": "ST007",
+    "distanceMeters": 374,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV216",
+    "from": "G11",
+    "to": "ST010",
+    "distanceMeters": 85,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV217",
+    "from": "G12",
+    "to": "ST009",
+    "distanceMeters": 129,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV218",
+    "from": "G8",
+    "to": "ST002",
+    "distanceMeters": 400,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV219",
+    "from": "G3",
+    "to": "ST005",
+    "distanceMeters": 132,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV220",
+    "from": "G5",
+    "to": "ST035",
+    "distanceMeters": 310,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV221",
+    "from": "G5",
+    "to": "ST037",
+    "distanceMeters": 331,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV222",
+    "from": "G1",
+    "to": "ST024",
+    "distanceMeters": 263,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV223",
+    "from": "G1",
+    "to": "ST029",
+    "distanceMeters": 328,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV224",
+    "from": "G3",
+    "to": "ST024",
+    "distanceMeters": 298,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV225",
+    "from": "G10",
+    "to": "ST002",
+    "distanceMeters": 270,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV226",
+    "from": "G6",
+    "to": "ST008",
+    "distanceMeters": 84,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV227",
+    "from": "G6",
+    "to": "ST006",
+    "distanceMeters": 79,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV228",
+    "from": "G1",
+    "to": "ST032",
+    "distanceMeters": 368,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV229",
+    "from": "G1",
+    "to": "ST005",
+    "distanceMeters": 131,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV230",
+    "from": "G4",
+    "to": "ST015",
+    "distanceMeters": 359,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV231",
+    "from": "G5",
+    "to": "ST024",
+    "distanceMeters": 382,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV232",
+    "from": "G12",
+    "to": "ST027",
+    "distanceMeters": 48,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV233",
+    "from": "G6",
+    "to": "ST037",
+    "distanceMeters": 87,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV234",
+    "from": "G9",
+    "to": "ST028",
+    "distanceMeters": 201,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV235",
+    "from": "G3",
+    "to": "ST018",
+    "distanceMeters": 210,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV236",
+    "from": "G12",
+    "to": "ST040",
+    "distanceMeters": 217,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV237",
+    "from": "G8",
+    "to": "ST023",
+    "distanceMeters": 316,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV238",
+    "from": "G12",
+    "to": "ST026",
+    "distanceMeters": 311,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV239",
+    "from": "G12",
+    "to": "ST039",
+    "distanceMeters": 209,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV240",
+    "from": "G9",
+    "to": "ST036",
+    "distanceMeters": 128,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV241",
+    "from": "G3",
+    "to": "ST001",
+    "distanceMeters": 209,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV242",
+    "from": "G3",
+    "to": "ST037",
+    "distanceMeters": 245,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV243",
+    "from": "G8",
+    "to": "ST012",
+    "distanceMeters": 79,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV244",
+    "from": "G5",
+    "to": "ST039",
+    "distanceMeters": 49,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV245",
+    "from": "G7",
+    "to": "ST036",
+    "distanceMeters": 89,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV246",
+    "from": "G4",
+    "to": "ST017",
+    "distanceMeters": 348,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV247",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 364,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV248",
+    "from": "G5",
+    "to": "ST019",
+    "distanceMeters": 233,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV249",
+    "from": "G2",
+    "to": "ST014",
+    "distanceMeters": 227,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV250",
+    "from": "G1",
+    "to": "ST026",
+    "distanceMeters": 305,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV251",
+    "from": "G7",
+    "to": "ST040",
+    "distanceMeters": 232,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV252",
+    "from": "G6",
+    "to": "ST016",
+    "distanceMeters": 37,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV253",
+    "from": "G9",
+    "to": "ST009",
+    "distanceMeters": 382,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV254",
+    "from": "G4",
+    "to": "ST014",
+    "distanceMeters": 211,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV255",
+    "from": "G11",
+    "to": "ST039",
+    "distanceMeters": 372,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV256",
+    "from": "G5",
+    "to": "ST002",
+    "distanceMeters": 49,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV257",
+    "from": "G10",
+    "to": "ST005",
+    "distanceMeters": 131,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV258",
+    "from": "G4",
+    "to": "ST020",
+    "distanceMeters": 230,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV259",
+    "from": "G9",
+    "to": "ST012",
+    "distanceMeters": 314,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV260",
+    "from": "G11",
+    "to": "ST005",
+    "distanceMeters": 309,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV261",
+    "from": "G8",
+    "to": "ST020",
+    "distanceMeters": 303,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV262",
+    "from": "G12",
+    "to": "ST029",
+    "distanceMeters": 174,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV263",
+    "from": "G1",
+    "to": "ST011",
+    "distanceMeters": 78,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV264",
+    "from": "G1",
+    "to": "ST027",
+    "distanceMeters": 399,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV265",
+    "from": "G8",
+    "to": "ST034",
+    "distanceMeters": 62,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV266",
+    "from": "G10",
+    "to": "ST029",
+    "distanceMeters": 47,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV267",
+    "from": "G6",
+    "to": "ST007",
+    "distanceMeters": 233,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV268",
+    "from": "G12",
+    "to": "ST011",
+    "distanceMeters": 271,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV269",
+    "from": "G10",
+    "to": "ST016",
+    "distanceMeters": 352,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV270",
+    "from": "G11",
+    "to": "ST018",
+    "distanceMeters": 50,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV271",
+    "from": "G11",
+    "to": "ST020",
+    "distanceMeters": 396,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV272",
+    "from": "G2",
+    "to": "ST003",
+    "distanceMeters": 302,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV273",
+    "from": "G8",
+    "to": "ST015",
+    "distanceMeters": 110,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV274",
+    "from": "G1",
+    "to": "ST029",
+    "distanceMeters": 311,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV275",
+    "from": "G9",
+    "to": "ST028",
+    "distanceMeters": 151,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV276",
+    "from": "G4",
+    "to": "ST032",
+    "distanceMeters": 156,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV277",
+    "from": "G7",
+    "to": "ST005",
+    "distanceMeters": 168,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV278",
+    "from": "G6",
+    "to": "ST006",
+    "distanceMeters": 389,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV279",
+    "from": "G9",
+    "to": "ST032",
+    "distanceMeters": 145,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV280",
+    "from": "G2",
+    "to": "ST002",
+    "distanceMeters": 92,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV281",
+    "from": "G4",
+    "to": "ST037",
+    "distanceMeters": 96,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV282",
+    "from": "G3",
+    "to": "ST010",
+    "distanceMeters": 299,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV283",
+    "from": "G7",
+    "to": "ST018",
+    "distanceMeters": 84,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV284",
+    "from": "G4",
+    "to": "ST033",
+    "distanceMeters": 276,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV285",
+    "from": "G9",
+    "to": "ST008",
+    "distanceMeters": 339,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV286",
+    "from": "G5",
+    "to": "ST020",
+    "distanceMeters": 144,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV287",
+    "from": "G12",
+    "to": "ST024",
+    "distanceMeters": 158,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV288",
+    "from": "G2",
+    "to": "ST030",
+    "distanceMeters": 40,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV289",
+    "from": "G12",
+    "to": "ST032",
+    "distanceMeters": 138,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV290",
+    "from": "G10",
+    "to": "ST026",
+    "distanceMeters": 332,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV291",
+    "from": "G3",
+    "to": "ST034",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV292",
+    "from": "G8",
+    "to": "ST025",
+    "distanceMeters": 121,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV293",
+    "from": "G3",
+    "to": "ST021",
+    "distanceMeters": 139,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV294",
+    "from": "G10",
+    "to": "ST024",
+    "distanceMeters": 304,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV295",
+    "from": "G9",
+    "to": "ST037",
+    "distanceMeters": 108,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV296",
+    "from": "G2",
+    "to": "ST038",
+    "distanceMeters": 192,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV297",
+    "from": "G9",
+    "to": "ST027",
+    "distanceMeters": 171,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV298",
+    "from": "G3",
+    "to": "ST034",
+    "distanceMeters": 356,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV299",
+    "from": "G8",
+    "to": "ST008",
+    "distanceMeters": 306,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV300",
+    "from": "G7",
+    "to": "ST003",
+    "distanceMeters": 275,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV301",
+    "from": "G12",
+    "to": "ST019",
+    "distanceMeters": 51,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV302",
+    "from": "G1",
+    "to": "ST032",
+    "distanceMeters": 336,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV303",
+    "from": "G4",
+    "to": "ST014",
+    "distanceMeters": 371,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV304",
+    "from": "G12",
+    "to": "ST040",
+    "distanceMeters": 86,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV305",
+    "from": "G10",
+    "to": "ST014",
+    "distanceMeters": 334,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV306",
+    "from": "G6",
+    "to": "ST007",
+    "distanceMeters": 93,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV307",
+    "from": "G6",
+    "to": "ST002",
+    "distanceMeters": 308,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV308",
+    "from": "G10",
+    "to": "ST023",
+    "distanceMeters": 319,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV309",
+    "from": "G1",
+    "to": "ST025",
+    "distanceMeters": 218,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV310",
+    "from": "G8",
+    "to": "ST032",
+    "distanceMeters": 188,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV311",
+    "from": "G2",
+    "to": "ST032",
+    "distanceMeters": 229,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV312",
+    "from": "G9",
+    "to": "ST001",
+    "distanceMeters": 193,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV313",
+    "from": "G7",
+    "to": "ST031",
+    "distanceMeters": 312,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV314",
+    "from": "G11",
+    "to": "ST005",
+    "distanceMeters": 296,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV315",
+    "from": "G11",
+    "to": "ST040",
+    "distanceMeters": 130,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV316",
+    "from": "G7",
+    "to": "ST015",
+    "distanceMeters": 250,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV317",
+    "from": "G10",
+    "to": "ST012",
+    "distanceMeters": 117,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV318",
+    "from": "G12",
+    "to": "ST016",
+    "distanceMeters": 206,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV319",
+    "from": "G4",
+    "to": "ST014",
+    "distanceMeters": 260,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV320",
+    "from": "G1",
+    "to": "ST028",
+    "distanceMeters": 138,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV321",
+    "from": "G6",
+    "to": "ST038",
+    "distanceMeters": 187,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV322",
+    "from": "G11",
+    "to": "ST025",
+    "distanceMeters": 362,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV323",
+    "from": "G12",
+    "to": "ST014",
+    "distanceMeters": 367,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV324",
+    "from": "G8",
+    "to": "ST026",
+    "distanceMeters": 34,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV325",
+    "from": "G5",
+    "to": "ST035",
+    "distanceMeters": 235,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV326",
+    "from": "G2",
+    "to": "ST012",
+    "distanceMeters": 316,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV327",
+    "from": "G3",
+    "to": "ST007",
+    "distanceMeters": 208,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV328",
+    "from": "G10",
+    "to": "ST033",
+    "distanceMeters": 98,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV329",
+    "from": "G12",
+    "to": "ST020",
+    "distanceMeters": 273,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV330",
+    "from": "G5",
+    "to": "ST032",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV331",
+    "from": "G3",
+    "to": "ST029",
+    "distanceMeters": 301,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV332",
+    "from": "G10",
+    "to": "ST019",
+    "distanceMeters": 329,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV333",
+    "from": "G2",
+    "to": "ST016",
+    "distanceMeters": 144,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV334",
+    "from": "G2",
+    "to": "ST009",
+    "distanceMeters": 259,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV335",
+    "from": "G5",
+    "to": "ST011",
+    "distanceMeters": 245,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV336",
+    "from": "G4",
+    "to": "ST007",
+    "distanceMeters": 41,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV337",
+    "from": "G1",
+    "to": "ST018",
+    "distanceMeters": 318,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV338",
+    "from": "G8",
+    "to": "ST021",
+    "distanceMeters": 102,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV339",
+    "from": "G5",
+    "to": "ST032",
+    "distanceMeters": 278,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV340",
+    "from": "G2",
+    "to": "ST028",
+    "distanceMeters": 347,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV341",
+    "from": "G5",
+    "to": "ST006",
+    "distanceMeters": 270,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV342",
+    "from": "G4",
+    "to": "ST035",
+    "distanceMeters": 216,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV343",
+    "from": "G9",
+    "to": "ST023",
+    "distanceMeters": 158,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV344",
+    "from": "G8",
+    "to": "ST030",
+    "distanceMeters": 323,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV345",
+    "from": "G12",
+    "to": "ST010",
+    "distanceMeters": 398,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV346",
+    "from": "G9",
+    "to": "ST025",
+    "distanceMeters": 320,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV347",
+    "from": "G12",
+    "to": "ST015",
+    "distanceMeters": 171,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV348",
+    "from": "G4",
+    "to": "ST005",
+    "distanceMeters": 142,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV349",
+    "from": "G1",
+    "to": "ST014",
+    "distanceMeters": 185,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV350",
+    "from": "G7",
+    "to": "ST040",
+    "distanceMeters": 149,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV351",
+    "from": "G6",
+    "to": "ST040",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV352",
+    "from": "G3",
+    "to": "ST011",
+    "distanceMeters": 36,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV353",
+    "from": "G3",
+    "to": "ST038",
+    "distanceMeters": 183,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV354",
+    "from": "G2",
+    "to": "ST037",
+    "distanceMeters": 42,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV355",
+    "from": "G3",
+    "to": "ST027",
+    "distanceMeters": 61,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV356",
+    "from": "G6",
+    "to": "ST029",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV357",
+    "from": "G4",
+    "to": "ST021",
+    "distanceMeters": 191,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV358",
+    "from": "G2",
+    "to": "ST002",
+    "distanceMeters": 365,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV359",
+    "from": "G12",
+    "to": "ST039",
+    "distanceMeters": 294,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV360",
+    "from": "G2",
+    "to": "ST018",
+    "distanceMeters": 259,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV361",
+    "from": "G7",
+    "to": "ST011",
+    "distanceMeters": 280,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV362",
+    "from": "G7",
+    "to": "ST012",
+    "distanceMeters": 182,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV363",
+    "from": "G8",
+    "to": "ST017",
+    "distanceMeters": 354,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV364",
+    "from": "G5",
+    "to": "ST013",
+    "distanceMeters": 61,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV365",
+    "from": "G12",
+    "to": "ST012",
+    "distanceMeters": 239,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV366",
+    "from": "G5",
+    "to": "ST020",
+    "distanceMeters": 243,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV367",
+    "from": "G7",
+    "to": "ST010",
+    "distanceMeters": 47,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV368",
+    "from": "G6",
+    "to": "ST021",
+    "distanceMeters": 290,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV369",
+    "from": "G2",
+    "to": "ST004",
+    "distanceMeters": 272,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV370",
+    "from": "G10",
+    "to": "ST004",
+    "distanceMeters": 125,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV371",
+    "from": "G2",
+    "to": "ST020",
+    "distanceMeters": 286,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV372",
+    "from": "G8",
+    "to": "ST022",
+    "distanceMeters": 211,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV373",
+    "from": "G8",
+    "to": "ST039",
+    "distanceMeters": 391,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV374",
+    "from": "G4",
+    "to": "ST009",
+    "distanceMeters": 355,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV375",
+    "from": "G1",
+    "to": "ST007",
+    "distanceMeters": 352,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV376",
+    "from": "G4",
+    "to": "ST013",
+    "distanceMeters": 210,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV377",
+    "from": "G3",
+    "to": "ST019",
+    "distanceMeters": 159,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV378",
+    "from": "G12",
+    "to": "ST018",
+    "distanceMeters": 313,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV379",
+    "from": "G3",
+    "to": "ST038",
+    "distanceMeters": 197,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV380",
+    "from": "G11",
+    "to": "ST028",
+    "distanceMeters": 55,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV381",
+    "from": "G10",
+    "to": "ST023",
+    "distanceMeters": 49,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV382",
+    "from": "G9",
+    "to": "ST029",
+    "distanceMeters": 370,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV383",
+    "from": "G7",
+    "to": "ST021",
+    "distanceMeters": 251,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV384",
+    "from": "G12",
+    "to": "ST012",
+    "distanceMeters": 164,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV385",
+    "from": "G11",
+    "to": "ST033",
+    "distanceMeters": 173,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV386",
+    "from": "G11",
+    "to": "ST036",
+    "distanceMeters": 153,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV387",
+    "from": "G4",
+    "to": "ST023",
+    "distanceMeters": 132,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV388",
+    "from": "G6",
+    "to": "ST011",
+    "distanceMeters": 86,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV389",
+    "from": "G1",
+    "to": "ST040",
+    "distanceMeters": 370,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV390",
+    "from": "G6",
+    "to": "ST015",
+    "distanceMeters": 289,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV391",
+    "from": "G3",
+    "to": "ST036",
+    "distanceMeters": 127,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV392",
+    "from": "G11",
+    "to": "ST031",
+    "distanceMeters": 380,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV393",
+    "from": "G10",
+    "to": "ST025",
+    "distanceMeters": 98,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV394",
+    "from": "G9",
+    "to": "ST031",
+    "distanceMeters": 194,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV395",
+    "from": "G9",
+    "to": "ST037",
+    "distanceMeters": 97,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV396",
+    "from": "G10",
+    "to": "ST011",
+    "distanceMeters": 391,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV397",
+    "from": "G3",
+    "to": "ST016",
+    "distanceMeters": 30,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV398",
+    "from": "G6",
+    "to": "ST005",
+    "distanceMeters": 84,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV399",
+    "from": "G4",
+    "to": "ST036",
+    "distanceMeters": 298,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV400",
+    "from": "G12",
+    "to": "ST033",
+    "distanceMeters": 163,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV401",
+    "from": "G2",
+    "to": "ST023",
+    "distanceMeters": 381,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV402",
+    "from": "G6",
+    "to": "ST014",
+    "distanceMeters": 97,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV403",
+    "from": "G12",
+    "to": "ST015",
+    "distanceMeters": 55,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV404",
+    "from": "G1",
+    "to": "ST036",
+    "distanceMeters": 186,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV405",
+    "from": "G6",
+    "to": "ST019",
+    "distanceMeters": 279,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV406",
+    "from": "G5",
+    "to": "ST005",
+    "distanceMeters": 157,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV407",
+    "from": "G8",
+    "to": "ST033",
+    "distanceMeters": 205,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV408",
+    "from": "G12",
+    "to": "ST013",
+    "distanceMeters": 243,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV409",
+    "from": "G11",
+    "to": "ST022",
+    "distanceMeters": 166,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV410",
+    "from": "G4",
+    "to": "ST001",
+    "distanceMeters": 383,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV411",
+    "from": "G7",
+    "to": "ST034",
+    "distanceMeters": 111,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV412",
+    "from": "G1",
+    "to": "ST006",
+    "distanceMeters": 185,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV413",
+    "from": "G2",
+    "to": "ST032",
+    "distanceMeters": 311,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV414",
+    "from": "G10",
+    "to": "ST037",
+    "distanceMeters": 291,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV415",
+    "from": "G11",
+    "to": "ST024",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV416",
+    "from": "G9",
+    "to": "ST003",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV417",
+    "from": "G12",
+    "to": "ST029",
+    "distanceMeters": 230,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV418",
+    "from": "G10",
+    "to": "ST030",
+    "distanceMeters": 264,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV419",
+    "from": "G10",
+    "to": "ST001",
+    "distanceMeters": 53,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV420",
+    "from": "G11",
+    "to": "ST040",
+    "distanceMeters": 208,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV421",
+    "from": "G8",
+    "to": "ST039",
+    "distanceMeters": 180,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV422",
+    "from": "G5",
+    "to": "ST037",
+    "distanceMeters": 329,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV423",
+    "from": "G9",
+    "to": "ST013",
+    "distanceMeters": 131,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV424",
+    "from": "G6",
+    "to": "ST036",
+    "distanceMeters": 140,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV425",
+    "from": "G11",
+    "to": "ST006",
+    "distanceMeters": 188,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV426",
+    "from": "G3",
+    "to": "ST011",
+    "distanceMeters": 215,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV427",
+    "from": "G2",
+    "to": "ST014",
+    "distanceMeters": 62,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV428",
+    "from": "G6",
+    "to": "ST033",
+    "distanceMeters": 100,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV429",
+    "from": "G2",
+    "to": "ST023",
+    "distanceMeters": 302,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV430",
+    "from": "G7",
+    "to": "ST021",
+    "distanceMeters": 309,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV431",
+    "from": "G1",
+    "to": "ST035",
+    "distanceMeters": 375,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV432",
+    "from": "G10",
+    "to": "ST035",
+    "distanceMeters": 270,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV433",
+    "from": "G1",
+    "to": "ST004",
+    "distanceMeters": 352,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV434",
+    "from": "G6",
+    "to": "ST016",
+    "distanceMeters": 184,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV435",
+    "from": "G3",
+    "to": "ST028",
+    "distanceMeters": 123,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV436",
+    "from": "G12",
+    "to": "ST025",
+    "distanceMeters": 345,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV437",
+    "from": "G1",
+    "to": "ST039",
+    "distanceMeters": 132,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV438",
+    "from": "G1",
+    "to": "ST010",
+    "distanceMeters": 204,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV439",
+    "from": "G6",
+    "to": "ST005",
+    "distanceMeters": 242,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV440",
+    "from": "G8",
+    "to": "ST019",
+    "distanceMeters": 260,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV441",
+    "from": "G8",
+    "to": "ST019",
+    "distanceMeters": 263,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV442",
+    "from": "G12",
+    "to": "ST037",
+    "distanceMeters": 230,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV443",
+    "from": "G2",
+    "to": "ST026",
+    "distanceMeters": 152,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV444",
+    "from": "G12",
+    "to": "ST017",
+    "distanceMeters": 128,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV445",
+    "from": "G4",
+    "to": "ST020",
+    "distanceMeters": 164,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV446",
+    "from": "G11",
+    "to": "ST038",
+    "distanceMeters": 35,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV447",
+    "from": "G3",
+    "to": "ST031",
+    "distanceMeters": 49,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV448",
+    "from": "G4",
+    "to": "ST012",
+    "distanceMeters": 200,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV449",
+    "from": "G11",
+    "to": "ST014",
+    "distanceMeters": 135,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV450",
+    "from": "G3",
+    "to": "ST018",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV451",
+    "from": "G2",
+    "to": "ST030",
+    "distanceMeters": 380,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV452",
+    "from": "G2",
+    "to": "ST007",
+    "distanceMeters": 312,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV453",
+    "from": "G11",
+    "to": "ST015",
+    "distanceMeters": 199,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV454",
+    "from": "G9",
+    "to": "ST013",
+    "distanceMeters": 261,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV455",
+    "from": "G2",
+    "to": "ST031",
+    "distanceMeters": 234,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV456",
+    "from": "G2",
+    "to": "ST008",
+    "distanceMeters": 320,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV457",
+    "from": "G11",
+    "to": "ST014",
+    "distanceMeters": 365,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV458",
+    "from": "G7",
+    "to": "ST010",
+    "distanceMeters": 306,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV459",
+    "from": "G6",
+    "to": "ST020",
+    "distanceMeters": 41,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV460",
+    "from": "G4",
+    "to": "ST025",
+    "distanceMeters": 378,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV461",
+    "from": "G3",
+    "to": "ST013",
+    "distanceMeters": 286,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV462",
+    "from": "G7",
+    "to": "ST036",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV463",
+    "from": "G1",
+    "to": "ST023",
+    "distanceMeters": 359,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV464",
+    "from": "G6",
+    "to": "ST021",
+    "distanceMeters": 212,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV465",
+    "from": "G4",
+    "to": "ST014",
+    "distanceMeters": 148,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV466",
+    "from": "G2",
+    "to": "ST029",
+    "distanceMeters": 286,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV467",
+    "from": "G11",
+    "to": "ST034",
+    "distanceMeters": 56,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV468",
+    "from": "G6",
+    "to": "ST035",
+    "distanceMeters": 67,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV469",
+    "from": "G7",
+    "to": "ST037",
+    "distanceMeters": 92,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV470",
+    "from": "G10",
+    "to": "ST007",
+    "distanceMeters": 183,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV471",
+    "from": "G8",
+    "to": "ST033",
+    "distanceMeters": 128,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV472",
+    "from": "G2",
+    "to": "ST020",
+    "distanceMeters": 309,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV473",
+    "from": "G2",
+    "to": "ST035",
+    "distanceMeters": 370,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV474",
+    "from": "G3",
+    "to": "ST011",
+    "distanceMeters": 248,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV475",
+    "from": "G6",
+    "to": "ST001",
+    "distanceMeters": 245,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV476",
+    "from": "G5",
+    "to": "ST015",
+    "distanceMeters": 321,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV477",
+    "from": "G9",
+    "to": "ST022",
+    "distanceMeters": 332,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV478",
+    "from": "G7",
+    "to": "ST033",
+    "distanceMeters": 107,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV479",
+    "from": "G11",
+    "to": "ST035",
+    "distanceMeters": 38,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV480",
+    "from": "G7",
+    "to": "ST020",
+    "distanceMeters": 268,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV481",
+    "from": "G10",
+    "to": "ST021",
+    "distanceMeters": 277,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV482",
+    "from": "G12",
+    "to": "ST037",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV483",
+    "from": "G3",
+    "to": "ST022",
+    "distanceMeters": 103,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV484",
+    "from": "G6",
+    "to": "ST015",
+    "distanceMeters": 250,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV485",
+    "from": "G10",
+    "to": "ST002",
+    "distanceMeters": 246,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV486",
+    "from": "G7",
+    "to": "ST017",
+    "distanceMeters": 142,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV487",
+    "from": "G1",
+    "to": "ST026",
+    "distanceMeters": 375,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV488",
+    "from": "G4",
+    "to": "ST022",
+    "distanceMeters": 217,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV489",
+    "from": "G11",
+    "to": "ST018",
+    "distanceMeters": 191,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV490",
+    "from": "G10",
+    "to": "ST006",
+    "distanceMeters": 125,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV491",
+    "from": "G7",
+    "to": "ST011",
+    "distanceMeters": 98,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV492",
+    "from": "G7",
+    "to": "ST014",
+    "distanceMeters": 135,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV493",
+    "from": "G4",
+    "to": "ST017",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV494",
+    "from": "G8",
+    "to": "ST005",
+    "distanceMeters": 201,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV495",
+    "from": "G8",
+    "to": "ST009",
+    "distanceMeters": 58,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV496",
+    "from": "G7",
+    "to": "ST016",
+    "distanceMeters": 122,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV497",
+    "from": "G12",
+    "to": "ST013",
+    "distanceMeters": 354,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV498",
+    "from": "G8",
+    "to": "ST001",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV499",
+    "from": "G2",
+    "to": "ST019",
+    "distanceMeters": 376,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV500",
+    "from": "G3",
+    "to": "ST004",
+    "distanceMeters": 298,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV501",
+    "from": "G5",
+    "to": "ST014",
+    "distanceMeters": 325,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV502",
+    "from": "G12",
+    "to": "ST031",
+    "distanceMeters": 282,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV503",
+    "from": "G6",
+    "to": "ST025",
+    "distanceMeters": 271,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV504",
+    "from": "G10",
+    "to": "ST019",
+    "distanceMeters": 240,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV505",
+    "from": "G5",
+    "to": "ST001",
+    "distanceMeters": 331,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV506",
+    "from": "G1",
+    "to": "ST040",
+    "distanceMeters": 52,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV507",
+    "from": "G1",
+    "to": "ST037",
+    "distanceMeters": 284,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV508",
+    "from": "G11",
+    "to": "ST031",
+    "distanceMeters": 187,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV509",
+    "from": "G2",
+    "to": "ST032",
+    "distanceMeters": 92,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV510",
+    "from": "G3",
+    "to": "ST035",
+    "distanceMeters": 360,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV511",
+    "from": "G9",
+    "to": "ST020",
+    "distanceMeters": 197,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV512",
+    "from": "G12",
+    "to": "ST026",
+    "distanceMeters": 111,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV513",
+    "from": "G10",
+    "to": "ST018",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV514",
+    "from": "G10",
+    "to": "ST013",
+    "distanceMeters": 135,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV515",
+    "from": "G6",
+    "to": "ST011",
+    "distanceMeters": 82,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV516",
+    "from": "G12",
+    "to": "ST038",
+    "distanceMeters": 109,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV517",
+    "from": "G11",
+    "to": "ST007",
+    "distanceMeters": 261,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV518",
+    "from": "G7",
+    "to": "ST037",
+    "distanceMeters": 36,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV519",
+    "from": "G7",
+    "to": "ST007",
+    "distanceMeters": 342,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV520",
+    "from": "G8",
+    "to": "ST024",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV521",
+    "from": "G7",
+    "to": "ST029",
+    "distanceMeters": 232,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV522",
+    "from": "G5",
+    "to": "ST033",
+    "distanceMeters": 331,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV523",
+    "from": "G12",
+    "to": "ST020",
+    "distanceMeters": 337,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV524",
+    "from": "G3",
+    "to": "ST001",
+    "distanceMeters": 64,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV525",
+    "from": "G6",
+    "to": "ST016",
+    "distanceMeters": 383,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV526",
+    "from": "G4",
+    "to": "ST020",
+    "distanceMeters": 109,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV527",
+    "from": "G5",
+    "to": "ST002",
+    "distanceMeters": 148,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV528",
+    "from": "G3",
+    "to": "ST007",
+    "distanceMeters": 284,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV529",
+    "from": "G2",
+    "to": "ST002",
+    "distanceMeters": 48,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV530",
+    "from": "G2",
+    "to": "ST002",
+    "distanceMeters": 149,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV531",
+    "from": "G10",
+    "to": "ST039",
+    "distanceMeters": 311,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV532",
+    "from": "G3",
+    "to": "ST033",
+    "distanceMeters": 309,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV533",
+    "from": "G3",
+    "to": "ST024",
+    "distanceMeters": 77,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV534",
+    "from": "G12",
+    "to": "ST012",
+    "distanceMeters": 316,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV535",
+    "from": "G5",
+    "to": "ST013",
+    "distanceMeters": 61,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV536",
+    "from": "G7",
+    "to": "ST022",
+    "distanceMeters": 191,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV537",
+    "from": "G7",
+    "to": "ST006",
+    "distanceMeters": 60,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV538",
+    "from": "G11",
+    "to": "ST008",
+    "distanceMeters": 233,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV539",
+    "from": "G12",
+    "to": "ST030",
+    "distanceMeters": 73,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV540",
+    "from": "G5",
+    "to": "ST007",
+    "distanceMeters": 361,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV541",
+    "from": "G6",
+    "to": "ST003",
+    "distanceMeters": 126,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV542",
+    "from": "G5",
+    "to": "ST021",
+    "distanceMeters": 272,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV543",
+    "from": "G9",
+    "to": "ST007",
+    "distanceMeters": 378,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV544",
+    "from": "G6",
+    "to": "ST022",
+    "distanceMeters": 362,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV545",
+    "from": "G10",
+    "to": "ST023",
+    "distanceMeters": 357,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV546",
+    "from": "G1",
+    "to": "ST032",
+    "distanceMeters": 252,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV547",
+    "from": "G4",
+    "to": "ST023",
+    "distanceMeters": 388,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV548",
+    "from": "G2",
+    "to": "ST023",
+    "distanceMeters": 352,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV549",
+    "from": "G9",
+    "to": "ST011",
+    "distanceMeters": 393,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV550",
+    "from": "G8",
+    "to": "ST006",
+    "distanceMeters": 278,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV551",
+    "from": "G3",
+    "to": "ST033",
+    "distanceMeters": 379,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV552",
+    "from": "G2",
+    "to": "ST036",
+    "distanceMeters": 269,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV553",
+    "from": "G10",
+    "to": "ST027",
+    "distanceMeters": 173,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV554",
+    "from": "G7",
+    "to": "ST037",
+    "distanceMeters": 319,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV555",
+    "from": "G7",
+    "to": "ST007",
+    "distanceMeters": 392,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV556",
+    "from": "G9",
+    "to": "ST038",
+    "distanceMeters": 143,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV557",
+    "from": "G2",
+    "to": "ST025",
+    "distanceMeters": 145,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV558",
+    "from": "G7",
+    "to": "ST039",
+    "distanceMeters": 120,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV559",
+    "from": "G12",
+    "to": "ST033",
+    "distanceMeters": 273,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV560",
+    "from": "G2",
+    "to": "ST033",
+    "distanceMeters": 56,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV561",
+    "from": "G9",
+    "to": "ST038",
+    "distanceMeters": 189,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV562",
+    "from": "G2",
+    "to": "ST032",
+    "distanceMeters": 242,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV563",
+    "from": "G10",
+    "to": "ST010",
+    "distanceMeters": 377,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV564",
+    "from": "G5",
+    "to": "ST015",
+    "distanceMeters": 56,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV565",
+    "from": "G7",
+    "to": "ST028",
+    "distanceMeters": 390,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV566",
+    "from": "G8",
+    "to": "ST013",
+    "distanceMeters": 148,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV567",
+    "from": "G2",
+    "to": "ST017",
+    "distanceMeters": 209,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV568",
+    "from": "G12",
+    "to": "ST027",
+    "distanceMeters": 364,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV569",
+    "from": "G5",
+    "to": "ST007",
+    "distanceMeters": 364,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV570",
+    "from": "G4",
+    "to": "ST038",
+    "distanceMeters": 244,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV571",
+    "from": "G5",
+    "to": "ST020",
+    "distanceMeters": 35,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV572",
+    "from": "G3",
+    "to": "ST022",
+    "distanceMeters": 106,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV573",
+    "from": "G5",
+    "to": "ST008",
+    "distanceMeters": 398,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV574",
+    "from": "G12",
+    "to": "ST010",
+    "distanceMeters": 264,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV575",
+    "from": "G7",
+    "to": "ST028",
+    "distanceMeters": 196,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV576",
+    "from": "G1",
+    "to": "ST033",
+    "distanceMeters": 255,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV577",
+    "from": "G7",
+    "to": "ST010",
+    "distanceMeters": 40,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV578",
+    "from": "G6",
+    "to": "ST025",
+    "distanceMeters": 76,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV579",
+    "from": "G7",
+    "to": "ST037",
+    "distanceMeters": 154,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV580",
+    "from": "G10",
+    "to": "ST002",
+    "distanceMeters": 127,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV581",
+    "from": "G10",
+    "to": "ST010",
+    "distanceMeters": 53,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV582",
+    "from": "G9",
+    "to": "ST022",
+    "distanceMeters": 75,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV583",
+    "from": "G5",
+    "to": "ST017",
+    "distanceMeters": 65,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV584",
+    "from": "G10",
+    "to": "ST033",
+    "distanceMeters": 178,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV585",
+    "from": "G6",
+    "to": "ST018",
+    "distanceMeters": 281,
+    "estimatedWalkMinutes": 2,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV586",
+    "from": "G4",
+    "to": "ST029",
+    "distanceMeters": 218,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": false
+  },
+  {
+    "id": "NAV587",
+    "from": "G5",
+    "to": "ST028",
+    "distanceMeters": 242,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV588",
+    "from": "G11",
+    "to": "ST018",
+    "distanceMeters": 339,
+    "estimatedWalkMinutes": 8,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV589",
+    "from": "G5",
+    "to": "ST027",
+    "distanceMeters": 160,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV590",
+    "from": "G11",
+    "to": "ST024",
+    "distanceMeters": 331,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV591",
+    "from": "G7",
+    "to": "ST005",
+    "distanceMeters": 104,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV592",
+    "from": "G10",
+    "to": "ST033",
+    "distanceMeters": 226,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV593",
+    "from": "G2",
+    "to": "ST014",
+    "distanceMeters": 77,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV594",
+    "from": "G1",
+    "to": "ST036",
+    "distanceMeters": 82,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV595",
+    "from": "G7",
+    "to": "ST027",
+    "distanceMeters": 273,
+    "estimatedWalkMinutes": 3,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV596",
+    "from": "G9",
+    "to": "ST005",
+    "distanceMeters": 224,
+    "estimatedWalkMinutes": 6,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV597",
+    "from": "G9",
+    "to": "ST024",
+    "distanceMeters": 55,
+    "estimatedWalkMinutes": 1,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV598",
+    "from": "G3",
+    "to": "ST021",
+    "distanceMeters": 130,
+    "estimatedWalkMinutes": 5,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV599",
+    "from": "G10",
+    "to": "ST013",
+    "distanceMeters": 355,
+    "estimatedWalkMinutes": 7,
+    "accessibleRoute": true
+  },
+  {
+    "id": "NAV600",
+    "from": "G2",
+    "to": "ST018",
+    "distanceMeters": 257,
+    "estimatedWalkMinutes": 4,
+    "accessibleRoute": true
+  }
+]

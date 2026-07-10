@@ -1,0 +1,3026 @@
+[
+  {
+    "id": "M0001",
+    "restaurantId": "R001",
+    "name": "Choco Lava Cake",
+    "type": "Fast Food",
+    "price": 159,
+    "available": true
+  },
+  {
+    "id": "M0002",
+    "restaurantId": "R001",
+    "name": "Masala Fries",
+    "type": "Fast Food",
+    "price": 361,
+    "available": true
+  },
+  {
+    "id": "M0003",
+    "restaurantId": "R001",
+    "name": "Nachos with Salsa",
+    "type": "Non-Vegetarian",
+    "price": 185,
+    "available": true
+  },
+  {
+    "id": "M0004",
+    "restaurantId": "R001",
+    "name": "Butter Chicken Roll",
+    "type": "Vegan",
+    "price": 269,
+    "available": true
+  },
+  {
+    "id": "M0005",
+    "restaurantId": "R001",
+    "name": "Grilled Corn",
+    "type": "Fast Food",
+    "price": 201,
+    "available": true
+  },
+  {
+    "id": "M0006",
+    "restaurantId": "R001",
+    "name": "Popcorn Tub",
+    "type": "Vegetarian",
+    "price": 315,
+    "available": true
+  },
+  {
+    "id": "M0007",
+    "restaurantId": "R001",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 441,
+    "available": true
+  },
+  {
+    "id": "M0008",
+    "restaurantId": "R002",
+    "name": "Masala Fries",
+    "type": "Vegetarian",
+    "price": 254,
+    "available": true
+  },
+  {
+    "id": "M0009",
+    "restaurantId": "R002",
+    "name": "Hot Dog",
+    "type": "Jain",
+    "price": 311,
+    "available": true
+  },
+  {
+    "id": "M0010",
+    "restaurantId": "R002",
+    "name": "Margherita Pizza Slice",
+    "type": "Non-Vegetarian",
+    "price": 411,
+    "available": false
+  },
+  {
+    "id": "M0011",
+    "restaurantId": "R002",
+    "name": "Falafel Bowl",
+    "type": "Vegetarian",
+    "price": 191,
+    "available": true
+  },
+  {
+    "id": "M0012",
+    "restaurantId": "R002",
+    "name": "Chicken Momos",
+    "type": "Vegetarian",
+    "price": 382,
+    "available": true
+  },
+  {
+    "id": "M0013",
+    "restaurantId": "R002",
+    "name": "Masala Fries",
+    "type": "Non-Vegetarian",
+    "price": 291,
+    "available": true
+  },
+  {
+    "id": "M0014",
+    "restaurantId": "R002",
+    "name": "Chicken Momos",
+    "type": "Fast Food",
+    "price": 228,
+    "available": true
+  },
+  {
+    "id": "M0015",
+    "restaurantId": "R003",
+    "name": "Cold Drink",
+    "type": "Beverages",
+    "price": 330,
+    "available": true
+  },
+  {
+    "id": "M0016",
+    "restaurantId": "R003",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegan",
+    "price": 289,
+    "available": true
+  },
+  {
+    "id": "M0017",
+    "restaurantId": "R003",
+    "name": "Veggie Nachos",
+    "type": "Desserts",
+    "price": 156,
+    "available": true
+  },
+  {
+    "id": "M0018",
+    "restaurantId": "R003",
+    "name": "Paneer Tikka Wrap",
+    "type": "Jain",
+    "price": 449,
+    "available": true
+  },
+  {
+    "id": "M0019",
+    "restaurantId": "R003",
+    "name": "Falafel Bowl",
+    "type": "Non-Vegetarian",
+    "price": 302,
+    "available": true
+  },
+  {
+    "id": "M0020",
+    "restaurantId": "R003",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 286,
+    "available": true
+  },
+  {
+    "id": "M0021",
+    "restaurantId": "R003",
+    "name": "Masala Fries",
+    "type": "Vegan",
+    "price": 425,
+    "available": true
+  },
+  {
+    "id": "M0022",
+    "restaurantId": "R004",
+    "name": "Chicken Momos",
+    "type": "Fast Food",
+    "price": 243,
+    "available": true
+  },
+  {
+    "id": "M0023",
+    "restaurantId": "R004",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegan",
+    "price": 312,
+    "available": true
+  },
+  {
+    "id": "M0024",
+    "restaurantId": "R004",
+    "name": "Masala Fries",
+    "type": "Jain",
+    "price": 122,
+    "available": true
+  },
+  {
+    "id": "M0025",
+    "restaurantId": "R004",
+    "name": "Grilled Corn",
+    "type": "Vegan",
+    "price": 448,
+    "available": true
+  },
+  {
+    "id": "M0026",
+    "restaurantId": "R004",
+    "name": "Chicken Momos",
+    "type": "Desserts",
+    "price": 114,
+    "available": true
+  },
+  {
+    "id": "M0027",
+    "restaurantId": "R004",
+    "name": "Hot Dog",
+    "type": "Vegetarian",
+    "price": 359,
+    "available": true
+  },
+  {
+    "id": "M0028",
+    "restaurantId": "R004",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 227,
+    "available": true
+  },
+  {
+    "id": "M0029",
+    "restaurantId": "R005",
+    "name": "Veg Momos",
+    "type": "Non-Vegetarian",
+    "price": 396,
+    "available": true
+  },
+  {
+    "id": "M0030",
+    "restaurantId": "R005",
+    "name": "Popcorn Tub",
+    "type": "Desserts",
+    "price": 177,
+    "available": true
+  },
+  {
+    "id": "M0031",
+    "restaurantId": "R005",
+    "name": "Cheese Sandwich",
+    "type": "Fast Food",
+    "price": 83,
+    "available": true
+  },
+  {
+    "id": "M0032",
+    "restaurantId": "R005",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 301,
+    "available": true
+  },
+  {
+    "id": "M0033",
+    "restaurantId": "R005",
+    "name": "Cold Drink",
+    "type": "Vegan",
+    "price": 316,
+    "available": true
+  },
+  {
+    "id": "M0034",
+    "restaurantId": "R005",
+    "name": "Hot Dog",
+    "type": "Non-Vegetarian",
+    "price": 91,
+    "available": true
+  },
+  {
+    "id": "M0035",
+    "restaurantId": "R005",
+    "name": "Paneer Tikka Wrap",
+    "type": "Fast Food",
+    "price": 378,
+    "available": true
+  },
+  {
+    "id": "M0036",
+    "restaurantId": "R006",
+    "name": "Grilled Corn",
+    "type": "Desserts",
+    "price": 346,
+    "available": true
+  },
+  {
+    "id": "M0037",
+    "restaurantId": "R006",
+    "name": "Ice Cream Cup",
+    "type": "Desserts",
+    "price": 153,
+    "available": true
+  },
+  {
+    "id": "M0038",
+    "restaurantId": "R006",
+    "name": "Cheese Sandwich",
+    "type": "Beverages",
+    "price": 141,
+    "available": true
+  },
+  {
+    "id": "M0039",
+    "restaurantId": "R006",
+    "name": "Veggie Nachos",
+    "type": "Vegetarian",
+    "price": 441,
+    "available": true
+  },
+  {
+    "id": "M0040",
+    "restaurantId": "R006",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 191,
+    "available": true
+  },
+  {
+    "id": "M0041",
+    "restaurantId": "R006",
+    "name": "Falafel Bowl",
+    "type": "Vegan",
+    "price": 204,
+    "available": true
+  },
+  {
+    "id": "M0042",
+    "restaurantId": "R006",
+    "name": "Popcorn Tub",
+    "type": "Non-Vegetarian",
+    "price": 170,
+    "available": true
+  },
+  {
+    "id": "M0043",
+    "restaurantId": "R007",
+    "name": "Butter Chicken Roll",
+    "type": "Vegan",
+    "price": 243,
+    "available": true
+  },
+  {
+    "id": "M0044",
+    "restaurantId": "R007",
+    "name": "Pav Bhaji",
+    "type": "Fast Food",
+    "price": 360,
+    "available": true
+  },
+  {
+    "id": "M0045",
+    "restaurantId": "R007",
+    "name": "Cheese Sandwich",
+    "type": "Fast Food",
+    "price": 273,
+    "available": true
+  },
+  {
+    "id": "M0046",
+    "restaurantId": "R007",
+    "name": "Masala Fries",
+    "type": "Desserts",
+    "price": 294,
+    "available": true
+  },
+  {
+    "id": "M0047",
+    "restaurantId": "R007",
+    "name": "Cheese Sandwich",
+    "type": "Jain",
+    "price": 334,
+    "available": true
+  },
+  {
+    "id": "M0048",
+    "restaurantId": "R007",
+    "name": "Cold Drink",
+    "type": "Desserts",
+    "price": 448,
+    "available": true
+  },
+  {
+    "id": "M0049",
+    "restaurantId": "R007",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 226,
+    "available": true
+  },
+  {
+    "id": "M0050",
+    "restaurantId": "R008",
+    "name": "Veg Momos",
+    "type": "Fast Food",
+    "price": 321,
+    "available": true
+  },
+  {
+    "id": "M0051",
+    "restaurantId": "R008",
+    "name": "Chicken Burger",
+    "type": "Vegetarian",
+    "price": 317,
+    "available": true
+  },
+  {
+    "id": "M0052",
+    "restaurantId": "R008",
+    "name": "Cold Drink",
+    "type": "Beverages",
+    "price": 172,
+    "available": true
+  },
+  {
+    "id": "M0053",
+    "restaurantId": "R008",
+    "name": "Hot Dog",
+    "type": "Fast Food",
+    "price": 107,
+    "available": true
+  },
+  {
+    "id": "M0054",
+    "restaurantId": "R008",
+    "name": "Margherita Pizza Slice",
+    "type": "Jain",
+    "price": 133,
+    "available": true
+  },
+  {
+    "id": "M0055",
+    "restaurantId": "R008",
+    "name": "Veg Momos",
+    "type": "Non-Vegetarian",
+    "price": 367,
+    "available": true
+  },
+  {
+    "id": "M0056",
+    "restaurantId": "R008",
+    "name": "Cold Coffee",
+    "type": "Vegetarian",
+    "price": 97,
+    "available": true
+  },
+  {
+    "id": "M0057",
+    "restaurantId": "R009",
+    "name": "Popcorn Tub",
+    "type": "Non-Vegetarian",
+    "price": 315,
+    "available": true
+  },
+  {
+    "id": "M0058",
+    "restaurantId": "R009",
+    "name": "Veggie Nachos",
+    "type": "Vegan",
+    "price": 312,
+    "available": true
+  },
+  {
+    "id": "M0059",
+    "restaurantId": "R009",
+    "name": "Popcorn Tub",
+    "type": "Jain",
+    "price": 257,
+    "available": true
+  },
+  {
+    "id": "M0060",
+    "restaurantId": "R009",
+    "name": "Veg Momos",
+    "type": "Beverages",
+    "price": 210,
+    "available": true
+  },
+  {
+    "id": "M0061",
+    "restaurantId": "R009",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 91,
+    "available": true
+  },
+  {
+    "id": "M0062",
+    "restaurantId": "R009",
+    "name": "Hot Dog",
+    "type": "Fast Food",
+    "price": 322,
+    "available": true
+  },
+  {
+    "id": "M0063",
+    "restaurantId": "R009",
+    "name": "Cold Drink",
+    "type": "Fast Food",
+    "price": 139,
+    "available": true
+  },
+  {
+    "id": "M0064",
+    "restaurantId": "R010",
+    "name": "Chicken Momos",
+    "type": "Non-Vegetarian",
+    "price": 305,
+    "available": true
+  },
+  {
+    "id": "M0065",
+    "restaurantId": "R010",
+    "name": "Pav Bhaji",
+    "type": "Vegetarian",
+    "price": 180,
+    "available": true
+  },
+  {
+    "id": "M0066",
+    "restaurantId": "R010",
+    "name": "Chicken Momos",
+    "type": "Jain",
+    "price": 426,
+    "available": true
+  },
+  {
+    "id": "M0067",
+    "restaurantId": "R010",
+    "name": "Hot Dog",
+    "type": "Jain",
+    "price": 194,
+    "available": true
+  },
+  {
+    "id": "M0068",
+    "restaurantId": "R010",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegetarian",
+    "price": 341,
+    "available": true
+  },
+  {
+    "id": "M0069",
+    "restaurantId": "R010",
+    "name": "Margherita Pizza Slice",
+    "type": "Non-Vegetarian",
+    "price": 264,
+    "available": true
+  },
+  {
+    "id": "M0070",
+    "restaurantId": "R010",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 352,
+    "available": true
+  },
+  {
+    "id": "M0071",
+    "restaurantId": "R011",
+    "name": "Butter Chicken Roll",
+    "type": "Vegetarian",
+    "price": 250,
+    "available": true
+  },
+  {
+    "id": "M0072",
+    "restaurantId": "R011",
+    "name": "Cold Drink",
+    "type": "Non-Vegetarian",
+    "price": 450,
+    "available": true
+  },
+  {
+    "id": "M0073",
+    "restaurantId": "R011",
+    "name": "Veggie Nachos",
+    "type": "Non-Vegetarian",
+    "price": 323,
+    "available": true
+  },
+  {
+    "id": "M0074",
+    "restaurantId": "R011",
+    "name": "Ice Cream Cup",
+    "type": "Non-Vegetarian",
+    "price": 100,
+    "available": true
+  },
+  {
+    "id": "M0075",
+    "restaurantId": "R011",
+    "name": "Butter Chicken Roll",
+    "type": "Non-Vegetarian",
+    "price": 82,
+    "available": true
+  },
+  {
+    "id": "M0076",
+    "restaurantId": "R011",
+    "name": "Popcorn Tub",
+    "type": "Vegetarian",
+    "price": 124,
+    "available": true
+  },
+  {
+    "id": "M0077",
+    "restaurantId": "R011",
+    "name": "Cold Drink",
+    "type": "Jain",
+    "price": 152,
+    "available": true
+  },
+  {
+    "id": "M0078",
+    "restaurantId": "R012",
+    "name": "Popcorn Tub",
+    "type": "Desserts",
+    "price": 148,
+    "available": true
+  },
+  {
+    "id": "M0079",
+    "restaurantId": "R012",
+    "name": "Fresh Lime Soda",
+    "type": "Beverages",
+    "price": 273,
+    "available": true
+  },
+  {
+    "id": "M0080",
+    "restaurantId": "R012",
+    "name": "Cold Coffee",
+    "type": "Jain",
+    "price": 147,
+    "available": true
+  },
+  {
+    "id": "M0081",
+    "restaurantId": "R012",
+    "name": "Ice Cream Cup",
+    "type": "Desserts",
+    "price": 298,
+    "available": true
+  },
+  {
+    "id": "M0082",
+    "restaurantId": "R012",
+    "name": "Hot Dog",
+    "type": "Non-Vegetarian",
+    "price": 337,
+    "available": true
+  },
+  {
+    "id": "M0083",
+    "restaurantId": "R012",
+    "name": "Margherita Pizza Slice",
+    "type": "Beverages",
+    "price": 439,
+    "available": true
+  },
+  {
+    "id": "M0084",
+    "restaurantId": "R012",
+    "name": "Nachos with Salsa",
+    "type": "Vegetarian",
+    "price": 98,
+    "available": false
+  },
+  {
+    "id": "M0085",
+    "restaurantId": "R013",
+    "name": "Veggie Nachos",
+    "type": "Fast Food",
+    "price": 123,
+    "available": true
+  },
+  {
+    "id": "M0086",
+    "restaurantId": "R013",
+    "name": "Cold Coffee",
+    "type": "Vegetarian",
+    "price": 246,
+    "available": true
+  },
+  {
+    "id": "M0087",
+    "restaurantId": "R013",
+    "name": "Masala Fries",
+    "type": "Fast Food",
+    "price": 344,
+    "available": true
+  },
+  {
+    "id": "M0088",
+    "restaurantId": "R013",
+    "name": "Chicken Momos",
+    "type": "Vegan",
+    "price": 84,
+    "available": true
+  },
+  {
+    "id": "M0089",
+    "restaurantId": "R013",
+    "name": "Margherita Pizza Slice",
+    "type": "Non-Vegetarian",
+    "price": 208,
+    "available": true
+  },
+  {
+    "id": "M0090",
+    "restaurantId": "R013",
+    "name": "Cold Drink",
+    "type": "Vegan",
+    "price": 179,
+    "available": true
+  },
+  {
+    "id": "M0091",
+    "restaurantId": "R013",
+    "name": "Veggie Nachos",
+    "type": "Jain",
+    "price": 305,
+    "available": true
+  },
+  {
+    "id": "M0092",
+    "restaurantId": "R014",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegan",
+    "price": 426,
+    "available": true
+  },
+  {
+    "id": "M0093",
+    "restaurantId": "R014",
+    "name": "Grilled Corn",
+    "type": "Beverages",
+    "price": 444,
+    "available": true
+  },
+  {
+    "id": "M0094",
+    "restaurantId": "R014",
+    "name": "Cheese Sandwich",
+    "type": "Vegan",
+    "price": 136,
+    "available": true
+  },
+  {
+    "id": "M0095",
+    "restaurantId": "R014",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 80,
+    "available": true
+  },
+  {
+    "id": "M0096",
+    "restaurantId": "R014",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegetarian",
+    "price": 225,
+    "available": true
+  },
+  {
+    "id": "M0097",
+    "restaurantId": "R014",
+    "name": "Choco Lava Cake",
+    "type": "Desserts",
+    "price": 80,
+    "available": true
+  },
+  {
+    "id": "M0098",
+    "restaurantId": "R014",
+    "name": "Veggie Nachos",
+    "type": "Vegetarian",
+    "price": 244,
+    "available": true
+  },
+  {
+    "id": "M0099",
+    "restaurantId": "R015",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 389,
+    "available": true
+  },
+  {
+    "id": "M0100",
+    "restaurantId": "R015",
+    "name": "Pav Bhaji",
+    "type": "Beverages",
+    "price": 190,
+    "available": true
+  },
+  {
+    "id": "M0101",
+    "restaurantId": "R015",
+    "name": "Popcorn Tub",
+    "type": "Desserts",
+    "price": 175,
+    "available": true
+  },
+  {
+    "id": "M0102",
+    "restaurantId": "R015",
+    "name": "Veggie Nachos",
+    "type": "Vegetarian",
+    "price": 105,
+    "available": true
+  },
+  {
+    "id": "M0103",
+    "restaurantId": "R015",
+    "name": "Butter Chicken Roll",
+    "type": "Jain",
+    "price": 214,
+    "available": true
+  },
+  {
+    "id": "M0104",
+    "restaurantId": "R015",
+    "name": "Cold Drink",
+    "type": "Desserts",
+    "price": 215,
+    "available": true
+  },
+  {
+    "id": "M0105",
+    "restaurantId": "R015",
+    "name": "Chicken Burger",
+    "type": "Beverages",
+    "price": 169,
+    "available": true
+  },
+  {
+    "id": "M0106",
+    "restaurantId": "R016",
+    "name": "Popcorn Tub",
+    "type": "Vegetarian",
+    "price": 102,
+    "available": true
+  },
+  {
+    "id": "M0107",
+    "restaurantId": "R016",
+    "name": "Masala Fries",
+    "type": "Vegetarian",
+    "price": 283,
+    "available": true
+  },
+  {
+    "id": "M0108",
+    "restaurantId": "R016",
+    "name": "Pav Bhaji",
+    "type": "Fast Food",
+    "price": 131,
+    "available": true
+  },
+  {
+    "id": "M0109",
+    "restaurantId": "R016",
+    "name": "Popcorn Tub",
+    "type": "Desserts",
+    "price": 280,
+    "available": true
+  },
+  {
+    "id": "M0110",
+    "restaurantId": "R016",
+    "name": "Nachos with Salsa",
+    "type": "Desserts",
+    "price": 244,
+    "available": true
+  },
+  {
+    "id": "M0111",
+    "restaurantId": "R016",
+    "name": "Nachos with Salsa",
+    "type": "Non-Vegetarian",
+    "price": 139,
+    "available": true
+  },
+  {
+    "id": "M0112",
+    "restaurantId": "R016",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 196,
+    "available": true
+  },
+  {
+    "id": "M0113",
+    "restaurantId": "R017",
+    "name": "Cold Coffee",
+    "type": "Jain",
+    "price": 190,
+    "available": true
+  },
+  {
+    "id": "M0114",
+    "restaurantId": "R017",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegetarian",
+    "price": 88,
+    "available": true
+  },
+  {
+    "id": "M0115",
+    "restaurantId": "R017",
+    "name": "Hot Dog",
+    "type": "Beverages",
+    "price": 440,
+    "available": true
+  },
+  {
+    "id": "M0116",
+    "restaurantId": "R017",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegetarian",
+    "price": 110,
+    "available": true
+  },
+  {
+    "id": "M0117",
+    "restaurantId": "R017",
+    "name": "Cheese Sandwich",
+    "type": "Vegan",
+    "price": 432,
+    "available": true
+  },
+  {
+    "id": "M0118",
+    "restaurantId": "R017",
+    "name": "Veg Momos",
+    "type": "Vegan",
+    "price": 166,
+    "available": true
+  },
+  {
+    "id": "M0119",
+    "restaurantId": "R017",
+    "name": "Veggie Nachos",
+    "type": "Beverages",
+    "price": 221,
+    "available": true
+  },
+  {
+    "id": "M0120",
+    "restaurantId": "R018",
+    "name": "Chicken Burger",
+    "type": "Desserts",
+    "price": 349,
+    "available": true
+  },
+  {
+    "id": "M0121",
+    "restaurantId": "R018",
+    "name": "Margherita Pizza Slice",
+    "type": "Non-Vegetarian",
+    "price": 172,
+    "available": true
+  },
+  {
+    "id": "M0122",
+    "restaurantId": "R018",
+    "name": "Veggie Nachos",
+    "type": "Desserts",
+    "price": 332,
+    "available": true
+  },
+  {
+    "id": "M0123",
+    "restaurantId": "R018",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 290,
+    "available": true
+  },
+  {
+    "id": "M0124",
+    "restaurantId": "R018",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 255,
+    "available": true
+  },
+  {
+    "id": "M0125",
+    "restaurantId": "R018",
+    "name": "Veg Momos",
+    "type": "Fast Food",
+    "price": 296,
+    "available": false
+  },
+  {
+    "id": "M0126",
+    "restaurantId": "R018",
+    "name": "Chicken Burger",
+    "type": "Jain",
+    "price": 414,
+    "available": true
+  },
+  {
+    "id": "M0127",
+    "restaurantId": "R019",
+    "name": "Grilled Corn",
+    "type": "Non-Vegetarian",
+    "price": 201,
+    "available": true
+  },
+  {
+    "id": "M0128",
+    "restaurantId": "R019",
+    "name": "Pav Bhaji",
+    "type": "Non-Vegetarian",
+    "price": 159,
+    "available": true
+  },
+  {
+    "id": "M0129",
+    "restaurantId": "R019",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegetarian",
+    "price": 95,
+    "available": true
+  },
+  {
+    "id": "M0130",
+    "restaurantId": "R019",
+    "name": "Hot Dog",
+    "type": "Vegetarian",
+    "price": 253,
+    "available": true
+  },
+  {
+    "id": "M0131",
+    "restaurantId": "R019",
+    "name": "Choco Lava Cake",
+    "type": "Beverages",
+    "price": 168,
+    "available": true
+  },
+  {
+    "id": "M0132",
+    "restaurantId": "R019",
+    "name": "Paneer Tikka Wrap",
+    "type": "Fast Food",
+    "price": 389,
+    "available": true
+  },
+  {
+    "id": "M0133",
+    "restaurantId": "R019",
+    "name": "Veggie Nachos",
+    "type": "Vegan",
+    "price": 221,
+    "available": true
+  },
+  {
+    "id": "M0134",
+    "restaurantId": "R020",
+    "name": "Masala Fries",
+    "type": "Desserts",
+    "price": 359,
+    "available": true
+  },
+  {
+    "id": "M0135",
+    "restaurantId": "R020",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 415,
+    "available": true
+  },
+  {
+    "id": "M0136",
+    "restaurantId": "R020",
+    "name": "Cheese Sandwich",
+    "type": "Non-Vegetarian",
+    "price": 96,
+    "available": true
+  },
+  {
+    "id": "M0137",
+    "restaurantId": "R020",
+    "name": "Hot Dog",
+    "type": "Vegan",
+    "price": 113,
+    "available": true
+  },
+  {
+    "id": "M0138",
+    "restaurantId": "R020",
+    "name": "Veggie Nachos",
+    "type": "Vegetarian",
+    "price": 309,
+    "available": false
+  },
+  {
+    "id": "M0139",
+    "restaurantId": "R020",
+    "name": "Chicken Momos",
+    "type": "Beverages",
+    "price": 217,
+    "available": true
+  },
+  {
+    "id": "M0140",
+    "restaurantId": "R020",
+    "name": "Butter Chicken Roll",
+    "type": "Desserts",
+    "price": 336,
+    "available": true
+  },
+  {
+    "id": "M0141",
+    "restaurantId": "R021",
+    "name": "Pav Bhaji",
+    "type": "Non-Vegetarian",
+    "price": 274,
+    "available": true
+  },
+  {
+    "id": "M0142",
+    "restaurantId": "R021",
+    "name": "Chicken Burger",
+    "type": "Beverages",
+    "price": 231,
+    "available": true
+  },
+  {
+    "id": "M0143",
+    "restaurantId": "R021",
+    "name": "Cold Drink",
+    "type": "Desserts",
+    "price": 158,
+    "available": true
+  },
+  {
+    "id": "M0144",
+    "restaurantId": "R021",
+    "name": "Chicken Burger",
+    "type": "Vegetarian",
+    "price": 196,
+    "available": true
+  },
+  {
+    "id": "M0145",
+    "restaurantId": "R021",
+    "name": "Grilled Corn",
+    "type": "Desserts",
+    "price": 367,
+    "available": true
+  },
+  {
+    "id": "M0146",
+    "restaurantId": "R021",
+    "name": "Fresh Lime Soda",
+    "type": "Non-Vegetarian",
+    "price": 131,
+    "available": true
+  },
+  {
+    "id": "M0147",
+    "restaurantId": "R021",
+    "name": "Popcorn Tub",
+    "type": "Vegan",
+    "price": 428,
+    "available": true
+  },
+  {
+    "id": "M0148",
+    "restaurantId": "R022",
+    "name": "Veg Momos",
+    "type": "Beverages",
+    "price": 411,
+    "available": true
+  },
+  {
+    "id": "M0149",
+    "restaurantId": "R022",
+    "name": "Pav Bhaji",
+    "type": "Vegan",
+    "price": 369,
+    "available": false
+  },
+  {
+    "id": "M0150",
+    "restaurantId": "R022",
+    "name": "Pav Bhaji",
+    "type": "Desserts",
+    "price": 433,
+    "available": true
+  },
+  {
+    "id": "M0151",
+    "restaurantId": "R022",
+    "name": "Masala Fries",
+    "type": "Vegetarian",
+    "price": 139,
+    "available": true
+  },
+  {
+    "id": "M0152",
+    "restaurantId": "R022",
+    "name": "Fresh Lime Soda",
+    "type": "Non-Vegetarian",
+    "price": 294,
+    "available": true
+  },
+  {
+    "id": "M0153",
+    "restaurantId": "R022",
+    "name": "Cold Drink",
+    "type": "Jain",
+    "price": 109,
+    "available": true
+  },
+  {
+    "id": "M0154",
+    "restaurantId": "R022",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 349,
+    "available": true
+  },
+  {
+    "id": "M0155",
+    "restaurantId": "R023",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 388,
+    "available": true
+  },
+  {
+    "id": "M0156",
+    "restaurantId": "R023",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 304,
+    "available": true
+  },
+  {
+    "id": "M0157",
+    "restaurantId": "R023",
+    "name": "Choco Lava Cake",
+    "type": "Desserts",
+    "price": 328,
+    "available": true
+  },
+  {
+    "id": "M0158",
+    "restaurantId": "R023",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 278,
+    "available": true
+  },
+  {
+    "id": "M0159",
+    "restaurantId": "R023",
+    "name": "Falafel Bowl",
+    "type": "Vegan",
+    "price": 153,
+    "available": true
+  },
+  {
+    "id": "M0160",
+    "restaurantId": "R023",
+    "name": "Chicken Momos",
+    "type": "Non-Vegetarian",
+    "price": 448,
+    "available": true
+  },
+  {
+    "id": "M0161",
+    "restaurantId": "R023",
+    "name": "Paneer Tikka Wrap",
+    "type": "Fast Food",
+    "price": 274,
+    "available": true
+  },
+  {
+    "id": "M0162",
+    "restaurantId": "R024",
+    "name": "Cold Drink",
+    "type": "Vegetarian",
+    "price": 139,
+    "available": false
+  },
+  {
+    "id": "M0163",
+    "restaurantId": "R024",
+    "name": "Choco Lava Cake",
+    "type": "Beverages",
+    "price": 110,
+    "available": true
+  },
+  {
+    "id": "M0164",
+    "restaurantId": "R024",
+    "name": "Cold Coffee",
+    "type": "Fast Food",
+    "price": 409,
+    "available": false
+  },
+  {
+    "id": "M0165",
+    "restaurantId": "R024",
+    "name": "Popcorn Tub",
+    "type": "Jain",
+    "price": 243,
+    "available": false
+  },
+  {
+    "id": "M0166",
+    "restaurantId": "R024",
+    "name": "Choco Lava Cake",
+    "type": "Non-Vegetarian",
+    "price": 202,
+    "available": true
+  },
+  {
+    "id": "M0167",
+    "restaurantId": "R024",
+    "name": "Paneer Tikka Wrap",
+    "type": "Desserts",
+    "price": 296,
+    "available": true
+  },
+  {
+    "id": "M0168",
+    "restaurantId": "R024",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 367,
+    "available": true
+  },
+  {
+    "id": "M0169",
+    "restaurantId": "R025",
+    "name": "Grilled Corn",
+    "type": "Non-Vegetarian",
+    "price": 94,
+    "available": true
+  },
+  {
+    "id": "M0170",
+    "restaurantId": "R025",
+    "name": "Margherita Pizza Slice",
+    "type": "Fast Food",
+    "price": 237,
+    "available": true
+  },
+  {
+    "id": "M0171",
+    "restaurantId": "R025",
+    "name": "Cold Drink",
+    "type": "Non-Vegetarian",
+    "price": 216,
+    "available": true
+  },
+  {
+    "id": "M0172",
+    "restaurantId": "R025",
+    "name": "Nachos with Salsa",
+    "type": "Vegan",
+    "price": 305,
+    "available": true
+  },
+  {
+    "id": "M0173",
+    "restaurantId": "R025",
+    "name": "Veg Momos",
+    "type": "Fast Food",
+    "price": 121,
+    "available": true
+  },
+  {
+    "id": "M0174",
+    "restaurantId": "R025",
+    "name": "Paneer Tikka Wrap",
+    "type": "Jain",
+    "price": 431,
+    "available": false
+  },
+  {
+    "id": "M0175",
+    "restaurantId": "R025",
+    "name": "Masala Fries",
+    "type": "Jain",
+    "price": 151,
+    "available": true
+  },
+  {
+    "id": "M0176",
+    "restaurantId": "R026",
+    "name": "Popcorn Tub",
+    "type": "Vegan",
+    "price": 196,
+    "available": true
+  },
+  {
+    "id": "M0177",
+    "restaurantId": "R026",
+    "name": "Ice Cream Cup",
+    "type": "Desserts",
+    "price": 389,
+    "available": true
+  },
+  {
+    "id": "M0178",
+    "restaurantId": "R026",
+    "name": "Cold Coffee",
+    "type": "Non-Vegetarian",
+    "price": 209,
+    "available": true
+  },
+  {
+    "id": "M0179",
+    "restaurantId": "R026",
+    "name": "Hot Dog",
+    "type": "Vegetarian",
+    "price": 315,
+    "available": true
+  },
+  {
+    "id": "M0180",
+    "restaurantId": "R026",
+    "name": "Ice Cream Cup",
+    "type": "Vegan",
+    "price": 299,
+    "available": true
+  },
+  {
+    "id": "M0181",
+    "restaurantId": "R026",
+    "name": "Pav Bhaji",
+    "type": "Non-Vegetarian",
+    "price": 349,
+    "available": true
+  },
+  {
+    "id": "M0182",
+    "restaurantId": "R026",
+    "name": "Masala Fries",
+    "type": "Beverages",
+    "price": 85,
+    "available": true
+  },
+  {
+    "id": "M0183",
+    "restaurantId": "R027",
+    "name": "Pav Bhaji",
+    "type": "Beverages",
+    "price": 332,
+    "available": true
+  },
+  {
+    "id": "M0184",
+    "restaurantId": "R027",
+    "name": "Choco Lava Cake",
+    "type": "Desserts",
+    "price": 85,
+    "available": true
+  },
+  {
+    "id": "M0185",
+    "restaurantId": "R027",
+    "name": "Choco Lava Cake",
+    "type": "Beverages",
+    "price": 425,
+    "available": true
+  },
+  {
+    "id": "M0186",
+    "restaurantId": "R027",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 211,
+    "available": true
+  },
+  {
+    "id": "M0187",
+    "restaurantId": "R027",
+    "name": "Masala Fries",
+    "type": "Non-Vegetarian",
+    "price": 214,
+    "available": true
+  },
+  {
+    "id": "M0188",
+    "restaurantId": "R027",
+    "name": "Choco Lava Cake",
+    "type": "Desserts",
+    "price": 282,
+    "available": true
+  },
+  {
+    "id": "M0189",
+    "restaurantId": "R027",
+    "name": "Ice Cream Cup",
+    "type": "Vegetarian",
+    "price": 376,
+    "available": true
+  },
+  {
+    "id": "M0190",
+    "restaurantId": "R028",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 426,
+    "available": true
+  },
+  {
+    "id": "M0191",
+    "restaurantId": "R028",
+    "name": "Cold Coffee",
+    "type": "Vegan",
+    "price": 110,
+    "available": true
+  },
+  {
+    "id": "M0192",
+    "restaurantId": "R028",
+    "name": "Veg Momos",
+    "type": "Vegetarian",
+    "price": 262,
+    "available": true
+  },
+  {
+    "id": "M0193",
+    "restaurantId": "R028",
+    "name": "Grilled Corn",
+    "type": "Jain",
+    "price": 431,
+    "available": true
+  },
+  {
+    "id": "M0194",
+    "restaurantId": "R028",
+    "name": "Nachos with Salsa",
+    "type": "Fast Food",
+    "price": 391,
+    "available": true
+  },
+  {
+    "id": "M0195",
+    "restaurantId": "R028",
+    "name": "Chicken Momos",
+    "type": "Desserts",
+    "price": 159,
+    "available": true
+  },
+  {
+    "id": "M0196",
+    "restaurantId": "R028",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegan",
+    "price": 307,
+    "available": true
+  },
+  {
+    "id": "M0197",
+    "restaurantId": "R029",
+    "name": "Nachos with Salsa",
+    "type": "Vegetarian",
+    "price": 377,
+    "available": true
+  },
+  {
+    "id": "M0198",
+    "restaurantId": "R029",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 392,
+    "available": true
+  },
+  {
+    "id": "M0199",
+    "restaurantId": "R029",
+    "name": "Popcorn Tub",
+    "type": "Non-Vegetarian",
+    "price": 84,
+    "available": true
+  },
+  {
+    "id": "M0200",
+    "restaurantId": "R029",
+    "name": "Fresh Lime Soda",
+    "type": "Vegetarian",
+    "price": 422,
+    "available": true
+  },
+  {
+    "id": "M0201",
+    "restaurantId": "R029",
+    "name": "Nachos with Salsa",
+    "type": "Fast Food",
+    "price": 296,
+    "available": true
+  },
+  {
+    "id": "M0202",
+    "restaurantId": "R029",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 147,
+    "available": true
+  },
+  {
+    "id": "M0203",
+    "restaurantId": "R029",
+    "name": "Butter Chicken Roll",
+    "type": "Vegetarian",
+    "price": 378,
+    "available": true
+  },
+  {
+    "id": "M0204",
+    "restaurantId": "R030",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 269,
+    "available": true
+  },
+  {
+    "id": "M0205",
+    "restaurantId": "R030",
+    "name": "Nachos with Salsa",
+    "type": "Jain",
+    "price": 283,
+    "available": true
+  },
+  {
+    "id": "M0206",
+    "restaurantId": "R030",
+    "name": "Popcorn Tub",
+    "type": "Jain",
+    "price": 370,
+    "available": true
+  },
+  {
+    "id": "M0207",
+    "restaurantId": "R030",
+    "name": "Hot Dog",
+    "type": "Non-Vegetarian",
+    "price": 193,
+    "available": true
+  },
+  {
+    "id": "M0208",
+    "restaurantId": "R030",
+    "name": "Masala Fries",
+    "type": "Jain",
+    "price": 405,
+    "available": true
+  },
+  {
+    "id": "M0209",
+    "restaurantId": "R030",
+    "name": "Ice Cream Cup",
+    "type": "Beverages",
+    "price": 247,
+    "available": true
+  },
+  {
+    "id": "M0210",
+    "restaurantId": "R030",
+    "name": "Falafel Bowl",
+    "type": "Fast Food",
+    "price": 81,
+    "available": true
+  },
+  {
+    "id": "M0211",
+    "restaurantId": "R031",
+    "name": "Hot Dog",
+    "type": "Vegan",
+    "price": 130,
+    "available": true
+  },
+  {
+    "id": "M0212",
+    "restaurantId": "R031",
+    "name": "Veggie Nachos",
+    "type": "Vegan",
+    "price": 406,
+    "available": true
+  },
+  {
+    "id": "M0213",
+    "restaurantId": "R031",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 379,
+    "available": true
+  },
+  {
+    "id": "M0214",
+    "restaurantId": "R031",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 423,
+    "available": true
+  },
+  {
+    "id": "M0215",
+    "restaurantId": "R031",
+    "name": "Pav Bhaji",
+    "type": "Beverages",
+    "price": 312,
+    "available": true
+  },
+  {
+    "id": "M0216",
+    "restaurantId": "R031",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegetarian",
+    "price": 128,
+    "available": true
+  },
+  {
+    "id": "M0217",
+    "restaurantId": "R031",
+    "name": "Masala Fries",
+    "type": "Jain",
+    "price": 118,
+    "available": true
+  },
+  {
+    "id": "M0218",
+    "restaurantId": "R032",
+    "name": "Grilled Corn",
+    "type": "Jain",
+    "price": 111,
+    "available": true
+  },
+  {
+    "id": "M0219",
+    "restaurantId": "R032",
+    "name": "Chicken Burger",
+    "type": "Desserts",
+    "price": 371,
+    "available": true
+  },
+  {
+    "id": "M0220",
+    "restaurantId": "R032",
+    "name": "Masala Fries",
+    "type": "Fast Food",
+    "price": 273,
+    "available": true
+  },
+  {
+    "id": "M0221",
+    "restaurantId": "R032",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 442,
+    "available": true
+  },
+  {
+    "id": "M0222",
+    "restaurantId": "R032",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 157,
+    "available": true
+  },
+  {
+    "id": "M0223",
+    "restaurantId": "R032",
+    "name": "Paneer Tikka Wrap",
+    "type": "Desserts",
+    "price": 130,
+    "available": true
+  },
+  {
+    "id": "M0224",
+    "restaurantId": "R032",
+    "name": "Falafel Bowl",
+    "type": "Vegan",
+    "price": 280,
+    "available": true
+  },
+  {
+    "id": "M0225",
+    "restaurantId": "R033",
+    "name": "Choco Lava Cake",
+    "type": "Jain",
+    "price": 379,
+    "available": true
+  },
+  {
+    "id": "M0226",
+    "restaurantId": "R033",
+    "name": "Ice Cream Cup",
+    "type": "Non-Vegetarian",
+    "price": 286,
+    "available": true
+  },
+  {
+    "id": "M0227",
+    "restaurantId": "R033",
+    "name": "Butter Chicken Roll",
+    "type": "Non-Vegetarian",
+    "price": 436,
+    "available": true
+  },
+  {
+    "id": "M0228",
+    "restaurantId": "R033",
+    "name": "Cold Drink",
+    "type": "Desserts",
+    "price": 351,
+    "available": false
+  },
+  {
+    "id": "M0229",
+    "restaurantId": "R033",
+    "name": "Butter Chicken Roll",
+    "type": "Jain",
+    "price": 412,
+    "available": true
+  },
+  {
+    "id": "M0230",
+    "restaurantId": "R033",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegetarian",
+    "price": 370,
+    "available": true
+  },
+  {
+    "id": "M0231",
+    "restaurantId": "R033",
+    "name": "Veg Momos",
+    "type": "Vegan",
+    "price": 295,
+    "available": true
+  },
+  {
+    "id": "M0232",
+    "restaurantId": "R034",
+    "name": "Margherita Pizza Slice",
+    "type": "Beverages",
+    "price": 199,
+    "available": true
+  },
+  {
+    "id": "M0233",
+    "restaurantId": "R034",
+    "name": "Butter Chicken Roll",
+    "type": "Vegan",
+    "price": 183,
+    "available": true
+  },
+  {
+    "id": "M0234",
+    "restaurantId": "R034",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 394,
+    "available": true
+  },
+  {
+    "id": "M0235",
+    "restaurantId": "R034",
+    "name": "Chicken Burger",
+    "type": "Vegetarian",
+    "price": 307,
+    "available": true
+  },
+  {
+    "id": "M0236",
+    "restaurantId": "R034",
+    "name": "Nachos with Salsa",
+    "type": "Vegan",
+    "price": 227,
+    "available": true
+  },
+  {
+    "id": "M0237",
+    "restaurantId": "R034",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 274,
+    "available": true
+  },
+  {
+    "id": "M0238",
+    "restaurantId": "R034",
+    "name": "Nachos with Salsa",
+    "type": "Desserts",
+    "price": 374,
+    "available": true
+  },
+  {
+    "id": "M0239",
+    "restaurantId": "R035",
+    "name": "Veg Momos",
+    "type": "Fast Food",
+    "price": 340,
+    "available": true
+  },
+  {
+    "id": "M0240",
+    "restaurantId": "R035",
+    "name": "Hot Dog",
+    "type": "Beverages",
+    "price": 284,
+    "available": true
+  },
+  {
+    "id": "M0241",
+    "restaurantId": "R035",
+    "name": "Margherita Pizza Slice",
+    "type": "Jain",
+    "price": 135,
+    "available": true
+  },
+  {
+    "id": "M0242",
+    "restaurantId": "R035",
+    "name": "Margherita Pizza Slice",
+    "type": "Fast Food",
+    "price": 104,
+    "available": true
+  },
+  {
+    "id": "M0243",
+    "restaurantId": "R035",
+    "name": "Pav Bhaji",
+    "type": "Vegan",
+    "price": 373,
+    "available": true
+  },
+  {
+    "id": "M0244",
+    "restaurantId": "R035",
+    "name": "Veg Momos",
+    "type": "Non-Vegetarian",
+    "price": 344,
+    "available": true
+  },
+  {
+    "id": "M0245",
+    "restaurantId": "R035",
+    "name": "Falafel Bowl",
+    "type": "Jain",
+    "price": 118,
+    "available": true
+  },
+  {
+    "id": "M0246",
+    "restaurantId": "R036",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 389,
+    "available": true
+  },
+  {
+    "id": "M0247",
+    "restaurantId": "R036",
+    "name": "Pav Bhaji",
+    "type": "Beverages",
+    "price": 295,
+    "available": true
+  },
+  {
+    "id": "M0248",
+    "restaurantId": "R036",
+    "name": "Masala Fries",
+    "type": "Jain",
+    "price": 288,
+    "available": false
+  },
+  {
+    "id": "M0249",
+    "restaurantId": "R036",
+    "name": "Veg Momos",
+    "type": "Fast Food",
+    "price": 282,
+    "available": true
+  },
+  {
+    "id": "M0250",
+    "restaurantId": "R036",
+    "name": "Cold Drink",
+    "type": "Jain",
+    "price": 229,
+    "available": true
+  },
+  {
+    "id": "M0251",
+    "restaurantId": "R036",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 140,
+    "available": false
+  },
+  {
+    "id": "M0252",
+    "restaurantId": "R036",
+    "name": "Cold Drink",
+    "type": "Vegetarian",
+    "price": 112,
+    "available": true
+  },
+  {
+    "id": "M0253",
+    "restaurantId": "R037",
+    "name": "Cheese Sandwich",
+    "type": "Vegetarian",
+    "price": 444,
+    "available": true
+  },
+  {
+    "id": "M0254",
+    "restaurantId": "R037",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 340,
+    "available": true
+  },
+  {
+    "id": "M0255",
+    "restaurantId": "R037",
+    "name": "Veg Momos",
+    "type": "Non-Vegetarian",
+    "price": 401,
+    "available": true
+  },
+  {
+    "id": "M0256",
+    "restaurantId": "R037",
+    "name": "Choco Lava Cake",
+    "type": "Desserts",
+    "price": 391,
+    "available": true
+  },
+  {
+    "id": "M0257",
+    "restaurantId": "R037",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 91,
+    "available": true
+  },
+  {
+    "id": "M0258",
+    "restaurantId": "R037",
+    "name": "Cheese Sandwich",
+    "type": "Fast Food",
+    "price": 100,
+    "available": true
+  },
+  {
+    "id": "M0259",
+    "restaurantId": "R037",
+    "name": "Paneer Tikka Wrap",
+    "type": "Jain",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "M0260",
+    "restaurantId": "R038",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 294,
+    "available": true
+  },
+  {
+    "id": "M0261",
+    "restaurantId": "R038",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 369,
+    "available": true
+  },
+  {
+    "id": "M0262",
+    "restaurantId": "R038",
+    "name": "Cold Drink",
+    "type": "Non-Vegetarian",
+    "price": 201,
+    "available": true
+  },
+  {
+    "id": "M0263",
+    "restaurantId": "R038",
+    "name": "Chicken Momos",
+    "type": "Vegetarian",
+    "price": 351,
+    "available": true
+  },
+  {
+    "id": "M0264",
+    "restaurantId": "R038",
+    "name": "Popcorn Tub",
+    "type": "Vegetarian",
+    "price": 383,
+    "available": true
+  },
+  {
+    "id": "M0265",
+    "restaurantId": "R038",
+    "name": "Popcorn Tub",
+    "type": "Beverages",
+    "price": 304,
+    "available": true
+  },
+  {
+    "id": "M0266",
+    "restaurantId": "R038",
+    "name": "Choco Lava Cake",
+    "type": "Fast Food",
+    "price": 326,
+    "available": true
+  },
+  {
+    "id": "M0267",
+    "restaurantId": "R039",
+    "name": "Pav Bhaji",
+    "type": "Vegetarian",
+    "price": 144,
+    "available": true
+  },
+  {
+    "id": "M0268",
+    "restaurantId": "R039",
+    "name": "Hot Dog",
+    "type": "Vegan",
+    "price": 188,
+    "available": true
+  },
+  {
+    "id": "M0269",
+    "restaurantId": "R039",
+    "name": "Hot Dog",
+    "type": "Desserts",
+    "price": 80,
+    "available": true
+  },
+  {
+    "id": "M0270",
+    "restaurantId": "R039",
+    "name": "Nachos with Salsa",
+    "type": "Vegetarian",
+    "price": 231,
+    "available": true
+  },
+  {
+    "id": "M0271",
+    "restaurantId": "R039",
+    "name": "Masala Fries",
+    "type": "Vegan",
+    "price": 378,
+    "available": true
+  },
+  {
+    "id": "M0272",
+    "restaurantId": "R039",
+    "name": "Butter Chicken Roll",
+    "type": "Fast Food",
+    "price": 214,
+    "available": true
+  },
+  {
+    "id": "M0273",
+    "restaurantId": "R039",
+    "name": "Ice Cream Cup",
+    "type": "Beverages",
+    "price": 297,
+    "available": true
+  },
+  {
+    "id": "M0274",
+    "restaurantId": "R040",
+    "name": "Ice Cream Cup",
+    "type": "Vegetarian",
+    "price": 289,
+    "available": true
+  },
+  {
+    "id": "M0275",
+    "restaurantId": "R040",
+    "name": "Cold Drink",
+    "type": "Jain",
+    "price": 199,
+    "available": true
+  },
+  {
+    "id": "M0276",
+    "restaurantId": "R040",
+    "name": "Fresh Lime Soda",
+    "type": "Vegan",
+    "price": 203,
+    "available": true
+  },
+  {
+    "id": "M0277",
+    "restaurantId": "R040",
+    "name": "Chicken Momos",
+    "type": "Fast Food",
+    "price": 383,
+    "available": true
+  },
+  {
+    "id": "M0278",
+    "restaurantId": "R040",
+    "name": "Cheese Sandwich",
+    "type": "Vegan",
+    "price": 241,
+    "available": false
+  },
+  {
+    "id": "M0279",
+    "restaurantId": "R040",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 434,
+    "available": true
+  },
+  {
+    "id": "M0280",
+    "restaurantId": "R040",
+    "name": "Veg Momos",
+    "type": "Non-Vegetarian",
+    "price": 164,
+    "available": true
+  },
+  {
+    "id": "M0281",
+    "restaurantId": "R041",
+    "name": "Chicken Burger",
+    "type": "Jain",
+    "price": 248,
+    "available": true
+  },
+  {
+    "id": "M0282",
+    "restaurantId": "R041",
+    "name": "Paneer Tikka Wrap",
+    "type": "Non-Vegetarian",
+    "price": 101,
+    "available": true
+  },
+  {
+    "id": "M0283",
+    "restaurantId": "R041",
+    "name": "Pav Bhaji",
+    "type": "Beverages",
+    "price": 338,
+    "available": true
+  },
+  {
+    "id": "M0284",
+    "restaurantId": "R041",
+    "name": "Chicken Momos",
+    "type": "Vegan",
+    "price": 262,
+    "available": true
+  },
+  {
+    "id": "M0285",
+    "restaurantId": "R041",
+    "name": "Choco Lava Cake",
+    "type": "Fast Food",
+    "price": 391,
+    "available": true
+  },
+  {
+    "id": "M0286",
+    "restaurantId": "R041",
+    "name": "Cold Drink",
+    "type": "Vegan",
+    "price": 271,
+    "available": true
+  },
+  {
+    "id": "M0287",
+    "restaurantId": "R041",
+    "name": "Cheese Sandwich",
+    "type": "Vegetarian",
+    "price": 309,
+    "available": true
+  },
+  {
+    "id": "M0288",
+    "restaurantId": "R042",
+    "name": "Margherita Pizza Slice",
+    "type": "Desserts",
+    "price": 99,
+    "available": true
+  },
+  {
+    "id": "M0289",
+    "restaurantId": "R042",
+    "name": "Veg Momos",
+    "type": "Vegetarian",
+    "price": 373,
+    "available": true
+  },
+  {
+    "id": "M0290",
+    "restaurantId": "R042",
+    "name": "Choco Lava Cake",
+    "type": "Beverages",
+    "price": 118,
+    "available": true
+  },
+  {
+    "id": "M0291",
+    "restaurantId": "R042",
+    "name": "Popcorn Tub",
+    "type": "Non-Vegetarian",
+    "price": 404,
+    "available": true
+  },
+  {
+    "id": "M0292",
+    "restaurantId": "R042",
+    "name": "Veg Momos",
+    "type": "Vegetarian",
+    "price": 206,
+    "available": true
+  },
+  {
+    "id": "M0293",
+    "restaurantId": "R042",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 80,
+    "available": true
+  },
+  {
+    "id": "M0294",
+    "restaurantId": "R042",
+    "name": "Cold Coffee",
+    "type": "Vegan",
+    "price": 238,
+    "available": true
+  },
+  {
+    "id": "M0295",
+    "restaurantId": "R043",
+    "name": "Butter Chicken Roll",
+    "type": "Fast Food",
+    "price": 450,
+    "available": true
+  },
+  {
+    "id": "M0296",
+    "restaurantId": "R043",
+    "name": "Choco Lava Cake",
+    "type": "Jain",
+    "price": 337,
+    "available": true
+  },
+  {
+    "id": "M0297",
+    "restaurantId": "R043",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 256,
+    "available": true
+  },
+  {
+    "id": "M0298",
+    "restaurantId": "R043",
+    "name": "Choco Lava Cake",
+    "type": "Beverages",
+    "price": 127,
+    "available": true
+  },
+  {
+    "id": "M0299",
+    "restaurantId": "R043",
+    "name": "Grilled Corn",
+    "type": "Vegan",
+    "price": 84,
+    "available": true
+  },
+  {
+    "id": "M0300",
+    "restaurantId": "R043",
+    "name": "Chicken Burger",
+    "type": "Vegetarian",
+    "price": 131,
+    "available": true
+  },
+  {
+    "id": "M0301",
+    "restaurantId": "R043",
+    "name": "Falafel Bowl",
+    "type": "Non-Vegetarian",
+    "price": 224,
+    "available": true
+  },
+  {
+    "id": "M0302",
+    "restaurantId": "R044",
+    "name": "Pav Bhaji",
+    "type": "Desserts",
+    "price": 109,
+    "available": true
+  },
+  {
+    "id": "M0303",
+    "restaurantId": "R044",
+    "name": "Chicken Burger",
+    "type": "Desserts",
+    "price": 374,
+    "available": true
+  },
+  {
+    "id": "M0304",
+    "restaurantId": "R044",
+    "name": "Veggie Nachos",
+    "type": "Fast Food",
+    "price": 375,
+    "available": true
+  },
+  {
+    "id": "M0305",
+    "restaurantId": "R044",
+    "name": "Popcorn Tub",
+    "type": "Vegan",
+    "price": 226,
+    "available": true
+  },
+  {
+    "id": "M0306",
+    "restaurantId": "R044",
+    "name": "Veggie Nachos",
+    "type": "Vegan",
+    "price": 98,
+    "available": true
+  },
+  {
+    "id": "M0307",
+    "restaurantId": "R044",
+    "name": "Veggie Nachos",
+    "type": "Non-Vegetarian",
+    "price": 354,
+    "available": true
+  },
+  {
+    "id": "M0308",
+    "restaurantId": "R044",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegan",
+    "price": 84,
+    "available": true
+  },
+  {
+    "id": "M0309",
+    "restaurantId": "R045",
+    "name": "Pav Bhaji",
+    "type": "Jain",
+    "price": 237,
+    "available": true
+  },
+  {
+    "id": "M0310",
+    "restaurantId": "R045",
+    "name": "Ice Cream Cup",
+    "type": "Vegan",
+    "price": 327,
+    "available": true
+  },
+  {
+    "id": "M0311",
+    "restaurantId": "R045",
+    "name": "Ice Cream Cup",
+    "type": "Fast Food",
+    "price": 329,
+    "available": true
+  },
+  {
+    "id": "M0312",
+    "restaurantId": "R045",
+    "name": "Veggie Nachos",
+    "type": "Vegetarian",
+    "price": 356,
+    "available": true
+  },
+  {
+    "id": "M0313",
+    "restaurantId": "R045",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 383,
+    "available": true
+  },
+  {
+    "id": "M0314",
+    "restaurantId": "R045",
+    "name": "Margherita Pizza Slice",
+    "type": "Fast Food",
+    "price": 377,
+    "available": true
+  },
+  {
+    "id": "M0315",
+    "restaurantId": "R045",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 435,
+    "available": true
+  },
+  {
+    "id": "M0316",
+    "restaurantId": "R046",
+    "name": "Nachos with Salsa",
+    "type": "Beverages",
+    "price": 430,
+    "available": true
+  },
+  {
+    "id": "M0317",
+    "restaurantId": "R046",
+    "name": "Cold Coffee",
+    "type": "Jain",
+    "price": 293,
+    "available": true
+  },
+  {
+    "id": "M0318",
+    "restaurantId": "R046",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 424,
+    "available": true
+  },
+  {
+    "id": "M0319",
+    "restaurantId": "R046",
+    "name": "Paneer Tikka Wrap",
+    "type": "Fast Food",
+    "price": 121,
+    "available": true
+  },
+  {
+    "id": "M0320",
+    "restaurantId": "R046",
+    "name": "Chicken Momos",
+    "type": "Desserts",
+    "price": 441,
+    "available": true
+  },
+  {
+    "id": "M0321",
+    "restaurantId": "R046",
+    "name": "Chicken Momos",
+    "type": "Non-Vegetarian",
+    "price": 146,
+    "available": false
+  },
+  {
+    "id": "M0322",
+    "restaurantId": "R046",
+    "name": "Butter Chicken Roll",
+    "type": "Vegetarian",
+    "price": 334,
+    "available": true
+  },
+  {
+    "id": "M0323",
+    "restaurantId": "R047",
+    "name": "Butter Chicken Roll",
+    "type": "Non-Vegetarian",
+    "price": 401,
+    "available": true
+  },
+  {
+    "id": "M0324",
+    "restaurantId": "R047",
+    "name": "Masala Fries",
+    "type": "Fast Food",
+    "price": 256,
+    "available": true
+  },
+  {
+    "id": "M0325",
+    "restaurantId": "R047",
+    "name": "Hot Dog",
+    "type": "Beverages",
+    "price": 434,
+    "available": true
+  },
+  {
+    "id": "M0326",
+    "restaurantId": "R047",
+    "name": "Popcorn Tub",
+    "type": "Non-Vegetarian",
+    "price": 234,
+    "available": true
+  },
+  {
+    "id": "M0327",
+    "restaurantId": "R047",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 170,
+    "available": true
+  },
+  {
+    "id": "M0328",
+    "restaurantId": "R047",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegan",
+    "price": 393,
+    "available": true
+  },
+  {
+    "id": "M0329",
+    "restaurantId": "R047",
+    "name": "Ice Cream Cup",
+    "type": "Fast Food",
+    "price": 354,
+    "available": true
+  },
+  {
+    "id": "M0330",
+    "restaurantId": "R048",
+    "name": "Masala Fries",
+    "type": "Fast Food",
+    "price": 232,
+    "available": true
+  },
+  {
+    "id": "M0331",
+    "restaurantId": "R048",
+    "name": "Grilled Corn",
+    "type": "Fast Food",
+    "price": 312,
+    "available": true
+  },
+  {
+    "id": "M0332",
+    "restaurantId": "R048",
+    "name": "Veg Momos",
+    "type": "Beverages",
+    "price": 180,
+    "available": true
+  },
+  {
+    "id": "M0333",
+    "restaurantId": "R048",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 146,
+    "available": true
+  },
+  {
+    "id": "M0334",
+    "restaurantId": "R048",
+    "name": "Cheese Sandwich",
+    "type": "Desserts",
+    "price": 240,
+    "available": true
+  },
+  {
+    "id": "M0335",
+    "restaurantId": "R048",
+    "name": "Falafel Bowl",
+    "type": "Jain",
+    "price": 401,
+    "available": true
+  },
+  {
+    "id": "M0336",
+    "restaurantId": "R048",
+    "name": "Pav Bhaji",
+    "type": "Fast Food",
+    "price": 183,
+    "available": true
+  },
+  {
+    "id": "M0337",
+    "restaurantId": "R049",
+    "name": "Butter Chicken Roll",
+    "type": "Fast Food",
+    "price": 143,
+    "available": true
+  },
+  {
+    "id": "M0338",
+    "restaurantId": "R049",
+    "name": "Cheese Sandwich",
+    "type": "Vegan",
+    "price": 254,
+    "available": true
+  },
+  {
+    "id": "M0339",
+    "restaurantId": "R049",
+    "name": "Fresh Lime Soda",
+    "type": "Desserts",
+    "price": 306,
+    "available": true
+  },
+  {
+    "id": "M0340",
+    "restaurantId": "R049",
+    "name": "Masala Fries",
+    "type": "Non-Vegetarian",
+    "price": 267,
+    "available": true
+  },
+  {
+    "id": "M0341",
+    "restaurantId": "R049",
+    "name": "Veg Momos",
+    "type": "Vegan",
+    "price": 350,
+    "available": true
+  },
+  {
+    "id": "M0342",
+    "restaurantId": "R049",
+    "name": "Ice Cream Cup",
+    "type": "Fast Food",
+    "price": 291,
+    "available": true
+  },
+  {
+    "id": "M0343",
+    "restaurantId": "R049",
+    "name": "Nachos with Salsa",
+    "type": "Jain",
+    "price": 133,
+    "available": true
+  },
+  {
+    "id": "M0344",
+    "restaurantId": "R050",
+    "name": "Fresh Lime Soda",
+    "type": "Beverages",
+    "price": 411,
+    "available": true
+  },
+  {
+    "id": "M0345",
+    "restaurantId": "R050",
+    "name": "Ice Cream Cup",
+    "type": "Vegan",
+    "price": 318,
+    "available": true
+  },
+  {
+    "id": "M0346",
+    "restaurantId": "R050",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 260,
+    "available": true
+  },
+  {
+    "id": "M0347",
+    "restaurantId": "R050",
+    "name": "Pav Bhaji",
+    "type": "Non-Vegetarian",
+    "price": 253,
+    "available": true
+  },
+  {
+    "id": "M0348",
+    "restaurantId": "R050",
+    "name": "Margherita Pizza Slice",
+    "type": "Vegetarian",
+    "price": 241,
+    "available": true
+  },
+  {
+    "id": "M0349",
+    "restaurantId": "R050",
+    "name": "Chicken Momos",
+    "type": "Vegan",
+    "price": 190,
+    "available": true
+  },
+  {
+    "id": "M0350",
+    "restaurantId": "R050",
+    "name": "Butter Chicken Roll",
+    "type": "Beverages",
+    "price": 83,
+    "available": false
+  },
+  {
+    "id": "M0351",
+    "restaurantId": "R051",
+    "name": "Paneer Tikka Wrap",
+    "type": "Vegan",
+    "price": 85,
+    "available": true
+  },
+  {
+    "id": "M0352",
+    "restaurantId": "R051",
+    "name": "Popcorn Tub",
+    "type": "Beverages",
+    "price": 298,
+    "available": true
+  },
+  {
+    "id": "M0353",
+    "restaurantId": "R051",
+    "name": "Masala Fries",
+    "type": "Non-Vegetarian",
+    "price": 156,
+    "available": true
+  },
+  {
+    "id": "M0354",
+    "restaurantId": "R051",
+    "name": "Nachos with Salsa",
+    "type": "Vegan",
+    "price": 207,
+    "available": true
+  },
+  {
+    "id": "M0355",
+    "restaurantId": "R051",
+    "name": "Falafel Bowl",
+    "type": "Desserts",
+    "price": 436,
+    "available": true
+  },
+  {
+    "id": "M0356",
+    "restaurantId": "R051",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 257,
+    "available": true
+  },
+  {
+    "id": "M0357",
+    "restaurantId": "R051",
+    "name": "Nachos with Salsa",
+    "type": "Non-Vegetarian",
+    "price": 186,
+    "available": true
+  },
+  {
+    "id": "M0358",
+    "restaurantId": "R052",
+    "name": "Choco Lava Cake",
+    "type": "Non-Vegetarian",
+    "price": 413,
+    "available": true
+  },
+  {
+    "id": "M0359",
+    "restaurantId": "R052",
+    "name": "Veg Momos",
+    "type": "Vegan",
+    "price": 329,
+    "available": true
+  },
+  {
+    "id": "M0360",
+    "restaurantId": "R052",
+    "name": "Cold Coffee",
+    "type": "Beverages",
+    "price": 368,
+    "available": true
+  },
+  {
+    "id": "M0361",
+    "restaurantId": "R052",
+    "name": "Popcorn Tub",
+    "type": "Jain",
+    "price": 274,
+    "available": true
+  },
+  {
+    "id": "M0362",
+    "restaurantId": "R052",
+    "name": "Cold Coffee",
+    "type": "Desserts",
+    "price": 388,
+    "available": true
+  },
+  {
+    "id": "M0363",
+    "restaurantId": "R052",
+    "name": "Choco Lava Cake",
+    "type": "Jain",
+    "price": 192,
+    "available": true
+  },
+  {
+    "id": "M0364",
+    "restaurantId": "R052",
+    "name": "Nachos with Salsa",
+    "type": "Desserts",
+    "price": 259,
+    "available": true
+  },
+  {
+    "id": "M0365",
+    "restaurantId": "R053",
+    "name": "Margherita Pizza Slice",
+    "type": "Non-Vegetarian",
+    "price": 366,
+    "available": true
+  },
+  {
+    "id": "M0366",
+    "restaurantId": "R053",
+    "name": "Nachos with Salsa",
+    "type": "Vegetarian",
+    "price": 220,
+    "available": true
+  },
+  {
+    "id": "M0367",
+    "restaurantId": "R053",
+    "name": "Grilled Corn",
+    "type": "Fast Food",
+    "price": 316,
+    "available": true
+  },
+  {
+    "id": "M0368",
+    "restaurantId": "R053",
+    "name": "Veg Momos",
+    "type": "Desserts",
+    "price": 385,
+    "available": true
+  },
+  {
+    "id": "M0369",
+    "restaurantId": "R053",
+    "name": "Chicken Burger",
+    "type": "Non-Vegetarian",
+    "price": 447,
+    "available": true
+  },
+  {
+    "id": "M0370",
+    "restaurantId": "R053",
+    "name": "Butter Chicken Roll",
+    "type": "Non-Vegetarian",
+    "price": 313,
+    "available": true
+  },
+  {
+    "id": "M0371",
+    "restaurantId": "R053",
+    "name": "Veggie Nachos",
+    "type": "Fast Food",
+    "price": 187,
+    "available": true
+  },
+  {
+    "id": "M0372",
+    "restaurantId": "R054",
+    "name": "Ice Cream Cup",
+    "type": "Jain",
+    "price": 370,
+    "available": true
+  },
+  {
+    "id": "M0373",
+    "restaurantId": "R054",
+    "name": "Chicken Burger",
+    "type": "Jain",
+    "price": 204,
+    "available": true
+  },
+  {
+    "id": "M0374",
+    "restaurantId": "R054",
+    "name": "Popcorn Tub",
+    "type": "Jain",
+    "price": 441,
+    "available": true
+  },
+  {
+    "id": "M0375",
+    "restaurantId": "R054",
+    "name": "Popcorn Tub",
+    "type": "Fast Food",
+    "price": 160,
+    "available": true
+  },
+  {
+    "id": "M0376",
+    "restaurantId": "R054",
+    "name": "Chicken Momos",
+    "type": "Vegan",
+    "price": 311,
+    "available": true
+  },
+  {
+    "id": "M0377",
+    "restaurantId": "R054",
+    "name": "Falafel Bowl",
+    "type": "Fast Food",
+    "price": 441,
+    "available": true
+  },
+  {
+    "id": "M0378",
+    "restaurantId": "R054",
+    "name": "Pav Bhaji",
+    "type": "Desserts",
+    "price": 176,
+    "available": true
+  }
+]

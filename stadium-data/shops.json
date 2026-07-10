@@ -1,0 +1,402 @@
+[
+  {
+    "id": "SHOP01",
+    "name": "Souvenir Kiosk 1",
+    "type": "Jersey Store",
+    "nearestGate": "G2",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP02",
+    "name": "Souvenir Kiosk 2",
+    "type": "Sportswear",
+    "nearestGate": "G3",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP03",
+    "name": "Fan Gear 3",
+    "type": "Sportswear",
+    "nearestGate": "G4",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP04",
+    "name": "Merchandise 4",
+    "type": "Fan Gear",
+    "nearestGate": "G5",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP05",
+    "name": "Merchandise 5",
+    "type": "Sportswear",
+    "nearestGate": "G6",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP06",
+    "name": "Sportswear 6",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G7",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP07",
+    "name": "Merchandise 7",
+    "type": "Bookstore",
+    "nearestGate": "G8",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP08",
+    "name": "Bookstore 8",
+    "type": "Jersey Store",
+    "nearestGate": "G9",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP09",
+    "name": "Bookstore 9",
+    "type": "Merchandise",
+    "nearestGate": "G10",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP10",
+    "name": "Merchandise 10",
+    "type": "Sportswear",
+    "nearestGate": "G11",
+    "zone": "West",
+    "openNow": false
+  },
+  {
+    "id": "SHOP11",
+    "name": "Bookstore 11",
+    "type": "Fan Gear",
+    "nearestGate": "G12",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP12",
+    "name": "Jersey Store 12",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G1",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP13",
+    "name": "Souvenir Kiosk 13",
+    "type": "Jersey Store",
+    "nearestGate": "G2",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP14",
+    "name": "Fan Gear 14",
+    "type": "Bookstore",
+    "nearestGate": "G3",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP15",
+    "name": "Fan Gear 15",
+    "type": "Jersey Store",
+    "nearestGate": "G4",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP16",
+    "name": "Sportswear 16",
+    "type": "Merchandise",
+    "nearestGate": "G5",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP17",
+    "name": "Bookstore 17",
+    "type": "Bookstore",
+    "nearestGate": "G6",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP18",
+    "name": "Jersey Store 18",
+    "type": "Fan Gear",
+    "nearestGate": "G7",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP19",
+    "name": "Merchandise 19",
+    "type": "Sportswear",
+    "nearestGate": "G8",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP20",
+    "name": "Sportswear 20",
+    "type": "Sportswear",
+    "nearestGate": "G9",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP21",
+    "name": "Jersey Store 21",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G10",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP22",
+    "name": "Sportswear 22",
+    "type": "Jersey Store",
+    "nearestGate": "G11",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP23",
+    "name": "Jersey Store 23",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G12",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP24",
+    "name": "Jersey Store 24",
+    "type": "Bookstore",
+    "nearestGate": "G1",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP25",
+    "name": "Bookstore 25",
+    "type": "Fan Gear",
+    "nearestGate": "G2",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP26",
+    "name": "Jersey Store 26",
+    "type": "Merchandise",
+    "nearestGate": "G3",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP27",
+    "name": "Jersey Store 27",
+    "type": "Jersey Store",
+    "nearestGate": "G4",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP28",
+    "name": "Sportswear 28",
+    "type": "Bookstore",
+    "nearestGate": "G5",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP29",
+    "name": "Sportswear 29",
+    "type": "Sportswear",
+    "nearestGate": "G6",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP30",
+    "name": "Bookstore 30",
+    "type": "Jersey Store",
+    "nearestGate": "G7",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP31",
+    "name": "Merchandise 31",
+    "type": "Sportswear",
+    "nearestGate": "G8",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP32",
+    "name": "Sportswear 32",
+    "type": "Jersey Store",
+    "nearestGate": "G9",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP33",
+    "name": "Souvenir Kiosk 33",
+    "type": "Sportswear",
+    "nearestGate": "G10",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP34",
+    "name": "Jersey Store 34",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G11",
+    "zone": "West",
+    "openNow": false
+  },
+  {
+    "id": "SHOP35",
+    "name": "Merchandise 35",
+    "type": "Merchandise",
+    "nearestGate": "G12",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP36",
+    "name": "Souvenir Kiosk 36",
+    "type": "Merchandise",
+    "nearestGate": "G1",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP37",
+    "name": "Sportswear 37",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G2",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP38",
+    "name": "Jersey Store 38",
+    "type": "Bookstore",
+    "nearestGate": "G3",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP39",
+    "name": "Merchandise 39",
+    "type": "Merchandise",
+    "nearestGate": "G4",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP40",
+    "name": "Bookstore 40",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G5",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP41",
+    "name": "Jersey Store 41",
+    "type": "Bookstore",
+    "nearestGate": "G6",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP42",
+    "name": "Bookstore 42",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G7",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP43",
+    "name": "Jersey Store 43",
+    "type": "Bookstore",
+    "nearestGate": "G8",
+    "zone": "North",
+    "openNow": false
+  },
+  {
+    "id": "SHOP44",
+    "name": "Bookstore 44",
+    "type": "Bookstore",
+    "nearestGate": "G9",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP45",
+    "name": "Fan Gear 45",
+    "type": "Bookstore",
+    "nearestGate": "G10",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP46",
+    "name": "Merchandise 46",
+    "type": "Merchandise",
+    "nearestGate": "G11",
+    "zone": "West",
+    "openNow": true
+  },
+  {
+    "id": "SHOP47",
+    "name": "Sportswear 47",
+    "type": "Souvenir Kiosk",
+    "nearestGate": "G12",
+    "zone": "North",
+    "openNow": true
+  },
+  {
+    "id": "SHOP48",
+    "name": "Fan Gear 48",
+    "type": "Merchandise",
+    "nearestGate": "G1",
+    "zone": "South",
+    "openNow": true
+  },
+  {
+    "id": "SHOP49",
+    "name": "Bookstore 49",
+    "type": "Sportswear",
+    "nearestGate": "G2",
+    "zone": "East",
+    "openNow": true
+  },
+  {
+    "id": "SHOP50",
+    "name": "Merchandise 50",
+    "type": "Bookstore",
+    "nearestGate": "G3",
+    "zone": "West",
+    "openNow": false
+  }
+]

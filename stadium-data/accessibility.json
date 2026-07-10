@@ -1,0 +1,302 @@
+{
+  "wheelchairEntrances": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "G9",
+    "G10",
+    "G11",
+    "G12"
+  ],
+  "accessibleWashrooms": [
+    "W02",
+    "W10",
+    "W13",
+    "W17",
+    "W18",
+    "W26",
+    "W31",
+    "W32",
+    "W33",
+    "W34",
+    "W35",
+    "W39",
+    "W42",
+    "W46",
+    "W48",
+    "W49",
+    "W50",
+    "W56",
+    "W59",
+    "W60",
+    "W64",
+    "W67",
+    "W70",
+    "W77",
+    "W80"
+  ],
+  "elevators": [
+    {
+      "id": "EL01",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL02",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "EL03",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL04",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "EL05",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "EL06",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL07",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "EL08",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "EL09",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "EL10",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL11",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "EL12",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "EL13",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL14",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL15",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "EL16",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "EL17",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "EL18",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "EL19",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "EL20",
+      "zone": "North",
+      "status": "Operational"
+    }
+  ],
+  "escalators": [
+    {
+      "id": "ESC01",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC02",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC03",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC04",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC05",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC06",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC07",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC08",
+      "zone": "West",
+      "status": "Under Maintenance"
+    },
+    {
+      "id": "ESC09",
+      "zone": "North",
+      "status": "Under Maintenance"
+    },
+    {
+      "id": "ESC10",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC11",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC12",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC13",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC14",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC15",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC16",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC17",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC18",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC19",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC20",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC21",
+      "zone": "South",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC22",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC23",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC24",
+      "zone": "East",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC25",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC26",
+      "zone": "North",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC27",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC28",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC29",
+      "zone": "West",
+      "status": "Operational"
+    },
+    {
+      "id": "ESC30",
+      "zone": "South",
+      "status": "Operational"
+    }
+  ],
+  "sensoryRoom": {
+    "available": true,
+    "location": "Near Gate 3, Level 1"
+  },
+  "signLanguageInterpreters": "Available on request at Guest Services, 48hr advance notice preferred"
+}

@@ -1,0 +1,596 @@
+[
+  {
+    "id": "R001",
+    "name": "American Kitchen",
+    "foodCourtId": "FC01",
+    "cuisine": "American",
+    "dietaryOptions": [
+      "Fast Food",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R002",
+    "name": "Italian Express",
+    "foodCourtId": "FC01",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Jain",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R003",
+    "name": "Middle Eastern House",
+    "foodCourtId": "FC01",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Jain",
+      "Beverages"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R004",
+    "name": "Continental Kitchen",
+    "foodCourtId": "FC02",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Jain",
+      "Desserts"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R005",
+    "name": "Continental House",
+    "foodCourtId": "FC02",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Jain",
+      "Fast Food"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R006",
+    "name": "Indian Corner",
+    "foodCourtId": "FC02",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Beverages",
+      "Vegan"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R007",
+    "name": "Chinese Corner",
+    "foodCourtId": "FC03",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Vegan",
+      "Vegan"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R008",
+    "name": "Continental House",
+    "foodCourtId": "FC03",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Jain",
+      "Beverages"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R009",
+    "name": "American House",
+    "foodCourtId": "FC03",
+    "cuisine": "American",
+    "dietaryOptions": [
+      "Fast Food",
+      "Beverages"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R010",
+    "name": "Chinese Express",
+    "foodCourtId": "FC04",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Beverages",
+      "Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R011",
+    "name": "Continental Grill",
+    "foodCourtId": "FC04",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Beverages"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R012",
+    "name": "Middle Eastern Corner",
+    "foodCourtId": "FC04",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R013",
+    "name": "Middle Eastern Kitchen",
+    "foodCourtId": "FC05",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Vegetarian",
+      "Beverages"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R014",
+    "name": "Middle Eastern Kitchen",
+    "foodCourtId": "FC05",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Beverages",
+      "Vegetarian"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R015",
+    "name": "Chinese Express",
+    "foodCourtId": "FC05",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Fast Food",
+      "Fast Food"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R016",
+    "name": "Chinese Grill",
+    "foodCourtId": "FC06",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Vegan"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R017",
+    "name": "Chinese Grill",
+    "foodCourtId": "FC06",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Fast Food",
+      "Beverages"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R018",
+    "name": "Mexican Kitchen",
+    "foodCourtId": "FC06",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Beverages",
+      "Fast Food"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R019",
+    "name": "Indian Express",
+    "foodCourtId": "FC07",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Desserts",
+      "Beverages"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R020",
+    "name": "Mexican House",
+    "foodCourtId": "FC07",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Vegan",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R021",
+    "name": "Chinese Express",
+    "foodCourtId": "FC07",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Beverages",
+      "Desserts"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R022",
+    "name": "Middle Eastern Kitchen",
+    "foodCourtId": "FC08",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R023",
+    "name": "Chinese House",
+    "foodCourtId": "FC08",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Jain",
+      "Beverages"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R024",
+    "name": "Italian Grill",
+    "foodCourtId": "FC08",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Jain",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R025",
+    "name": "Middle Eastern Corner",
+    "foodCourtId": "FC09",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Beverages",
+      "Desserts"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R026",
+    "name": "Indian Express",
+    "foodCourtId": "FC09",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Desserts",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R027",
+    "name": "Italian House",
+    "foodCourtId": "FC09",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R028",
+    "name": "Chinese Kitchen",
+    "foodCourtId": "FC10",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Vegetarian"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R029",
+    "name": "Mexican Grill",
+    "foodCourtId": "FC10",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Fast Food",
+      "Vegan"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R030",
+    "name": "Indian Kitchen",
+    "foodCourtId": "FC10",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Vegan",
+      "Fast Food"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R031",
+    "name": "Middle Eastern Express",
+    "foodCourtId": "FC11",
+    "cuisine": "Middle Eastern",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R032",
+    "name": "Continental Corner",
+    "foodCourtId": "FC11",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Fast Food",
+      "Jain"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R033",
+    "name": "Indian Corner",
+    "foodCourtId": "FC11",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Vegetarian",
+      "Jain"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R034",
+    "name": "Italian Express",
+    "foodCourtId": "FC12",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Fast Food",
+      "Beverages"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R035",
+    "name": "American House",
+    "foodCourtId": "FC12",
+    "cuisine": "American",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Vegan"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R036",
+    "name": "American Kitchen",
+    "foodCourtId": "FC12",
+    "cuisine": "American",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R037",
+    "name": "Chinese Kitchen",
+    "foodCourtId": "FC13",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Vegan",
+      "Fast Food"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R038",
+    "name": "Mexican House",
+    "foodCourtId": "FC13",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Vegan",
+      "Beverages"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R039",
+    "name": "Continental Kitchen",
+    "foodCourtId": "FC13",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Vegetarian",
+      "Vegetarian"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R040",
+    "name": "Italian Kitchen",
+    "foodCourtId": "FC14",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Jain"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R041",
+    "name": "Continental Corner",
+    "foodCourtId": "FC14",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Vegan",
+      "Jain"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R042",
+    "name": "Chinese Express",
+    "foodCourtId": "FC14",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Vegetarian",
+      "Fast Food"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R043",
+    "name": "Chinese Kitchen",
+    "foodCourtId": "FC15",
+    "cuisine": "Chinese",
+    "dietaryOptions": [
+      "Fast Food",
+      "Jain"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R044",
+    "name": "Continental Kitchen",
+    "foodCourtId": "FC15",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Desserts",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R045",
+    "name": "Indian Express",
+    "foodCourtId": "FC15",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Jain",
+      "Jain"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R046",
+    "name": "Mexican House",
+    "foodCourtId": "FC16",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Vegan",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R047",
+    "name": "Continental House",
+    "foodCourtId": "FC16",
+    "cuisine": "Continental",
+    "dietaryOptions": [
+      "Desserts",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R048",
+    "name": "Italian Grill",
+    "foodCourtId": "FC16",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R049",
+    "name": "Indian House",
+    "foodCourtId": "FC17",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Vegetarian",
+      "Desserts"
+    ],
+    "priceRange": "$$$"
+  },
+  {
+    "id": "R050",
+    "name": "Italian Corner",
+    "foodCourtId": "FC17",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Desserts",
+      "Fast Food"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R051",
+    "name": "American Grill",
+    "foodCourtId": "FC17",
+    "cuisine": "American",
+    "dietaryOptions": [
+      "Jain",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R052",
+    "name": "Mexican House",
+    "foodCourtId": "FC18",
+    "cuisine": "Mexican",
+    "dietaryOptions": [
+      "Non-Vegetarian",
+      "Jain"
+    ],
+    "priceRange": "$"
+  },
+  {
+    "id": "R053",
+    "name": "Indian Express",
+    "foodCourtId": "FC18",
+    "cuisine": "Indian",
+    "dietaryOptions": [
+      "Fast Food",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$"
+  },
+  {
+    "id": "R054",
+    "name": "Italian Express",
+    "foodCourtId": "FC18",
+    "cuisine": "Italian",
+    "dietaryOptions": [
+      "Fast Food",
+      "Non-Vegetarian"
+    ],
+    "priceRange": "$$"
+  }
+]

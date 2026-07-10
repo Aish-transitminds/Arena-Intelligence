@@ -1,0 +1,21 @@
+{
+  "id": "STD001",
+  "name": "Arena Intelligence Stadium",
+  "city": "Mumbai",
+  "capacity": 52000,
+  "opened": 2014,
+  "surface": "Hybrid grass",
+  "facilities": {
+    "vipLounges": 4,
+    "kidsPlayArea": true,
+    "prayerRoom": true,
+    "babyCareRoom": true,
+    "wifiZones": 22,
+    "chargingStations": 45,
+    "metroConnection": "Arena Metro Station (Line 3), 400m from Gate 1",
+    "shuttleBuses": [
+      "Shuttle A: City Center - Gate 1",
+      "Shuttle B: North Parking - Gate 7"
+    ]
+  }
+}

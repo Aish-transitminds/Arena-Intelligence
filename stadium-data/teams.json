@@ -1,0 +1,142 @@
+[
+  {
+    "id": "TM01",
+    "name": "Delhi Titans",
+    "city": "Delhi",
+    "founded": 2011,
+    "homeGround": "Delhi Stadium"
+  },
+  {
+    "id": "TM02",
+    "name": "Chennai Warriors",
+    "city": "Chennai",
+    "founded": 2003,
+    "homeGround": "Chennai Stadium"
+  },
+  {
+    "id": "TM03",
+    "name": "Bengaluru Panthers",
+    "city": "Bengaluru",
+    "founded": 2008,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM04",
+    "name": "Kolkata Warriors",
+    "city": "Kolkata",
+    "founded": 2003,
+    "homeGround": "Kolkata Stadium"
+  },
+  {
+    "id": "TM05",
+    "name": "Hyderabad Warriors",
+    "city": "Hyderabad",
+    "founded": 1999,
+    "homeGround": "Hyderabad Stadium"
+  },
+  {
+    "id": "TM06",
+    "name": "Pune Titans",
+    "city": "Pune",
+    "founded": 2010,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM07",
+    "name": "Ahmedabad Riders",
+    "city": "Ahmedabad",
+    "founded": 2015,
+    "homeGround": "Ahmedabad Stadium"
+  },
+  {
+    "id": "TM08",
+    "name": "Jaipur Titans",
+    "city": "Jaipur",
+    "founded": 2010,
+    "homeGround": "Jaipur Stadium"
+  },
+  {
+    "id": "TM09",
+    "name": "Lucknow Strikers",
+    "city": "Lucknow",
+    "founded": 2010,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM10",
+    "name": "Guwahati Strikers",
+    "city": "Guwahati",
+    "founded": 1998,
+    "homeGround": "Guwahati Stadium"
+  },
+  {
+    "id": "TM11",
+    "name": "Indore Warriors",
+    "city": "Indore",
+    "founded": 2019,
+    "homeGround": "Indore Stadium"
+  },
+  {
+    "id": "TM12",
+    "name": "Chandigarh Kings",
+    "city": "Chandigarh",
+    "founded": 2004,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM13",
+    "name": "Ranchi Riders",
+    "city": "Ranchi",
+    "founded": 2001,
+    "homeGround": "Ranchi Stadium"
+  },
+  {
+    "id": "TM14",
+    "name": "Nagpur Riders",
+    "city": "Nagpur",
+    "founded": 2001,
+    "homeGround": "Nagpur Stadium"
+  },
+  {
+    "id": "TM15",
+    "name": "Kochi Warriors",
+    "city": "Kochi",
+    "founded": 2002,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM16",
+    "name": "Surat Warriors",
+    "city": "Surat",
+    "founded": 2004,
+    "homeGround": "Surat Stadium"
+  },
+  {
+    "id": "TM17",
+    "name": "Bhopal Panthers",
+    "city": "Bhopal",
+    "founded": 2011,
+    "homeGround": "Bhopal Stadium"
+  },
+  {
+    "id": "TM18",
+    "name": "Patna Warriors",
+    "city": "Patna",
+    "founded": 2002,
+    "homeGround": "Arena Intelligence Stadium"
+  },
+  {
+    "id": "TM19",
+    "name": "Vizag Strikers",
+    "city": "Vizag",
+    "founded": 2011,
+    "homeGround": "Vizag Stadium"
+  },
+  {
+    "id": "TM20",
+    "name": "Mumbai Kings",
+    "city": "Mumbai",
+    "founded": 2009,
+    "homeGround": "Mumbai Stadium"
+  }
+]

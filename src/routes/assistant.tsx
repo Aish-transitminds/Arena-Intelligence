@@ -7,7 +7,7 @@ import { useState, useMemo } from "react";
 export const Route = createFileRoute("/assistant")({
   head: () => ({
     meta: [
-      { title: "Arena IQ Operations Copilot — Arena Intelligence" },
+      { title: "Arena IQ Operations — Arena Intelligence" },
       { name: "description", content: "World Cup 2026 operations intelligence assistant at MetLife Stadium. Persona-driven real-time coordination." },
     ],
   }),
@@ -123,7 +123,7 @@ function Assistant() {
   const [persona, setPersona] = useState<Persona>("staff");
   const [lang, setLang] = useState<Language>("en");
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
-    { role: "ai", text: "Welcome to MetLife Stadium World Cup 2026 Operations Copilot. Select your persona in the tabs and preferred language in the header dropdown to coordinate real-time crowd dynamics." },
+    { role: "ai", text: "Welcome to MetLife Stadium World Cup 2026 Arena IQ. Select your persona in the tabs and preferred language in the header dropdown to coordinate real-time crowd dynamics." },
   ]);
   const [input, setInput] = useState("");
 
@@ -149,7 +149,7 @@ function Assistant() {
   }
 
   return (
-    <AppShell title="Arena IQ Copilot Workspace" subtitle="Multimodal neural model trained on MetLife Stadium events and telemetry data">
+    <AppShell title="Arena IQ Workspace" subtitle="Multimodal neural model trained on MetLife Stadium events and telemetry data">
       <div className="grid lg:grid-cols-4 gap-5 h-[calc(100vh-10rem)]">
         
         {/* Main Chat Panel */}
@@ -240,7 +240,7 @@ function Assistant() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={`Query Arena IQ Copilot about crowds, queues, transport or guidelines as ${persona}...`}
+                placeholder={`Query Arena IQ about crowds, queues, transport or guidelines as ${persona}...`}
                 className="flex-1 bg-transparent outline-none text-xs text-white placeholder:text-slate-600 font-medium"
               />
               <button

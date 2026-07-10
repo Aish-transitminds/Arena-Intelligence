@@ -1,0 +1,26 @@
+[
+  {
+    "id": "RULE01",
+    "text": "No smoking anywhere inside the stadium premises."
+  },
+  {
+    "id": "RULE02",
+    "text": "Alcohol is served only at licensed counters to guests above 21."
+  },
+  {
+    "id": "RULE03",
+    "text": "Standing on seats or blocking aisles is prohibited."
+  },
+  {
+    "id": "RULE04",
+    "text": "Flags and banners must not obstruct other spectators' view."
+  },
+  {
+    "id": "RULE05",
+    "text": "Unruly behavior may result in immediate ejection without refund."
+  },
+  {
+    "id": "RULE06",
+    "text": "Photography is allowed; flash photography is discouraged during play."
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "ST001",
+    "name": "Stand B1",
+    "zone": "East",
+    "nearestGate": "G2",
+    "tier": "Lower Tier",
+    "capacity": 1636,
+    "seatRows": 25
+  },
+  {
+    "id": "ST002",
+    "name": "Stand C1",
+    "zone": "West",
+    "nearestGate": "G3",
+    "tier": "Lower Tier",
+    "capacity": 829,
+    "seatRows": 43
+  },
+  {
+    "id": "ST003",
+    "name": "Stand D1",
+    "zone": "North",
+    "nearestGate": "G4",
+    "tier": "Upper Tier",
+    "capacity": 1133,
+    "seatRows": 31
+  },
+  {
+    "id": "ST004",
+    "name": "Stand E1",
+    "zone": "South",
+    "nearestGate": "G5",
+    "tier": "Upper Tier",
+    "capacity": 1137,
+    "seatRows": 23
+  },
+  {
+    "id": "ST005",
+    "name": "Stand F1",
+    "zone": "East",
+    "nearestGate": "G6",
+    "tier": "VIP",
+    "capacity": 1897,
+    "seatRows": 22
+  },
+  {
+    "id": "ST006",
+    "name": "Stand G1",
+    "zone": "West",
+    "nearestGate": "G7",
+    "tier": "Lower Tier",
+    "capacity": 1902,
+    "seatRows": 26
+  },
+  {
+    "id": "ST007",
+    "name": "Stand H1",
+    "zone": "North",
+    "nearestGate": "G8",
+    "tier": "VIP",
+    "capacity": 1930,
+    "seatRows": 39
+  },
+  {
+    "id": "ST008",
+    "name": "Stand I1",
+    "zone": "South",
+    "nearestGate": "G9",
+    "tier": "VIP",
+    "capacity": 1447,
+    "seatRows": 30
+  },
+  {
+    "id": "ST009",
+    "name": "Stand J1",
+    "zone": "East",
+    "nearestGate": "G10",
+    "tier": "Lower Tier",
+    "capacity": 2157,
+    "seatRows": 30
+  },
+  {
+    "id": "ST010",
+    "name": "Stand K1",
+    "zone": "West",
+    "nearestGate": "G11",
+    "tier": "Lower Tier",
+    "capacity": 1165,
+    "seatRows": 34
+  },
+  {
+    "id": "ST011",
+    "name": "Stand L1",
+    "zone": "North",
+    "nearestGate": "G12",
+    "tier": "Upper Tier",
+    "capacity": 2007,
+    "seatRows": 34
+  },
+  {
+    "id": "ST012",
+    "name": "Stand M1",
+    "zone": "South",
+    "nearestGate": "G1",
+    "tier": "Lower Tier",
+    "capacity": 1970,
+    "seatRows": 25
+  },
+  {
+    "id": "ST013",
+    "name": "Stand N1",
+    "zone": "East",
+    "nearestGate": "G2",
+    "tier": "Lower Tier",
+    "capacity": 1764,
+    "seatRows": 23
+  },
+  {
+    "id": "ST014",
+    "name": "Stand O1",
+    "zone": "West",
+    "nearestGate": "G3",
+    "tier": "VIP",
+    "capacity": 1017,
+    "seatRows": 30
+  },
+  {
+    "id": "ST015",
+    "name": "Stand P1",
+    "zone": "North",
+    "nearestGate": "G4",
+    "tier": "Premium",
+    "capacity": 2163,
+    "seatRows": 40
+  },
+  {
+    "id": "ST016",
+    "name": "Stand Q1",
+    "zone": "South",
+    "nearestGate": "G5",
+    "tier": "Premium",
+    "capacity": 1097,
+    "seatRows": 32
+  },
+  {
+    "id": "ST017",
+    "name": "Stand R1",
+    "zone": "East",
+    "nearestGate": "G6",
+    "tier": "VIP",
+    "capacity": 2138,
+    "seatRows": 39
+  },
+  {
+    "id": "ST018",
+    "name": "Stand S1",
+    "zone": "West",
+    "nearestGate": "G7",
+    "tier": "Upper Tier",
+    "capacity": 1249,
+    "seatRows": 21
+  },
+  {
+    "id": "ST019",
+    "name": "Stand T1",
+    "zone": "North",
+    "nearestGate": "G8",
+    "tier": "Lower Tier",
+    "capacity": 2200,
+    "seatRows": 26
+  },
+  {
+    "id": "ST020",
+    "name": "Stand U1",
+    "zone": "South",
+    "nearestGate": "G9",
+    "tier": "Lower Tier",
+    "capacity": 1682,
+    "seatRows": 24
+  },
+  {
+    "id": "ST021",
+    "name": "Stand V1",
+    "zone": "East",
+    "nearestGate": "G10",
+    "tier": "Upper Tier",
+    "capacity": 1967,
+    "seatRows": 21
+  },
+  {
+    "id": "ST022",
+    "name": "Stand W1",
+    "zone": "West",
+    "nearestGate": "G11",
+    "tier": "Upper Tier",
+    "capacity": 888,
+    "seatRows": 32
+  },
+  {
+    "id": "ST023",
+    "name": "Stand X1",
+    "zone": "North",
+    "nearestGate": "G12",
+    "tier": "Premium",
+    "capacity": 818,
+    "seatRows": 24
+  },
+  {
+    "id": "ST024",
+    "name": "Stand Y1",
+    "zone": "South",
+    "nearestGate": "G1",
+    "tier": "VIP",
+    "capacity": 2069,
+    "seatRows": 28
+  },
+  {
+    "id": "ST025",
+    "name": "Stand Z1",
+    "zone": "East",
+    "nearestGate": "G2",
+    "tier": "Lower Tier",
+    "capacity": 1452,
+    "seatRows": 39
+  },
+  {
+    "id": "ST026",
+    "name": "Stand A1",
+    "zone": "West",
+    "nearestGate": "G3",
+    "tier": "Upper Tier",
+    "capacity": 1422,
+    "seatRows": 45
+  },
+  {
+    "id": "ST027",
+    "name": "Stand B2",
+    "zone": "North",
+    "nearestGate": "G4",
+    "tier": "Lower Tier",
+    "capacity": 1304,
+    "seatRows": 31
+  },
+  {
+    "id": "ST028",
+    "name": "Stand C2",
+    "zone": "South",
+    "nearestGate": "G5",
+    "tier": "Premium",
+    "capacity": 1367,
+    "seatRows": 34
+  },
+  {
+    "id": "ST029",
+    "name": "Stand D2",
+    "zone": "East",
+    "nearestGate": "G6",
+    "tier": "Premium",
+    "capacity": 1891,
+    "seatRows": 23
+  },
+  {
+    "id": "ST030",
+    "name": "Stand E2",
+    "zone": "West",
+    "nearestGate": "G7",
+    "tier": "Lower Tier",
+    "capacity": 924,
+    "seatRows": 35
+  },
+  {
+    "id": "ST031",
+    "name": "Stand F2",
+    "zone": "North",
+    "nearestGate": "G8",
+    "tier": "Upper Tier",
+    "capacity": 1263,
+    "seatRows": 21
+  },
+  {
+    "id": "ST032",
+    "name": "Stand G2",
+    "zone": "South",
+    "nearestGate": "G9",
+    "tier": "VIP",
+    "capacity": 803,
+    "seatRows": 32
+  },
+  {
+    "id": "ST033",
+    "name": "Stand H2",
+    "zone": "East",
+    "nearestGate": "G10",
+    "tier": "Upper Tier",
+    "capacity": 1061,
+    "seatRows": 31
+  },
+  {
+    "id": "ST034",
+    "name": "Stand I2",
+    "zone": "West",
+    "nearestGate": "G11",
+    "tier": "Lower Tier",
+    "capacity": 1568,
+    "seatRows": 20
+  },
+  {
+    "id": "ST035",
+    "name": "Stand J2",
+    "zone": "North",
+    "nearestGate": "G12",
+    "tier": "Upper Tier",
+    "capacity": 1348,
+    "seatRows": 29
+  },
+  {
+    "id": "ST036",
+    "name": "Stand K2",
+    "zone": "South",
+    "nearestGate": "G1",
+    "tier": "VIP",
+    "capacity": 1408,
+    "seatRows": 34
+  },
+  {
+    "id": "ST037",
+    "name": "Stand L2",
+    "zone": "East",
+    "nearestGate": "G2",
+    "tier": "Lower Tier",
+    "capacity": 881,
+    "seatRows": 40
+  },
+  {
+    "id": "ST038",
+    "name": "Stand M2",
+    "zone": "West",
+    "nearestGate": "G3",
+    "tier": "Premium",
+    "capacity": 1691,
+    "seatRows": 24
+  },
+  {
+    "id": "ST039",
+    "name": "Stand N2",
+    "zone": "North",
+    "nearestGate": "G4",
+    "tier": "Upper Tier",
+    "capacity": 1600,
+    "seatRows": 37
+  },
+  {
+    "id": "ST040",
+    "name": "Stand O2",
+    "zone": "South",
+    "nearestGate": "G5",
+    "tier": "Premium",
+    "capacity": 1392,
+    "seatRows": 24
+  }
+]

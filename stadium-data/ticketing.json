@@ -1,0 +1,19 @@
+{
+  "tiers": [
+    {
+      "name": "General",
+      "priceRange": "₹500-₹1200"
+    },
+    {
+      "name": "Premium",
+      "priceRange": "₹1500-₹3000"
+    },
+    {
+      "name": "VIP Lounge",
+      "priceRange": "₹5000-₹12000"
+    }
+  ],
+  "refundPolicy": "Refunds available up to 48 hours before event, minus 10% processing fee.",
+  "transferPolicy": "Tickets can be transferred once via the official app.",
+  "childPolicy": "Children under 3 enter free without a separate seat."
+}

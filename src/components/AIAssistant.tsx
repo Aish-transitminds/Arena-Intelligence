@@ -59,7 +59,7 @@ function buildSystemPrompt(persona: Persona, lang: Language) {
       "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
   };
 
-  return `You are Arena IQ, the intelligent operations copilot for MetLife Stadium during the FIFA World Cup 2026.
+  return `You are Arena IQ, the intelligent operations assistant for MetLife Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
@@ -78,7 +78,7 @@ export function AIAssistant() {
   >([
     {
       role: "ai",
-      text: "👋 Welcome to Arena IQ — your intelligent stadium copilot for FIFA World Cup 2026 at MetLife Stadium. Select your persona below and ask me anything about operations, navigation, or match day logistics!",
+      text: "👋 Welcome to Arena IQ — your intelligent stadium assistant for FIFA World Cup 2026 at MetLife Stadium. Select your persona below and ask me anything about operations, navigation, or match day logistics!",
     },
   ]);
   const [input, setInput] = useState("");

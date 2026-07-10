@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "FAQ001",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ002",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ003",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ004",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ005",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ006",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ007",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ008",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ009",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ010",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ011",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ012",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ013",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ014",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ015",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ016",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ017",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ018",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ019",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ020",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ021",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ022",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ023",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ024",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ025",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ026",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ027",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ028",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ029",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ030",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ031",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ032",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ033",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ034",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ035",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ036",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ037",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ038",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ039",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ040",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ041",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ042",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ043",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ044",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ045",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ046",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ047",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ048",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ049",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ050",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ051",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ052",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ053",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ054",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ055",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ056",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ057",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ058",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ059",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ060",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ061",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ062",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ063",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ064",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ065",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ066",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ067",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ068",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ069",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ070",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ071",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ072",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ073",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ074",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ075",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ076",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ077",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ078",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ079",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ080",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ081",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ082",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ083",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ084",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ085",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ086",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ087",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ088",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ089",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ090",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ091",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ092",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ093",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ094",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ095",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ096",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ097",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ098",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ099",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ100",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ101",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ102",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ103",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ104",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ105",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ106",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ107",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ108",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ109",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ110",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ111",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ112",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ113",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ114",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ115",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ116",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ117",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ118",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ119",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ120",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ121",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ122",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ123",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ124",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ125",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ126",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ127",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ128",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ129",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ130",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ131",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ132",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ133",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ134",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ135",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ136",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ137",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ138",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ139",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ140",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ141",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ142",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ143",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ144",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ145",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ146",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ147",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ148",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ149",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ150",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ151",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ152",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ153",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ154",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ155",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ156",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ157",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ158",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ159",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ160",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ161",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ162",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ163",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ164",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ165",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ166",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ167",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ168",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ169",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ170",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ171",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ172",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ173",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ174",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ175",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ176",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ177",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ178",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ179",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ180",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ181",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ182",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ183",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ184",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ185",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ186",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ187",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ188",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ189",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ190",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ191",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ192",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ193",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ194",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ195",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ196",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ197",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ198",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ199",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ200",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ201",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ202",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ203",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ204",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ205",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ206",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ207",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ208",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ209",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ210",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ211",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ212",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ213",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ214",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ215",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ216",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ217",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ218",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ219",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ220",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ221",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ222",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ223",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ224",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ225",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ226",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ227",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ228",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ229",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ230",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Accessibility"
+  },
+  {
+    "id": "FAQ231",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ232",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ233",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ234",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ235",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ236",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ237",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ238",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ239",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ240",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ241",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ242",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ243",
+    "question": "What time do gates open?",
+    "answer": "Gates typically open 2 hours before the scheduled event start time.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ244",
+    "question": "Is parking free?",
+    "answer": "General parking has standard rates; VIP lots require a prepaid pass.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ245",
+    "question": "Can I bring a professional camera?",
+    "answer": "Professional cameras with detachable lenses require a media pass.",
+    "category": "Food"
+  },
+  {
+    "id": "FAQ246",
+    "question": "Is there Wi-Fi in the stadium?",
+    "answer": "Free Wi-Fi is available in designated zones near concourses and food courts.",
+    "category": "Security"
+  },
+  {
+    "id": "FAQ247",
+    "question": "Where is the lost and found?",
+    "answer": "Lost and found is located at the Guest Services desk near Gate 1.",
+    "category": "Parking"
+  },
+  {
+    "id": "FAQ248",
+    "question": "Can I bring outside food into the stadium?",
+    "answer": "Outside food and beverages are not permitted. Food courts inside offer a wide range of options.",
+    "category": "Tickets"
+  },
+  {
+    "id": "FAQ249",
+    "question": "Is re-entry allowed if I leave the stadium?",
+    "answer": "Re-entry is not allowed once you exit through any gate.",
+    "category": "General"
+  },
+  {
+    "id": "FAQ250",
+    "question": "Are pets allowed?",
+    "answer": "Pets are not allowed, except certified service animals.",
+    "category": "Tickets"
+  }
+]

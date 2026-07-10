@@ -1,0 +1,107 @@
+[
+  {
+    "id": "EV01",
+    "name": "Fan Fest",
+    "date": "2026-09-28",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 35754
+  },
+  {
+    "id": "EV02",
+    "name": "Charity Match",
+    "date": "2026-07-07",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 25033
+  },
+  {
+    "id": "EV03",
+    "name": "Charity Match",
+    "date": "2026-07-01",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 28362
+  },
+  {
+    "id": "EV04",
+    "name": "Concert Night",
+    "date": "2026-08-19",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 40137
+  },
+  {
+    "id": "EV05",
+    "name": "Charity Match",
+    "date": "2026-12-20",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 50392
+  },
+  {
+    "id": "EV06",
+    "name": "Charity Match",
+    "date": "2026-10-02",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 34074
+  },
+  {
+    "id": "EV07",
+    "name": "Youth Tournament",
+    "date": "2026-10-15",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 50299
+  },
+  {
+    "id": "EV08",
+    "name": "Youth Tournament",
+    "date": "2026-08-11",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 44067
+  },
+  {
+    "id": "EV09",
+    "name": "Youth Tournament",
+    "date": "2026-07-19",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 41001
+  },
+  {
+    "id": "EV10",
+    "name": "Championship Final",
+    "date": "2026-09-10",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 39053
+  },
+  {
+    "id": "EV11",
+    "name": "Youth Tournament",
+    "date": "2026-09-17",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 35779
+  },
+  {
+    "id": "EV12",
+    "name": "Championship Final",
+    "date": "2026-08-28",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 50375
+  },
+  {
+    "id": "EV13",
+    "name": "Championship Final",
+    "date": "2026-08-12",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 20882
+  },
+  {
+    "id": "EV14",
+    "name": "Youth Tournament",
+    "date": "2026-08-09",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 50397
+  },
+  {
+    "id": "EV15",
+    "name": "Youth Tournament",
+    "date": "2026-10-07",
+    "gatesOpen": "5:00 PM",
+    "expectedAttendance": 43950
+  }
+]

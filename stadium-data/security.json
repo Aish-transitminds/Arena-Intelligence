@@ -1,0 +1,6116 @@
+{
+  "cctvCameraCount": 1200,
+  "cctvSample": [
+    {
+      "id": "CAM0001",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0002",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0003",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0004",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0005",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0006",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0007",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0008",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0009",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0010",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0011",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0012",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0013",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0014",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0015",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0016",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0017",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0018",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0019",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0020",
+      "zone": "West",
+      "status": "Active"
+    }
+  ],
+  "staffOnDuty": 377,
+  "bagPolicy": "Bags larger than A4 size are not permitted. All bags subject to search at entry.",
+  "prohibitedItems": [
+    "Weapons",
+    "Fireworks",
+    "Laser pointers",
+    "Glass bottles",
+    "Drones"
+  ],
+  "cctvAll": [
+    {
+      "id": "CAM0001",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0002",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0003",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0004",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0005",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0006",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0007",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0008",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0009",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0010",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0011",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0012",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0013",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0014",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0015",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0016",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0017",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0018",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0019",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0020",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0021",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0022",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0023",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0024",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0025",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0026",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0027",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0028",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0029",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0030",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0031",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0032",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0033",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0034",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0035",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0036",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0037",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0038",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0039",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0040",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0041",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0042",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0043",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0044",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0045",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0046",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0047",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0048",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0049",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0050",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0051",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0052",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0053",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0054",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0055",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0056",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0057",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0058",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0059",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0060",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0061",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0062",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0063",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0064",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0065",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0066",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0067",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0068",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0069",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0070",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0071",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0072",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0073",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0074",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0075",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0076",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0077",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0078",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0079",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0080",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0081",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0082",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0083",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0084",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0085",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0086",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0087",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0088",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0089",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0090",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0091",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0092",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0093",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0094",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0095",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0096",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0097",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0098",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0099",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0100",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0101",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0102",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0103",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0104",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0105",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0106",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0107",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0108",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0109",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0110",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0111",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0112",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0113",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0114",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0115",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0116",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0117",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0118",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0119",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0120",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0121",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0122",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0123",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0124",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0125",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0126",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0127",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0128",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0129",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0130",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0131",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0132",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0133",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0134",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0135",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0136",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0137",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0138",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0139",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0140",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0141",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0142",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0143",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0144",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0145",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0146",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0147",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0148",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0149",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0150",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0151",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0152",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0153",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0154",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0155",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0156",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0157",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0158",
+      "zone": "South",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0159",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0160",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0161",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0162",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0163",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0164",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0165",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0166",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0167",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0168",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0169",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0170",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0171",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0172",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0173",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0174",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0175",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0176",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0177",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0178",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0179",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0180",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0181",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0182",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0183",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0184",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0185",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0186",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0187",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0188",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0189",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0190",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0191",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0192",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0193",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0194",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0195",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0196",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0197",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0198",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0199",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0200",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0201",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0202",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0203",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0204",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0205",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0206",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0207",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0208",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0209",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0210",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0211",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0212",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0213",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0214",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0215",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0216",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0217",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0218",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0219",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0220",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0221",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0222",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0223",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0224",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0225",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0226",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0227",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0228",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0229",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0230",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0231",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0232",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0233",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0234",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0235",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0236",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0237",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0238",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0239",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0240",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0241",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0242",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0243",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0244",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0245",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0246",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0247",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0248",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0249",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0250",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0251",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0252",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0253",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0254",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0255",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0256",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0257",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0258",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0259",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0260",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0261",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0262",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0263",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0264",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0265",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0266",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0267",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0268",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0269",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0270",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0271",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0272",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0273",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0274",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0275",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0276",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0277",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0278",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0279",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0280",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0281",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0282",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0283",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0284",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0285",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0286",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0287",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0288",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0289",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0290",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0291",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0292",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0293",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0294",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0295",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0296",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0297",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0298",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0299",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0300",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0301",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0302",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0303",
+      "zone": "East",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0304",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0305",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0306",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0307",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0308",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0309",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0310",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0311",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0312",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0313",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0314",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0315",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0316",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0317",
+      "zone": "North",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0318",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0319",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0320",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0321",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0322",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0323",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0324",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0325",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0326",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0327",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0328",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0329",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0330",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0331",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0332",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0333",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0334",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0335",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0336",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0337",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0338",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0339",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0340",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0341",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0342",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0343",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0344",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0345",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0346",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0347",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0348",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0349",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0350",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0351",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0352",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0353",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0354",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0355",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0356",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0357",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0358",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0359",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0360",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0361",
+      "zone": "North",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0362",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0363",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0364",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0365",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0366",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0367",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0368",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0369",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0370",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0371",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0372",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0373",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0374",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0375",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0376",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0377",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0378",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0379",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0380",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0381",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0382",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0383",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0384",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0385",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0386",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0387",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0388",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0389",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0390",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0391",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0392",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0393",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0394",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0395",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0396",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0397",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0398",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0399",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0400",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0401",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0402",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0403",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0404",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0405",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0406",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0407",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0408",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0409",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0410",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0411",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0412",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0413",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0414",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0415",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0416",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0417",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0418",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0419",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0420",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0421",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0422",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0423",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0424",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0425",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0426",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0427",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0428",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0429",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0430",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0431",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0432",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0433",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0434",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0435",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0436",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0437",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0438",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0439",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0440",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0441",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0442",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0443",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0444",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0445",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0446",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0447",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0448",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0449",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0450",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0451",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0452",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0453",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0454",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0455",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0456",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0457",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0458",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0459",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0460",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0461",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0462",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0463",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0464",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0465",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0466",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0467",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0468",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0469",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0470",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0471",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0472",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0473",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0474",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0475",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0476",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0477",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0478",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0479",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0480",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0481",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0482",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0483",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0484",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0485",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0486",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0487",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0488",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0489",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0490",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0491",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0492",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0493",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0494",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0495",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0496",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0497",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0498",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0499",
+      "zone": "East",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0500",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0501",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0502",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0503",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0504",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0505",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0506",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0507",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0508",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0509",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0510",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0511",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0512",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0513",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0514",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0515",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0516",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0517",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0518",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0519",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0520",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0521",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0522",
+      "zone": "South",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0523",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0524",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0525",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0526",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0527",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0528",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0529",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0530",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0531",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0532",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0533",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0534",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0535",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0536",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0537",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0538",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0539",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0540",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0541",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0542",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0543",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0544",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0545",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0546",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0547",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0548",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0549",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0550",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0551",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0552",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0553",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0554",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0555",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0556",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0557",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0558",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0559",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0560",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0561",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0562",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0563",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0564",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0565",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0566",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0567",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0568",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0569",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0570",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0571",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0572",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0573",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0574",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0575",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0576",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0577",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0578",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0579",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0580",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0581",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0582",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0583",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0584",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0585",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0586",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0587",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0588",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0589",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0590",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0591",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0592",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0593",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0594",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0595",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0596",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0597",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0598",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0599",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0600",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0601",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0602",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0603",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0604",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0605",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0606",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0607",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0608",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0609",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0610",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0611",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0612",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0613",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0614",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0615",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0616",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0617",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0618",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0619",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0620",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0621",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0622",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0623",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0624",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0625",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0626",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0627",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0628",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0629",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0630",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0631",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0632",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0633",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0634",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0635",
+      "zone": "East",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0636",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0637",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0638",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0639",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0640",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0641",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0642",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0643",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0644",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0645",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0646",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0647",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0648",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0649",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0650",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0651",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0652",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0653",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0654",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0655",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0656",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0657",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0658",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0659",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0660",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0661",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0662",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0663",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0664",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0665",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0666",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0667",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0668",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0669",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0670",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0671",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0672",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0673",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0674",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0675",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0676",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0677",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0678",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0679",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0680",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0681",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0682",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0683",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0684",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0685",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0686",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0687",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0688",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0689",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0690",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0691",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0692",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0693",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0694",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0695",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0696",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0697",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0698",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0699",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0700",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0701",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0702",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0703",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0704",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0705",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0706",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0707",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0708",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0709",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0710",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0711",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0712",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0713",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0714",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0715",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0716",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0717",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0718",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0719",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0720",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0721",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0722",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0723",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0724",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0725",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0726",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0727",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0728",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0729",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0730",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0731",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0732",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0733",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0734",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0735",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0736",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0737",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0738",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0739",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0740",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0741",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0742",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0743",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0744",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0745",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0746",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0747",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0748",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0749",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0750",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0751",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0752",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0753",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0754",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0755",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0756",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0757",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0758",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0759",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0760",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0761",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0762",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0763",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0764",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0765",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0766",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0767",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0768",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0769",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0770",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0771",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0772",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0773",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0774",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0775",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0776",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0777",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0778",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0779",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0780",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0781",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0782",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0783",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0784",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0785",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0786",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0787",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0788",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0789",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0790",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0791",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0792",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0793",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0794",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0795",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0796",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0797",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0798",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0799",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0800",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0801",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0802",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0803",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0804",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0805",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0806",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0807",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0808",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0809",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0810",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0811",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0812",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0813",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0814",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0815",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0816",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0817",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0818",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0819",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0820",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0821",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0822",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0823",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0824",
+      "zone": "West",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0825",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0826",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0827",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0828",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0829",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0830",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0831",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0832",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0833",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0834",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0835",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0836",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0837",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0838",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0839",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0840",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0841",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0842",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0843",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0844",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0845",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0846",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0847",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0848",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0849",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0850",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0851",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0852",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0853",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0854",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0855",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0856",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0857",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0858",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0859",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0860",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0861",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0862",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0863",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0864",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0865",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0866",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0867",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0868",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0869",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0870",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0871",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0872",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0873",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0874",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0875",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0876",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0877",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0878",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0879",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0880",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0881",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0882",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0883",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0884",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0885",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0886",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0887",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0888",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0889",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0890",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0891",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0892",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0893",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0894",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0895",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0896",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0897",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0898",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0899",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0900",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0901",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0902",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0903",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0904",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0905",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0906",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0907",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0908",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0909",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0910",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0911",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0912",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0913",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0914",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0915",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0916",
+      "zone": "West",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0917",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0918",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0919",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0920",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0921",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0922",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0923",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0924",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0925",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0926",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0927",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0928",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0929",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0930",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0931",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0932",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0933",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0934",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0935",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0936",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0937",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0938",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0939",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0940",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0941",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0942",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0943",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0944",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0945",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0946",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0947",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0948",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0949",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0950",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0951",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0952",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0953",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0954",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0955",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0956",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0957",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0958",
+      "zone": "South",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0959",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0960",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0961",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0962",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0963",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0964",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0965",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0966",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0967",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0968",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0969",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0970",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0971",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0972",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0973",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0974",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0975",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0976",
+      "zone": "West",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0977",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0978",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0979",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0980",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0981",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0982",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0983",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0984",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0985",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0986",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0987",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0988",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0989",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0990",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0991",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0992",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0993",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0994",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0995",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0996",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0997",
+      "zone": "North",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM0998",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM0999",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1000",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1001",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1002",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1003",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1004",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1005",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1006",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1007",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1008",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1009",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1010",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1011",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1012",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1013",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1014",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1015",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1016",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1017",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1018",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1019",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1020",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1021",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1022",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1023",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1024",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1025",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1026",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1027",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1028",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1029",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1030",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1031",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1032",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1033",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1034",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1035",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1036",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1037",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1038",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1039",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1040",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1041",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1042",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1043",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1044",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1045",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1046",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1047",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1048",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1049",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1050",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1051",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1052",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1053",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1054",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1055",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1056",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1057",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1058",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1059",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1060",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1061",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1062",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1063",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1064",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1065",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1066",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1067",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1068",
+      "zone": "West",
+      "status": "Offline"
+    },
+    {
+      "id": "CAM1069",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1070",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1071",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1072",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1073",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1074",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1075",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1076",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1077",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1078",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1079",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1080",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1081",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1082",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1083",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1084",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1085",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1086",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1087",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1088",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1089",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1090",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1091",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1092",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1093",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1094",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1095",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1096",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1097",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1098",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1099",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1100",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1101",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1102",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1103",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1104",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1105",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1106",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1107",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1108",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1109",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1110",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1111",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1112",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1113",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1114",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1115",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1116",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1117",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1118",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1119",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1120",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1121",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1122",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1123",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1124",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1125",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1126",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1127",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1128",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1129",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1130",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1131",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1132",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1133",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1134",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1135",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1136",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1137",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1138",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1139",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1140",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1141",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1142",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1143",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1144",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1145",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1146",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1147",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1148",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1149",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1150",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1151",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1152",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1153",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1154",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1155",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1156",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1157",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1158",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1159",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1160",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1161",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1162",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1163",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1164",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1165",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1166",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1167",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1168",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1169",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1170",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1171",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1172",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1173",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1174",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1175",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1176",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1177",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1178",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1179",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1180",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1181",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1182",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1183",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1184",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1185",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1186",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1187",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1188",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1189",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1190",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1191",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1192",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1193",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1194",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1195",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1196",
+      "zone": "West",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1197",
+      "zone": "North",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1198",
+      "zone": "South",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1199",
+      "zone": "East",
+      "status": "Active"
+    },
+    {
+      "id": "CAM1200",
+      "zone": "West",
+      "status": "Active"
+    }
+  ]
+}

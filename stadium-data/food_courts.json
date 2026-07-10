@@ -1,0 +1,164 @@
+[
+  {
+    "id": "FC01",
+    "name": "Food Court Alpha",
+    "nearestGate": "G1",
+    "zone": "South",
+    "seatingCapacity": 118,
+    "queueLength": 19,
+    "waitTimeMinutes": 8
+  },
+  {
+    "id": "FC02",
+    "name": "Food Court Beta",
+    "nearestGate": "G2",
+    "zone": "East",
+    "seatingCapacity": 177,
+    "queueLength": 15,
+    "waitTimeMinutes": 9
+  },
+  {
+    "id": "FC03",
+    "name": "Food Court Charlie",
+    "nearestGate": "G3",
+    "zone": "West",
+    "seatingCapacity": 194,
+    "queueLength": 11,
+    "waitTimeMinutes": 7
+  },
+  {
+    "id": "FC04",
+    "name": "Food Court Delta",
+    "nearestGate": "G4",
+    "zone": "North",
+    "seatingCapacity": 150,
+    "queueLength": 26,
+    "waitTimeMinutes": 6
+  },
+  {
+    "id": "FC05",
+    "name": "Food Court Echo",
+    "nearestGate": "G5",
+    "zone": "South",
+    "seatingCapacity": 173,
+    "queueLength": 7,
+    "waitTimeMinutes": 10
+  },
+  {
+    "id": "FC06",
+    "name": "Food Court Foxtrot",
+    "nearestGate": "G6",
+    "zone": "East",
+    "seatingCapacity": 153,
+    "queueLength": 27,
+    "waitTimeMinutes": 11
+  },
+  {
+    "id": "FC07",
+    "name": "Food Court Golf",
+    "nearestGate": "G7",
+    "zone": "West",
+    "seatingCapacity": 181,
+    "queueLength": 6,
+    "waitTimeMinutes": 4
+  },
+  {
+    "id": "FC08",
+    "name": "Food Court Hotel",
+    "nearestGate": "G8",
+    "zone": "North",
+    "seatingCapacity": 200,
+    "queueLength": 6,
+    "waitTimeMinutes": 5
+  },
+  {
+    "id": "FC09",
+    "name": "Food Court India",
+    "nearestGate": "G9",
+    "zone": "South",
+    "seatingCapacity": 151,
+    "queueLength": 15,
+    "waitTimeMinutes": 10
+  },
+  {
+    "id": "FC10",
+    "name": "Food Court Juliet",
+    "nearestGate": "G10",
+    "zone": "East",
+    "seatingCapacity": 109,
+    "queueLength": 25,
+    "waitTimeMinutes": 1
+  },
+  {
+    "id": "FC11",
+    "name": "Food Court Kilo",
+    "nearestGate": "G11",
+    "zone": "West",
+    "seatingCapacity": 130,
+    "queueLength": 20,
+    "waitTimeMinutes": 10
+  },
+  {
+    "id": "FC12",
+    "name": "Food Court Lima",
+    "nearestGate": "G12",
+    "zone": "North",
+    "seatingCapacity": 144,
+    "queueLength": 22,
+    "waitTimeMinutes": 11
+  },
+  {
+    "id": "FC13",
+    "name": "Food Court Mike",
+    "nearestGate": "G1",
+    "zone": "South",
+    "seatingCapacity": 104,
+    "queueLength": 25,
+    "waitTimeMinutes": 2
+  },
+  {
+    "id": "FC14",
+    "name": "Food Court November",
+    "nearestGate": "G2",
+    "zone": "East",
+    "seatingCapacity": 170,
+    "queueLength": 0,
+    "waitTimeMinutes": 15
+  },
+  {
+    "id": "FC15",
+    "name": "Food Court Oscar",
+    "nearestGate": "G3",
+    "zone": "West",
+    "seatingCapacity": 84,
+    "queueLength": 26,
+    "waitTimeMinutes": 4
+  },
+  {
+    "id": "FC16",
+    "name": "Food Court Papa",
+    "nearestGate": "G4",
+    "zone": "North",
+    "seatingCapacity": 186,
+    "queueLength": 3,
+    "waitTimeMinutes": 6
+  },
+  {
+    "id": "FC17",
+    "name": "Food Court Quebec",
+    "nearestGate": "G5",
+    "zone": "South",
+    "seatingCapacity": 106,
+    "queueLength": 8,
+    "waitTimeMinutes": 9
+  },
+  {
+    "id": "FC18",
+    "name": "Food Court Romeo",
+    "nearestGate": "G6",
+    "zone": "East",
+    "seatingCapacity": 102,
+    "queueLength": 12,
+    "waitTimeMinutes": 10
+  }
+]

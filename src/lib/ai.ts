@@ -81,7 +81,7 @@ export async function generateEmergencyPlan(
   medicalAvailability: number,
   signal?: AbortSignal,
 ): Promise<EmergencyPlanResult> {
-  const systemPrompt = `You are a calm operations copilot for a fictional mega-event stadium. Return strict JSON only with this shape: {"severity":"string","recommendedActions":["string"],"alertTeams":["string"],"alertGates":["string"],"rationale":"string"}. Keep it concise and operational.`;
+  const systemPrompt = `You are a calm operations assistant for a fictional mega-event stadium. Return strict JSON only with this shape: {"severity":"string","recommendedActions":["string"],"alertTeams":["string"],"alertGates":["string"],"rationale":"string"}. Keep it concise and operational.`;
 
   const prompt = `Incident description: ${incidentDescription}\nLocation: ${selectedArea}\nCrowd load: ${crowdLoad}%\nMedical availability: ${medicalAvailability}%\nRespond with JSON only.`;
 

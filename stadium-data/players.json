@@ -1,0 +1,802 @@
+[
+  {
+    "id": "PL001",
+    "name": "Vikram Iyer",
+    "teamId": "TM02",
+    "position": "All-Rounder",
+    "jerseyNumber": 52,
+    "age": 32
+  },
+  {
+    "id": "PL002",
+    "name": "Vikram Nair",
+    "teamId": "TM03",
+    "position": "Batsman",
+    "jerseyNumber": 73,
+    "age": 29
+  },
+  {
+    "id": "PL003",
+    "name": "Neel Brown",
+    "teamId": "TM04",
+    "position": "Forward",
+    "jerseyNumber": 93,
+    "age": 37
+  },
+  {
+    "id": "PL004",
+    "name": "Arjun Clarke",
+    "teamId": "TM05",
+    "position": "Midfielder",
+    "jerseyNumber": 52,
+    "age": 31
+  },
+  {
+    "id": "PL005",
+    "name": "Liam Mehta",
+    "teamId": "TM06",
+    "position": "Goalkeeper",
+    "jerseyNumber": 68,
+    "age": 33
+  },
+  {
+    "id": "PL006",
+    "name": "Lucas Khan",
+    "teamId": "TM07",
+    "position": "Goalkeeper",
+    "jerseyNumber": 41,
+    "age": 22
+  },
+  {
+    "id": "PL007",
+    "name": "Dev Hussain",
+    "teamId": "TM08",
+    "position": "Defender",
+    "jerseyNumber": 47,
+    "age": 33
+  },
+  {
+    "id": "PL008",
+    "name": "Marco Fernandez",
+    "teamId": "TM09",
+    "position": "Midfielder",
+    "jerseyNumber": 36,
+    "age": 30
+  },
+  {
+    "id": "PL009",
+    "name": "Kabir Sharma",
+    "teamId": "TM10",
+    "position": "All-Rounder",
+    "jerseyNumber": 51,
+    "age": 35
+  },
+  {
+    "id": "PL010",
+    "name": "Dev Sharma",
+    "teamId": "TM11",
+    "position": "All-Rounder",
+    "jerseyNumber": 28,
+    "age": 31
+  },
+  {
+    "id": "PL011",
+    "name": "Liam Patel",
+    "teamId": "TM12",
+    "position": "Batsman",
+    "jerseyNumber": 78,
+    "age": 30
+  },
+  {
+    "id": "PL012",
+    "name": "Andre Iyer",
+    "teamId": "TM13",
+    "position": "Defender",
+    "jerseyNumber": 39,
+    "age": 33
+  },
+  {
+    "id": "PL013",
+    "name": "Diego Clarke",
+    "teamId": "TM14",
+    "position": "All-Rounder",
+    "jerseyNumber": 10,
+    "age": 19
+  },
+  {
+    "id": "PL014",
+    "name": "Arjun Rao",
+    "teamId": "TM15",
+    "position": "Forward",
+    "jerseyNumber": 13,
+    "age": 19
+  },
+  {
+    "id": "PL015",
+    "name": "Diego Johnson",
+    "teamId": "TM16",
+    "position": "Goalkeeper",
+    "jerseyNumber": 64,
+    "age": 23
+  },
+  {
+    "id": "PL016",
+    "name": "Ethan Clarke",
+    "teamId": "TM17",
+    "position": "Goalkeeper",
+    "jerseyNumber": 75,
+    "age": 24
+  },
+  {
+    "id": "PL017",
+    "name": "Diego Clarke",
+    "teamId": "TM18",
+    "position": "Bowler",
+    "jerseyNumber": 87,
+    "age": 36
+  },
+  {
+    "id": "PL018",
+    "name": "Dev Johnson",
+    "teamId": "TM19",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 78,
+    "age": 28
+  },
+  {
+    "id": "PL019",
+    "name": "Andre Iyer",
+    "teamId": "TM20",
+    "position": "Bowler",
+    "jerseyNumber": 86,
+    "age": 21
+  },
+  {
+    "id": "PL020",
+    "name": "Neel Johnson",
+    "teamId": "TM01",
+    "position": "Bowler",
+    "jerseyNumber": 54,
+    "age": 28
+  },
+  {
+    "id": "PL021",
+    "name": "Marco Reddy",
+    "teamId": "TM02",
+    "position": "All-Rounder",
+    "jerseyNumber": 57,
+    "age": 31
+  },
+  {
+    "id": "PL022",
+    "name": "Aditya Rodriguez",
+    "teamId": "TM03",
+    "position": "Batsman",
+    "jerseyNumber": 98,
+    "age": 28
+  },
+  {
+    "id": "PL023",
+    "name": "Jamal Khan",
+    "teamId": "TM04",
+    "position": "Batsman",
+    "jerseyNumber": 80,
+    "age": 22
+  },
+  {
+    "id": "PL024",
+    "name": "Aditya Khan",
+    "teamId": "TM05",
+    "position": "Midfielder",
+    "jerseyNumber": 20,
+    "age": 36
+  },
+  {
+    "id": "PL025",
+    "name": "Vikram Clarke",
+    "teamId": "TM06",
+    "position": "Defender",
+    "jerseyNumber": 93,
+    "age": 29
+  },
+  {
+    "id": "PL026",
+    "name": "Aditya Rodriguez",
+    "teamId": "TM07",
+    "position": "Forward",
+    "jerseyNumber": 46,
+    "age": 25
+  },
+  {
+    "id": "PL027",
+    "name": "Lucas Khan",
+    "teamId": "TM08",
+    "position": "Defender",
+    "jerseyNumber": 18,
+    "age": 31
+  },
+  {
+    "id": "PL028",
+    "name": "Omar Khan",
+    "teamId": "TM09",
+    "position": "Bowler",
+    "jerseyNumber": 52,
+    "age": 19
+  },
+  {
+    "id": "PL029",
+    "name": "Diego Fernandez",
+    "teamId": "TM10",
+    "position": "Batsman",
+    "jerseyNumber": 58,
+    "age": 33
+  },
+  {
+    "id": "PL030",
+    "name": "Dev Rodriguez",
+    "teamId": "TM11",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 44,
+    "age": 37
+  },
+  {
+    "id": "PL031",
+    "name": "Arjun Nair",
+    "teamId": "TM12",
+    "position": "All-Rounder",
+    "jerseyNumber": 68,
+    "age": 23
+  },
+  {
+    "id": "PL032",
+    "name": "Aditya Gupta",
+    "teamId": "TM13",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 50,
+    "age": 25
+  },
+  {
+    "id": "PL033",
+    "name": "Ishaan Hussain",
+    "teamId": "TM14",
+    "position": "Bowler",
+    "jerseyNumber": 1,
+    "age": 35
+  },
+  {
+    "id": "PL034",
+    "name": "Aditya Rodriguez",
+    "teamId": "TM15",
+    "position": "Midfielder",
+    "jerseyNumber": 40,
+    "age": 25
+  },
+  {
+    "id": "PL035",
+    "name": "Liam Hussain",
+    "teamId": "TM16",
+    "position": "Batsman",
+    "jerseyNumber": 60,
+    "age": 24
+  },
+  {
+    "id": "PL036",
+    "name": "Carlos Brown",
+    "teamId": "TM17",
+    "position": "Defender",
+    "jerseyNumber": 22,
+    "age": 22
+  },
+  {
+    "id": "PL037",
+    "name": "Jamal Williams",
+    "teamId": "TM18",
+    "position": "Bowler",
+    "jerseyNumber": 63,
+    "age": 35
+  },
+  {
+    "id": "PL038",
+    "name": "Rohit Mehta",
+    "teamId": "TM19",
+    "position": "Batsman",
+    "jerseyNumber": 24,
+    "age": 29
+  },
+  {
+    "id": "PL039",
+    "name": "Rohit Mehta",
+    "teamId": "TM20",
+    "position": "All-Rounder",
+    "jerseyNumber": 30,
+    "age": 25
+  },
+  {
+    "id": "PL040",
+    "name": "Noah Costa",
+    "teamId": "TM01",
+    "position": "Midfielder",
+    "jerseyNumber": 47,
+    "age": 31
+  },
+  {
+    "id": "PL041",
+    "name": "Rohit Nair",
+    "teamId": "TM02",
+    "position": "Forward",
+    "jerseyNumber": 67,
+    "age": 25
+  },
+  {
+    "id": "PL042",
+    "name": "Noah Gupta",
+    "teamId": "TM03",
+    "position": "Forward",
+    "jerseyNumber": 76,
+    "age": 19
+  },
+  {
+    "id": "PL043",
+    "name": "Ethan Rodriguez",
+    "teamId": "TM04",
+    "position": "Batsman",
+    "jerseyNumber": 14,
+    "age": 24
+  },
+  {
+    "id": "PL044",
+    "name": "Aditya Johnson",
+    "teamId": "TM05",
+    "position": "Bowler",
+    "jerseyNumber": 42,
+    "age": 33
+  },
+  {
+    "id": "PL045",
+    "name": "Aditya Silva",
+    "teamId": "TM06",
+    "position": "Goalkeeper",
+    "jerseyNumber": 74,
+    "age": 33
+  },
+  {
+    "id": "PL046",
+    "name": "Sameer Verma",
+    "teamId": "TM07",
+    "position": "Midfielder",
+    "jerseyNumber": 79,
+    "age": 21
+  },
+  {
+    "id": "PL047",
+    "name": "Lucas Khan",
+    "teamId": "TM08",
+    "position": "Midfielder",
+    "jerseyNumber": 49,
+    "age": 27
+  },
+  {
+    "id": "PL048",
+    "name": "Omar Silva",
+    "teamId": "TM09",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 97,
+    "age": 37
+  },
+  {
+    "id": "PL049",
+    "name": "Lucas Mehta",
+    "teamId": "TM10",
+    "position": "Forward",
+    "jerseyNumber": 73,
+    "age": 24
+  },
+  {
+    "id": "PL050",
+    "name": "Ethan Brown",
+    "teamId": "TM11",
+    "position": "Forward",
+    "jerseyNumber": 32,
+    "age": 22
+  },
+  {
+    "id": "PL051",
+    "name": "Aditya Nair",
+    "teamId": "TM12",
+    "position": "Defender",
+    "jerseyNumber": 73,
+    "age": 34
+  },
+  {
+    "id": "PL052",
+    "name": "Arjun Brown",
+    "teamId": "TM13",
+    "position": "Bowler",
+    "jerseyNumber": 85,
+    "age": 20
+  },
+  {
+    "id": "PL053",
+    "name": "Kabir Fernandez",
+    "teamId": "TM14",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 57,
+    "age": 32
+  },
+  {
+    "id": "PL054",
+    "name": "Liam Mehta",
+    "teamId": "TM15",
+    "position": "Bowler",
+    "jerseyNumber": 37,
+    "age": 19
+  },
+  {
+    "id": "PL055",
+    "name": "Sameer Williams",
+    "teamId": "TM16",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 45,
+    "age": 31
+  },
+  {
+    "id": "PL056",
+    "name": "Arjun Costa",
+    "teamId": "TM17",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 85,
+    "age": 27
+  },
+  {
+    "id": "PL057",
+    "name": "Aditya Fernandez",
+    "teamId": "TM18",
+    "position": "Goalkeeper",
+    "jerseyNumber": 37,
+    "age": 33
+  },
+  {
+    "id": "PL058",
+    "name": "Carlos Singh",
+    "teamId": "TM19",
+    "position": "All-Rounder",
+    "jerseyNumber": 65,
+    "age": 36
+  },
+  {
+    "id": "PL059",
+    "name": "Sameer Hussain",
+    "teamId": "TM20",
+    "position": "Defender",
+    "jerseyNumber": 13,
+    "age": 24
+  },
+  {
+    "id": "PL060",
+    "name": "Diego Rodriguez",
+    "teamId": "TM01",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 80,
+    "age": 31
+  },
+  {
+    "id": "PL061",
+    "name": "Rohit Mehta",
+    "teamId": "TM02",
+    "position": "Batsman",
+    "jerseyNumber": 2,
+    "age": 28
+  },
+  {
+    "id": "PL062",
+    "name": "Arjun Williams",
+    "teamId": "TM03",
+    "position": "Forward",
+    "jerseyNumber": 69,
+    "age": 33
+  },
+  {
+    "id": "PL063",
+    "name": "Liam Mehta",
+    "teamId": "TM04",
+    "position": "Goalkeeper",
+    "jerseyNumber": 51,
+    "age": 22
+  },
+  {
+    "id": "PL064",
+    "name": "Arjun Fernandez",
+    "teamId": "TM05",
+    "position": "Defender",
+    "jerseyNumber": 23,
+    "age": 32
+  },
+  {
+    "id": "PL065",
+    "name": "Aditya Mehta",
+    "teamId": "TM06",
+    "position": "Forward",
+    "jerseyNumber": 13,
+    "age": 24
+  },
+  {
+    "id": "PL066",
+    "name": "Ethan Rodriguez",
+    "teamId": "TM07",
+    "position": "Midfielder",
+    "jerseyNumber": 63,
+    "age": 19
+  },
+  {
+    "id": "PL067",
+    "name": "Arjun Clarke",
+    "teamId": "TM08",
+    "position": "Goalkeeper",
+    "jerseyNumber": 68,
+    "age": 30
+  },
+  {
+    "id": "PL068",
+    "name": "Kabir Patel",
+    "teamId": "TM09",
+    "position": "Midfielder",
+    "jerseyNumber": 42,
+    "age": 23
+  },
+  {
+    "id": "PL069",
+    "name": "Diego Silva",
+    "teamId": "TM10",
+    "position": "Goalkeeper",
+    "jerseyNumber": 94,
+    "age": 34
+  },
+  {
+    "id": "PL070",
+    "name": "Omar Khan",
+    "teamId": "TM11",
+    "position": "Midfielder",
+    "jerseyNumber": 93,
+    "age": 32
+  },
+  {
+    "id": "PL071",
+    "name": "Andre Patel",
+    "teamId": "TM12",
+    "position": "Goalkeeper",
+    "jerseyNumber": 53,
+    "age": 34
+  },
+  {
+    "id": "PL072",
+    "name": "Sameer Hussain",
+    "teamId": "TM13",
+    "position": "Defender",
+    "jerseyNumber": 25,
+    "age": 21
+  },
+  {
+    "id": "PL073",
+    "name": "Rohit Singh",
+    "teamId": "TM14",
+    "position": "Bowler",
+    "jerseyNumber": 45,
+    "age": 29
+  },
+  {
+    "id": "PL074",
+    "name": "Diego Iyer",
+    "teamId": "TM15",
+    "position": "All-Rounder",
+    "jerseyNumber": 68,
+    "age": 19
+  },
+  {
+    "id": "PL075",
+    "name": "Sameer Gupta",
+    "teamId": "TM16",
+    "position": "Goalkeeper",
+    "jerseyNumber": 25,
+    "age": 20
+  },
+  {
+    "id": "PL076",
+    "name": "Sameer Verma",
+    "teamId": "TM17",
+    "position": "Midfielder",
+    "jerseyNumber": 17,
+    "age": 23
+  },
+  {
+    "id": "PL077",
+    "name": "Sameer Nair",
+    "teamId": "TM18",
+    "position": "All-Rounder",
+    "jerseyNumber": 14,
+    "age": 25
+  },
+  {
+    "id": "PL078",
+    "name": "Kabir Iyer",
+    "teamId": "TM19",
+    "position": "Midfielder",
+    "jerseyNumber": 58,
+    "age": 24
+  },
+  {
+    "id": "PL079",
+    "name": "Jamal Verma",
+    "teamId": "TM20",
+    "position": "Goalkeeper",
+    "jerseyNumber": 34,
+    "age": 28
+  },
+  {
+    "id": "PL080",
+    "name": "Kabir Hussain",
+    "teamId": "TM01",
+    "position": "Goalkeeper",
+    "jerseyNumber": 58,
+    "age": 38
+  },
+  {
+    "id": "PL081",
+    "name": "Marco Patel",
+    "teamId": "TM02",
+    "position": "Forward",
+    "jerseyNumber": 95,
+    "age": 32
+  },
+  {
+    "id": "PL082",
+    "name": "Marco Clarke",
+    "teamId": "TM03",
+    "position": "Bowler",
+    "jerseyNumber": 52,
+    "age": 28
+  },
+  {
+    "id": "PL083",
+    "name": "Sameer Rao",
+    "teamId": "TM04",
+    "position": "Midfielder",
+    "jerseyNumber": 87,
+    "age": 33
+  },
+  {
+    "id": "PL084",
+    "name": "Andre Patel",
+    "teamId": "TM05",
+    "position": "Batsman",
+    "jerseyNumber": 90,
+    "age": 29
+  },
+  {
+    "id": "PL085",
+    "name": "Rahul Fernandez",
+    "teamId": "TM06",
+    "position": "All-Rounder",
+    "jerseyNumber": 17,
+    "age": 32
+  },
+  {
+    "id": "PL086",
+    "name": "Noah Hussain",
+    "teamId": "TM07",
+    "position": "Defender",
+    "jerseyNumber": 68,
+    "age": 34
+  },
+  {
+    "id": "PL087",
+    "name": "Rohit Verma",
+    "teamId": "TM08",
+    "position": "All-Rounder",
+    "jerseyNumber": 88,
+    "age": 24
+  },
+  {
+    "id": "PL088",
+    "name": "Lucas Iyer",
+    "teamId": "TM09",
+    "position": "All-Rounder",
+    "jerseyNumber": 19,
+    "age": 21
+  },
+  {
+    "id": "PL089",
+    "name": "Aditya Verma",
+    "teamId": "TM10",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 42,
+    "age": 22
+  },
+  {
+    "id": "PL090",
+    "name": "Neel Singh",
+    "teamId": "TM11",
+    "position": "Forward",
+    "jerseyNumber": 40,
+    "age": 21
+  },
+  {
+    "id": "PL091",
+    "name": "Andre Mehta",
+    "teamId": "TM12",
+    "position": "Midfielder",
+    "jerseyNumber": 29,
+    "age": 27
+  },
+  {
+    "id": "PL092",
+    "name": "Rahul Silva",
+    "teamId": "TM13",
+    "position": "Bowler",
+    "jerseyNumber": 12,
+    "age": 20
+  },
+  {
+    "id": "PL093",
+    "name": "Noah Rodriguez",
+    "teamId": "TM14",
+    "position": "Bowler",
+    "jerseyNumber": 26,
+    "age": 22
+  },
+  {
+    "id": "PL094",
+    "name": "Neel Costa",
+    "teamId": "TM15",
+    "position": "Wicketkeeper",
+    "jerseyNumber": 68,
+    "age": 24
+  },
+  {
+    "id": "PL095",
+    "name": "Vikram Verma",
+    "teamId": "TM16",
+    "position": "All-Rounder",
+    "jerseyNumber": 67,
+    "age": 30
+  },
+  {
+    "id": "PL096",
+    "name": "Jamal Mehta",
+    "teamId": "TM17",
+    "position": "Bowler",
+    "jerseyNumber": 5,
+    "age": 20
+  },
+  {
+    "id": "PL097",
+    "name": "Noah Iyer",
+    "teamId": "TM18",
+    "position": "Forward",
+    "jerseyNumber": 35,
+    "age": 37
+  },
+  {
+    "id": "PL098",
+    "name": "Sameer Patel",
+    "teamId": "TM19",
+    "position": "Bowler",
+    "jerseyNumber": 65,
+    "age": 19
+  },
+  {
+    "id": "PL099",
+    "name": "Rohit Khan",
+    "teamId": "TM20",
+    "position": "Defender",
+    "jerseyNumber": 25,
+    "age": 20
+  },
+  {
+    "id": "PL100",
+    "name": "Arjun Fernandez",
+    "teamId": "TM01",
+    "position": "Batsman",
+    "jerseyNumber": 87,
+    "age": 22
+  }
+]

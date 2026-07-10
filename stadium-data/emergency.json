@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "EP001",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP002",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP003",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP004",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP005",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP006",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP007",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP008",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP009",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP010",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP011",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP012",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP013",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP014",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP015",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP016",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP017",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP018",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP019",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP020",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP021",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP022",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP023",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP024",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP025",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP026",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP027",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP028",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP029",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP030",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP031",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP032",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP033",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP034",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP035",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP036",
+    "type": "Medical",
+    "zone": "West",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP037",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP038",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP039",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP040",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP041",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP042",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP043",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP044",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP045",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP046",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP047",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP048",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP049",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP050",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP051",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP052",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP053",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP054",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP055",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP056",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP057",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP058",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP059",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP060",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP061",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP062",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP063",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP064",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP065",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP066",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP067",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP068",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP069",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP070",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP071",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP072",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP073",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP074",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP075",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP076",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP077",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP078",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP079",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP080",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP081",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP082",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP083",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP084",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP085",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP086",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP087",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP088",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP089",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP090",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP091",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP092",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP093",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP094",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP095",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP096",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP097",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP098",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP099",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP100",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP101",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP102",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP103",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP104",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP105",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP106",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP107",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP108",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP109",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP110",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP111",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP112",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP113",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP114",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP115",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP116",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP117",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP118",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP119",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP120",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP121",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP122",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP123",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP124",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP125",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP126",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP127",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP128",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP129",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP130",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP131",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP132",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP133",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP134",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP135",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP136",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP137",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP138",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP139",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP140",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP141",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP142",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP143",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP144",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP145",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP146",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP147",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP148",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP149",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP150",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP151",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP152",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP153",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP154",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP155",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP156",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP157",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP158",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP159",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP160",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP161",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP162",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP163",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP164",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP165",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP166",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP167",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP168",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP169",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP170",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP171",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP172",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP173",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP174",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP175",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP176",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP177",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP178",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP179",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP180",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP181",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP182",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP183",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP184",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP185",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP186",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP187",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP188",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP189",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP190",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP191",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP192",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP193",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP194",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP195",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP196",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP197",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP198",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP199",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP200",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP201",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP202",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP203",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP204",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP205",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP206",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP207",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP208",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP209",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP210",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP211",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP212",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP213",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP214",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP215",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP216",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP217",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP218",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP219",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP220",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP221",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP222",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP223",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP224",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP225",
+    "type": "Fire",
+    "zone": "North",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP226",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP227",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP228",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP229",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP230",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP231",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP232",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP233",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP234",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP235",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP236",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP237",
+    "type": "Medical",
+    "zone": "West",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP238",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP239",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP240",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP241",
+    "type": "Medical",
+    "zone": "North",
+    "procedure": "In case of medical near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP242",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP243",
+    "type": "Crowd Crush",
+    "zone": "West",
+    "procedure": "In case of crowd crush near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP244",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP245",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP246",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP247",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP248",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP249",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP250",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP251",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP252",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP253",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP254",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP255",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP256",
+    "type": "Fire",
+    "zone": "East",
+    "procedure": "In case of fire near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP257",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP258",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP259",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP260",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP261",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP262",
+    "type": "Structural",
+    "zone": "South",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP263",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP264",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP265",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP266",
+    "type": "Security Threat",
+    "zone": "East",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP267",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP268",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP269",
+    "type": "Medical",
+    "zone": "West",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP270",
+    "type": "Power Outage",
+    "zone": "North",
+    "procedure": "In case of power outage near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP271",
+    "type": "Crowd Crush",
+    "zone": "East",
+    "procedure": "In case of crowd crush near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP272",
+    "type": "Severe Weather",
+    "zone": "East",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP273",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP274",
+    "type": "Severe Weather",
+    "zone": "North",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP275",
+    "type": "Power Outage",
+    "zone": "East",
+    "procedure": "In case of power outage near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP276",
+    "type": "Fire",
+    "zone": "West",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP277",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP278",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP279",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP280",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP281",
+    "type": "Security Threat",
+    "zone": "North",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP282",
+    "type": "Severe Weather",
+    "zone": "West",
+    "procedure": "In case of severe weather near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP283",
+    "type": "Medical",
+    "zone": "East",
+    "procedure": "In case of medical near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP284",
+    "type": "Structural",
+    "zone": "East",
+    "procedure": "In case of structural near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP285",
+    "type": "Power Outage",
+    "zone": "South",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP286",
+    "type": "Power Outage",
+    "zone": "West",
+    "procedure": "In case of power outage near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP287",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP288",
+    "type": "Medical",
+    "zone": "South",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP289",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP290",
+    "type": "Structural",
+    "zone": "West",
+    "procedure": "In case of structural near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP291",
+    "type": "Crowd Crush",
+    "zone": "South",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP292",
+    "type": "Medical",
+    "zone": "West",
+    "procedure": "In case of medical near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP293",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near South zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP294",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP295",
+    "type": "Crowd Crush",
+    "zone": "North",
+    "procedure": "In case of crowd crush near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Low"
+  },
+  {
+    "id": "EP296",
+    "type": "Fire",
+    "zone": "South",
+    "procedure": "In case of fire near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP297",
+    "type": "Security Threat",
+    "zone": "West",
+    "procedure": "In case of security threat near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Medium"
+  },
+  {
+    "id": "EP298",
+    "type": "Structural",
+    "zone": "North",
+    "procedure": "In case of structural near East zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  },
+  {
+    "id": "EP299",
+    "type": "Severe Weather",
+    "zone": "South",
+    "procedure": "In case of severe weather near West zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "Critical"
+  },
+  {
+    "id": "EP300",
+    "type": "Security Threat",
+    "zone": "South",
+    "procedure": "In case of security threat near North zone: alert nearest steward, guide fans to nearest marked exit, do not use elevators, assemble at designated point.",
+    "priority": "High"
+  }
+]

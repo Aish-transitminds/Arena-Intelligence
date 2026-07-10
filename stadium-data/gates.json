@@ -1,0 +1,110 @@
+[
+  {
+    "id": "G1",
+    "name": "Gate 1",
+    "zone": "South",
+    "entryType": "General",
+    "crowdLevel": "Low",
+    "nearestParkingLot": "P1",
+    "accessible": true
+  },
+  {
+    "id": "G2",
+    "name": "Gate 2",
+    "zone": "East",
+    "entryType": "General",
+    "crowdLevel": "Moderate",
+    "nearestParkingLot": "P2",
+    "accessible": true
+  },
+  {
+    "id": "G3",
+    "name": "Gate 3",
+    "zone": "West",
+    "entryType": "VIP/Premium",
+    "crowdLevel": "Moderate",
+    "nearestParkingLot": "P3",
+    "accessible": true
+  },
+  {
+    "id": "G4",
+    "name": "Gate 4",
+    "zone": "North",
+    "entryType": "General",
+    "crowdLevel": "High",
+    "nearestParkingLot": "P4",
+    "accessible": true
+  },
+  {
+    "id": "G5",
+    "name": "Gate 5",
+    "zone": "South",
+    "entryType": "General",
+    "crowdLevel": "Moderate",
+    "nearestParkingLot": "P5",
+    "accessible": true
+  },
+  {
+    "id": "G6",
+    "name": "Gate 6",
+    "zone": "East",
+    "entryType": "VIP/Premium",
+    "crowdLevel": "Moderate",
+    "nearestParkingLot": "P6",
+    "accessible": true
+  },
+  {
+    "id": "G7",
+    "name": "Gate 7",
+    "zone": "West",
+    "entryType": "General",
+    "crowdLevel": "Low",
+    "nearestParkingLot": "P7",
+    "accessible": true
+  },
+  {
+    "id": "G8",
+    "name": "Gate 8",
+    "zone": "North",
+    "entryType": "General",
+    "crowdLevel": "High",
+    "nearestParkingLot": "P8",
+    "accessible": true
+  },
+  {
+    "id": "G9",
+    "name": "Gate 9",
+    "zone": "South",
+    "entryType": "VIP/Premium",
+    "crowdLevel": "Low",
+    "nearestParkingLot": "P9",
+    "accessible": true
+  },
+  {
+    "id": "G10",
+    "name": "Gate 10",
+    "zone": "East",
+    "entryType": "General",
+    "crowdLevel": "Low",
+    "nearestParkingLot": "P10",
+    "accessible": true
+  },
+  {
+    "id": "G11",
+    "name": "Gate 11",
+    "zone": "West",
+    "entryType": "General",
+    "crowdLevel": "Moderate",
+    "nearestParkingLot": "P1",
+    "accessible": true
+  },
+  {
+    "id": "G12",
+    "name": "Gate 12",
+    "zone": "North",
+    "entryType": "VIP/Premium",
+    "crowdLevel": "Low",
+    "nearestParkingLot": "P2",
+    "accessible": true
+  }
+]

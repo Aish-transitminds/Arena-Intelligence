@@ -1,0 +1,106 @@
+[
+  {
+    "id": "MED1",
+    "name": "Medical Center 1",
+    "zone": "South",
+    "nearestGate": "G4",
+    "staffOnDuty": 4,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED2",
+    "name": "Medical Center 2",
+    "zone": "East",
+    "nearestGate": "G7",
+    "staffOnDuty": 4,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED3",
+    "name": "Medical Center 3",
+    "zone": "West",
+    "nearestGate": "G10",
+    "staffOnDuty": 4,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED4",
+    "name": "Medical Center 4",
+    "zone": "North",
+    "nearestGate": "G1",
+    "staffOnDuty": 2,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED5",
+    "name": "Medical Center 5",
+    "zone": "South",
+    "nearestGate": "G4",
+    "staffOnDuty": 3,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED6",
+    "name": "Medical Center 6",
+    "zone": "East",
+    "nearestGate": "G7",
+    "staffOnDuty": 5,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED7",
+    "name": "Medical Center 7",
+    "zone": "West",
+    "nearestGate": "G10",
+    "staffOnDuty": 2,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  },
+  {
+    "id": "MED8",
+    "name": "Medical Center 8",
+    "zone": "North",
+    "nearestGate": "G1",
+    "staffOnDuty": 6,
+    "services": [
+      "First Aid",
+      "Ambulance Standby",
+      "Defibrillator",
+      "Wheelchair Assistance"
+    ]
+  }
+]

@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "P1-Z01",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 127,
+    "availableSlots": 54
+  },
+  {
+    "id": "P1-Z02",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 109,
+    "availableSlots": 59
+  },
+  {
+    "id": "P1-Z03",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 139,
+    "availableSlots": 41
+  },
+  {
+    "id": "P1-Z04",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 82,
+    "availableSlots": 9
+  },
+  {
+    "id": "P1-Z05",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 132,
+    "availableSlots": 100
+  },
+  {
+    "id": "P1-Z06",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 149,
+    "availableSlots": 35
+  },
+  {
+    "id": "P1-Z07",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 117,
+    "availableSlots": 68
+  },
+  {
+    "id": "P1-Z08",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 149,
+    "availableSlots": 114
+  },
+  {
+    "id": "P1-Z09",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 90,
+    "availableSlots": 65
+  },
+  {
+    "id": "P1-Z10",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 104,
+    "availableSlots": 37
+  },
+  {
+    "id": "P1-Z11",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 83,
+    "availableSlots": 76
+  },
+  {
+    "id": "P1-Z12",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 124,
+    "availableSlots": 4
+  },
+  {
+    "id": "P1-Z13",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 122,
+    "availableSlots": 90
+  },
+  {
+    "id": "P1-Z14",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 129,
+    "availableSlots": 15
+  },
+  {
+    "id": "P1-Z15",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 136,
+    "availableSlots": 76
+  },
+  {
+    "id": "P1-Z16",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 84,
+    "availableSlots": 66
+  },
+  {
+    "id": "P1-Z17",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 83,
+    "availableSlots": 0
+  },
+  {
+    "id": "P1-Z18",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 81,
+    "availableSlots": 68
+  },
+  {
+    "id": "P1-Z19",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 82,
+    "availableSlots": 12
+  },
+  {
+    "id": "P1-Z20",
+    "lot": "P1",
+    "nearestGate": "G1",
+    "type": "VIP",
+    "capacity": 89,
+    "availableSlots": 13
+  },
+  {
+    "id": "P2-Z01",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 121,
+    "availableSlots": 68
+  },
+  {
+    "id": "P2-Z02",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 135,
+    "availableSlots": 48
+  },
+  {
+    "id": "P2-Z03",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 148,
+    "availableSlots": 124
+  },
+  {
+    "id": "P2-Z04",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 134,
+    "availableSlots": 124
+  },
+  {
+    "id": "P2-Z05",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 80,
+    "availableSlots": 34
+  },
+  {
+    "id": "P2-Z06",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 89,
+    "availableSlots": 55
+  },
+  {
+    "id": "P2-Z07",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 117,
+    "availableSlots": 2
+  },
+  {
+    "id": "P2-Z08",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 128,
+    "availableSlots": 114
+  },
+  {
+    "id": "P2-Z09",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 125,
+    "availableSlots": 5
+  },
+  {
+    "id": "P2-Z10",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 138,
+    "availableSlots": 29
+  },
+  {
+    "id": "P2-Z11",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 120,
+    "availableSlots": 2
+  },
+  {
+    "id": "P2-Z12",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 85,
+    "availableSlots": 45
+  },
+  {
+    "id": "P2-Z13",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 102,
+    "availableSlots": 11
+  },
+  {
+    "id": "P2-Z14",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 127,
+    "availableSlots": 103
+  },
+  {
+    "id": "P2-Z15",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 125,
+    "availableSlots": 77
+  },
+  {
+    "id": "P2-Z16",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 105,
+    "availableSlots": 45
+  },
+  {
+    "id": "P2-Z17",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 80,
+    "availableSlots": 72
+  },
+  {
+    "id": "P2-Z18",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 101,
+    "availableSlots": 86
+  },
+  {
+    "id": "P2-Z19",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 93,
+    "availableSlots": 62
+  },
+  {
+    "id": "P2-Z20",
+    "lot": "P2",
+    "nearestGate": "G2",
+    "type": "VIP",
+    "capacity": 146,
+    "availableSlots": 61
+  },
+  {
+    "id": "P3-Z01",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 81,
+    "availableSlots": 6
+  },
+  {
+    "id": "P3-Z02",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 132,
+    "availableSlots": 119
+  },
+  {
+    "id": "P3-Z03",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 95,
+    "availableSlots": 79
+  },
+  {
+    "id": "P3-Z04",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 148,
+    "availableSlots": 11
+  },
+  {
+    "id": "P3-Z05",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 149,
+    "availableSlots": 114
+  },
+  {
+    "id": "P3-Z06",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 89,
+    "availableSlots": 55
+  },
+  {
+    "id": "P3-Z07",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 135,
+    "availableSlots": 43
+  },
+  {
+    "id": "P3-Z08",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 104,
+    "availableSlots": 36
+  },
+  {
+    "id": "P3-Z09",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 124,
+    "availableSlots": 105
+  },
+  {
+    "id": "P3-Z10",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 149,
+    "availableSlots": 107
+  },
+  {
+    "id": "P3-Z11",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 90,
+    "availableSlots": 80
+  },
+  {
+    "id": "P3-Z12",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 122,
+    "availableSlots": 97
+  },
+  {
+    "id": "P3-Z13",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 131,
+    "availableSlots": 42
+  },
+  {
+    "id": "P3-Z14",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 86,
+    "availableSlots": 8
+  },
+  {
+    "id": "P3-Z15",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 114,
+    "availableSlots": 101
+  },
+  {
+    "id": "P3-Z16",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 149,
+    "availableSlots": 11
+  },
+  {
+    "id": "P3-Z17",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 128,
+    "availableSlots": 91
+  },
+  {
+    "id": "P3-Z18",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 150,
+    "availableSlots": 23
+  },
+  {
+    "id": "P3-Z19",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 137,
+    "availableSlots": 136
+  },
+  {
+    "id": "P3-Z20",
+    "lot": "P3",
+    "nearestGate": "G3",
+    "type": "General",
+    "capacity": 139,
+    "availableSlots": 51
+  },
+  {
+    "id": "P4-Z01",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 148,
+    "availableSlots": 89
+  },
+  {
+    "id": "P4-Z02",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 112,
+    "availableSlots": 51
+  },
+  {
+    "id": "P4-Z03",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 88,
+    "availableSlots": 77
+  },
+  {
+    "id": "P4-Z04",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 118,
+    "availableSlots": 79
+  },
+  {
+    "id": "P4-Z05",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 112,
+    "availableSlots": 53
+  },
+  {
+    "id": "P4-Z06",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 110,
+    "availableSlots": 89
+  },
+  {
+    "id": "P4-Z07",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 85,
+    "availableSlots": 83
+  },
+  {
+    "id": "P4-Z08",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 136,
+    "availableSlots": 69
+  },
+  {
+    "id": "P4-Z09",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 125,
+    "availableSlots": 20
+  },
+  {
+    "id": "P4-Z10",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 85,
+    "availableSlots": 62
+  },
+  {
+    "id": "P4-Z11",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 150,
+    "availableSlots": 29
+  },
+  {
+    "id": "P4-Z12",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 141,
+    "availableSlots": 89
+  },
+  {
+    "id": "P4-Z13",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 123,
+    "availableSlots": 78
+  },
+  {
+    "id": "P4-Z14",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 145,
+    "availableSlots": 17
+  },
+  {
+    "id": "P4-Z15",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 137,
+    "availableSlots": 48
+  },
+  {
+    "id": "P4-Z16",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 105,
+    "availableSlots": 71
+  },
+  {
+    "id": "P4-Z17",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 149,
+    "availableSlots": 38
+  },
+  {
+    "id": "P4-Z18",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 138,
+    "availableSlots": 39
+  },
+  {
+    "id": "P4-Z19",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 98,
+    "availableSlots": 9
+  },
+  {
+    "id": "P4-Z20",
+    "lot": "P4",
+    "nearestGate": "G4",
+    "type": "General",
+    "capacity": 106,
+    "availableSlots": 2
+  },
+  {
+    "id": "P5-Z01",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 131,
+    "availableSlots": 54
+  },
+  {
+    "id": "P5-Z02",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 102,
+    "availableSlots": 60
+  },
+  {
+    "id": "P5-Z03",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 140,
+    "availableSlots": 32
+  },
+  {
+    "id": "P5-Z04",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 111,
+    "availableSlots": 95
+  },
+  {
+    "id": "P5-Z05",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 100,
+    "availableSlots": 76
+  },
+  {
+    "id": "P5-Z06",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 90,
+    "availableSlots": 75
+  },
+  {
+    "id": "P5-Z07",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 97,
+    "availableSlots": 34
+  },
+  {
+    "id": "P5-Z08",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 127,
+    "availableSlots": 25
+  },
+  {
+    "id": "P5-Z09",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 83,
+    "availableSlots": 72
+  },
+  {
+    "id": "P5-Z10",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 89,
+    "availableSlots": 60
+  },
+  {
+    "id": "P5-Z11",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 142,
+    "availableSlots": 61
+  },
+  {
+    "id": "P5-Z12",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 129,
+    "availableSlots": 100
+  },
+  {
+    "id": "P5-Z13",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 105,
+    "availableSlots": 96
+  },
+  {
+    "id": "P5-Z14",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 108,
+    "availableSlots": 28
+  },
+  {
+    "id": "P5-Z15",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 150,
+    "availableSlots": 127
+  },
+  {
+    "id": "P5-Z16",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 129,
+    "availableSlots": 55
+  },
+  {
+    "id": "P5-Z17",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 140,
+    "availableSlots": 68
+  },
+  {
+    "id": "P5-Z18",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 146,
+    "availableSlots": 34
+  },
+  {
+    "id": "P5-Z19",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 130,
+    "availableSlots": 75
+  },
+  {
+    "id": "P5-Z20",
+    "lot": "P5",
+    "nearestGate": "G5",
+    "type": "General",
+    "capacity": 115,
+    "availableSlots": 54
+  },
+  {
+    "id": "P6-Z01",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 150,
+    "availableSlots": 51
+  },
+  {
+    "id": "P6-Z02",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 97,
+    "availableSlots": 23
+  },
+  {
+    "id": "P6-Z03",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 119,
+    "availableSlots": 91
+  },
+  {
+    "id": "P6-Z04",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 148,
+    "availableSlots": 89
+  },
+  {
+    "id": "P6-Z05",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 133,
+    "availableSlots": 120
+  },
+  {
+    "id": "P6-Z06",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 114,
+    "availableSlots": 93
+  },
+  {
+    "id": "P6-Z07",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 93,
+    "availableSlots": 74
+  },
+  {
+    "id": "P6-Z08",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 131,
+    "availableSlots": 78
+  },
+  {
+    "id": "P6-Z09",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 88,
+    "availableSlots": 79
+  },
+  {
+    "id": "P6-Z10",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 88,
+    "availableSlots": 34
+  },
+  {
+    "id": "P6-Z11",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 109,
+    "availableSlots": 22
+  },
+  {
+    "id": "P6-Z12",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 126,
+    "availableSlots": 54
+  },
+  {
+    "id": "P6-Z13",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 86,
+    "availableSlots": 32
+  },
+  {
+    "id": "P6-Z14",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 115,
+    "availableSlots": 40
+  },
+  {
+    "id": "P6-Z15",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 83,
+    "availableSlots": 16
+  },
+  {
+    "id": "P6-Z16",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 107,
+    "availableSlots": 26
+  },
+  {
+    "id": "P6-Z17",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 136,
+    "availableSlots": 61
+  },
+  {
+    "id": "P6-Z18",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 103,
+    "availableSlots": 46
+  },
+  {
+    "id": "P6-Z19",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 82,
+    "availableSlots": 42
+  },
+  {
+    "id": "P6-Z20",
+    "lot": "P6",
+    "nearestGate": "G6",
+    "type": "General",
+    "capacity": 94,
+    "availableSlots": 93
+  },
+  {
+    "id": "P7-Z01",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 81,
+    "availableSlots": 43
+  },
+  {
+    "id": "P7-Z02",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 111,
+    "availableSlots": 103
+  },
+  {
+    "id": "P7-Z03",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 138,
+    "availableSlots": 43
+  },
+  {
+    "id": "P7-Z04",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 84,
+    "availableSlots": 60
+  },
+  {
+    "id": "P7-Z05",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 91,
+    "availableSlots": 91
+  },
+  {
+    "id": "P7-Z06",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 148,
+    "availableSlots": 139
+  },
+  {
+    "id": "P7-Z07",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 98,
+    "availableSlots": 68
+  },
+  {
+    "id": "P7-Z08",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 126,
+    "availableSlots": 8
+  },
+  {
+    "id": "P7-Z09",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 111,
+    "availableSlots": 90
+  },
+  {
+    "id": "P7-Z10",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 132,
+    "availableSlots": 72
+  },
+  {
+    "id": "P7-Z11",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 100,
+    "availableSlots": 20
+  },
+  {
+    "id": "P7-Z12",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 142,
+    "availableSlots": 79
+  },
+  {
+    "id": "P7-Z13",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 116,
+    "availableSlots": 95
+  },
+  {
+    "id": "P7-Z14",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 107,
+    "availableSlots": 12
+  },
+  {
+    "id": "P7-Z15",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 102,
+    "availableSlots": 1
+  },
+  {
+    "id": "P7-Z16",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 95,
+    "availableSlots": 74
+  },
+  {
+    "id": "P7-Z17",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 126,
+    "availableSlots": 88
+  },
+  {
+    "id": "P7-Z18",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 141,
+    "availableSlots": 65
+  },
+  {
+    "id": "P7-Z19",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 95,
+    "availableSlots": 81
+  },
+  {
+    "id": "P7-Z20",
+    "lot": "P7",
+    "nearestGate": "G7",
+    "type": "General",
+    "capacity": 118,
+    "availableSlots": 89
+  },
+  {
+    "id": "P8-Z01",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 85,
+    "availableSlots": 25
+  },
+  {
+    "id": "P8-Z02",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 139,
+    "availableSlots": 53
+  },
+  {
+    "id": "P8-Z03",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 101,
+    "availableSlots": 44
+  },
+  {
+    "id": "P8-Z04",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 89,
+    "availableSlots": 38
+  },
+  {
+    "id": "P8-Z05",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 139,
+    "availableSlots": 111
+  },
+  {
+    "id": "P8-Z06",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 103,
+    "availableSlots": 42
+  },
+  {
+    "id": "P8-Z07",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 120,
+    "availableSlots": 27
+  },
+  {
+    "id": "P8-Z08",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 142,
+    "availableSlots": 131
+  },
+  {
+    "id": "P8-Z09",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 105,
+    "availableSlots": 93
+  },
+  {
+    "id": "P8-Z10",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 96,
+    "availableSlots": 20
+  },
+  {
+    "id": "P8-Z11",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 87,
+    "availableSlots": 49
+  },
+  {
+    "id": "P8-Z12",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 84,
+    "availableSlots": 18
+  },
+  {
+    "id": "P8-Z13",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 134,
+    "availableSlots": 89
+  },
+  {
+    "id": "P8-Z14",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 130,
+    "availableSlots": 99
+  },
+  {
+    "id": "P8-Z15",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 146,
+    "availableSlots": 109
+  },
+  {
+    "id": "P8-Z16",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 82,
+    "availableSlots": 22
+  },
+  {
+    "id": "P8-Z17",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 125,
+    "availableSlots": 12
+  },
+  {
+    "id": "P8-Z18",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 85,
+    "availableSlots": 65
+  },
+  {
+    "id": "P8-Z19",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 90,
+    "availableSlots": 75
+  },
+  {
+    "id": "P8-Z20",
+    "lot": "P8",
+    "nearestGate": "G8",
+    "type": "General",
+    "capacity": 132,
+    "availableSlots": 17
+  },
+  {
+    "id": "P9-Z01",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 85,
+    "availableSlots": 3
+  },
+  {
+    "id": "P9-Z02",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 87,
+    "availableSlots": 74
+  },
+  {
+    "id": "P9-Z03",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 139,
+    "availableSlots": 44
+  },
+  {
+    "id": "P9-Z04",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 84,
+    "availableSlots": 28
+  },
+  {
+    "id": "P9-Z05",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 121,
+    "availableSlots": 74
+  },
+  {
+    "id": "P9-Z06",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 145,
+    "availableSlots": 81
+  },
+  {
+    "id": "P9-Z07",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 135,
+    "availableSlots": 26
+  },
+  {
+    "id": "P9-Z08",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 122,
+    "availableSlots": 53
+  },
+  {
+    "id": "P9-Z09",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 142,
+    "availableSlots": 101
+  },
+  {
+    "id": "P9-Z10",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 133,
+    "availableSlots": 34
+  },
+  {
+    "id": "P9-Z11",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 94,
+    "availableSlots": 35
+  },
+  {
+    "id": "P9-Z12",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 105,
+    "availableSlots": 59
+  },
+  {
+    "id": "P9-Z13",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 149,
+    "availableSlots": 59
+  },
+  {
+    "id": "P9-Z14",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 132,
+    "availableSlots": 23
+  },
+  {
+    "id": "P9-Z15",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 145,
+    "availableSlots": 78
+  },
+  {
+    "id": "P9-Z16",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 133,
+    "availableSlots": 95
+  },
+  {
+    "id": "P9-Z17",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 90,
+    "availableSlots": 61
+  },
+  {
+    "id": "P9-Z18",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 137,
+    "availableSlots": 4
+  },
+  {
+    "id": "P9-Z19",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 80,
+    "availableSlots": 60
+  },
+  {
+    "id": "P9-Z20",
+    "lot": "P9",
+    "nearestGate": "G9",
+    "type": "General",
+    "capacity": 136,
+    "availableSlots": 75
+  },
+  {
+    "id": "P10-Z01",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 138,
+    "availableSlots": 123
+  },
+  {
+    "id": "P10-Z02",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 134,
+    "availableSlots": 92
+  },
+  {
+    "id": "P10-Z03",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 86,
+    "availableSlots": 68
+  },
+  {
+    "id": "P10-Z04",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 135,
+    "availableSlots": 78
+  },
+  {
+    "id": "P10-Z05",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 84,
+    "availableSlots": 25
+  },
+  {
+    "id": "P10-Z06",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 123,
+    "availableSlots": 55
+  },
+  {
+    "id": "P10-Z07",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 110,
+    "availableSlots": 19
+  },
+  {
+    "id": "P10-Z08",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 124,
+    "availableSlots": 16
+  },
+  {
+    "id": "P10-Z09",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 84,
+    "availableSlots": 79
+  },
+  {
+    "id": "P10-Z10",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 134,
+    "availableSlots": 83
+  },
+  {
+    "id": "P10-Z11",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 118,
+    "availableSlots": 52
+  },
+  {
+    "id": "P10-Z12",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 106,
+    "availableSlots": 63
+  },
+  {
+    "id": "P10-Z13",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 90,
+    "availableSlots": 38
+  },
+  {
+    "id": "P10-Z14",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 119,
+    "availableSlots": 67
+  },
+  {
+    "id": "P10-Z15",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 119,
+    "availableSlots": 105
+  },
+  {
+    "id": "P10-Z16",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 140,
+    "availableSlots": 131
+  },
+  {
+    "id": "P10-Z17",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 98,
+    "availableSlots": 3
+  },
+  {
+    "id": "P10-Z18",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 89,
+    "availableSlots": 10
+  },
+  {
+    "id": "P10-Z19",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 86,
+    "availableSlots": 83
+  },
+  {
+    "id": "P10-Z20",
+    "lot": "P10",
+    "nearestGate": "G10",
+    "type": "General",
+    "capacity": 116,
+    "availableSlots": 97
+  }
+]

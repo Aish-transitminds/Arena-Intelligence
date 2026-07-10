@@ -1,0 +1,452 @@
+[
+  {
+    "id": "MTC001",
+    "homeTeam": "Ranchi Riders",
+    "awayTeam": "Lucknow Strikers",
+    "date": "2026-10-19",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ranchi Riders 2 - 5 Lucknow Strikers",
+    "attendance": 49329
+  },
+  {
+    "id": "MTC002",
+    "homeTeam": "Kolkata Warriors",
+    "awayTeam": "Guwahati Strikers",
+    "date": "2022-07-20",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Kolkata Warriors 1 - 0 Guwahati Strikers",
+    "attendance": 36061
+  },
+  {
+    "id": "MTC003",
+    "homeTeam": "Vizag Strikers",
+    "awayTeam": "Guwahati Strikers",
+    "date": "2022-06-16",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Vizag Strikers 2 - 1 Guwahati Strikers",
+    "attendance": 41991
+  },
+  {
+    "id": "MTC004",
+    "homeTeam": "Kochi Warriors",
+    "awayTeam": "Pune Titans",
+    "date": "2023-03-09",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Kochi Warriors 1 - 3 Pune Titans",
+    "attendance": 41511
+  },
+  {
+    "id": "MTC005",
+    "homeTeam": "Surat Warriors",
+    "awayTeam": "Delhi Titans",
+    "date": "2023-10-10",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Surat Warriors 1 - 1 Delhi Titans",
+    "attendance": 48002
+  },
+  {
+    "id": "MTC006",
+    "homeTeam": "Bengaluru Panthers",
+    "awayTeam": "Bhopal Panthers",
+    "date": "2025-12-26",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Bengaluru Panthers 5 - 1 Bhopal Panthers",
+    "attendance": 47721
+  },
+  {
+    "id": "MTC007",
+    "homeTeam": "Jaipur Titans",
+    "awayTeam": "Surat Warriors",
+    "date": "2023-02-15",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Jaipur Titans 1 - 4 Surat Warriors",
+    "attendance": 34626
+  },
+  {
+    "id": "MTC008",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Ahmedabad Riders",
+    "date": "2023-06-28",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 0 - 0 Ahmedabad Riders",
+    "attendance": 50885
+  },
+  {
+    "id": "MTC009",
+    "homeTeam": "Surat Warriors",
+    "awayTeam": "Nagpur Riders",
+    "date": "2025-01-04",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Surat Warriors 3 - 3 Nagpur Riders",
+    "attendance": 40025
+  },
+  {
+    "id": "MTC010",
+    "homeTeam": "Lucknow Strikers",
+    "awayTeam": "Kochi Warriors",
+    "date": "2023-10-22",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Lucknow Strikers 5 - 3 Kochi Warriors",
+    "attendance": 44210
+  },
+  {
+    "id": "MTC011",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Delhi Titans",
+    "date": "2023-08-28",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 4 - 3 Delhi Titans",
+    "attendance": 51423
+  },
+  {
+    "id": "MTC012",
+    "homeTeam": "Indore Warriors",
+    "awayTeam": "Delhi Titans",
+    "date": "2023-10-22",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Indore Warriors 1 - 3 Delhi Titans",
+    "attendance": 48697
+  },
+  {
+    "id": "MTC013",
+    "homeTeam": "Indore Warriors",
+    "awayTeam": "Kochi Warriors",
+    "date": "2022-11-14",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Indore Warriors 5 - 4 Kochi Warriors",
+    "attendance": 35555
+  },
+  {
+    "id": "MTC014",
+    "homeTeam": "Lucknow Strikers",
+    "awayTeam": "Bhopal Panthers",
+    "date": "2025-09-13",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Lucknow Strikers 3 - 1 Bhopal Panthers",
+    "attendance": 49382
+  },
+  {
+    "id": "MTC015",
+    "homeTeam": "Jaipur Titans",
+    "awayTeam": "Ranchi Riders",
+    "date": "2024-01-07",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Jaipur Titans 1 - 4 Ranchi Riders",
+    "attendance": 30877
+  },
+  {
+    "id": "MTC016",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Mumbai Kings",
+    "date": "2026-02-09",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 3 - 3 Mumbai Kings",
+    "attendance": 47591
+  },
+  {
+    "id": "MTC017",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Chandigarh Kings",
+    "date": "2026-07-24",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 3 - 3 Chandigarh Kings",
+    "attendance": 33665
+  },
+  {
+    "id": "MTC018",
+    "homeTeam": "Ranchi Riders",
+    "awayTeam": "Chennai Warriors",
+    "date": "2023-01-24",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ranchi Riders 1 - 3 Chennai Warriors",
+    "attendance": 49282
+  },
+  {
+    "id": "MTC019",
+    "homeTeam": "Lucknow Strikers",
+    "awayTeam": "Chandigarh Kings",
+    "date": "2026-04-23",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Lucknow Strikers 0 - 1 Chandigarh Kings",
+    "attendance": 42815
+  },
+  {
+    "id": "MTC020",
+    "homeTeam": "Indore Warriors",
+    "awayTeam": "Chennai Warriors",
+    "date": "2024-12-24",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Indore Warriors 2 - 3 Chennai Warriors",
+    "attendance": 33232
+  },
+  {
+    "id": "MTC021",
+    "homeTeam": "Patna Warriors",
+    "awayTeam": "Bengaluru Panthers",
+    "date": "2024-12-18",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Patna Warriors 3 - 1 Bengaluru Panthers",
+    "attendance": 46598
+  },
+  {
+    "id": "MTC022",
+    "homeTeam": "Delhi Titans",
+    "awayTeam": "Ranchi Riders",
+    "date": "2023-06-28",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Delhi Titans 1 - 5 Ranchi Riders",
+    "attendance": 46824
+  },
+  {
+    "id": "MTC023",
+    "homeTeam": "Chennai Warriors",
+    "awayTeam": "Jaipur Titans",
+    "date": "2025-07-08",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Chennai Warriors 3 - 5 Jaipur Titans",
+    "attendance": 40221
+  },
+  {
+    "id": "MTC024",
+    "homeTeam": "Hyderabad Warriors",
+    "awayTeam": "Chennai Warriors",
+    "date": "2024-01-01",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Hyderabad Warriors 0 - 1 Chennai Warriors",
+    "attendance": 39917
+  },
+  {
+    "id": "MTC025",
+    "homeTeam": "Delhi Titans",
+    "awayTeam": "Mumbai Kings",
+    "date": "2025-03-23",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Delhi Titans 5 - 5 Mumbai Kings",
+    "attendance": 42830
+  },
+  {
+    "id": "MTC026",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Ahmedabad Riders",
+    "date": "2023-06-23",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 5 - 2 Ahmedabad Riders",
+    "attendance": 34086
+  },
+  {
+    "id": "MTC027",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Surat Warriors",
+    "date": "2022-03-10",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 4 - 2 Surat Warriors",
+    "attendance": 48722
+  },
+  {
+    "id": "MTC028",
+    "homeTeam": "Ahmedabad Riders",
+    "awayTeam": "Guwahati Strikers",
+    "date": "2024-08-04",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ahmedabad Riders 3 - 5 Guwahati Strikers",
+    "attendance": 51780
+  },
+  {
+    "id": "MTC029",
+    "homeTeam": "Delhi Titans",
+    "awayTeam": "Pune Titans",
+    "date": "2022-11-08",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Delhi Titans 1 - 4 Pune Titans",
+    "attendance": 46685
+  },
+  {
+    "id": "MTC030",
+    "homeTeam": "Vizag Strikers",
+    "awayTeam": "Nagpur Riders",
+    "date": "2024-03-20",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Vizag Strikers 3 - 5 Nagpur Riders",
+    "attendance": 40247
+  },
+  {
+    "id": "MTC031",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Pune Titans",
+    "date": "2023-01-05",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 1 - 4 Pune Titans",
+    "attendance": 39286
+  },
+  {
+    "id": "MTC032",
+    "homeTeam": "Kolkata Warriors",
+    "awayTeam": "Pune Titans",
+    "date": "2024-02-12",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Kolkata Warriors 2 - 3 Pune Titans",
+    "attendance": 40175
+  },
+  {
+    "id": "MTC033",
+    "homeTeam": "Ahmedabad Riders",
+    "awayTeam": "Ranchi Riders",
+    "date": "2024-06-20",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ahmedabad Riders 2 - 3 Ranchi Riders",
+    "attendance": 47020
+  },
+  {
+    "id": "MTC034",
+    "homeTeam": "Bengaluru Panthers",
+    "awayTeam": "Bhopal Panthers",
+    "date": "2026-02-17",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Bengaluru Panthers 2 - 5 Bhopal Panthers",
+    "attendance": 47666
+  },
+  {
+    "id": "MTC035",
+    "homeTeam": "Chennai Warriors",
+    "awayTeam": "Surat Warriors",
+    "date": "2023-05-18",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Chennai Warriors 3 - 4 Surat Warriors",
+    "attendance": 48923
+  },
+  {
+    "id": "MTC036",
+    "homeTeam": "Delhi Titans",
+    "awayTeam": "Vizag Strikers",
+    "date": "2022-01-04",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Delhi Titans 5 - 5 Vizag Strikers",
+    "attendance": 42502
+  },
+  {
+    "id": "MTC037",
+    "homeTeam": "Delhi Titans",
+    "awayTeam": "Mumbai Kings",
+    "date": "2025-04-21",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Delhi Titans 2 - 2 Mumbai Kings",
+    "attendance": 45521
+  },
+  {
+    "id": "MTC038",
+    "homeTeam": "Surat Warriors",
+    "awayTeam": "Delhi Titans",
+    "date": "2026-04-12",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Surat Warriors 2 - 0 Delhi Titans",
+    "attendance": 44269
+  },
+  {
+    "id": "MTC039",
+    "homeTeam": "Kochi Warriors",
+    "awayTeam": "Indore Warriors",
+    "date": "2025-12-25",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Kochi Warriors 2 - 0 Indore Warriors",
+    "attendance": 51995
+  },
+  {
+    "id": "MTC040",
+    "homeTeam": "Bhopal Panthers",
+    "awayTeam": "Vizag Strikers",
+    "date": "2024-05-15",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Bhopal Panthers 1 - 0 Vizag Strikers",
+    "attendance": 34527
+  },
+  {
+    "id": "MTC041",
+    "homeTeam": "Jaipur Titans",
+    "awayTeam": "Mumbai Kings",
+    "date": "2022-12-07",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Jaipur Titans 3 - 5 Mumbai Kings",
+    "attendance": 41410
+  },
+  {
+    "id": "MTC042",
+    "homeTeam": "Surat Warriors",
+    "awayTeam": "Bengaluru Panthers",
+    "date": "2024-05-05",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Surat Warriors 4 - 3 Bengaluru Panthers",
+    "attendance": 32966
+  },
+  {
+    "id": "MTC043",
+    "homeTeam": "Ahmedabad Riders",
+    "awayTeam": "Nagpur Riders",
+    "date": "2023-05-02",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ahmedabad Riders 2 - 1 Nagpur Riders",
+    "attendance": 51295
+  },
+  {
+    "id": "MTC044",
+    "homeTeam": "Ahmedabad Riders",
+    "awayTeam": "Hyderabad Warriors",
+    "date": "2022-11-22",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Ahmedabad Riders 0 - 5 Hyderabad Warriors",
+    "attendance": 48386
+  },
+  {
+    "id": "MTC045",
+    "homeTeam": "Nagpur Riders",
+    "awayTeam": "Delhi Titans",
+    "date": "2023-08-08",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Nagpur Riders 1 - 5 Delhi Titans",
+    "attendance": 51051
+  },
+  {
+    "id": "MTC046",
+    "homeTeam": "Guwahati Strikers",
+    "awayTeam": "Chandigarh Kings",
+    "date": "2025-05-19",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Guwahati Strikers 5 - 5 Chandigarh Kings",
+    "attendance": 48466
+  },
+  {
+    "id": "MTC047",
+    "homeTeam": "Pune Titans",
+    "awayTeam": "Guwahati Strikers",
+    "date": "2022-04-22",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Pune Titans 3 - 1 Guwahati Strikers",
+    "attendance": 47634
+  },
+  {
+    "id": "MTC048",
+    "homeTeam": "Pune Titans",
+    "awayTeam": "Jaipur Titans",
+    "date": "2025-04-01",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Pune Titans 0 - 4 Jaipur Titans",
+    "attendance": 49477
+  },
+  {
+    "id": "MTC049",
+    "homeTeam": "Indore Warriors",
+    "awayTeam": "Mumbai Kings",
+    "date": "2023-09-03",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Indore Warriors 3 - 5 Mumbai Kings",
+    "attendance": 48906
+  },
+  {
+    "id": "MTC050",
+    "homeTeam": "Vizag Strikers",
+    "awayTeam": "Pune Titans",
+    "date": "2025-03-06",
+    "venue": "Arena Intelligence Stadium",
+    "result": "Vizag Strikers 3 - 0 Pune Titans",
+    "attendance": 32563
+  }
+]

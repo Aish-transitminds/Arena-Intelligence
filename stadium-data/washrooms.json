@@ -1,0 +1,722 @@
+[
+  {
+    "id": "W01",
+    "nearestStand": "ST002",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 7,
+    "occupancyPercent": 58,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W02",
+    "nearestStand": "ST003",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 5,
+    "occupancyPercent": 71,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W03",
+    "nearestStand": "ST004",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 12,
+    "occupancyPercent": 34,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W04",
+    "nearestStand": "ST005",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 6,
+    "occupancyPercent": 42,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W05",
+    "nearestStand": "ST006",
+    "zone": "West",
+    "type": "Male",
+    "stalls": 8,
+    "occupancyPercent": 60,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W06",
+    "nearestStand": "ST007",
+    "zone": "North",
+    "type": "Male",
+    "stalls": 8,
+    "occupancyPercent": 87,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W07",
+    "nearestStand": "ST008",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 75,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W08",
+    "nearestStand": "ST009",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 4,
+    "occupancyPercent": 29,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W09",
+    "nearestStand": "ST010",
+    "zone": "West",
+    "type": "Male",
+    "stalls": 10,
+    "occupancyPercent": 94,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W10",
+    "nearestStand": "ST011",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 8,
+    "occupancyPercent": 78,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W11",
+    "nearestStand": "ST012",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 12,
+    "occupancyPercent": 62,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W12",
+    "nearestStand": "ST013",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 7,
+    "occupancyPercent": 10,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W13",
+    "nearestStand": "ST014",
+    "zone": "West",
+    "type": "Unisex/Accessible",
+    "stalls": 5,
+    "occupancyPercent": 76,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W14",
+    "nearestStand": "ST015",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 75,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W15",
+    "nearestStand": "ST016",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 7,
+    "occupancyPercent": 76,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W16",
+    "nearestStand": "ST017",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 8,
+    "occupancyPercent": 75,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W17",
+    "nearestStand": "ST018",
+    "zone": "West",
+    "type": "Unisex/Accessible",
+    "stalls": 12,
+    "occupancyPercent": 25,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W18",
+    "nearestStand": "ST019",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 12,
+    "occupancyPercent": 6,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W19",
+    "nearestStand": "ST020",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 9,
+    "occupancyPercent": 74,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W20",
+    "nearestStand": "ST021",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 4,
+    "occupancyPercent": 50,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W21",
+    "nearestStand": "ST022",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 12,
+    "occupancyPercent": 74,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W22",
+    "nearestStand": "ST023",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 12,
+    "occupancyPercent": 63,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W23",
+    "nearestStand": "ST024",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 9,
+    "occupancyPercent": 72,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W24",
+    "nearestStand": "ST025",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 10,
+    "occupancyPercent": 90,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W25",
+    "nearestStand": "ST026",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 5,
+    "occupancyPercent": 13,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W26",
+    "nearestStand": "ST027",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 7,
+    "occupancyPercent": 66,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W27",
+    "nearestStand": "ST028",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 7,
+    "occupancyPercent": 40,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W28",
+    "nearestStand": "ST029",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 8,
+    "occupancyPercent": 75,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W29",
+    "nearestStand": "ST030",
+    "zone": "West",
+    "type": "Male",
+    "stalls": 10,
+    "occupancyPercent": 89,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W30",
+    "nearestStand": "ST031",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 55,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W31",
+    "nearestStand": "ST032",
+    "zone": "South",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 91,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W32",
+    "nearestStand": "ST033",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 4,
+    "occupancyPercent": 93,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W33",
+    "nearestStand": "ST034",
+    "zone": "West",
+    "type": "Unisex/Accessible",
+    "stalls": 6,
+    "occupancyPercent": 55,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W34",
+    "nearestStand": "ST035",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 4,
+    "occupancyPercent": 92,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W35",
+    "nearestStand": "ST036",
+    "zone": "South",
+    "type": "Unisex/Accessible",
+    "stalls": 6,
+    "occupancyPercent": 74,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W36",
+    "nearestStand": "ST037",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 9,
+    "occupancyPercent": 64,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W37",
+    "nearestStand": "ST038",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 12,
+    "occupancyPercent": 24,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W38",
+    "nearestStand": "ST039",
+    "zone": "North",
+    "type": "Male",
+    "stalls": 5,
+    "occupancyPercent": 79,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W39",
+    "nearestStand": "ST040",
+    "zone": "South",
+    "type": "Unisex/Accessible",
+    "stalls": 11,
+    "occupancyPercent": 14,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W40",
+    "nearestStand": "ST001",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 5,
+    "occupancyPercent": 13,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W41",
+    "nearestStand": "ST002",
+    "zone": "West",
+    "type": "Male",
+    "stalls": 10,
+    "occupancyPercent": 8,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W42",
+    "nearestStand": "ST003",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 6,
+    "occupancyPercent": 7,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W43",
+    "nearestStand": "ST004",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 10,
+    "occupancyPercent": 17,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W44",
+    "nearestStand": "ST005",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 9,
+    "occupancyPercent": 38,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W45",
+    "nearestStand": "ST006",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 9,
+    "occupancyPercent": 64,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W46",
+    "nearestStand": "ST007",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 43,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W47",
+    "nearestStand": "ST008",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 5,
+    "occupancyPercent": 53,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W48",
+    "nearestStand": "ST009",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 12,
+    "occupancyPercent": 16,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W49",
+    "nearestStand": "ST010",
+    "zone": "West",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 33,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W50",
+    "nearestStand": "ST011",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 52,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W51",
+    "nearestStand": "ST012",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 5,
+    "occupancyPercent": 78,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W52",
+    "nearestStand": "ST013",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 6,
+    "occupancyPercent": 16,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W53",
+    "nearestStand": "ST014",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 4,
+    "occupancyPercent": 83,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W54",
+    "nearestStand": "ST015",
+    "zone": "North",
+    "type": "Male",
+    "stalls": 5,
+    "occupancyPercent": 5,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W55",
+    "nearestStand": "ST016",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 4,
+    "occupancyPercent": 55,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W56",
+    "nearestStand": "ST017",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 12,
+    "occupancyPercent": 68,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W57",
+    "nearestStand": "ST018",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 9,
+    "occupancyPercent": 14,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W58",
+    "nearestStand": "ST019",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 21,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W59",
+    "nearestStand": "ST020",
+    "zone": "South",
+    "type": "Unisex/Accessible",
+    "stalls": 7,
+    "occupancyPercent": 36,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W60",
+    "nearestStand": "ST021",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 44,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W61",
+    "nearestStand": "ST022",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 71,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W62",
+    "nearestStand": "ST023",
+    "zone": "North",
+    "type": "Male",
+    "stalls": 12,
+    "occupancyPercent": 27,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W63",
+    "nearestStand": "ST024",
+    "zone": "South",
+    "type": "Female",
+    "stalls": 6,
+    "occupancyPercent": 59,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W64",
+    "nearestStand": "ST025",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 67,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W65",
+    "nearestStand": "ST026",
+    "zone": "West",
+    "type": "Male",
+    "stalls": 12,
+    "occupancyPercent": 77,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W66",
+    "nearestStand": "ST027",
+    "zone": "North",
+    "type": "Male",
+    "stalls": 5,
+    "occupancyPercent": 89,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W67",
+    "nearestStand": "ST028",
+    "zone": "South",
+    "type": "Unisex/Accessible",
+    "stalls": 6,
+    "occupancyPercent": 60,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W68",
+    "nearestStand": "ST029",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 5,
+    "occupancyPercent": 69,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W69",
+    "nearestStand": "ST030",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 5,
+    "occupancyPercent": 12,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W70",
+    "nearestStand": "ST031",
+    "zone": "North",
+    "type": "Unisex/Accessible",
+    "stalls": 10,
+    "occupancyPercent": 67,
+    "babyCareAvailable": true
+  },
+  {
+    "id": "W71",
+    "nearestStand": "ST032",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 4,
+    "occupancyPercent": 79,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W72",
+    "nearestStand": "ST033",
+    "zone": "East",
+    "type": "Female",
+    "stalls": 7,
+    "occupancyPercent": 94,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W73",
+    "nearestStand": "ST034",
+    "zone": "West",
+    "type": "Female",
+    "stalls": 10,
+    "occupancyPercent": 35,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W74",
+    "nearestStand": "ST035",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 4,
+    "occupancyPercent": 49,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W75",
+    "nearestStand": "ST036",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 4,
+    "occupancyPercent": 33,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W76",
+    "nearestStand": "ST037",
+    "zone": "East",
+    "type": "Male",
+    "stalls": 4,
+    "occupancyPercent": 12,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W77",
+    "nearestStand": "ST038",
+    "zone": "West",
+    "type": "Unisex/Accessible",
+    "stalls": 9,
+    "occupancyPercent": 45,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W78",
+    "nearestStand": "ST039",
+    "zone": "North",
+    "type": "Female",
+    "stalls": 11,
+    "occupancyPercent": 85,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W79",
+    "nearestStand": "ST040",
+    "zone": "South",
+    "type": "Male",
+    "stalls": 8,
+    "occupancyPercent": 86,
+    "babyCareAvailable": false
+  },
+  {
+    "id": "W80",
+    "nearestStand": "ST001",
+    "zone": "East",
+    "type": "Unisex/Accessible",
+    "stalls": 6,
+    "occupancyPercent": 13,
+    "babyCareAvailable": true
+  }
+]
