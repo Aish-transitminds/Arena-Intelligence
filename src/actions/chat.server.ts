@@ -37,9 +37,14 @@ function getGroqKey() {
   return process.env.GROQ_API_KEY;
 }
 
+function getCohereKey() {
+  return process.env.COHERE_API_KEY;
+}
+
 const EMBED_MODEL = "gemini-embedding-2";
 const CHAT_MODEL = "llama-3.3-70b-versatile"; // Groq model
-const TOP_K = 8;
+const TOP_K = 20; // Fetch more chunks initially
+const TOP_N_RERANK = 4; // Top chunks to send to LLM after re-ranking
 
 let cachedIndex: VectorChunk[] | undefined;
 function loadIndex(): VectorChunk[] {
@@ -71,6 +76,56 @@ async function embedQuery(text: string): Promise<number[]> {
     throw new Error("Embedding response did not include a numeric vector");
   }
   return data.embedding.values;
+}
+
+async function reRankChunks(
+  query: string,
+  chunks: Array<VectorChunk & { score: number }>,
+): Promise<Array<VectorChunk & { score: number }>> {
+  if (chunks.length === 0) return [];
+  const key = getCohereKey();
+  
+  // If no Cohere key is set, fallback to original vector similarity
+  if (!key) {
+    console.warn("No Cohere API key provided. Falling back to vector similarity search.");
+    return chunks.slice(0, TOP_N_RERANK);
+  }
+
+  const res = await fetch("https://api.cohere.com/v1/rerank", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${key}`,
+      "X-Client-Name": "Arena-Intelligence",
+    },
+    body: JSON.stringify({
+      model: "rerank-english-v3.0",
+      query: query,
+      documents: chunks.map((c) => c.text),
+      top_n: TOP_N_RERANK,
+    }),
+  });
+
+  if (!res.ok) {
+    console.error(`Cohere rerank error: ${res.status} ${await res.text()}`);
+    return chunks.slice(0, TOP_N_RERANK); // Fallback
+  }
+
+  const data = (await res.json()) as { results?: Array<{ index: number; relevance_score: number }> };
+  if (!data.results) return chunks.slice(0, TOP_N_RERANK); // Fallback
+
+  const rerankedChunks: Array<VectorChunk & { score: number }> = [];
+  for (const result of data.results) {
+    const originalChunk = chunks[result.index];
+    if (originalChunk) {
+      rerankedChunks.push({
+        ...originalChunk,
+        score: result.relevance_score,
+      });
+    }
+  }
+
+  return rerankedChunks;
 }
 
 async function askGroq(
@@ -142,7 +197,8 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
 
       if (index.length > 0) {
         const queryVector = await embedQuery(cleanMessage);
-        topChunks = retrieveTopChunks(queryVector, index as VectorChunk[], TOP_K);
+        const initialChunks = retrieveTopChunks(queryVector, index as VectorChunk[], TOP_K);
+        topChunks = await reRankChunks(cleanMessage, initialChunks);
         staticContext = buildRAGContext(topChunks);
       } else {
         staticContext = "No static data indexed yet.";
