@@ -80,47 +80,24 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-dvh flex relative bg-background">
-      {/* Global Stadium Backdrop */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div
-          className="absolute inset-0 scale-[1.04]"
-          style={{
-            backgroundImage: 'url("/stadium-hero.png")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.9,
-            filter: "saturate(1.2) contrast(1.1) brightness(0.7)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.75) 100%)",
-            backdropFilter: "blur(2px)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse at 50% 0%, rgba(14,159,110,0.14) 0%, transparent 48%, transparent 100%)",
-          }}
-        />
+    <div className="min-h-dvh flex relative bg-background" data-theme={themeVariant}>
+      {/* Global Backdrop */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-background">
       </div>
 
       <div className="relative z-10 flex w-full">
       {/* Sidebar */}
       <aside
         aria-label="Primary navigation"
-        className="hidden md:flex w-[260px] shrink-0 flex-col glass-sidebar sticky top-0 h-dvh"
+        className="hidden md:flex w-[260px] shrink-0 flex-col sticky top-0 h-dvh bg-sidebar border-r border-border"
       >
         {/* Logo area */}
-        <div className="px-5 py-5 border-b" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+        <div className="px-5 py-5 border-b border-border">
           <Logo />
         </div>
 
         {/* Live status ticker */}
-        <div className="px-5 py-3 border-b flex items-center gap-2.5" style={{ borderColor: "rgba(0,0,0,0.04)", background: "rgba(14,159,110,0.05)" }}>
+        <div className="px-5 py-3 border-b border-border flex items-center gap-2.5 bg-sidebar-accent">
           <Radio className="size-3 text-primary animate-pulse" />
           <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#0E9F6E" }}>
             Live Operations
@@ -155,8 +132,8 @@ export function AppShell({
                         style={
                           active
                             ? {
-                                background: "linear-gradient(135deg, rgba(14,159,110,0.15), rgba(60,179,113,0.08))",
-                                border: "1px solid rgba(14,159,110,0.18)",
+                                background: "var(--sidebar-accent)",
+                                border: "1px solid var(--border)",
                               }
                             : { color: "#64748B" }
                         }
@@ -166,7 +143,7 @@ export function AppShell({
                           aria-hidden="true"
                           className={`absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[3px] rounded-r-full transition-opacity`}
                           style={{
-                            background: "#0E9F6E",
+                            background: "var(--primary)",
                             opacity: active ? 1 : 0,
                           }}
                         />
@@ -191,11 +168,10 @@ export function AppShell({
         </nav>
 
         {/* User card at bottom */}
-        <div className="p-3 border-t" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+        <div className="p-3 border-t border-border">
           <div className="glass rounded-xl p-3 flex items-center gap-3">
             <div
-              className="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-              style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
+              className="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0 bg-primary"
             >
               AI
             </div>
@@ -218,12 +194,7 @@ export function AppShell({
       {/* Main content area */}
       <div className="flex-1 min-w-0 flex flex-col">
         <header
-          className="sticky top-0 z-30 backdrop-blur-2xl"
-          style={{
-            background: "rgba(255,255,255,0.85)",
-            borderBottom: "1px solid rgba(0,0,0,0.06)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.05)",
-          }}
+          className="sticky top-0 z-30 bg-background border-b border-border"
         >
           <div className="flex items-center gap-4 px-6 py-3.5">
             {/* Breadcrumb + title */}
@@ -241,7 +212,7 @@ export function AppShell({
             </div>
 
             {/* Search */}
-            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 transition" style={{ border: "1px solid rgba(0,0,0,0.08)" }}>
+            <label className="hidden lg:flex items-center gap-2 glass rounded-xl px-3 py-2 w-72 transition border border-border">
               <Search className="size-4 shrink-0" style={{ color: "#64748B" }} aria-hidden="true" />
               <span className="sr-only">Search</span>
               <input
@@ -262,8 +233,7 @@ export function AppShell({
               <Bell className="size-4" aria-hidden="true" />
               <span
                 aria-hidden="true"
-                className="absolute top-2 right-2 size-2 rounded-full"
-                style={{ background: "#D92D20", boxShadow: "0 0 6px rgba(217,45,32,0.60)", outline: "2px solid #FFFFFF" }}
+                style={{ background: "var(--destructive)" }}
               />
             </button>
           </div>

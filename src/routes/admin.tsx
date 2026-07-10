@@ -149,7 +149,7 @@ function Admin() {
   const opsScoreLabel = useMemo(() => `${opsScore.toFixed(1)}%`, [opsScore]);
 
   return (
-    <AppShell title="Operations Console" subtitle="Concept Ops Platform · Stadium Alpha · Match Day Operations">
+    <AppShell themeVariant="enterprise" title="Operations Console" subtitle="Concept Ops Platform · Stadium Alpha · Match Day Operations">
       <div className="flex flex-wrap items-center justify-end gap-4 mb-8">        {/* Status indicators */}
         <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-[#64748B]">
           <div className="flex items-center gap-2">
@@ -214,23 +214,23 @@ function Admin() {
             {/* Attendance Chart */}
             <div
               className="rounded-2xl p-7 relative overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
-                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Attendance Flow</h2>
-                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Live vs Forecast · Today</p>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-foreground">Attendance Flow</h2>
+                  <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>Live vs Forecast · Today</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="size-2 rounded-full bg-primary" />
-                    <span className="text-[10px] uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Live</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>Live</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="size-2 rounded-full" style={{ background: "#64748B" }} />
-                    <span className="text-[10px] uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Forecast</span>
+                    <span className="text-[10px] uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>Forecast</span>
                   </div>
-                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest transition" style={{ background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}>
+                  <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest transition" style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--muted-foreground)" }}>
                     <ChevronDown className="size-3" /> Filter
                   </button>
                 </div>
@@ -245,8 +245,8 @@ function Admin() {
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.04)" vertical={false} />
-                    <XAxis dataKey="time" stroke="#64748B" fontSize={10} axisLine={false} tickLine={false} />
-                    <YAxis stroke="#64748B" fontSize={10} axisLine={false} tickLine={false} tickFormatter={(v) => `${(v / 1000).toFixed(0)}K`} />
+                    <XAxis dataKey="time" stroke="var(--muted-foreground)" fontSize={10} axisLine={false} tickLine={false} />
+                    <YAxis stroke="var(--muted-foreground)" fontSize={10} axisLine={false} tickLine={false} tickFormatter={(v) => `${(v / 1000).toFixed(0)}K`} />
                     <Tooltip
                       contentStyle={{
                         background: "rgba(255,255,255,0.97)",
@@ -256,10 +256,10 @@ function Admin() {
                         padding: "10px 14px",
                       }}
                       itemStyle={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase" }}
-                      labelStyle={{ fontSize: 10, color: "#64748B", marginBottom: 6 }}
+                      labelStyle={{ fontSize: 10, color: "var(--muted-foreground)", marginBottom: 6 }}
                     />
                     <Area type="monotone" dataKey="current" stroke="#0E9F6E" fill="url(#attendGrad)" strokeWidth={2.5} animationDuration={1800} name="Live" />
-                    <Area type="monotone" dataKey="forecast" stroke="#64748B" fill="transparent" strokeWidth={1.5} strokeDasharray="6 4" name="Forecast" />
+                    <Area type="monotone" dataKey="forecast" stroke="var(--muted-foreground)" fill="transparent" strokeWidth={1.5} strokeDasharray="6 4" name="Forecast" />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -268,12 +268,12 @@ function Admin() {
             {/* Gate Queue Bar Chart */}
             <div
               className="rounded-2xl p-7"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
-                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Gate Wait Times</h2>
-                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Visual comparison · Live</p>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-foreground">Gate Wait Times</h2>
+                  <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>Visual comparison · Live</p>
                 </div>
                 <span
                   className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
@@ -286,8 +286,8 @@ function Admin() {
                 <ResponsiveContainer>
                   <BarChart data={gateQueues} layout="vertical" barCategoryGap="20%">
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.04)" horizontal={false} />
-                    <XAxis type="number" stroke="#64748B" fontSize={10} axisLine={false} tickLine={false} unit=" min" />
-                    <YAxis type="category" dataKey="gate" stroke="#64748B" fontSize={10} axisLine={false} tickLine={false} width={110} />
+                    <XAxis type="number" stroke="var(--muted-foreground)" fontSize={10} axisLine={false} tickLine={false} unit=" min" />
+                    <YAxis type="category" dataKey="gate" stroke="var(--muted-foreground)" fontSize={10} axisLine={false} tickLine={false} width={110} />
                     <Tooltip
                       contentStyle={{
                         background: "rgba(255,255,255,0.97)",
@@ -297,7 +297,7 @@ function Admin() {
                         padding: "10px 14px",
                       }}
                       itemStyle={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase" }}
-                      labelStyle={{ fontSize: 10, color: "#64748B", marginBottom: 6 }}
+                      labelStyle={{ fontSize: 10, color: "var(--muted-foreground)", marginBottom: 6 }}
                       formatter={(value: number) => [`${value} min`, "Wait Time"]}
                     />
                     <Bar dataKey="wait" radius={[0, 6, 6, 0]} animationDuration={1400}>
@@ -316,14 +316,14 @@ function Admin() {
             {/* Section Occupancy */}
             <div
               className="rounded-2xl p-7"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
-                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Section Occupancy</h2>
-                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Live capacity by zone</p>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-foreground">Section Occupancy</h2>
+                  <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>Live capacity by zone</p>
                 </div>
-                <button className="size-9 rounded-xl flex items-center justify-center transition" style={{ background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}>
+                <button className="size-9 rounded-xl flex items-center justify-center transition" style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--muted-foreground)" }}>
                   <MoreHorizontal className="size-4" />
                 </button>
               </div>
@@ -371,7 +371,7 @@ function Admin() {
                   {sectionOccupancy.map((s) => (
                     <div key={s.name}>
                       <div className="flex justify-between text-xs mb-2">
-                        <span className="font-semibold text-slate-900">{s.name} Stand</span>
+                        <span className="font-semibold text-foreground">{s.name} Stand</span>
                         <span
                           className="font-bold"
                           style={{ color: s.value >= 95 ? "#D92D20" : s.value >= 85 ? "#F4B400" : "#0E9F6E" }}
@@ -404,17 +404,17 @@ function Admin() {
             {/* Crowd Density Heatmap */}
             <div
               className="rounded-2xl p-7"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
-                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Live Crowd Heatmap</h2>
-                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Top-down density visualization</p>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-foreground">Live Crowd Heatmap</h2>
+                  <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>Top-down density visualization</p>
                 </div>
                 <div className="flex items-center gap-3 text-[10px] uppercase tracking-widest font-bold">
-                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#0E9F6E" }}/> <span style={{ color: "#64748B" }}>Optimal</span></div>
-                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#F4B400" }}/> <span style={{ color: "#64748B" }}>High</span></div>
-                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#D92D20" }}/> <span style={{ color: "#64748B" }}>Critical</span></div>
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#0E9F6E" }}/> <span style={{ color: "var(--muted-foreground)" }}>Optimal</span></div>
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#F4B400" }}/> <span style={{ color: "var(--muted-foreground)" }}>High</span></div>
+                  <div className="flex items-center gap-1.5"><span className="size-2 rounded-full" style={{ background: "#D92D20" }}/> <span style={{ color: "var(--muted-foreground)" }}>Critical</span></div>
                 </div>
               </div>
               <div className="w-full flex items-center justify-center py-6">
@@ -425,12 +425,12 @@ function Admin() {
             {/* Gate Queue Table */}
             <div
               className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="px-7 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
-                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-slate-900">Gate Queue Status</h2>
-                  <p className="text-xs mt-1" style={{ color: "#64748B" }}>Live wait times & capacity</p>
+                  <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-foreground">Gate Queue Status</h2>
+                  <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>Live wait times & capacity</p>
                 </div>
                 <span
                   className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
@@ -442,9 +442,9 @@ function Admin() {
               <table className="w-full text-sm">
                 <thead>
                   <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
-                    <th className="text-left px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Gate</th>
-                    <th className="text-center px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Wait Time</th>
-                    <th className="text-right px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>Load</th>
+                    <th className="text-left px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>Gate</th>
+                    <th className="text-center px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>Wait Time</th>
+                    <th className="text-right px-7 py-3 text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>Load</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -456,7 +456,7 @@ function Admin() {
                       onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(14,159,110,0.04)")}
                       onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                     >
-                      <td className="px-7 py-4 font-medium text-slate-900">{g.gate}</td>
+                      <td className="px-7 py-4 font-medium text-foreground">{g.gate}</td>
                       <td className="px-4 py-4 text-center">
                         <span
                           className="font-bold"
@@ -481,7 +481,7 @@ function Admin() {
                               }}
                             />
                           </div>
-                          <span className="text-xs font-bold text-slate-900">{g.capacity}%</span>
+                          <span className="text-xs font-bold text-foreground">{g.capacity}%</span>
                         </div>
                       </td>
                     </tr>
@@ -511,28 +511,28 @@ function Admin() {
                   <TrendingUp className="size-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Operational Recommendation</h3>
-                  <p className="text-[10px] mt-0.5 uppercase tracking-[0.14em]" style={{ color: "#64748B" }}>Flow Analysis · Gate D</p>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground">Operational Recommendation</h3>
+                  <p className="text-[10px] mt-0.5 uppercase tracking-[0.14em]" style={{ color: "var(--muted-foreground)" }}>Flow Analysis · Gate D</p>
                 </div>
               </div>
-              <p className="text-sm leading-7 mb-5" style={{ color: "#64748B" }}>
+              <p className="text-sm leading-7 mb-5" style={{ color: "var(--muted-foreground)" }}>
                 {recommendationBusy ? "Generating an AI recommendation from live gate and occupancy data…" : recommendation}
               </p>
               <button
                 type="button"
                 onClick={() => setShowRecommendationReasoning((v) => !v)}
-                className="mb-4 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900"
+                className="mb-4 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-foreground"
                 style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.22)" }}
               >
                 {showRecommendationReasoning ? "Hide AI reasoning" : "Show AI reasoning"}
               </button>
               {showRecommendationReasoning && recommendationMeta && (
-                <div className="mb-4 rounded-xl p-3 text-sm" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "#64748B" }}>Prompt / Response</p>
-                  <p className="text-slate-900 font-semibold">Prompt</p>
-                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#64748B" }}>{recommendationMeta.prompt}</pre>
-                  <p className="mt-3 text-slate-900 font-semibold">Raw Response</p>
-                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "#64748B" }}>{recommendationMeta.rawResponse}</pre>
+                <div className="mb-4 rounded-xl p-3 text-sm" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--muted-foreground)" }}>Prompt / Response</p>
+                  <p className="text-foreground font-semibold">Prompt</p>
+                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "var(--muted-foreground)" }}>{recommendationMeta.prompt}</pre>
+                  <p className="mt-3 text-foreground font-semibold">Raw Response</p>
+                  <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "var(--muted-foreground)" }}>{recommendationMeta.rawResponse}</pre>
                 </div>
               )}
               {isRedirected ? (
@@ -549,7 +549,7 @@ function Admin() {
               ) : (
                 <button
                   onClick={handleDeployRedirect}
-                  className="w-full py-3 rounded-xl text-sm font-bold uppercase tracking-[0.18em] text-slate-900 transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
+                  className="w-full py-3 rounded-xl text-sm font-bold uppercase tracking-[0.18em] text-foreground transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
                   style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 0 20px rgba(14,159,110,0.20)" }}
                 >
                   Dispatch Redirect Signal
@@ -560,23 +560,23 @@ function Admin() {
             {/* Restrooms Operations Panel */}
             <div
               className="rounded-2xl p-6 relative overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div className="flex items-center gap-2 mb-4">
                 <ShieldCheck className="size-4 text-primary" />
-                <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Amenities &amp; Restrooms</h3>
+                <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground">Amenities &amp; Restrooms</h3>
               </div>
               <div className="space-y-3.5">
                 {restrooms.map((res) => (
                   <div
                     key={res.id}
                     className="p-3.5 rounded-xl flex items-center justify-between"
-                    style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}
+                    style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
                   >
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900">{res.location}</h4>
-                      <p className="text-[10px] mt-1" style={{ color: "#64748B" }}>
-                        Load: <span className="text-slate-900 font-semibold">{res.load}</span> · Wait: <span className="text-slate-900 font-semibold">{res.wait}</span>
+                      <h4 className="text-xs font-bold text-foreground">{res.location}</h4>
+                      <p className="text-[10px] mt-1" style={{ color: "var(--muted-foreground)" }}>
+                        Load: <span className="text-foreground font-semibold">{res.load}</span> · Wait: <span className="text-foreground font-semibold">{res.wait}</span>
                       </p>
                       <p className="text-[10px] mt-1.5 flex items-center gap-1.5">
                         <span className="size-1.5 rounded-full" style={{ background: res.status === "Clean" ? "#0E9F6E" : "#D92D20" }} />
@@ -590,7 +590,7 @@ function Admin() {
                     ) : res.status === "Needs Service" ? (
                       <button
                         onClick={() => handleDispatchClean(res.id)}
-                        className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-900 bg-red-600 hover:bg-red-500 px-2.5 py-1.5 rounded-lg transition active:scale-95 cursor-pointer border-none outline-none"
+                        className="text-[9px] font-bold uppercase tracking-[0.16em] text-foreground bg-red-600 hover:bg-red-500 px-2.5 py-1.5 rounded-lg transition active:scale-95 cursor-pointer border-none outline-none"
                       >
                         Dispatch Crew
                       </button>
@@ -607,10 +607,10 @@ function Admin() {
             {/* Operations Score Gauge */}
             <div
               className="rounded-2xl p-7"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
-              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900 mb-1">Operations Score</h3>
-              <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "#64748B" }}>Overall readiness index</p>
+              <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground mb-1">Operations Score</h3>
+              <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "var(--muted-foreground)" }}>Overall readiness index</p>
 
               <div className="flex items-center justify-center py-4">
                 <div className="relative size-44 group cursor-pointer">
@@ -630,21 +630,21 @@ function Admin() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-5xl font-extrabold text-slate-900 tabular-nums tracking-tight tabular-nums leading-none">97</span>
+                    <span className="text-5xl font-extrabold text-foreground tabular-nums tracking-tight tabular-nums leading-none">97</span>
                     <span className="text-lg font-bold text-primary mt-0.5">%</span>
-                    <span className="text-[10px] uppercase tracking-[0.20em] mt-2" style={{ color: "#64748B" }}>Nominal</span>
+                    <span className="text-[10px] uppercase tracking-[0.20em] mt-2" style={{ color: "var(--muted-foreground)" }}>Nominal</span>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mt-4 pt-5" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-                <div className="rounded-xl p-4" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <p className="text-[10px] uppercase tracking-[0.16em] mb-2" style={{ color: "#64748B" }}>Response Latency</p>
-                  <p className="text-lg font-extrabold text-slate-900">0.42<span className="text-xs ml-1" style={{ color: "#64748B" }}>ms</span></p>
+                <div className="rounded-xl p-4" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                  <p className="text-[10px] uppercase tracking-[0.16em] mb-2" style={{ color: "var(--muted-foreground)" }}>Response Latency</p>
+                  <p className="text-lg font-extrabold text-foreground">0.42<span className="text-xs ml-1" style={{ color: "var(--muted-foreground)" }}>ms</span></p>
                 </div>
-                <div className="rounded-xl p-4" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
-                  <p className="text-[10px] uppercase tracking-[0.16em] mb-2" style={{ color: "#64748B" }}>Sensor Accuracy</p>
-                  <p className="text-lg font-extrabold text-slate-900">99.8<span className="text-xs ml-1" style={{ color: "#64748B" }}>%</span></p>
+                <div className="rounded-xl p-4" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                  <p className="text-[10px] uppercase tracking-[0.16em] mb-2" style={{ color: "var(--muted-foreground)" }}>Sensor Accuracy</p>
+                  <p className="text-lg font-extrabold text-foreground">99.8<span className="text-xs ml-1" style={{ color: "var(--muted-foreground)" }}>%</span></p>
                 </div>
               </div>
             </div>
@@ -652,13 +652,13 @@ function Admin() {
             {/* Recent Events Feed */}
             <div
               className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+              className="bg-card border border-border"
             >
               <div
                 className="px-6 py-5 flex items-center justify-between"
                 style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
               >
-                <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-slate-900">Live Incident Feed</h3>
+                <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground">Live Incident Feed</h3>
                 <span
                   className="text-[10px] font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full"
                   style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)", color: "#0E9F6E" }}
@@ -718,7 +718,7 @@ function Admin() {
                         >
                           {log.msg}
                         </p>
-                        <p className="text-[10px] mt-0.5 font-mono" style={{ color: "rgba(100,116,139,0.50)" }}>
+                        <p className="text-[10px] mt-0.5 font-mono" style={{ color: "var(--muted-foreground)" }}>
                           {log.time}
                         </p>
                       </div>
@@ -734,7 +734,7 @@ function Admin() {
                   placeholder="Log custom operational incident..."
                   value={newIncidentMsg}
                   onChange={(e) => setNewIncidentMsg(e.target.value)}
-                  className="flex-1 bg-transparent rounded-lg px-3 py-2 text-xs text-slate-900 border border-white/10 focus:outline-none focus:border-primary/50 placeholder:text-slate-600 outline-none transition"
+                  className="flex-1 bg-transparent rounded-lg px-3 py-2 text-xs text-foreground border border-white/10 focus:outline-none focus:border-primary/50 placeholder:text-slate-600 outline-none transition"
                 />
                 <button
                   type="submit"
@@ -748,7 +748,7 @@ function Admin() {
                 style={{ borderTop: "1px solid rgba(0,0,0,0.05)", background: "rgba(7,20,28,0.40)" }}
               >
                 <Radio className="size-3 text-primary animate-pulse" />
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em]" style={{ color: "#64748B" }}>
+                <span className="text-[10px] font-mono uppercase tracking-[0.16em]" style={{ color: "var(--muted-foreground)" }}>
                   Receiving live telemetry…
                 </span>
               </div>
@@ -765,19 +765,19 @@ function Admin() {
       >
         <div className="flex items-center gap-4">
           <span className="size-2 rounded-full bg-primary" style={{ boxShadow: "0 0 6px rgba(14,159,110,0.60)" }} />
-          <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#64748B" }}>
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "var(--muted-foreground)" }}>
             All Systems Operational
           </span>
         </div>
-        <div className="flex flex-wrap items-center gap-8 text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "rgba(100,116,139,0.50)" }}>
-          <span>Uptime: <span style={{ color: "#64748B" }}>421d 14h 22m</span></span>
-          <Link to="/" className="hover:text-slate-900 transition-colors">Home</Link>
-          <a href="#" className="hover:text-slate-900 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-slate-900 transition-colors">Emergency Overrides</a>
+        <div className="flex flex-wrap items-center gap-8 text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "var(--muted-foreground)" }}>
+          <span>Uptime: <span style={{ color: "var(--muted-foreground)" }}>421d 14h 22m</span></span>
+          <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+          <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
+          <a href="#" className="hover:text-foreground transition-colors">Emergency Overrides</a>
         </div>
         <div
           className="px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-[0.18em]"
-          style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}
+          style={{ background: "var(--surface)", border: "1px solid var(--border)", color: "var(--muted-foreground)" }}
         >
           v4.2.1
         </div>
@@ -815,15 +815,15 @@ function KPICard({
       }}
     >
       <div className="flex items-start justify-between mb-6">
-        <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "#64748B" }}>
+        <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "var(--muted-foreground)" }}>
           {label}
         </span>
-        <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,0,0,0.03)", color: "#64748B" }}>
+        <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,0,0,0.03)", color: "var(--muted-foreground)" }}>
           {icon}
         </div>
       </div>
       <div>
-        <div className="text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">{value}</div>
+        <div className="text-3xl font-extrabold text-foreground tracking-tight tabular-nums">{value}</div>
         <div className="flex items-center gap-3 mt-3">
           <span
             className="text-[10px] font-bold uppercase tracking-[0.16em] px-2 py-1 rounded-md"
@@ -836,7 +836,7 @@ function KPICard({
             {trend === "down" && <ArrowDown className="size-3 inline mr-1" />}
             {delta}
           </span>
-          <span className="text-[10px] uppercase tracking-[0.12em]" style={{ color: "#64748B" }}>
+          <span className="text-[10px] uppercase tracking-[0.12em]" style={{ color: "var(--muted-foreground)" }}>
             {sub}
           </span>
         </div>
@@ -856,13 +856,13 @@ function AlertPill({ icon, label, value, tone }: { icon: React.ReactNode; label:
   return (
     <div
       className="flex items-center justify-between p-4 rounded-xl"
-      style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+      className="bg-card border border-border"
     >
       <div className="flex items-center gap-3">
         <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: c.bg, color: c.text }}>
           {icon}
         </div>
-        <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-900">{label}</span>
+        <span className="text-xs font-bold uppercase tracking-[0.16em] text-foreground">{label}</span>
       </div>
       <span className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: c.text }}>{value}</span>
     </div>
@@ -889,7 +889,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
 
       {/* North Stand */}
       <motion.div 
-        className="absolute top-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-slate-900 shadow-lg"
+        className="absolute top-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-foreground shadow-lg"
         animate={{ backgroundColor: getColor(getSection("North")) }}
         transition={{ duration: 1.5 }}
       >
@@ -898,7 +898,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
 
       {/* South Stand */}
       <motion.div 
-        className="absolute bottom-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-slate-900 shadow-lg"
+        className="absolute bottom-2 w-32 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-foreground shadow-lg"
         animate={{ backgroundColor: getColor(getSection("South")) }}
         transition={{ duration: 1.5 }}
       >
@@ -911,7 +911,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
         animate={{ backgroundColor: getColor(getSection("West")) }}
         transition={{ duration: 1.5 }}
       >
-        <span className="-rotate-90 text-[10px] font-bold text-slate-900 whitespace-nowrap">WEST ({getSection("West").toFixed(1)}%)</span>
+        <span className="-rotate-90 text-[10px] font-bold text-foreground whitespace-nowrap">WEST ({getSection("West").toFixed(1)}%)</span>
       </motion.div>
 
       {/* East Stand */}
@@ -920,7 +920,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
         animate={{ backgroundColor: getColor(getSection("East")) }}
         transition={{ duration: 1.5 }}
       >
-        <span className="rotate-90 text-[10px] font-bold text-slate-900 whitespace-nowrap">EAST ({getSection("East").toFixed(1)}%)</span>
+        <span className="rotate-90 text-[10px] font-bold text-foreground whitespace-nowrap">EAST ({getSection("East").toFixed(1)}%)</span>
       </motion.div>
 
       {/* VIP Stand */}
@@ -929,7 +929,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
         animate={{ backgroundColor: getColor(getSection("VIP")) }}
         transition={{ duration: 1.5 }}
       >
-        <span className="text-[8px] font-bold text-slate-900 whitespace-nowrap">VIP ({getSection("VIP").toFixed(1)}%)</span>
+        <span className="text-[8px] font-bold text-foreground whitespace-nowrap">VIP ({getSection("VIP").toFixed(1)}%)</span>
       </motion.div>
       
       {/* Press Stand */}
@@ -938,7 +938,7 @@ function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
         animate={{ backgroundColor: getColor(getSection("Press")) }}
         transition={{ duration: 1.5 }}
       >
-        <span className="text-[8px] font-bold text-slate-900 whitespace-nowrap">PRESS ({getSection("Press").toFixed(1)}%)</span>
+        <span className="text-[8px] font-bold text-foreground whitespace-nowrap">PRESS ({getSection("Press").toFixed(1)}%)</span>
       </motion.div>
     </div>
   );

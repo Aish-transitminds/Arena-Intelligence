@@ -21,11 +21,11 @@ function Tournament() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("fixtures");
 
   return (
-    <AppShell title="Mega-Event Tournament" subtitle="48 teams · Group Stage · Concept Operations Workspace">
+    <AppShell themeVariant="enterprise" title="Mega-Event Tournament" subtitle="48 teams · Group Stage · Concept Operations Workspace">
       {/* Tab bar */}
       <div
         className="flex flex-wrap gap-2 mb-6 p-1.5 rounded-2xl"
-        style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}
+        style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
       >
         {tabs.map((t) => (
           <button
@@ -39,7 +39,7 @@ function Tournament() {
                     color: "#0F172A",
                     border: "1px solid rgba(14,159,110,0.25)",
                   }
-                : { color: "#64748B" }
+                : { color: "var(--muted-foreground)" }
             }
           >
             {t === "register" ? "Team Registration" : t === "live" ? "Live Scores" : t}
@@ -51,10 +51,10 @@ function Tournament() {
       {tab === "fixtures" && (
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="bg-card border border-border"
         >
           <div
-            className="px-6 py-4 font-bold text-sm text-slate-900"
+            className="px-6 py-4 font-bold text-sm text-foreground"
             style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", background: "rgba(0,0,0,0.02)" }}
           >
             Upcoming Fixtures
@@ -69,22 +69,22 @@ function Tournament() {
                 onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
               >
                 <div className="flex sm:block justify-between items-center sm:w-16 sm:text-center shrink-0">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: "#64748B" }}>{f.date}</div>
-                  <div className="text-sm font-extrabold text-slate-900 mt-0.5">{f.time}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color: "var(--muted-foreground)" }}>{f.date}</div>
+                  <div className="text-sm font-extrabold text-foreground mt-0.5">{f.time}</div>
                 </div>
                 <div className="w-full sm:flex-1 grid grid-cols-3 items-center gap-2 sm:gap-3">
-                  <div className="text-right font-semibold text-slate-900">{f.home}</div>
+                  <div className="text-right font-semibold text-foreground">{f.home}</div>
                   <div className="text-center">
                     {f.homeScore !== undefined ? (
-                      <div className="text-xl font-extrabold text-slate-900 tracking-tight tabular-nums">
-                        {f.homeScore} <span style={{ color: "#64748B" }}>—</span> {f.awayScore}
+                      <div className="text-xl font-extrabold text-foreground tracking-tight tabular-nums">
+                        {f.homeScore} <span style={{ color: "var(--muted-foreground)" }}>—</span> {f.awayScore}
                       </div>
                     ) : (
-                      <div className="text-xs uppercase tracking-[0.16em]" style={{ color: "#64748B" }}>vs</div>
+                      <div className="text-xs uppercase tracking-[0.16em]" style={{ color: "var(--muted-foreground)" }}>vs</div>
                     )}
-                    <div className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>{f.venue}</div>
+                    <div className="text-[10px] mt-0.5" style={{ color: "var(--muted-foreground)" }}>{f.venue}</div>
                   </div>
-                  <div className="font-semibold text-slate-900">{f.away}</div>
+                  <div className="font-semibold text-foreground">{f.away}</div>
                 </div>
                 <div className="text-center sm:text-right mt-2 sm:mt-0">
                   <span
@@ -93,7 +93,7 @@ function Tournament() {
                       f.status === "Live"
                         ? { background: "rgba(217,45,32,0.15)", color: "#D92D20", border: "1px solid rgba(217,45,32,0.28)" }
                         : f.status === "Final"
-                        ? { background: "rgba(0,0,0,0.06)", color: "#64748B", border: "1px solid rgba(0,0,0,0.10)" }
+                        ? { background: "rgba(0,0,0,0.06)", color: "var(--muted-foreground)", border: "1px solid rgba(0,0,0,0.10)" }
                         : { background: "rgba(14,159,110,0.12)", color: "#0E9F6E", border: "1px solid rgba(14,159,110,0.22)" }
                     }
                   >
@@ -110,7 +110,7 @@ function Tournament() {
       {tab === "leaderboard" && (
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="bg-card border border-border"
         >
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -120,7 +120,7 @@ function Tournament() {
                   <th
                     key={h}
                     className={`px-5 py-4 text-[10px] font-bold uppercase tracking-[0.18em] ${h === "#" || h === "P" || h === "W" || h === "D" || h === "L" || h === "Pts" ? "text-center" : "text-left"}`}
-                    style={{ color: "#64748B" }}
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     {h}
                   </th>
@@ -144,23 +144,23 @@ function Tournament() {
                           ? { background: "rgba(212,175,55,0.15)", color: "#D4AF37", border: "1px solid rgba(212,175,55,0.28)" }
                           : r.rank <= 3
                           ? { background: "rgba(14,159,110,0.12)", color: "#0E9F6E", border: "1px solid rgba(14,159,110,0.22)" }
-                          : { background: "rgba(0,0,0,0.05)", color: "#64748B", border: "1px solid rgba(0,0,0,0.08)" }
+                          : { background: "rgba(0,0,0,0.05)", color: "var(--muted-foreground)", border: "1px solid rgba(0,0,0,0.08)" }
                       }
                     >
                       {r.rank}
                     </div>
                   </td>
                   <td className="px-5 py-4">
-                    <div className="flex items-center gap-2 font-semibold text-slate-900">
+                    <div className="flex items-center gap-2 font-semibold text-foreground">
                       {r.rank === 1 && <Trophy className="size-3.5" style={{ color: "#D4AF37" }} />}
                       {r.team}
                     </div>
                   </td>
-                  <td className="px-5 py-4 text-center" style={{ color: "#64748B" }}>{r.played}</td>
+                  <td className="px-5 py-4 text-center" style={{ color: "var(--muted-foreground)" }}>{r.played}</td>
                   <td className="px-5 py-4 text-center font-semibold" style={{ color: "#0E9F6E" }}>{r.won}</td>
-                  <td className="px-5 py-4 text-center" style={{ color: "#64748B" }}>{r.drawn}</td>
+                  <td className="px-5 py-4 text-center" style={{ color: "var(--muted-foreground)" }}>{r.drawn}</td>
                   <td className="px-5 py-4 text-center" style={{ color: "#D92D20" }}>{r.lost}</td>
-                  <td className="px-5 py-4 text-center font-extrabold text-slate-900">{r.points}</td>
+                  <td className="px-5 py-4 text-center font-extrabold text-foreground">{r.points}</td>
                 </tr>
               ))}
             </tbody>
@@ -193,20 +193,20 @@ function Tournament() {
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
                   <div className="text-right">
-                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "#64748B" }}>Home</div>
-                    <div className="text-lg font-bold text-slate-900 mt-1">{f.home}</div>
+                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "var(--muted-foreground)" }}>Home</div>
+                    <div className="text-lg font-bold text-foreground mt-1">{f.home}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl sm:text-5xl font-extrabold text-slate-900 tabular-nums tracking-tight tabular-nums">
-                      {f.homeScore} <span style={{ color: "#64748B" }}>—</span> {f.awayScore}
+                    <div className="text-3xl sm:text-5xl font-extrabold text-foreground tabular-nums tracking-tight tabular-nums">
+                      {f.homeScore} <span style={{ color: "var(--muted-foreground)" }}>—</span> {f.awayScore}
                     </div>
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "#64748B" }}>Away</div>
-                    <div className="text-lg font-bold text-slate-900 mt-1">{f.away}</div>
+                    <div className="text-xs uppercase tracking-[0.14em]" style={{ color: "var(--muted-foreground)" }}>Away</div>
+                    <div className="text-lg font-bold text-foreground mt-1">{f.away}</div>
                   </div>
                 </div>
-                <div className="mt-5 text-xs text-center" style={{ color: "#64748B" }}>
+                <div className="mt-5 text-xs text-center" style={{ color: "var(--muted-foreground)" }}>
                   {f.venue} · Attendance 24,812
                 </div>
               </div>
@@ -219,7 +219,7 @@ function Tournament() {
       {tab === "register" && (
         <div
           className="rounded-2xl p-7 max-w-2xl"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="bg-card border border-border"
         >
           <div className="flex items-center gap-3 mb-2">
             <div
@@ -228,9 +228,9 @@ function Tournament() {
             >
               <Plus className="size-5 text-primary" />
             </div>
-            <h3 className="text-lg font-extrabold text-slate-900">Register Operations Squad</h3>
+            <h3 className="text-lg font-extrabold text-foreground">Register Operations Squad</h3>
           </div>
-          <p className="text-sm mb-7" style={{ color: "#64748B" }}>Register your volunteer or staff squad for the Stadium Alpha matches.</p>
+          <p className="text-sm mb-7" style={{ color: "var(--muted-foreground)" }}>Register your volunteer or staff squad for the Stadium Alpha matches.</p>
           <form className="space-y-4">
             {[
               { label: "Squad Name", placeholder: "Volunteer Crew Alpha" },
@@ -239,12 +239,12 @@ function Tournament() {
               { label: "Operation Zone", placeholder: "Gate B / Section 204" },
             ].map((f) => (
               <div key={f.label}>
-                <label className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "#64748B" }}>
+                <label className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>
                   {f.label}
                 </label>
                 <input
                   placeholder={f.placeholder}
-                  className="mt-2 w-full rounded-xl px-4 py-3 text-sm text-slate-900 bg-transparent outline-none transition"
+                  className="mt-2 w-full rounded-xl px-4 py-3 text-sm text-foreground bg-transparent outline-none transition"
                   style={{
                     background: "rgba(0,0,0,0.04)",
                     border: "1px solid rgba(0,0,0,0.09)",
@@ -255,7 +255,7 @@ function Tournament() {
               </div>
             ))}
             <button
-              className="w-full py-3.5 rounded-xl text-sm font-bold uppercase tracking-[0.20em] text-slate-900 transition hover:opacity-90 active:scale-[0.99] mt-2"
+              className="w-full py-3.5 rounded-xl text-sm font-bold uppercase tracking-[0.20em] text-foreground transition hover:opacity-90 active:scale-[0.99] mt-2"
               style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 0 24px rgba(14,159,110,0.20)" }}
             >
               Submit Registration
