@@ -447,7 +447,7 @@ function Landing() {
                   {
                     icon: Activity,
                     title: "Live Analytics",
-                    desc: "Operational dashboards updating every 30 seconds for decision support.",
+                    desc: "Operational dashboards updating every 30 seconds for decision support. (Simulated for demo)",
                   },
                 ].map((item) => {
                   const Icon = item.icon;
