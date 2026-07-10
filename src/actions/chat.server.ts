@@ -8,7 +8,7 @@ const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
 function checkServerRateLimit(ip: string): boolean {
   const now = Date.now();
-  const limit = 20; // 20 requests per minute
+  const limit = 50; // 50 requests per minute
   const windowMs = 60000;
   
   const record = rateLimitMap.get(ip);
@@ -24,8 +24,14 @@ function checkServerRateLimit(ip: string): boolean {
   return true;
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
+function getGeminiKey() {
+  return process.env.GEMINI_API_KEY || (import.meta as any).env?.VITE_GEMINI_API_KEY || (import.meta as any).env?.GEMINI_API_KEY;
+}
+
+function getGroqKey() {
+  return process.env.GROQ_API_KEY || (import.meta as any).env?.VITE_GROQ_API_KEY || (import.meta as any).env?.GROQ_API_KEY;
+}
+
 const EMBED_MODEL = "gemini-embedding-2";
 const CHAT_MODEL = "llama-3.3-70b-versatile"; // Groq model
 const TOP_K = 8;
@@ -50,8 +56,10 @@ function cosineSimilarity(a: number[], b: number[]) {
 }
 
 async function embedQuery(text: string) {
+  const key = getGeminiKey();
+  if (!key) throw new Error("Gemini API key is missing");
   const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${EMBED_MODEL}:embedContent?key=${GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/${EMBED_MODEL}:embedContent?key=${key}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -76,6 +84,9 @@ function retrieveTopChunks(queryVector: number[], index: any[], k: number) {
 }
 
 async function askGroq(question: string, staticContext: string, liveContext: any, personaContext: string, lang: string) {
+  const key = getGroqKey();
+  if (!key) throw new Error("Groq API key is missing");
+  
   const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Narendra Modi FIFA Stadium during the FIFA World Cup 2026.
 ${personaContext}
 
@@ -95,7 +106,7 @@ ${JSON.stringify(liveContext, null, 2)}`;
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${GROQ_API_KEY}`,
+      Authorization: `Bearer ${key}`,
     },
     body: JSON.stringify({
       model: CHAT_MODEL,
@@ -116,41 +127,48 @@ ${JSON.stringify(liveContext, null, 2)}`;
 export const askGeminiRAG = createServerFn({ method: "POST" })
   .validator((data: { message: string; personaContext: string; lang: string }) => data)
   .handler(async ({ data }) => {
-    const { message, personaContext, lang } = data;
-    if (!message || typeof message !== "string") {
-      throw new Error("Missing 'message' in request");
+    try {
+      const { message, personaContext, lang } = data;
+      if (!message || typeof message !== "string") {
+        throw new Error("Missing 'message' in request");
+      }
+      
+      const ip = "client-ip"; 
+      if (!checkServerRateLimit(ip)) {
+        throw new Error("Rate limit exceeded. Please try again later.");
+      }
+
+      const cleanMessage = sanitizeText(message);
+      if (!cleanMessage) {
+        throw new Error("Invalid or empty message after sanitization.");
+      }
+
+      const index = loadIndex();
+      let staticContext = "";
+      let topChunks: any[] = [];
+      
+      if (index.length > 0) {
+        const queryVector = await embedQuery(cleanMessage);
+        topChunks = retrieveTopChunks(queryVector, index, TOP_K);
+        staticContext = topChunks.map((c) => `- ${c.text}`).join("\n");
+      } else {
+        staticContext = "No static data indexed yet.";
+      }
+
+      const liveSnapshot = getLiveSnapshot();
+      const liveContext = getRelevantLiveData(cleanMessage, liveSnapshot);
+
+      const answer = await askGroq(cleanMessage, staticContext, liveContext, personaContext, lang);
+
+      return {
+        answer,
+        sources: topChunks.map((c) => ({ id: c.id, source: c.source, score: Number(c.score.toFixed(3)) })),
+      };
+    } catch (e: any) {
+      console.error("askGeminiRAG server error:", e);
+      return {
+        answer: `[Server Error] ${e.message} (HasGemini: ${!!getGeminiKey()}, HasGroq: ${!!getGroqKey()})`,
+        sources: []
+      };
     }
-
-    // Basic server-side rate limit (using a mock IP for now since TanStack Start doesn't expose it easily in standard createServerFn without context)
-    const ip = "client-ip"; 
-    if (!checkServerRateLimit(ip)) {
-      throw new Error("Rate limit exceeded. Please try again later.");
-    }
-
-    const cleanMessage = sanitizeText(message);
-    if (!cleanMessage) {
-      throw new Error("Invalid or empty message after sanitization.");
-    }
-
-    const index = loadIndex();
-    let staticContext = "";
-    let topChunks: any[] = [];
-    
-    if (index.length > 0) {
-      const queryVector = await embedQuery(cleanMessage);
-      topChunks = retrieveTopChunks(queryVector, index, TOP_K);
-      staticContext = topChunks.map((c) => `- ${c.text}`).join("\n");
-    } else {
-      staticContext = "No static data indexed yet.";
-    }
-
-    const liveSnapshot = getLiveSnapshot();
-    const liveContext = getRelevantLiveData(cleanMessage, liveSnapshot);
-
-    const answer = await askGroq(cleanMessage, staticContext, liveContext, personaContext, lang);
-
-    return {
-      answer,
-      sources: topChunks.map((c) => ({ id: c.id, source: c.source, score: Number(c.score.toFixed(3)) })),
-    };
   });
