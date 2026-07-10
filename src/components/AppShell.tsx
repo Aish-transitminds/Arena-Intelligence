@@ -49,10 +49,12 @@ export function AppShell({
   children,
   title,
   subtitle,
+  themeVariant = 'enterprise',
 }: {
   children: ReactNode;
   title: string;
   subtitle?: string;
+  themeVariant?: 'enterprise' | 'public-safety' | 'consumer';
 }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const activeItem = navSections.flatMap((s) => s.items).find((i) => pathname.startsWith(i.to));
@@ -83,6 +85,33 @@ export function AppShell({
     <div className="min-h-dvh flex relative bg-background" data-theme={themeVariant}>
       {/* Global Backdrop */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-background">
+        {themeVariant === 'consumer' && (
+          <>
+            <div
+              className="absolute inset-0 scale-[1.04]"
+              style={{
+                backgroundImage: 'url("/stadium-hero.png")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.9,
+                filter: "saturate(1.2) contrast(1.1) brightness(0.7)",
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.75) 100%)",
+                backdropFilter: "blur(2px)",
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.14) 0%, transparent 48%, transparent 100%)",
+              }}
+            />
+          </>
+        )}
       </div>
 
       <div className="relative z-10 flex w-full">
@@ -175,15 +204,15 @@ export function AppShell({
             >
               AI
             </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold truncate text-slate-900">Aishwarya</div>
-              <div className="text-[10px] truncate uppercase tracking-[0.16em]" style={{ color: "#64748B" }}>Ops Manager</div>
+            <div className="min-w-0 flex-1 flex flex-col items-start text-left">
+              <div className="text-sm font-semibold truncate text-foreground">Aishwarya</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Ops Manager</div>
             </div>
             <button
               type="button"
               aria-label="Account settings"
-              className={`size-8 rounded-md flex items-center justify-center transition-colors hover:text-slate-900 ${focusRing}`}
-              style={{ color: "#64748B" }}
+              className={`size-8 rounded-md flex items-center justify-center transition-colors hover:text-foreground ${focusRing}`}
+              style={{ color: "var(--muted-foreground)" }}
             >
               <Settings className="size-4" aria-hidden="true" />
             </button>

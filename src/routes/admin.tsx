@@ -496,10 +496,9 @@ function Admin() {
 
             {/* Operational Recommendation */}
             <div
-              className="rounded-2xl p-6 relative overflow-hidden"
+              className="bg-card rounded-2xl p-6 relative overflow-hidden"
               style={{
-                background: "rgba(255,255,255,0.90)",
-                border: isRedirected ? "1px solid rgba(14,159,110,0.25)" : "1px solid rgba(0,0,0,0.06)",
+                border: isRedirected ? "1px solid rgba(14,159,110,0.25)" : "1px solid var(--border)",
                 borderLeft: "4px solid #0E9F6E",
               }}
             >
@@ -807,10 +806,9 @@ function KPICard({
   return (
     <motion.div
       whileHover={{ y: -3 }}
-      className="rounded-2xl p-6 relative overflow-hidden card-lift"
+      className="bg-card rounded-2xl p-6 relative overflow-hidden card-lift"
       style={{
-        background: "rgba(255,255,255,0.90)",
-        border: highlight ? "1px solid rgba(14,159,110,0.18)" : "1px solid rgba(0,0,0,0.06)",
+        border: highlight ? "1px solid rgba(14,159,110,0.18)" : "1px solid var(--border)",
         boxShadow: highlight ? "0 0 32px rgba(14,159,110,0.06)" : "none",
       }}
     >
