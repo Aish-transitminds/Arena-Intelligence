@@ -5,7 +5,7 @@ import { getLiveSnapshot, getRelevantLiveData } from "../lib/liveData";
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const EMBED_MODEL = "gemini-embedding-2";
-const CHAT_MODEL = "gemini-2.0-flash";
+const CHAT_MODEL = "gemini-3.1-flash-lite";
 const TOP_K = 8;
 
 let cachedIndex: any = null;

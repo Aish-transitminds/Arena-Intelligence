@@ -241,7 +241,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.32 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Link
                 to="/admin"
@@ -265,6 +265,19 @@ function Landing() {
               >
                 <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(124,58,237,0.40)" }} />
                 ⚽ Fan Dashboard
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                to="/assistant"
+                className="group relative inline-flex items-center justify-center gap-2.5 rounded-full px-10 py-4.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
+                style={{
+                  background: "linear-gradient(135deg, #0E9F6E, #059669, #10B981)",
+                  boxShadow: "0 0 40px rgba(14,159,110,0.30), 0 0 60px rgba(5,150,105,0.15)",
+                  border: "2px solid rgba(255,255,255,0.50)",
+                }}
+              >
+                <span className="absolute inset-0 rounded-full animate-pulse-ring" style={{ border: "2px solid rgba(14,159,110,0.40)" }} />
+                🤖 Smarty Arena Helper
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </motion.div>
