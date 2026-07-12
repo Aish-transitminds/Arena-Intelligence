@@ -122,6 +122,8 @@ export function AIAssistant() {
       const transcript = event.results[0][0].transcript;
       setInput(transcript);
       setIsListening(false);
+      // Auto-send the transcribed voice input
+      send(transcript);
     };
     recognition.onerror = (event: any) => {
       console.error("Speech error", event.error);

@@ -8,7 +8,7 @@ import { crowdData, queueData, notifications } from "@/lib/mock-data";
 import {
   Users, Clock, MapPin, Ticket, CalendarDays, Bell,
   Crosshair, UtensilsCrossed, Car, AlertTriangle,
-  ChevronRight, ArrowRight, Navigation, ShoppingBag,
+  ChevronRight, ArrowRight, Navigation, ShoppingBag, Lock
 } from "lucide-react";
 
 export const Route = createFileRoute("/fan")({
@@ -94,8 +94,15 @@ function FanPage() {
 
             {/* QR Code */}
             <div className="flex justify-center my-6">
-              <div className="p-4 rounded-2xl" style={{ background: "#fff" }}>
-                <QRCodeSVG value="ARENA-TKT-2891-7X" size={140} />
+              <div className="p-4 rounded-2xl relative group overflow-hidden" style={{ background: "#fff" }}>
+                <div className="transition-all duration-300 blur-sm opacity-30 group-hover:blur-md">
+                  <QRCodeSVG value="ARENA-TKT-2891-7X" size={140} />
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-900 drop-shadow-md">
+                  <Lock className="size-8 mb-2" />
+                  <span className="text-xs font-black uppercase tracking-widest text-center px-2">Ticket Hidden</span>
+                  <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-1">Tap to View</span>
+                </div>
               </div>
             </div>
 

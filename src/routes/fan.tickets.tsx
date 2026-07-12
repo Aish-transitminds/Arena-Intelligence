@@ -18,7 +18,8 @@ import {
   Download,
   QrCode,
   Minus,
-  Plus
+  Plus,
+  Lock
 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 
@@ -532,15 +533,22 @@ function FanTicketsPage() {
 
               {/* QR Code */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 onClick={() => setShowQRModal(true)}
                 className="flex justify-center cursor-pointer"
               >
                 <div
-                  className="p-5 rounded-2xl hover:shadow-xl transition-shadow"
+                  className="p-5 rounded-2xl hover:shadow-xl transition-shadow relative overflow-hidden group"
                   style={{ background: "#fff" }}
                 >
-                  <QRCodeSVG value={selectedTicket.qrCode} size={160} />
+                  <div className="transition-all duration-300 blur-sm opacity-30 group-hover:blur-md">
+                    <QRCodeSVG value={selectedTicket.qrCode} size={160} />
+                  </div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-900 drop-shadow-md">
+                    <Lock className="size-8 mb-2" />
+                    <span className="text-xs font-black uppercase tracking-widest text-center px-2">Ticket Hidden</span>
+                    <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-1">Tap to View</span>
+                  </div>
                 </div>
               </motion.div>
 
