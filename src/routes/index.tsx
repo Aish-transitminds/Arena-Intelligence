@@ -142,7 +142,7 @@ function Landing() {
               Fan Portal
             </Link>
             <Link
-              to="/admin"
+              to="/login"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.20em] text-white transition"
               style={{
                 background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
@@ -244,14 +244,14 @@ function Landing() {
               className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Link
-                to="/admin"
+                to="/login"
                 className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
                   boxShadow: "0 0 32px rgba(14,159,110,0.25)",
                 }}
               >
-                Admin Console
+                Sign In / Register
                 <ArrowUpRight className="size-4" />
               </Link>
 
@@ -307,162 +307,7 @@ function Landing() {
           </div>
         </section>
 
-        {/* ── MODULES ── */}
-        <section
-          id="modules"
-          className="py-24 lg:py-32 bg-white"
-          style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
-        >
-          <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
-            <div className="max-w-2xl mb-14">
-              <span
-                className="inline-flex rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-primary mb-5"
-                style={{ background: "rgba(14,159,110,0.08)", border: "1px solid rgba(14,159,110,0.18)" }}
-              >
-                Platform Modules
-              </span>
-              <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                Six modules. One command surface.
-              </h2>
-              <p className="mt-5 text-lg leading-8" style={{ color: "#64748B" }}>
-                From ticketing to emergency control, every module is designed to be fast to understand and even faster to act on.
-              </p>
-            </div>
 
-            {/* Modules table */}
-            <div
-              className="overflow-hidden rounded-2xl"
-              style={{ border: "1px solid rgba(0,0,0,0.08)", background: "#F8FAFC" }}
-            >
-              {/* Table header */}
-              <div
-                className="hidden md:grid md:grid-cols-[1.4fr_1.6fr_0.5fr] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.22em]"
-                style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", color: "#64748B" }}
-              >
-                <span>Module</span>
-                <span>Operational Scope</span>
-                <span>Status</span>
-              </div>
-              {modules.map((mod, i) => {
-                const Icon = mod.icon;
-                return (
-                  <motion.div
-                    key={mod.title}
-                    whileHover={{ backgroundColor: "rgba(14,159,110,0.04)" }}
-                    className="grid gap-4 px-6 py-5 transition-all last:border-b-0 md:grid-cols-[1.4fr_1.6fr_0.5fr] md:items-center cursor-default"
-                    style={{ borderBottom: i < modules.length - 1 ? "1px solid rgba(0,0,0,0.05)" : "none" }}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div
-                        className="inline-flex size-11 items-center justify-center rounded-xl shrink-0"
-                        style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)" }}
-                      >
-                        <Icon className="size-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900">{mod.title}</div>
-                        <div className="text-[10px] uppercase tracking-[0.18em] mt-0.5" style={{ color: "#64748B" }}>
-                          Core Module
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-sm leading-7" style={{ color: "#64748B" }}>{mod.desc}</p>
-                    <div>
-                      <Link
-                        to={mod.to as any}
-                        className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary hover:underline"
-                      >
-                        {mod.tag}
-                        <ArrowUpRight className="size-3" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHY SECTION ── */}
-        <section id="operations" className="py-24 lg:py-32">
-          <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
-            <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
-              <div>
-                <span
-                  className="inline-flex rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] mb-6"
-                  style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.08)", color: "#64748B" }}
-                >
-                  Why Arena Intelligence
-                </span>
-                <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                  Built for operators who need clarity under pressure.
-                </h2>
-                <p className="mt-6 text-lg leading-8" style={{ color: "#64748B" }}>
-                  The platform turns crowd data, venue topology, and operational signals into one shared view so teams can respond faster with confidence during the biggest events.
-                </p>
-                <div className="mt-10">
-                  <Link
-                    to="/admin"
-                    className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold uppercase tracking-[0.20em] text-white transition"
-                    style={{
-                      background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
-                      boxShadow: "0 0 24px rgba(14,159,110,0.22)",
-                    }}
-                  >
-                    Open Operations Console
-                    <ArrowUpRight className="size-4" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                {[
-                  {
-                    icon: Users,
-                    title: "Crowd Management",
-                    desc: "Real-time occupancy tracking, flow analysis, and capacity recommendations.",
-                  },
-                  {
-                    icon: ShieldCheck,
-                    title: "Safety Operations",
-                    desc: "Incident response, emergency routing and security coordination.",
-                  },
-                  {
-                    icon: Globe,
-                    title: "Tournament Scale",
-                    desc: "Supports 100,000+ capacity venues across multiple concurrent events.",
-                  },
-                  {
-                    icon: Activity,
-                    title: "Live Analytics",
-                    desc: "Operational dashboards updating every 30 seconds for decision support. (Simulated for demo)",
-                  },
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.title}
-                      className="rounded-2xl p-6 card-lift bg-white"
-                      style={{
-                        border: "1px solid rgba(0,0,0,0.06)",
-                        boxShadow: "0 8px 32px rgba(0,0,0,0.03)",
-                      }}
-                    >
-                      <div
-                        className="inline-flex size-11 items-center justify-center rounded-xl mb-4"
-                        style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.18)" }}
-                      >
-                        <Icon className="size-5 text-primary" />
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900 mb-2">{item.title}</h3>
-                      <p className="text-sm leading-7" style={{ color: "#64748B" }}>{item.desc}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* ── CTA BANNER ── */}
@@ -491,7 +336,7 @@ function Landing() {
               </p>
             </div>
             <Link
-              to="/admin"
+              to="/login"
               className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
               style={{
                 background: "linear-gradient(135deg, #0E9F6E, #3CB371)",

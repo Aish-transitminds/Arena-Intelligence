@@ -1,4 +1,4 @@
-export type UserRole = "fan" | "admin" | "security" | "guest";
+export type UserRole = "fan" | "admin" | "manager" | "steward" | "security" | "guest";
 
 const ROLE_STORAGE_KEY = "arena-role";
 import { getRoleFromToken, isTokenValid, issueToken, clearToken } from "./auth";
@@ -44,13 +44,13 @@ export function getStoredRole(): UserRole {
   try {
     if (isTokenValid()) {
       const r = getRoleFromToken();
-      if (r === "admin" || r === "security" || r === "fan") return r;
+      if (r === "admin" || r === "manager" || r === "steward" || r === "security" || r === "fan") return r;
     }
   } catch {}
 
   const storage = getStorage();
   const role = storage?.getItem(ROLE_STORAGE_KEY);
-  return role === "admin" || role === "security" || role === "fan" ? role : "guest";
+  return role === "admin" || role === "manager" || role === "steward" || role === "security" || role === "fan" ? role as UserRole : "guest";
 }
 
 export function persistRole(role: UserRole): void {
@@ -71,18 +71,18 @@ export function clearStoredRole(): void {
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {
-  // DEMO MODE: Allow unrestricted access to showcase features (disabled during testing)
-  const DEMO_MODE = process.env.NODE_ENV !== 'test';
-  if (DEMO_MODE) return true;
-
   if (pathname.startsWith("/admin") || pathname.startsWith("/security") || pathname.startsWith("/audit") || pathname.startsWith("/tournament") || pathname.startsWith("/emergency")) {
-    return role === "admin" || role === "security";
+    if (role === "steward") {
+      // Steward is only allowed on the transport map
+      return pathname.startsWith("/admin/transport");
+    }
+    return role === "admin" || role === "manager" || role === "security";
   }
   if (pathname.startsWith("/fan")) {
-    return role === "fan" || role === "admin" || role === "security";
+    return role === "fan" || role === "admin" || role === "manager" || role === "security";
   }
   if (pathname.startsWith("/assistant")) {
-    return role === "admin" || role === "security" || role === "fan";
+    return role === "admin" || role === "manager" || role === "security" || role === "fan";
   }
   // Public routes (e.g. index, /login)
   return true;

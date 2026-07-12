@@ -14,12 +14,13 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as FanRouteImport } from './routes/fan'
 import { Route as EmergencyRouteImport } from './routes/emergency'
-import { Route as AuditRouteImport } from './routes/audit'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FanTransportRouteImport } from './routes/fan.transport'
 import { Route as FanTicketsRouteImport } from './routes/fan.tickets'
 import { Route as FanTacticalRouteImport } from './routes/fan.tactical'
+import { Route as AdminTransportRouteImport } from './routes/admin.transport'
 
 const TournamentRoute = TournamentRouteImport.update({
   id: '/tournament',
@@ -46,11 +47,6 @@ const EmergencyRoute = EmergencyRouteImport.update({
   path: '/emergency',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuditRoute = AuditRouteImport.update({
-  id: '/audit',
-  path: '/audit',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AssistantRoute = AssistantRouteImport.update({
   id: '/assistant',
   path: '/assistant',
@@ -66,6 +62,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FanTransportRoute = FanTransportRouteImport.update({
+  id: '/transport',
+  path: '/transport',
+  getParentRoute: () => FanRoute,
+} as any)
 const FanTicketsRoute = FanTicketsRouteImport.update({
   id: '/tickets',
   path: '/tickets',
@@ -76,46 +77,54 @@ const FanTacticalRoute = FanTacticalRouteImport.update({
   path: '/tactical',
   getParentRoute: () => FanRoute,
 } as any)
+const AdminTransportRoute = AdminTransportRouteImport.update({
+  id: '/transport',
+  path: '/transport',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/assistant': typeof AssistantRoute
-  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
+  '/admin/transport': typeof AdminTransportRoute
   '/fan/tactical': typeof FanTacticalRoute
   '/fan/tickets': typeof FanTicketsRoute
+  '/fan/transport': typeof FanTransportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/assistant': typeof AssistantRoute
-  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
+  '/admin/transport': typeof AdminTransportRoute
   '/fan/tactical': typeof FanTacticalRoute
   '/fan/tickets': typeof FanTicketsRoute
+  '/fan/transport': typeof FanTransportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
   '/assistant': typeof AssistantRoute
-  '/audit': typeof AuditRoute
   '/emergency': typeof EmergencyRoute
   '/fan': typeof FanRouteWithChildren
   '/login': typeof LoginRoute
   '/security': typeof SecurityRoute
   '/tournament': typeof TournamentRoute
+  '/admin/transport': typeof AdminTransportRoute
   '/fan/tactical': typeof FanTacticalRoute
   '/fan/tickets': typeof FanTicketsRoute
+  '/fan/transport': typeof FanTransportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -123,47 +132,49 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/assistant'
-    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
     | '/security'
     | '/tournament'
+    | '/admin/transport'
     | '/fan/tactical'
     | '/fan/tickets'
+    | '/fan/transport'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/admin'
     | '/assistant'
-    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
     | '/security'
     | '/tournament'
+    | '/admin/transport'
     | '/fan/tactical'
     | '/fan/tickets'
+    | '/fan/transport'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/assistant'
-    | '/audit'
     | '/emergency'
     | '/fan'
     | '/login'
     | '/security'
     | '/tournament'
+    | '/admin/transport'
     | '/fan/tactical'
     | '/fan/tickets'
+    | '/fan/transport'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AssistantRoute: typeof AssistantRoute
-  AuditRoute: typeof AuditRoute
   EmergencyRoute: typeof EmergencyRoute
   FanRoute: typeof FanRouteWithChildren
   LoginRoute: typeof LoginRoute
@@ -208,13 +219,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmergencyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/audit': {
-      id: '/audit'
-      path: '/audit'
-      fullPath: '/audit'
-      preLoaderRoute: typeof AuditRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/assistant': {
       id: '/assistant'
       path: '/assistant'
@@ -236,6 +240,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fan/transport': {
+      id: '/fan/transport'
+      path: '/transport'
+      fullPath: '/fan/transport'
+      preLoaderRoute: typeof FanTransportRouteImport
+      parentRoute: typeof FanRoute
+    }
     '/fan/tickets': {
       id: '/fan/tickets'
       path: '/tickets'
@@ -250,26 +261,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FanTacticalRouteImport
       parentRoute: typeof FanRoute
     }
+    '/admin/transport': {
+      id: '/admin/transport'
+      path: '/transport'
+      fullPath: '/admin/transport'
+      preLoaderRoute: typeof AdminTransportRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminTransportRoute: typeof AdminTransportRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminTransportRoute: AdminTransportRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface FanRouteChildren {
   FanTacticalRoute: typeof FanTacticalRoute
   FanTicketsRoute: typeof FanTicketsRoute
+  FanTransportRoute: typeof FanTransportRoute
 }
 
 const FanRouteChildren: FanRouteChildren = {
   FanTacticalRoute: FanTacticalRoute,
   FanTicketsRoute: FanTicketsRoute,
+  FanTransportRoute: FanTransportRoute,
 }
 
 const FanRouteWithChildren = FanRoute._addFileChildren(FanRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
   AssistantRoute: AssistantRoute,
-  AuditRoute: AuditRoute,
   EmergencyRoute: EmergencyRoute,
   FanRoute: FanRouteWithChildren,
   LoginRoute: LoginRoute,

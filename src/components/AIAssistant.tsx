@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Send, X, Globe, UserCheck } from "lucide-react";
+import { Sparkles, Send, X, Globe, UserCheck, Volume2, VolumeX, Mic } from "lucide-react";
+import { currentBuses } from "../lib/transportState";
+import { askGeminiRAG } from "../actions/chat.server";
 
 type Persona = "staff" | "fan" | "volunteer";
 type Language = "en" | "es" | "fr" | "pt";
@@ -9,13 +11,13 @@ const suggestions: Record<Persona, string[]> = {
   staff: [
     "Optimize transport lanes",
     "Concourse waste alert",
-    "Gate E queue status",
+    "Where is the Silk Board bus?",
     "Draft multilingual PA alert",
   ],
   fan: [
     "Find nearest restroom",
     "Where is Food Court?",
-    "Transport to NYC",
+    "Status of Majestic bus?",
     "How to get wheelchair help?",
   ],
   volunteer: [
@@ -40,34 +42,31 @@ const languageNames: Record<Language, string> = {
   pt: "Portuguese",
 };
 
-// Used only if the live API call fails (network issue, rate limit, etc).
-// Keeps the assistant usable during a demo even if the API has a hiccup.
 const fallbackByPersona: Record<Persona, string> = {
-  staff:
-    "I couldn't reach the live AI service just now, but stadium operations are nominal. Please try your question again in a moment.",
+  staff: "I couldn't reach the live AI service just now, but stadium operations are nominal. Please try your question again in a moment.",
   fan: "I'm having trouble connecting right now. For urgent help, please visit the nearest Guest Services booth or ask any staff member.",
-  volunteer:
-    "Connection issue on my end — please check with your shift coordinator for immediate guidance, and I'll be back online shortly.",
+  volunteer: "Connection issue on my end — please check with your shift coordinator for immediate guidance, and I'll be back online shortly.",
 };
 
 function buildSystemPrompt(persona: Persona, lang: Language) {
   const personaContext: Record<Persona, string> = {
-    staff:
-      "You are speaking to stadium OPERATIONS STAFF. Be concise, operational, and action-oriented. Include concrete numbers, gate/section references, and next steps when relevant (e.g. dispatch, reroute, alert).",
+    staff: "You are speaking to stadium OPERATIONS STAFF. Be concise, operational, and action-oriented. Include concrete numbers, gate/section references, and next steps when relevant (e.g. dispatch, reroute, alert).",
     fan: "You are speaking to a FAN attending the match. Be warm, brief, and practical — directions, wait times, amenities, and accessibility help.",
-    volunteer:
-      "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
+    volunteer: "You are speaking to a VOLUNTEER on shift. Be clear and procedural — give step-by-step protocol instructions (lost & found, accessibility escorts, shift logistics).",
   };
+
+  const transportContext = currentBuses.map(b => `Bus ${b.id} (${b.route}): ETA ${b.eta}m, Status: ${b.status}, Occupancy: ${b.occupancy}%`).join('. ');
 
   return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
+
+[LIVE TRANSPORT DATA]:
+${transportContext}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific. Use only the provided stadium and live-data facts; say when information is unavailable.
 Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
 }
-
-import { askGeminiRAG } from "../actions/chat.server";
 
 export function AIAssistant() {
   const [open, setOpen] = useState(false);
@@ -81,6 +80,8 @@ export function AIAssistant() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
+  const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -89,8 +90,59 @@ export function AIAssistant() {
 
   const activeSuggestions = useMemo(() => suggestions[persona], [persona]);
 
+  const speakText = (text: string) => {
+    if (!voiceEnabled || typeof window === "undefined" || !window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const langMap: Record<Language, string> = { en: "en-US", es: "es-ES", fr: "fr-FR", pt: "pt-BR" };
+    utterance.lang = langMap[lang];
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const toggleListening = () => {
+    if (isListening) {
+      setIsListening(false);
+      return;
+    }
+    
+    // @ts-ignore
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Voice recognition is not supported in this browser.");
+      return;
+    }
+    
+    const recognition = new SpeechRecognition();
+    const langMap: Record<Language, string> = { en: "en-US", es: "es-ES", fr: "fr-FR", pt: "pt-BR" };
+    recognition.lang = langMap[lang];
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    
+    recognition.onstart = () => setIsListening(true);
+    recognition.onresult = (event: any) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+      setIsListening(false);
+    };
+    recognition.onerror = (event: any) => {
+      console.error("Speech error", event.error);
+      if (event.error === "not-allowed") {
+        alert("Microphone access blocked! Please click the camera/mic icon in your browser's address bar to allow it.");
+      } else if (event.error !== "no-speech") {
+        alert("Microphone error: " + event.error);
+      }
+      setIsListening(false);
+    };
+    recognition.onend = () => setIsListening(false);
+    
+    recognition.start();
+  };
+
   async function send(text: string) {
     if (!text.trim() || isTyping) return;
+
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
 
     const nextHistory = [...messages, { role: "user" as const, text }];
     setMessages(nextHistory);
@@ -102,9 +154,11 @@ export function AIAssistant() {
         data: { message: text, personaContext: buildSystemPrompt(persona, lang), lang },
       });
       setMessages((m) => [...m, { role: "ai", text: answer }]);
+      speakText(answer);
     } catch (error: unknown) {
       console.error("AI Error:", error);
       setMessages((m) => [...m, { role: "ai", text: fallbackByPersona[persona] }]);
+      speakText(fallbackByPersona[persona]);
     } finally {
       setIsTyping(false);
     }
@@ -112,6 +166,22 @@ export function AIAssistant() {
 
   return (
     <>
+      <AnimatePresence>
+        {!open && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.9 }}
+            className="fixed bottom-24 right-6 z-40 bg-white text-slate-900 px-4 py-3 rounded-2xl shadow-xl font-medium text-sm border border-slate-200 cursor-pointer origin-bottom-right"
+            onClick={() => setOpen(true)}
+          >
+            I am your buddy! Ask me for help 🤖
+            {/* little triangle pointer */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-slate-200 transform rotate-45"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -162,9 +232,26 @@ export function AIAssistant() {
                   </div>
                 </div>
               </div>
+              <button
+                onClick={() => {
+                  setVoiceEnabled(!voiceEnabled);
+                  if (voiceEnabled && typeof window !== 'undefined' && window.speechSynthesis) {
+                    window.speechSynthesis.cancel();
+                  }
+                }}
+                className="p-2 rounded-lg transition-colors border cursor-pointer"
+                style={{
+                  background: voiceEnabled ? "rgba(14,159,110,0.2)" : "rgba(255,255,255,0.05)",
+                  borderColor: voiceEnabled ? "rgba(14,159,110,0.5)" : "rgba(255,255,255,0.1)",
+                  color: voiceEnabled ? "#4ADE80" : "#94A3B8"
+                }}
+                title={voiceEnabled ? "Mute Voice" : "Enable Voice"}
+              >
+                {voiceEnabled ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+              </button>
             </div>
 
-            {/* Language Selector — BIG & VISIBLE */}
+            {/* Language Selector */}
             <div
               className="px-4 py-3 flex items-center gap-2"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", background: "#0F2231" }}
@@ -214,7 +301,7 @@ export function AIAssistant() {
               ))}
             </div>
 
-            {/* Messages — SOLID BACKGROUNDS for visibility */}
+            {/* Messages */}
             <div
               className="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar"
               aria-live="polite"
@@ -301,18 +388,32 @@ export function AIAssistant() {
                   e.preventDefault();
                   send(input);
                 }}
-                className="flex items-center gap-2 rounded-xl px-4 py-3"
+                className="flex items-center gap-2 rounded-xl px-2 py-2"
                 style={{ background: "#162736", border: "1px solid rgba(255,255,255,0.12)" }}
               >
                 <input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={`Ask Arena IQ as ${persona}...`}
-                  className="flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-500 font-medium"
+                  className="flex-1 px-2 bg-transparent text-sm text-white outline-none placeholder:text-slate-500 font-medium"
                 />
+                
+                <button
+                  type="button"
+                  onClick={toggleListening}
+                  className="size-9 rounded-lg flex items-center justify-center transition border border-transparent outline-none cursor-pointer"
+                  style={{
+                    background: isListening ? "rgba(239, 68, 68, 0.15)" : "transparent",
+                    color: isListening ? "#ef4444" : "#94A3B8",
+                  }}
+                  title={isListening ? "Listening..." : "Click to speak"}
+                >
+                  <Mic className={`size-4 ${isListening ? 'animate-pulse' : ''}`} />
+                </button>
+                
                 <button
                   type="submit"
-                  disabled={isTyping}
+                  disabled={isTyping || !input.trim()}
                   className="size-9 rounded-lg flex items-center justify-center text-white transition hover:opacity-90 active:scale-95 disabled:opacity-40 border-none outline-none cursor-pointer"
                   style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}
                 >

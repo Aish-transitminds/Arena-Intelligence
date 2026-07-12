@@ -28,16 +28,17 @@ const navSections: { label: string; items: NavItem[] }[] = [
     label: "Fan Experience",
     items: [
       { to: "/fan", label: "Fan Dashboard", icon: User, hint: "Ticket & seat" },
+      { to: "/fan/transport" as any, label: "Live Transport", icon: Radio, hint: "Buses" },
     ],
   },
   {
     label: "Operations",
     items: [
       { to: "/admin", label: "Admin Console", icon: LayoutDashboard, hint: "Live KPIs" },
+      { to: "/admin/transport" as any, label: "Transport Map", icon: Radio, hint: "Dispatch" },
       { to: "/tournament", label: "Tournament", icon: Trophy, hint: "Fixtures" },
       { to: "/emergency", label: "Emergency Center", icon: ShieldAlert, hint: "SOS" },
       { to: "/security", label: "Security", icon: Settings, hint: "Platform" },
-      { to: "/audit", label: "Audit Log", icon: FileText, hint: "Events" },
     ],
   },
 ];
@@ -69,10 +70,10 @@ export function AppShell({
   if (!canAccessRoute(pathname, role)) {
     return (
       <div className="min-h-dvh flex items-center justify-center bg-background px-6 text-center">
-        <div className="glass-strong max-w-md rounded-3xl border border-destructive/20 p-8">
+        <div className="glass-strong max-w-md rounded-3xl border border-destructive/20 p-8 bg-black/40">
           <p className="text-xs uppercase tracking-[0.32em] text-destructive">Access Denied</p>
-          <h1 className="mt-4 text-2xl font-semibold text-slate-900">You do not have permission to view this area.</h1>
-          <p className="mt-3 text-sm" style={{ color: "#64748B" }}>Please sign in with the correct role to continue.</p>
+          <h1 className="mt-4 text-2xl font-semibold text-white">You do not have permission to view this area.</h1>
+          <p className="mt-3 text-sm text-slate-400">Please sign in with the correct role to continue.</p>
           <Link to="/login" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white">
             Return to sign in
           </Link>
@@ -155,8 +156,8 @@ export function AppShell({
                         aria-current={active ? "page" : undefined}
                         className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${focusRing} ${
                           active
-                            ? "text-slate-900"
-                            : "hover:text-slate-900"
+                            ? "text-foreground font-semibold"
+                            : "hover:text-foreground text-slate-400"
                         }`}
                         style={
                           active
@@ -164,7 +165,7 @@ export function AppShell({
                                 background: "var(--sidebar-accent)",
                                 border: "1px solid var(--border)",
                               }
-                            : { color: "#64748B" }
+                            : undefined
                         }
                       >
                         {/* Active indicator rail */}

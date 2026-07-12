@@ -22,6 +22,7 @@ export const Route = createFileRoute("/fan")({
 });
 
 const fanNav = [
+  { icon: ShoppingBag, label: "Buy Tickets", desc: "Get passes for new matches", href: "/fan/tickets?buy=true" },
   { icon: Ticket, label: "My Tickets", desc: "Manage & transfer", href: "/fan/tickets" },
   { icon: UtensilsCrossed, label: "Food Courts", desc: "4 nearby, 3-5 min walk" },
   { icon: ShoppingBag, label: "Adidas Official Store", desc: "0.2 km · Proceed North" },
