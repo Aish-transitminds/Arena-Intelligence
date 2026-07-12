@@ -28,14 +28,9 @@ export function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
         </div>
 
         <div className="flex flex-col leading-none">
-          <span className={`${textSize} font-extrabold tracking-tight text-white`}>
-            Arena<span style={{ color: "#0E9F6E" }}>Intelligence</span>
+          <span className={`${textSize} font-extrabold tracking-tight text-slate-900 dark:text-white`}>
+            Arena <span style={{ color: "#0E9F6E" }}>Intelligence</span>
           </span>
-          {size !== "sm" && (
-            <span className="text-[10px] uppercase tracking-[0.22em] mt-0.5" style={{ color: "#AAB8C2" }}>
-              Stadium Operations
-            </span>
-          )}
         </div>
       </div>
     </Link>
