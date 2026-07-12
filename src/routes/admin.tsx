@@ -213,8 +213,7 @@ function Admin() {
 
             {/* Attendance Chart */}
             <div
-              className="rounded-2xl p-7 relative overflow-hidden"
-              className="bg-card border border-border"
+              className="rounded-2xl p-7 relative overflow-hidden bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
@@ -267,8 +266,7 @@ function Admin() {
 
             {/* Gate Queue Bar Chart */}
             <div
-              className="rounded-2xl p-7"
-              className="bg-card border border-border"
+              className="rounded-2xl p-7 bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
@@ -298,7 +296,7 @@ function Admin() {
                       }}
                       itemStyle={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase" }}
                       labelStyle={{ fontSize: 10, color: "var(--muted-foreground)", marginBottom: 6 }}
-                      formatter={(value: number) => [`${value} min`, "Wait Time"]}
+                      formatter={(value: any) => [`${value} min`, "Wait Time"]}
                     />
                     <Bar dataKey="wait" radius={[0, 6, 6, 0]} animationDuration={1400}>
                       {gateQueues.map((entry, index) => (
@@ -315,8 +313,7 @@ function Admin() {
 
             {/* Section Occupancy */}
             <div
-              className="rounded-2xl p-7"
-              className="bg-card border border-border"
+              className="rounded-2xl p-7 bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
@@ -360,7 +357,7 @@ function Admin() {
                           padding: "8px 12px",
                         }}
                         itemStyle={{ fontSize: 11, fontWeight: 700 }}
-                        formatter={(value: number, name: string) => [`${value}%`, `${name} Stand`]}
+                        formatter={(value: any, name: any) => [`${value}%`, `${name} Stand`]}
                       />
                     </PieChart>
                   </ResponsiveContainer>
@@ -403,8 +400,7 @@ function Admin() {
 
             {/* Crowd Density Heatmap */}
             <div
-              className="rounded-2xl p-7"
-              className="bg-card border border-border"
+              className="rounded-2xl p-7 bg-card border border-border"
             >
               <div className="flex items-center justify-between mb-7">
                 <div>
@@ -424,8 +420,7 @@ function Admin() {
 
             {/* Gate Queue Table */}
             <div
-              className="rounded-2xl overflow-hidden"
-              className="bg-card border border-border"
+              className="rounded-2xl overflow-hidden bg-card border border-border"
             >
               <div className="px-7 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
                 <div>
@@ -558,8 +553,7 @@ function Admin() {
 
             {/* Restrooms Operations Panel */}
             <div
-              className="rounded-2xl p-6 relative overflow-hidden"
-              className="bg-card border border-border"
+              className="rounded-2xl p-6 relative overflow-hidden bg-card border border-border"
             >
               <div className="flex items-center gap-2 mb-4">
                 <ShieldCheck className="size-4 text-primary" />
@@ -605,8 +599,7 @@ function Admin() {
 
             {/* Operations Score Gauge */}
             <div
-              className="rounded-2xl p-7"
-              className="bg-card border border-border"
+              className="rounded-2xl p-7 bg-card border border-border"
             >
               <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground mb-1">Operations Score</h3>
               <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "var(--muted-foreground)" }}>Overall readiness index</p>
@@ -650,8 +643,7 @@ function Admin() {
 
             {/* Recent Events Feed */}
             <div
-              className="rounded-2xl overflow-hidden"
-              className="bg-card border border-border"
+              className="rounded-2xl overflow-hidden bg-card border border-border"
             >
               <div
                 className="px-6 py-5 flex items-center justify-between"
@@ -853,8 +845,7 @@ function AlertPill({ icon, label, value, tone }: { icon: React.ReactNode; label:
   const c = colors[tone];
   return (
     <div
-      className="flex items-center justify-between p-4 rounded-xl"
-      className="bg-card border border-border"
+      className="flex items-center justify-between p-4 rounded-xl bg-card border border-border"
     >
       <div className="flex items-center gap-3">
         <div className="size-8 rounded-lg flex items-center justify-center" style={{ background: c.bg, color: c.text }}>
@@ -867,7 +858,7 @@ function AlertPill({ icon, label, value, tone }: { icon: React.ReactNode; label:
   );
 }
 
-function CrowdHeatmap({ data }: { data: { name: string; value: number }[] }) {
+function CrowdHeatmap({ data }: { data: { name: string; value: any }[] }) {
   const getColor = (val: number) => {
     if (val >= 95) return "rgba(217,45,32,0.9)";
     if (val >= 85) return "rgba(244,180,0,0.9)";

@@ -18,7 +18,7 @@ vi.mock("@tanstack/react-start", () => ({
 
 describe("chat.server - askGeminiRAG", () => {
   it("returns a safe error response if message is missing", async () => {
-    // @ts-expect-error simulating bad input
+     simulating bad input
     await expect(
       askGeminiRAG({ data: { personaContext: "staff", lang: "en" } }),
     ).resolves.toMatchObject({ answer: expect.stringContaining("Missing 'message'"), sources: [] });

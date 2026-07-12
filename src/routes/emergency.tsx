@@ -348,8 +348,7 @@ function Emergency() {
 
           {/* Nearest medical */}
           <div
-            className="rounded-2xl p-5"
-            className="bg-card border border-border"
+            className="rounded-2xl p-5 bg-card border border-border"
           >
             <div className="flex items-center gap-2 mb-3">
               <MapPin className="size-4 text-primary" />
@@ -384,8 +383,7 @@ function Emergency() {
 
         {/* ── EVACUATION ROUTES ── */}
         <div
-          className="rounded-2xl overflow-hidden lg:col-span-2"
-          className="bg-card border border-border"
+          className="rounded-2xl overflow-hidden lg:col-span-2 bg-card border border-border"
         >
           <div
             className="px-6 py-4 flex items-center justify-between"
@@ -457,8 +455,7 @@ function Emergency() {
 
         {/* ── INCIDENT FEED ── */}
         <div
-          className="rounded-2xl overflow-hidden"
-          className="bg-card border border-border"
+          className="rounded-2xl overflow-hidden bg-card border border-border"
         >
           <div
             className="px-6 py-4 flex items-center justify-between"
@@ -533,8 +530,7 @@ function ResponseCard({
 
   return (
     <div
-      className="p-5 rounded-2xl flex items-center justify-between"
-      className="bg-card border border-border"
+      className="p-5 rounded-2xl flex items-center justify-between bg-card border border-border"
     >
       <div className="flex items-center gap-4">
         <div

@@ -17,7 +17,7 @@ import { AIAssistant } from "./AIAssistant";
 import { canAccessRoute, getStoredRole, persistRole } from "@/lib/security";
 
 type NavItem = {
-  to: "/fan" | "/admin" | "/tournament" | "/emergency" | "/assistant" | "/security" | "/audit";
+  to: "/fan" | "/admin" | "/tournament" | "/emergency" | "/assistant" | "/security";
   label: string;
   icon: typeof User;
   hint?: string;

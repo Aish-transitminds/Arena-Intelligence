@@ -108,8 +108,7 @@ function Security() {
 
           {/* Camera Zones Grid */}
           <div
-            className="rounded-2xl p-7"
-            className="bg-card border border-border"
+            className="rounded-2xl p-7 bg-card border border-border"
           >
             <div className="flex items-center justify-between mb-6">
               <div>
@@ -174,8 +173,7 @@ function Security() {
 
           {/* Active Patrols */}
           <div
-            className="rounded-2xl overflow-hidden"
-            className="bg-card border border-border"
+            className="rounded-2xl overflow-hidden bg-card border border-border"
           >
             <div className="px-7 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
               <div>
@@ -257,8 +255,7 @@ function Security() {
 
           {/* Threat Gauge */}
           <div
-            className="rounded-2xl p-7"
-            className="bg-card border border-border"
+            className="rounded-2xl p-7 bg-card border border-border"
           >
             <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground mb-1">Threat Assessment</h3>
             <p className="text-[10px] uppercase tracking-[0.14em] mb-6" style={{ color: "var(--muted-foreground)" }}>Current security posture</p>
@@ -290,8 +287,7 @@ function Security() {
 
           {/* Access Control */}
           <div
-            className="rounded-2xl p-6"
-            className="bg-card border border-border"
+            className="rounded-2xl p-6 bg-card border border-border"
           >
             <div className="flex items-center gap-2 mb-4">
               <Lock className="size-4 text-primary" />
@@ -326,8 +322,7 @@ function Security() {
 
           {/* Security Protocols */}
           <div
-            className="rounded-2xl p-6"
-            className="bg-card border border-border"
+            className="rounded-2xl p-6 bg-card border border-border"
           >
             <div className="flex items-center gap-2 mb-4">
               <Eye className="size-4 text-primary" />

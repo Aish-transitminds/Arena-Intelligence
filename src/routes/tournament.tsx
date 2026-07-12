@@ -50,8 +50,7 @@ function Tournament() {
       {/* Fixtures */}
       {tab === "fixtures" && (
         <div
-          className="rounded-2xl overflow-hidden"
-          className="bg-card border border-border"
+          className="rounded-2xl overflow-hidden bg-card border border-border"
         >
           <div
             className="px-6 py-4 font-bold text-sm text-foreground"
@@ -109,8 +108,7 @@ function Tournament() {
       {/* Leaderboard */}
       {tab === "leaderboard" && (
         <div
-          className="rounded-2xl overflow-hidden"
-          className="bg-card border border-border"
+          className="rounded-2xl overflow-hidden bg-card border border-border"
         >
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -218,8 +216,7 @@ function Tournament() {
       {/* Register */}
       {tab === "register" && (
         <div
-          className="rounded-2xl p-7 max-w-2xl"
-          className="bg-card border border-border"
+          className="rounded-2xl p-7 max-w-2xl bg-card border border-border"
         >
           <div className="flex items-center gap-3 mb-2">
             <div
