@@ -28,7 +28,7 @@ export function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
         </div>
 
         <div className="flex flex-col leading-none">
-          <span className={`${textSize} font-extrabold tracking-tight text-slate-900 dark:text-white`}>
+          <span className={`${textSize} font-extrabold tracking-tight text-foreground`}>
             Arena <span style={{ color: "#0E9F6E" }}>Intelligence</span>
           </span>
         </div>
