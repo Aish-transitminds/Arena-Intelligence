@@ -8,6 +8,7 @@ import foodCourtsData from "../../stadium-data/food_courts.json";
 import parkingData from "../../stadium-data/parking.json";
 import washroomsData from "../../stadium-data/washrooms.json";
 import gatesData from "../../stadium-data/gates.json";
+import { currentBuses } from "./transportState";
 
 function jitter(value: number, min: number, max: number) {
   const delta = Math.round((Math.random() - 0.5) * (max - min) * 0.2);
@@ -41,6 +42,13 @@ export function getLiveSnapshot() {
       id: g.id,
       crowdLevel: Math.random() > 0.85 ? (["Low", "Moderate", "High"])[Math.floor(Math.random() * 3)] : g.crowdLevel,
     })),
+    buses: currentBuses.map((b) => ({
+      id: b.id,
+      route: b.route,
+      eta: b.eta,
+      status: b.status,
+      occupancy: b.occupancy,
+    })),
     weather: {
       temperatureC: jitter(28, 20, 38),
       rainProbability: jitter(15, 0, 60),
@@ -59,6 +67,7 @@ export function getRelevantLiveData(query: string, snapshot: any) {
   const wantsWashroom = /washroom|restroom|toilet|bathroom/.test(q);
   const wantsGate = /gate|crowd|entry|entrance/.test(q);
   const wantsWeather = /weather|rain|temperature|hot|cold/.test(q);
+  const wantsBus = /bus|transport|transit|majestic|silk board|shivajinagar|koramangala|indiranagar|route|eta/.test(q);
 
   const out: any = {};
   if (wantsFood) out.foodCourts = snapshot.foodCourts;
@@ -66,6 +75,7 @@ export function getRelevantLiveData(query: string, snapshot: any) {
   if (wantsWashroom) out.washrooms = snapshot.washrooms;
   if (wantsGate) out.gates = snapshot.gates;
   if (wantsWeather) out.weather = snapshot.weather;
+  if (wantsBus) out.buses = snapshot.buses;
 
   return out;
 }

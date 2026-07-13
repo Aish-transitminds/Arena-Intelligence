@@ -229,16 +229,16 @@ export function AppShell({
           <div className="flex items-center gap-4 px-6 py-3.5">
             {/* Breadcrumb + title */}
             <div className="flex-1 min-w-0">
-              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs" style={{ color: "#64748B" }}>
-                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-slate-900 transition-colors ${focusRing}`}>
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Link to="/" className={`inline-flex items-center gap-1 rounded hover:text-foreground transition-colors ${focusRing}`}>
                   <Home className="size-3" aria-hidden="true" />
                   <span>Arena Intelligence</span>
                 </Link>
                 <span aria-hidden="true">/</span>
-                <span className="text-slate-700">{activeItem?.label ?? title}</span>
+                <span className="text-foreground/80">{activeItem?.label ?? title}</span>
               </nav>
-              <h1 className="mt-0.5 text-xl font-bold tracking-tight truncate text-slate-900">{title}</h1>
-              {subtitle && <p className="text-xs mt-0.5 truncate" style={{ color: "#64748B" }}>{subtitle}</p>}
+              <h1 className="mt-0.5 text-xl font-bold tracking-tight truncate text-foreground">{title}</h1>
+              {subtitle && <p className="text-xs mt-0.5 truncate text-muted-foreground">{subtitle}</p>}
             </div>
 
             {/* Search */}

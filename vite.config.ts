@@ -7,6 +7,22 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id: string) {
+            if (id.includes('leaflet') || id.includes('react-leaflet') || id.includes('@react-leaflet')) {
+              return 'leaflet-vendor';
+            }
+          }
+        }
+      }
+    },
+    ssr: {
+      external: ["react-leaflet", "leaflet", "@react-leaflet/core"],
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
@@ -14,5 +30,8 @@ export default defineConfig({
   },
   nitro: {
     preset: (process.env.VERCEL || process.env.NOW_BUILDER) ? "vercel" : "node-server",
+    externals: {
+      external: ["react-leaflet", "leaflet", "@react-leaflet/core"]
+    }
   },
 });

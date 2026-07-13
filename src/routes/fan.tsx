@@ -49,12 +49,7 @@ function FanPage() {
         {/* ── DIGITAL TICKET ── */}
         <Link
           to="/fan/tickets"
-          className="block lg:row-span-2 rounded-2xl overflow-hidden relative transition-transform hover:scale-[1.02] hover:shadow-2xl cursor-pointer group"
-          style={{
-            background: "rgba(255,255,255,0.90)",
-            border: "1px solid rgba(0,0,0,0.09)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
-          }}
+          className="block lg:row-span-2 rounded-2xl overflow-hidden relative transition-transform hover:scale-[1.02] hover:shadow-2xl cursor-pointer group bg-card border border-border shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
         >
           {/* Ticket Notches */}
           <div className="absolute top-[80px] -left-3 size-6 bg-background rounded-full border-r border-white/10 z-10" />
@@ -80,10 +75,10 @@ function FanPage() {
           <div className="p-6">
             {/* Match info */}
             <div className="mb-5 pb-5" style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-              <div className="text-xl font-extrabold text-slate-900 tracking-tight">
-                Team A <span style={{ color: "#64748B" }}>vs</span> Team B
+              <div className="text-xl font-extrabold text-foreground tracking-tight">
+                Team A <span style={{ color: "var(--muted-foreground)" }}>vs</span> Team B
               </div>
-              <div className="text-sm mt-1.5 flex items-center gap-3" style={{ color: "#64748B" }}>
+              <div className="text-sm mt-1.5 flex items-center gap-3" style={{ color: "var(--muted-foreground)" }}>
                 <span>Today</span>
                 <span style={{ color: "rgba(100,116,139,0.30)" }}>·</span>
                 <span>19:00 EST</span>
@@ -98,7 +93,7 @@ function FanPage() {
                 <div className="transition-all duration-300 blur-sm opacity-30 group-hover:blur-md">
                   <QRCodeSVG value="ARENA-TKT-2891-7X" size={140} />
                 </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-900 drop-shadow-md">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-foreground drop-shadow-md">
                   <Lock className="size-8 mb-2" />
                   <span className="text-xs font-black uppercase tracking-widest text-center px-2">Ticket Hidden</span>
                   <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-1">Tap to View</span>
@@ -118,8 +113,8 @@ function FanPage() {
                   className="rounded-xl p-3 text-center"
                   style={{ background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.06)" }}
                 >
-                  <div className="text-[9px] uppercase tracking-[0.20em] mb-1.5" style={{ color: "#64748B" }}>{f.label}</div>
-                  <div className="text-2xl font-extrabold text-slate-900">{f.value}</div>
+                  <div className="text-[9px] uppercase tracking-[0.20em] mb-1.5" style={{ color: "var(--muted-foreground)" }}>{f.label}</div>
+                  <div className="text-2xl font-extrabold text-foreground">{f.value}</div>
                 </div>
               ))}
             </div>
@@ -168,8 +163,7 @@ function FanPage() {
 
         {/* ── QUICK NAVIGATION ── */}
         <div
-          className="rounded-2xl p-5 lg:col-span-2 flex flex-col gap-6"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl p-5 lg:col-span-2 flex flex-col gap-6 bg-card border border-border"
         >
           {/* Big CTA for Find My Seat */}
           <button
@@ -179,23 +173,23 @@ function FanPage() {
           >
             <div className="flex items-center gap-4">
               <div className="size-12 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/30 transition-colors">
-                <MapPin className="size-6 text-slate-900" />
+                <MapPin className="size-6 text-foreground" />
               </div>
-              <div className="text-left text-slate-900">
-                <div className="text-lg font-extrabold tracking-tight group-hover:text-slate-900 transition-colors">Launch 3D Seat Viewer</div>
-                <div className="text-xs text-slate-900/90 font-medium">Interactive Stadium Alpha Preview</div>
+              <div className="text-left text-foreground">
+                <div className="text-lg font-extrabold tracking-tight group-hover:text-foreground transition-colors">Launch 3D Seat Viewer</div>
+                <div className="text-xs text-foreground/90 font-medium">Interactive Stadium Alpha Preview</div>
               </div>
             </div>
             <div className="size-10 rounded-full bg-black/20 flex items-center justify-center shrink-0 transition-all group-hover:translate-x-2 group-hover:bg-black/30">
-              <ArrowRight className="size-5 text-slate-900" />
+              <ArrowRight className="size-5 text-foreground" />
             </div>
           </button>
 
           <div>
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h2 className="text-sm font-bold text-slate-900">Stadium Directory</h2>
-                <p className="text-xs mt-0.5" style={{ color: "#64748B" }}>Nearby facilities & directions</p>
+                <h2 className="text-sm font-bold text-foreground">Stadium Directory</h2>
+                <p className="text-xs mt-0.5" style={{ color: "var(--muted-foreground)" }}>Nearby facilities & directions</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -210,8 +204,8 @@ function FanPage() {
                     <Icon className="size-4 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-sm font-semibold text-slate-900 truncate">{item.label}</div>
-                    <div className="text-[10px] mt-0.5 truncate" style={{ color: "#64748B" }}>{item.desc}</div>
+                    <div className="text-sm font-semibold text-foreground truncate">{item.label}</div>
+                    <div className="text-[10px] mt-0.5 truncate" style={{ color: "var(--muted-foreground)" }}>{item.desc}</div>
                   </div>
                 </>
               );
@@ -248,20 +242,19 @@ function FanPage() {
 
       {/* ── GATE QUEUES ── */}
         <div
-          className="rounded-2xl p-5"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl p-5 bg-card border border-border"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-sm font-bold text-slate-900">Gate Queues</h2>
-              <p className="text-xs mt-0.5" style={{ color: "#64748B" }}>Live wait times</p>
+              <h2 className="text-sm font-bold text-foreground">Gate Queues</h2>
+              <p className="text-xs mt-0.5" style={{ color: "var(--muted-foreground)" }}>Live wait times</p>
             </div>
           </div>
           <div className="space-y-3">
             {queueData.slice(0, 5).map((q) => (
               <div key={q.gate}>
                 <div className="flex justify-between text-xs mb-1.5">
-                  <span className="font-medium text-slate-900">{q.gate}</span>
+                  <span className="font-medium text-foreground">{q.gate}</span>
                   <span
                     className="font-bold"
                     style={{ color: q.wait > 10 ? "#D92D20" : q.wait > 6 ? "#F4B400" : "#0E9F6E" }}
@@ -285,13 +278,12 @@ function FanPage() {
 
         {/* ── CROWD FLOW CHART ── */}
         <div
-          className="rounded-2xl p-5 lg:col-span-2"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl p-5 lg:col-span-2 bg-card border border-border"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-sm font-bold text-slate-900">Crowd Flow</h2>
-              <p className="text-xs mt-0.5" style={{ color: "#64748B" }}>Live vs projected attendance</p>
+              <h2 className="text-sm font-bold text-foreground">Crowd Flow</h2>
+              <p className="text-xs mt-0.5" style={{ color: "var(--muted-foreground)" }}>Live vs projected attendance</p>
             </div>
             <span
               className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1 rounded-full"
@@ -310,10 +302,10 @@ function FanPage() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.04)" />
-                <XAxis dataKey="time" stroke="#64748B" fontSize={10} axisLine={false} tickLine={false} />
+                <XAxis dataKey="time" stroke="var(--muted-foreground)" fontSize={10} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{ background: "rgba(11,22,30,0.96)", border: "1px solid rgba(14,159,110,0.22)", borderRadius: 10 }}
-                  labelStyle={{ color: "#64748B", fontSize: 10 }}
+                  labelStyle={{ color: "var(--muted-foreground)", fontSize: 10 }}
                   itemStyle={{ fontSize: 11, fontWeight: 700 }}
                 />
                 <Area type="monotone" dataKey="crowd" stroke="#0E9F6E" fill="url(#crowdGrad)" strokeWidth={2} name="Live" />
@@ -324,12 +316,11 @@ function FanPage() {
 
         {/* ── MATCH SCHEDULE ── */}
         <div
-          className="rounded-2xl p-5 lg:col-span-2"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl p-5 lg:col-span-2 bg-card border border-border"
         >
           <div className="flex items-center gap-2 mb-4">
             <CalendarDays className="size-4 text-primary" />
-            <h2 className="text-sm font-bold text-slate-900">Match Schedule</h2>
+            <h2 className="text-sm font-bold text-foreground">Match Schedule</h2>
           </div>
           <div className="space-y-2">
             {[
@@ -343,8 +334,8 @@ function FanPage() {
                 style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}
               >
                 <div>
-                  <div className="text-sm font-semibold text-slate-900">{m.m}</div>
-                  <div className="text-xs mt-0.5" style={{ color: "#64748B" }}>{m.t} · {m.v}</div>
+                  <div className="text-sm font-semibold text-foreground">{m.m}</div>
+                  <div className="text-xs mt-0.5" style={{ color: "var(--muted-foreground)" }}>{m.t} · {m.v}</div>
                 </div>
                 {m.live && (
                   <span
@@ -361,12 +352,11 @@ function FanPage() {
 
         {/* ── NOTIFICATIONS ── */}
         <div
-          className="rounded-2xl p-5"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl p-5 bg-card border border-border"
         >
           <div className="flex items-center gap-2 mb-4">
             <Bell className="size-4 text-primary" />
-            <h2 className="text-sm font-bold text-slate-900">Updates</h2>
+            <h2 className="text-sm font-bold text-foreground">Updates</h2>
           </div>
           <div className="space-y-2">
             {notifications.map((n) => (
@@ -375,8 +365,8 @@ function FanPage() {
                 className="p-3.5 rounded-xl"
                 style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}
               >
-                <div className="text-sm font-medium text-slate-900">{n.title}</div>
-                <div className="text-[10px] mt-1" style={{ color: "#64748B" }}>{n.time}</div>
+                <div className="text-sm font-medium text-foreground">{n.title}</div>
+                <div className="text-[10px] mt-1" style={{ color: "var(--muted-foreground)" }}>{n.time}</div>
               </div>
             ))}
           </div>
@@ -384,8 +374,7 @@ function FanPage() {
 
         {/* ── SEAT NAVIGATION MAP ── */}
         <div
-          className="rounded-2xl overflow-hidden lg:col-span-3"
-          style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+          className="rounded-2xl overflow-hidden lg:col-span-3 bg-card border border-border"
         >
           <div
             className="px-6 py-4 flex items-center justify-between"
@@ -393,7 +382,7 @@ function FanPage() {
           >
             <div className="flex items-center gap-2">
               <MapPin className="size-4 text-primary" />
-              <h2 className="text-sm font-bold text-slate-900">Seat Navigation</h2>
+              <h2 className="text-sm font-bold text-foreground">Seat Navigation</h2>
             </div>
             <Link
               to={"/fan/tactical" as any}
@@ -426,7 +415,7 @@ function FanPage() {
               { pos: "top-4 left-8", label: "Merch Shops", color: "rgba(14,159,110,0.12)", border: "rgba(14,159,110,0.25)", text: "#0E9F6E" },
               { pos: "top-4 right-8", label: "First Aid", color: "rgba(217,45,32,0.10)", border: "rgba(217,45,32,0.25)", text: "#D92D20" },
               { pos: "bottom-4 left-8", label: "Food Court", color: "rgba(212,175,55,0.10)", border: "rgba(212,175,55,0.25)", text: "#D4AF37" },
-              { pos: "bottom-4 right-8", label: "Parking C", color: "rgba(170,184,194,0.08)", border: "rgba(100,116,139,0.20)", text: "#64748B" },
+              { pos: "bottom-4 right-8", label: "Parking C", color: "rgba(170,184,194,0.08)", border: "rgba(100,116,139,0.20)", text: "var(--muted-foreground)" },
             ].map((area) => (
               <div
                 key={area.label}
@@ -453,8 +442,7 @@ function FanPage() {
 
             {/* Walk info */}
             <div
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-slate-900"
-              style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.10)", backdropFilter: "blur(12px)" }}
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-foreground bg-card/90 border border-border backdrop-blur-md"
             >
               <Navigation className="size-3.5 text-primary" />
               3 min walk from Gate B · Section 204
@@ -537,20 +525,20 @@ function Modal3D({ onClose }: { onClose: () => void }) {
         initial={{ scale: 0.95, y: 15 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 15 }}
-        className="w-full max-w-4xl h-[680px] rounded-2xl flex flex-col overflow-hidden text-slate-900 border text-left shadow-2xl relative"
+        className="w-full max-w-4xl h-[680px] rounded-2xl flex flex-col overflow-hidden text-foreground border text-left shadow-2xl relative"
         style={{ background: "rgba(255,255,255,0.96)", borderColor: "rgba(0,0,0,0.08)" }}
       >
         {/* Header */}
         <div className="px-6 py-4 flex items-center justify-between border-b border-black/5 bg-black/5 z-10 shrink-0">
           <div>
-            <h2 className="text-sm font-extrabold uppercase tracking-widest text-slate-900">3D Virtual Narendra Modi Seat Preview</h2>
-            <p className="text-[10px] mt-0.5" style={{ color: "#64748B" }}>Tap the pitch to shoot/kick the soccer ball to the stands!</p>
+            <h2 className="text-sm font-extrabold uppercase tracking-widest text-foreground">3D Virtual Narendra Modi Seat Preview</h2>
+            <p className="text-[10px] mt-0.5" style={{ color: "var(--muted-foreground)" }}>Tap the pitch to shoot/kick the soccer ball to the stands!</p>
           </div>
           <button
             onClick={onClose}
             className="size-8 rounded-full flex items-center justify-center bg-black/5 border border-black/10 hover:bg-black/10 transition active:scale-95 cursor-pointer outline-none"
           >
-            <span className="text-sm font-extrabold text-slate-900">✕</span>
+            <span className="text-sm font-extrabold text-foreground">✕</span>
           </button>
         </div>
 
@@ -740,7 +728,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
         <div className="p-6 border-t border-black/5 bg-black/5 flex flex-wrap items-center justify-between gap-6 shrink-0 z-10">
           {/* Camera Controls */}
           <div className="space-y-1.5 text-left">
-            <label className="text-[9px] font-mono font-bold uppercase tracking-widest" style={{ color: "#64748B" }}>3D Camera Perspective</label>
+            <label className="text-[9px] font-mono font-bold uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>3D Camera Perspective</label>
             <div className="flex items-center gap-1.5 p-1 rounded-xl" style={{ background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.06)" }}>
               {(["pitch", "seats", "sky"] as const).map((mode) => (
                 <button
@@ -750,7 +738,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
                   style={
                     cameraAngle === mode
                       ? { background: "rgba(14,159,110,0.15)", color: "#0F172A", border: "1px solid rgba(14,159,110,0.20)" }
-                      : { color: "#64748B", background: "transparent", border: "1px solid transparent" }
+                      : { color: "var(--muted-foreground)", background: "transparent", border: "1px solid transparent" }
                   }
                 >
                   {mode === "pitch" ? "Center Field" : mode === "seats" ? "Section 204" : "Tactical Sky"}
@@ -763,7 +751,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
           <div className="flex gap-6 items-center">
             <div className="text-left font-mono border-r border-black/10 pr-6">
               <p className="text-[9px] uppercase tracking-wider text-[#64748B] font-bold">Selected Seat</p>
-              <p className="text-xs text-slate-900 font-extrabold mt-0.5">Section 204, Row 12, Seat 7</p>
+              <p className="text-xs text-foreground font-extrabold mt-0.5">Section 204, Row 12, Seat 7</p>
             </div>
             <div className="text-left font-mono border-r border-black/10 pr-6">
               <p className="text-[9px] uppercase tracking-wider text-[#64748B] font-bold">Field View</p>
@@ -771,7 +759,7 @@ function Modal3D({ onClose }: { onClose: () => void }) {
             </div>
             <div className="text-left font-mono">
               <p className="text-[9px] uppercase tracking-wider text-[#64748B] font-bold">Comfort Rating</p>
-              <p className="text-xs text-slate-900 font-extrabold mt-0.5">VIP Club Seat</p>
+              <p className="text-xs text-foreground font-extrabold mt-0.5">VIP Club Seat</p>
             </div>
           </div>
         </div>
@@ -802,11 +790,11 @@ function StatCard({
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.06, duration: 0.4 }}
-      className="rounded-2xl p-5 card-lift"
-      style={{ background: "rgba(255,255,255,0.90)", border: "1px solid rgba(0,0,0,0.06)" }}
+      whileHover={{ y: -3 }}
+      className={`rounded-2xl p-6 relative overflow-hidden bg-card border border-border ${index === 0 ? "lg:row-span-2" : ""}`}
     >
       <div className="flex items-start justify-between mb-4">
-        <span className="text-[10px] font-bold uppercase tracking-[0.20em]" style={{ color: "#64748B" }}>{label}</span>
+        <span className="text-[10px] font-bold uppercase tracking-[0.20em]" style={{ color: "var(--muted-foreground)" }}>{label}</span>
         {icon && (
           <div
             className="size-9 rounded-xl flex items-center justify-center"
@@ -816,8 +804,8 @@ function StatCard({
           </div>
         )}
       </div>
-      <div className="text-3xl font-extrabold text-slate-900 tracking-tight">{value}</div>
-      {sub && <div className="text-xs mt-2" style={{ color: positive ? "#0E9F6E" : "#64748B" }}>{sub}</div>}
+      <div className="text-3xl font-extrabold text-foreground tracking-tight">{value}</div>
+      {sub && <div className="text-xs mt-2" style={{ color: positive ? "#0E9F6E" : "var(--muted-foreground)" }}>{sub}</div>}
     </motion.div>
   );
 }

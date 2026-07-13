@@ -4,6 +4,7 @@ const ROLE_STORAGE_KEY = "arena-role";
 import { getRoleFromToken, isTokenValid, issueToken, clearToken } from "./auth";
 const AUDIT_STORAGE_KEY = "arena-audit-events";
 export const RATE_LIMIT_STORAGE_KEY = "arena-rate-limit";
+const AUTHORIZED_EMAIL_KEY = "arena-authorized-email";
 
 type RateLimitResult = {
   allowed: boolean;
@@ -71,7 +72,7 @@ export function clearStoredRole(): void {
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {
-  if (pathname.startsWith("/admin") || pathname.startsWith("/security") || pathname.startsWith("/audit") || pathname.startsWith("/tournament") || pathname.startsWith("/emergency")) {
+  if (pathname.startsWith("/admin") || pathname.startsWith("/security") || pathname.startsWith("/audit") || pathname.startsWith("/emergency")) {
     if (role === "steward") {
       // Steward is only allowed on the transport map
       return pathname.startsWith("/admin/transport");
@@ -143,6 +144,23 @@ export function readAuditEvents(): string[] {
   } catch {
     return [];
   }
+}
+
+export function registerAuthorizedEmail(email: string): void {
+  const storage = getStorage();
+  if (!storage) return;
+  const existing = storage.getItem(AUTHORIZED_EMAIL_KEY);
+  if (!existing) {
+    storage.setItem(AUTHORIZED_EMAIL_KEY, email.toLowerCase());
+  }
+}
+
+export function verifyAuthorizedEmail(email: string): boolean {
+  const storage = getStorage();
+  if (!storage) return true;
+  const existing = storage.getItem(AUTHORIZED_EMAIL_KEY);
+  if (!existing) return true; // If none registered yet, allow
+  return existing === email.toLowerCase();
 }
 
 export function setSecurityHeaders(response: Response): Response {

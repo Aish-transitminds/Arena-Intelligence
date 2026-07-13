@@ -35,7 +35,6 @@ function Emergency() {
   const [activeSosArea, setActiveSosArea] = useState<string | null>(null);
   const [aiBusy, setAiBusy] = useState(false);
   const [aiPlan, setAiPlan] = useState<Awaited<ReturnType<typeof generateEmergencyPlan>> | null>(null);
-  const [showAiReasoning, setShowAiReasoning] = useState(false);
 
   const handleSos = () => {
     const limit = checkRateLimit("emergency-sos", 1, 20000);
@@ -91,7 +90,6 @@ function Emergency() {
         72 + Math.round(Math.random() * 12),
       );
       setAiPlan(result);
-      setShowAiReasoning(true);
     } catch {
       setAiPlan(null);
     } finally {
@@ -132,11 +130,7 @@ function Emergency() {
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:col-span-2 rounded-2xl overflow-hidden relative"
-          style={{
-            background: "rgba(255,255,255,0.90)",
-            border: sos ? "1px solid rgba(217,45,32,0.30)" : "1px solid rgba(0,0,0,0.08)",
-          }}
+          className={`lg:col-span-2 rounded-2xl overflow-hidden relative bg-card border ${sos ? "border-red-500/30" : "border-border"}`}
         >
           {/* Header band */}
           <div
@@ -284,20 +278,12 @@ function Emergency() {
               )}
             </AnimatePresence>
 
-            <div className="mt-6 rounded-2xl border p-5" style={{ background: "rgba(0,0,0,0.02)", borderColor: "rgba(0,0,0,0.08)" }}>
+            <div className="mt-6 rounded-2xl border p-5 bg-card border-border">
               <div className="flex items-center justify-between mb-3">
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: "var(--muted-foreground)" }}>AI-Generated Response Plan</p>
                   <h3 className="text-sm font-bold text-foreground">Live incident analysis</h3>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setShowAiReasoning((v) => !v)}
-                  className="rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-foreground"
-                  style={{ background: "rgba(14,159,110,0.12)", border: "1px solid rgba(14,159,110,0.22)" }}
-                >
-                  {showAiReasoning ? "Hide AI reasoning" : "Show AI reasoning"}
-                </button>
               </div>
 
               {aiBusy ? (
@@ -323,15 +309,6 @@ function Emergency() {
                       <p className="text-foreground">{aiPlan.plan.alertGates.join(", ")}</p>
                     </div>
                   </div>
-                  {showAiReasoning && (
-                    <div className="rounded-xl p-3 text-sm" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-2" style={{ color: "var(--muted-foreground)" }}>Prompt / Response</p>
-                      <p className="text-foreground font-semibold">Prompt</p>
-                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "var(--muted-foreground)" }}>{aiPlan.prompt}</pre>
-                      <p className="mt-3 text-foreground font-semibold">Raw Response</p>
-                      <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-5" style={{ color: "var(--muted-foreground)" }}>{aiPlan.rawResponse}</pre>
-                    </div>
-                  )}
                 </div>
               ) : (
                 <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>Submit an incident to generate a live AI plan.</p>

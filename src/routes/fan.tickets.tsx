@@ -227,7 +227,7 @@ function FanTicketsPage() {
       },
       used: {
         bg: "rgba(170,184,194,0.10)",
-        text: "#64748B",
+        text: "var(--muted-foreground)",
         label: "Used",
         icon: <CheckCircle2 className="size-3.5" />,
       },
@@ -263,10 +263,10 @@ function FanTicketsPage() {
             {MOCK_FAN_PROFILE.name.charAt(0)}
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-1">
+            <h2 className="text-2xl font-bold text-foreground mb-1">
               {MOCK_FAN_PROFILE.name}
             </h2>
-            <p className="text-sm mb-2" style={{ color: "#64748B" }}>
+            <p className="text-sm mb-2" style={{ color: "var(--muted-foreground)" }}>
               {MOCK_FAN_PROFILE.email}
             </p>
             <div className="flex items-center gap-3">
@@ -301,7 +301,7 @@ function FanTicketsPage() {
               >
                 {MOCK_FAN_PROFILE.memberLevel} member
               </span>
-              <span style={{ color: "#64748B" }} className="text-xs">
+              <span style={{ color: "var(--muted-foreground)" }} className="text-xs">
                 Since {MOCK_FAN_PROFILE.joinDate}
               </span>
             </div>
@@ -317,10 +317,10 @@ function FanTicketsPage() {
         className="mb-6 flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between"
       >
         <div>
-          <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "#64748B" }}>
+          <p className="text-xs uppercase tracking-wider mb-1" style={{ color: "var(--muted-foreground)" }}>
             Member ID
           </p>
-          <p className="text-lg font-mono font-bold text-slate-900">
+          <p className="text-lg font-mono font-bold text-foreground">
             {MOCK_FAN_PROFILE.memberId}
           </p>
         </div>
@@ -362,7 +362,7 @@ function FanTicketsPage() {
                   className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all uppercase tracking-wider ${
                     activeTab === tab
                       ? "text-white shadow-md"
-                      : "text-slate-500 hover:text-slate-700 hover:bg-black/5"
+                      : "text-slate-500 hover:text-foreground hover:bg-black/5"
                   }`}
                   style={
                     activeTab === tab
@@ -435,12 +435,12 @@ function FanTicketsPage() {
                           >
                             <Ticket className="size-4 text-green-400" />
                           </div>
-                          <h3 className="font-bold text-slate-900 text-sm leading-tight">
+                          <h3 className="font-bold text-foreground text-sm leading-tight">
                             {ticket.event}
                           </h3>
                         </div>
 
-                        <div className="text-xs space-y-1 mb-3" style={{ color: "#64748B" }}>
+                        <div className="text-xs space-y-1 mb-3" style={{ color: "var(--muted-foreground)" }}>
                           <p>📅 {ticket.date} · {ticket.time}</p>
                           <p>📍 {ticket.venue}</p>
                           <p className="font-mono">
@@ -459,7 +459,7 @@ function FanTicketsPage() {
                             {statusConfig.icon}
                             {statusConfig.label}
                           </span>
-                          <span className="text-xs font-bold text-slate-900">
+                          <span className="text-xs font-bold text-foreground">
                             ${ticket.price}
                           </span>
                         </div>
@@ -516,17 +516,17 @@ function FanTicketsPage() {
               >
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <span style={{ color: "var(--muted-foreground)", fontSize: "11px" }} className="uppercase tracking-wider">
                       Ticket Owner
                     </span>
-                    <p className="text-slate-900 font-bold text-lg mt-1">
+                    <p className="text-foreground font-bold text-lg mt-1">
                       {selectedTicket.ownerName}
                     </p>
                   </div>
                   <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#64748B" }}>Ticket Type</span>
-                    <span className="text-slate-900 font-semibold">{selectedTicket.ticketType}</span>
+                    <span style={{ color: "var(--muted-foreground)" }}>Ticket Type</span>
+                    <span className="text-foreground font-semibold">{selectedTicket.ticketType}</span>
                   </div>
                 </div>
               </div>
@@ -544,7 +544,7 @@ function FanTicketsPage() {
                   <div className="transition-all duration-300 blur-sm opacity-30 group-hover:blur-md">
                     <QRCodeSVG value={selectedTicket.qrCode} size={160} />
                   </div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-900 drop-shadow-md">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-foreground drop-shadow-md">
                     <Lock className="size-8 mb-2" />
                     <span className="text-xs font-black uppercase tracking-widest text-center px-2">Ticket Hidden</span>
                     <span className="text-[9px] font-bold text-slate-600 uppercase tracking-widest mt-1">Tap to View</span>
@@ -562,22 +562,22 @@ function FanTicketsPage() {
               >
                 <div className="space-y-2.5 text-sm">
                   <div className="flex justify-between">
-                    <span style={{ color: "#64748B" }}>Event</span>
-                    <span className="text-slate-900 font-semibold">
+                    <span style={{ color: "var(--muted-foreground)" }}>Event</span>
+                    <span className="text-foreground font-semibold">
                       {selectedTicket.event}
                     </span>
                   </div>
                   <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#64748B" }}>Date</span>
-                    <span className="text-slate-900 font-semibold">
+                    <span style={{ color: "var(--muted-foreground)" }}>Date</span>
+                    <span className="text-foreground font-semibold">
                       {selectedTicket.date}
                     </span>
                   </div>
                   <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}></div>
                   <div className="flex justify-between">
-                    <span style={{ color: "#64748B" }}>Venue</span>
-                    <span className="text-slate-900 font-semibold text-right">
+                    <span style={{ color: "var(--muted-foreground)" }}>Venue</span>
+                    <span className="text-foreground font-semibold text-right">
                       {selectedTicket.venue}
                     </span>
                   </div>
@@ -594,22 +594,22 @@ function FanTicketsPage() {
               >
                 <div className="grid grid-cols-3 gap-3 text-center">
                   <div>
-                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <p style={{ color: "var(--muted-foreground)", fontSize: "11px" }} className="uppercase tracking-wider">
                       Section
                     </p>
-                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.section}</p>
+                    <p className="text-foreground font-bold text-lg mt-1">{selectedTicket.section}</p>
                   </div>
                   <div style={{ borderLeft: "1px solid rgba(0,0,0,0.06)", borderRight: "1px solid rgba(0,0,0,0.06)" }}>
-                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <p style={{ color: "var(--muted-foreground)", fontSize: "11px" }} className="uppercase tracking-wider">
                       Row
                     </p>
-                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.row}</p>
+                    <p className="text-foreground font-bold text-lg mt-1">{selectedTicket.row}</p>
                   </div>
                   <div>
-                    <p style={{ color: "#64748B", fontSize: "11px" }} className="uppercase tracking-wider">
+                    <p style={{ color: "var(--muted-foreground)", fontSize: "11px" }} className="uppercase tracking-wider">
                       Seat
                     </p>
-                    <p className="text-slate-900 font-bold text-lg mt-1">{selectedTicket.seat}</p>
+                    <p className="text-foreground font-bold text-lg mt-1">{selectedTicket.seat}</p>
                   </div>
                 </div>
               </div>
@@ -644,12 +644,12 @@ function FanTicketsPage() {
                   <QRCodeSVG value={selectedTicket?.qrCode || ""} size={280} />
                 </div>
                 <div className="text-center">
-                  <p className="text-sm text-slate-900 font-semibold">
+                  <p className="text-sm text-foreground font-semibold">
                     Present this QR code at the gate
                   </p>
                   <p
                     className="text-xs mt-1"
-                    style={{ color: "#64748B" }}
+                    style={{ color: "var(--muted-foreground)" }}
                   >
                     {selectedTicket?.qrCode}
                   </p>
@@ -675,7 +675,7 @@ function FanTicketsPage() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative"
             >
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Buy Tickets</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Buy Tickets</h3>
               <p className="text-sm text-slate-500 mb-6">Select ticket type and quantity for the upcoming match.</p>
               
               <div className="space-y-5 mb-8">
@@ -683,7 +683,7 @@ function FanTicketsPage() {
                 <div className="p-4 rounded-xl border border-slate-200 bg-slate-50">
                   <div className="flex justify-between items-start mb-1">
                     <div>
-                      <h4 className="font-bold text-slate-900">Royal Challengers vs Mumbai Indians</h4>
+                      <h4 className="font-bold text-foreground">Royal Challengers vs Mumbai Indians</h4>
                       <p className="text-xs text-slate-500">M. Chinnaswamy Stadium</p>
                     </div>
                   </div>
@@ -692,7 +692,7 @@ function FanTicketsPage() {
 
                 {/* Ticket Type Selection */}
                 <div>
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 block">Ticket Tier</label>
+                  <label className="text-xs font-bold text-foreground uppercase tracking-wider mb-2 block">Ticket Tier</label>
                   <div className="grid grid-cols-3 gap-2">
                     {(["Classic", "Gold", "Diamond"] as const).map((type) => (
                       <button
@@ -714,21 +714,21 @@ function FanTicketsPage() {
                 {/* Quantity Selection */}
                 <div className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-white shadow-sm">
                   <div>
-                    <label className="text-sm font-bold text-slate-900 block">Quantity</label>
+                    <label className="text-sm font-bold text-foreground block">Quantity</label>
                     <p className="text-xs text-slate-500">Max 8 tickets per transaction</p>
                   </div>
                   <div className="flex items-center gap-3 bg-slate-50 rounded-xl p-1 border border-slate-100">
                     <button
                       onClick={() => setBuyQuantity(Math.max(1, buyQuantity - 1))}
-                      className="size-8 flex items-center justify-center rounded-lg bg-white shadow-sm text-slate-600 hover:text-slate-900 disabled:opacity-50"
+                      className="size-8 flex items-center justify-center rounded-lg bg-white shadow-sm text-slate-600 hover:text-foreground disabled:opacity-50"
                       disabled={buyQuantity <= 1}
                     >
                       <Minus className="size-4" />
                     </button>
-                    <span className="font-bold text-slate-900 w-4 text-center">{buyQuantity}</span>
+                    <span className="font-bold text-foreground w-4 text-center">{buyQuantity}</span>
                     <button
                       onClick={() => setBuyQuantity(Math.min(8, buyQuantity + 1))}
-                      className="size-8 flex items-center justify-center rounded-lg bg-white shadow-sm text-slate-600 hover:text-slate-900 disabled:opacity-50"
+                      className="size-8 flex items-center justify-center rounded-lg bg-white shadow-sm text-slate-600 hover:text-foreground disabled:opacity-50"
                       disabled={buyQuantity >= 8}
                     >
                       <Plus className="size-4" />
@@ -739,7 +739,7 @@ function FanTicketsPage() {
                 {/* Total */}
                 <div className="flex items-center justify-between pt-2 border-t border-slate-100">
                   <span className="text-slate-500 font-medium text-sm">Total Amount</span>
-                  <span className="text-2xl font-black text-slate-900">${TICKET_PRICES[buyType] * buyQuantity}</span>
+                  <span className="text-2xl font-black text-foreground">${TICKET_PRICES[buyType] * buyQuantity}</span>
                 </div>
               </div>
 

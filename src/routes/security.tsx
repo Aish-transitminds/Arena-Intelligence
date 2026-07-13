@@ -381,11 +381,7 @@ function SecurityKPI({
   return (
     <motion.div
       whileHover={{ y: -3 }}
-      className="rounded-2xl p-6 relative overflow-hidden"
-      style={{
-        background: "rgba(255,255,255,0.90)",
-        border: "1px solid rgba(0,0,0,0.06)",
-      }}
+      className="rounded-2xl p-6 relative overflow-hidden bg-card border border-border"
     >
       <div className="flex items-start justify-between mb-6">
         <span className="text-[10px] font-bold uppercase tracking-[0.22em]" style={{ color: "var(--muted-foreground)" }}>
