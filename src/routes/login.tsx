@@ -152,20 +152,24 @@ function Login() {
 
           {error ? <div className="p-3 bg-red-50 text-destructive text-sm rounded-lg border border-red-100">{error}</div> : null}
           
-          <button 
-            type="button"
-            onClick={handleJudgePreview}
-            className="w-full py-4 rounded-xl font-bold text-white bg-blue-600 shadow-lg shadow-blue-600/20 flex items-center justify-center gap-3 transition-all hover:bg-blue-700 active:scale-[0.98] mb-4 relative overflow-hidden group"
-          >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-glitter-sweep" />
-            <ShieldAlert className="size-5" />
-            Judge / Reviewer Preview (One-Click)
-          </button>
-          
-          <div className="relative mb-4">
-            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
-            <div className="relative flex justify-center text-xs"><span className="bg-white px-2 text-slate-500 uppercase tracking-widest">Or login normally</span></div>
-          </div>
+          {import.meta.env.VITE_ENABLE_JUDGE_PREVIEW === "true" && (
+            <>
+              <button 
+                type="button"
+                onClick={handleJudgePreview}
+                className="w-full py-4 rounded-xl font-bold text-white bg-blue-600 shadow-lg shadow-blue-600/20 flex items-center justify-center gap-3 transition-all hover:bg-blue-700 active:scale-[0.98] mb-4 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-glitter-sweep" />
+                <ShieldAlert className="size-5" />
+                Judge / Reviewer Preview (One-Click)
+              </button>
+              
+              <div className="relative mb-4">
+                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
+                <div className="relative flex justify-center text-xs"><span className="bg-white px-2 text-slate-500 uppercase tracking-widest">Or login normally</span></div>
+              </div>
+            </>
+          )}
 
           {!showSimulatedAuth ? (
             <button 

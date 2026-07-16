@@ -2,14 +2,29 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { sanitizeText, isValidEmail, isStrongPassword, canAccessRoute, checkRateLimit } from './security';
 
 describe('Security Utility Functions', () => {
-  describe('sanitizeText', () => {
-    it('removes html tags and limits length', () => {
+  describe('sanitizeText (XSS Prevention)', () => {
+    it('escapes basic html tags', () => {
       const input = '<script>alert("xss")</script>Hello World!';
       const result = sanitizeText(input);
       expect(result).not.toContain('<script>');
       expect(result).toContain('&lt;script&gt;');
     });
-    it('returns empty string for nullish input', () => {
+    
+    it('escapes javascript pseudo-protocols in links', () => {
+      const input = 'Click <a href="javascript:alert(1)">here</a>';
+      const result = sanitizeText(input);
+      expect(result).not.toContain('<a href');
+      expect(result).toContain('&lt;a href=&quot;javascript:alert(1)&quot;&gt;');
+    });
+
+    it('escapes image error handlers', () => {
+      const input = '<img src=x onerror=alert(1)>';
+      const result = sanitizeText(input);
+      expect(result).not.toContain('<img');
+      expect(result).toContain('&lt;img src=x onerror=alert(1)&gt;');
+    });
+
+    it('returns empty string for nullish/empty input', () => {
       expect(sanitizeText('')).toBe('');
     });
   });

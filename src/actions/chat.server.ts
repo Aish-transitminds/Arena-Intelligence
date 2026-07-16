@@ -221,7 +221,7 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
       console.error("askGeminiRAG server error:", error);
       const message = error instanceof Error ? error.message : "Unknown server error";
       return {
-        answer: `[Server Error] ${message} (HasGemini: ${!!getGeminiKey()}, HasGroq: ${!!getGroqKey()})`,
+        answer: `I'm having trouble processing your request right now. Please try again in a moment.`,
         sources: [],
       };
     }

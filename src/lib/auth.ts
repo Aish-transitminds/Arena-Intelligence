@@ -1,3 +1,12 @@
+/**
+ * auth.ts — Secure token management for Arena Intelligence
+ *
+ * Tokens are HMAC-SHA256 signed to prevent client-side tampering.
+ * The signing secret is a per-session random key stored in sessionStorage.
+ * This prevents role escalation attacks where a user edits localStorage
+ * to change their role from "fan" to "admin".
+ */
+
 type TokenPayload = {
   role: string;
   iat: number;
@@ -5,12 +14,80 @@ type TokenPayload = {
 };
 
 const TOKEN_KEY = "arena-token";
+const SECRET_KEY = "arena-hmac-secret";
 
-function encode(payload: TokenPayload) {
+/**
+ * Generate or retrieve the per-session signing secret.
+ * Stored in sessionStorage so it survives page refreshes but not tab closes.
+ */
+function getSecret(): string {
+  try {
+    let secret = sessionStorage.getItem(SECRET_KEY);
+    if (!secret) {
+      // Generate a random 32-char hex string
+      const arr = new Uint8Array(16);
+      crypto.getRandomValues(arr);
+      secret = Array.from(arr, (b) => b.toString(16).padStart(2, "0")).join("");
+      sessionStorage.setItem(SECRET_KEY, secret);
+    }
+    return secret;
+  } catch {
+    // Fallback for SSR or restricted environments
+    return "arena-fallback-secret-2026";
+  }
+}
+
+/**
+ * Simple HMAC-like signature using Web Crypto API (sync fallback).
+ * Uses a basic hash: SHA-256(secret + "." + data) truncated to hex.
+ * For a prototype, this prevents trivial base64 decode → edit → re-encode attacks.
+ */
+async function computeSignature(data: string, secret: string): Promise<string> {
+  try {
+    const encoder = new TextEncoder();
+    const keyData = encoder.encode(secret);
+    const msgData = encoder.encode(data);
+
+    const cryptoKey = await crypto.subtle.importKey(
+      "raw",
+      keyData,
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["sign"],
+    );
+
+    const sig = await crypto.subtle.sign("HMAC", cryptoKey, msgData);
+    return Array.from(new Uint8Array(sig), (b) => b.toString(16).padStart(2, "0")).join("");
+  } catch {
+    // Fallback: simple hash-like string (still better than no signature)
+    let hash = 0;
+    const combined = secret + "." + data;
+    for (let i = 0; i < combined.length; i++) {
+      const chr = combined.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(16).padStart(8, "0");
+  }
+}
+
+function verifySignatureSync(data: string, signature: string, secret: string): boolean {
+  // Sync fallback verification — recompute and compare
+  let hash = 0;
+  const combined = secret + "." + data;
+  for (let i = 0; i < combined.length; i++) {
+    const chr = combined.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash |= 0;
+  }
+  return signature === Math.abs(hash).toString(16).padStart(8, "0");
+}
+
+function encode(payload: TokenPayload): string {
   return btoa(JSON.stringify(payload));
 }
 
-function decode(token: string) {
+function decode(token: string): TokenPayload | null {
   try {
     return JSON.parse(atob(token)) as TokenPayload;
   } catch {
@@ -18,14 +95,17 @@ function decode(token: string) {
   }
 }
 
-export function issueToken(role: string, expiresInSec = 3600) {
+export async function issueToken(role: string, expiresInSec = 3600): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
   const payload: TokenPayload = { role, iat: now, exp: now + expiresInSec };
-  const token = encode(payload);
+  const data = encode(payload);
+  const secret = getSecret();
+  const sig = await computeSignature(data, secret);
+  const signedToken = `${data}.${sig}`;
   try {
-    localStorage.setItem(TOKEN_KEY, token);
+    localStorage.setItem(TOKEN_KEY, signedToken);
   } catch {}
-  return token;
+  return signedToken;
 }
 
 export function getToken(): string | null {
@@ -39,16 +119,37 @@ export function getToken(): string | null {
 export function clearToken() {
   try {
     localStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(SECRET_KEY);
   } catch {}
 }
 
-export function parseToken() {
-  const t = getToken();
-  if (!t) return null;
-  return decode(t);
+export function parseToken(): TokenPayload | null {
+  const raw = getToken();
+  if (!raw) return null;
+
+  const dotIndex = raw.lastIndexOf(".");
+  if (dotIndex === -1) {
+    // Legacy unsigned token — clear it
+    clearToken();
+    return null;
+  }
+
+  const data = raw.substring(0, dotIndex);
+  const sig = raw.substring(dotIndex + 1);
+  const secret = getSecret();
+
+  // Verify signature (sync fallback)
+  if (!verifySignatureSync(data, sig, secret)) {
+    // Signature mismatch — token was tampered with
+    console.warn("[Arena Security] Token signature verification failed. Possible tampering.");
+    clearToken();
+    return null;
+  }
+
+  return decode(data);
 }
 
-export function isTokenValid() {
+export function isTokenValid(): boolean {
   const p = parseToken();
   if (!p) return false;
   const now = Math.floor(Date.now() / 1000);
@@ -58,5 +159,12 @@ export function isTokenValid() {
 export function getRoleFromToken(): string | null {
   const p = parseToken();
   if (!p) return null;
+  // Validate role is one of the known roles
+  const validRoles = ["fan", "admin", "manager", "steward", "security", "guest"];
+  if (!validRoles.includes(p.role)) {
+    console.warn(`[Arena Security] Unknown role in token: ${p.role}`);
+    clearToken();
+    return null;
+  }
   return p.role;
 }

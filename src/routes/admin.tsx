@@ -12,6 +12,10 @@ import { Logo } from "@/components/Logo";
 import { Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { generateAdminRecommendation } from "@/lib/ai";
+import { LiveAttendanceRing } from "@/components/LiveAttendanceRing";
+import { StaffShiftPanel } from "@/components/StaffShiftPanel";
+import { RevenueTracker } from "@/components/RevenueTracker";
+import { EnvironmentPanel } from "@/components/EnvironmentPanel";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -90,6 +94,7 @@ function Admin() {
   const [showRecommendationReasoning, setShowRecommendationReasoning] = useState(false);
   const [recommendationMeta, setRecommendationMeta] = useState<{prompt:string; rawResponse:string} | null>(null);
   const [chartData, setChartData] = useState(initialAttendanceTrend);
+  const [attendanceSparkline, setAttendanceSparkline] = useState<number[]>([52840]);
 
   const handleAddIncident = (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,6 +158,7 @@ function Admin() {
       tick++;
       setLiveAttendance((current) => {
         const newVal = Math.max(50000, Math.min(54500, current + Math.round((Math.random() - 0.5) * 220)));
+        setAttendanceSparkline((prev) => [...prev.slice(-14), newVal]);
         if (tick % 5 === 0) {
           setChartData(prev => {
             const now = new Date();
@@ -179,31 +185,20 @@ function Admin() {
 
   return (
     <AppShell themeVariant="enterprise" title="Operations Console" subtitle="Concept Ops Platform · Stadium Alpha · Match Day Operations">
-      <div className="flex flex-wrap items-center justify-end gap-4 mb-8">        {/* Status indicators */}
-        <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-[#64748B]">
-          <div className="flex items-center gap-2">
-            <span className="size-1.5 rounded-full bg-primary" style={{ boxShadow: "0 0 6px rgba(14,159,110,0.60)" }} />
-            Sensors: <span className="text-primary ml-1">48/48</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="size-1.5 rounded-full bg-primary" style={{ boxShadow: "0 0 6px rgba(14,159,110,0.60)" }} />
-            Systems: <span className="text-primary ml-1">Nominal</span>
-          </div>
-        </div>
-      </div>
+      {/* Status indicators moved to EnvironmentPanel */}
 
 
         {/* ── KPI GRID ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-          <KPICard
-            label="Live Attendance"
-            value={liveAttendanceLabel}
-            sub="Capacity: 54,000"
-            delta="Live"
-            trend="up"
-            icon={<Users className="size-5" />}
-            highlight
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-8">
+          {/* Hero: Live Attendance Ring */}
+          <div className="lg:row-span-2">
+            <LiveAttendanceRing
+              attendance={liveAttendance}
+              capacity={54000}
+              sparklineData={attendanceSparkline}
+              variant="hero"
+            />
+          </div>
           <KPICard
             label="Occupied Seats"
             value={occupiedSeatsLabel}
@@ -227,9 +222,8 @@ function Admin() {
           />
         </div>
 
-        {/* ── SECONDARY ALERTS (Industry standard additions) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <AlertPill icon={<Zap className="size-4" />} label="Grid Power Draw (IoT)" value={`${powerDraw.toFixed(1)} MW`} tone="warning" />
+        {/* ── SECONDARY ALERTS ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <AlertPill icon={<Users className="size-4" />} label="Social Sentiment (AI)" value={`${sentiment.toFixed(1)}% Positive`} tone="success" />
           <AlertPill icon={<Target className="size-4" />} label="Crowd Forecast" value="Peak in 18 min" tone="info" />
         </div>
@@ -426,6 +420,12 @@ function Admin() {
                 </div>
               </div>
             </div>
+
+            {/* Revenue Intelligence */}
+            <RevenueTracker attendance={liveAttendance} />
+
+            {/* Environmental Intelligence */}
+            <EnvironmentPanel />
 
             {/* Crowd Density Heatmap */}
             <div
@@ -659,6 +659,9 @@ function Admin() {
                 ))}
               </div>
             </div>
+
+            {/* Staff Deployment */}
+            <StaffShiftPanel />
 
             {/* Operations Score Gauge */}
             <div

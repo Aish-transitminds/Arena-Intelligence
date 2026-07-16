@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { AIAssistant } from "@/components/AIAssistant";
+import { LiveAttendanceRing } from "@/components/LiveAttendanceRing";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -89,13 +90,16 @@ const initialKpis = [
 
 function Landing() {
   const [liveKpis, setLiveKpis] = useState(initialKpis);
+  const [attendanceSparkline, setAttendanceSparkline] = useState<number[]>([52840]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setLiveKpis((current) =>
         current.map((kpi) => {
           if (kpi.id === "attendance") {
-            return { ...kpi, value: Math.max(52000, Math.min(54000, Number(kpi.value) + Math.round((Math.random() - 0.5) * 15))) };
+            const newVal = Math.max(52000, Math.min(54000, Number(kpi.value) + Math.round((Math.random() - 0.5) * 15)));
+            setAttendanceSparkline((prev) => [...prev.slice(-14), newVal]);
+            return { ...kpi, value: newVal };
           }
           if (kpi.id === "queue") {
             return { ...kpi, value: Math.max(2.5, Math.min(6.0, Number(kpi.value) + (Math.random() - 0.5) * 0.4)) };
@@ -285,9 +289,20 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.44 }}
-              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+              className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4"
             >
-              {liveKpis.map((kpi) => {
+              {/* Hero: Live Attendance Ring */}
+              <div className="md:row-span-2">
+                <LiveAttendanceRing
+                  attendance={Number(liveKpis.find((k) => k.id === "attendance")?.value ?? 52840)}
+                  capacity={54000}
+                  sparklineData={attendanceSparkline}
+                  variant="hero"
+                />
+              </div>
+
+              {/* Remaining KPI cards */}
+              {liveKpis.filter((k) => k.id !== "attendance").map((kpi) => {
                 const Icon = kpi.icon;
                 return (
                   <div
