@@ -16,6 +16,7 @@ import { LiveAttendanceRing } from "@/components/LiveAttendanceRing";
 import { StaffShiftPanel } from "@/components/StaffShiftPanel";
 import { RevenueTracker } from "@/components/RevenueTracker";
 import { EnvironmentPanel } from "@/components/EnvironmentPanel";
+import { AIAssistant } from "@/components/AIAssistant";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -517,6 +518,11 @@ function Admin() {
 
           {/* ── RIGHT: Sidebar ── */}
           <div className="col-span-12 xl:col-span-4 space-y-6">
+
+            {/* AI Assistant (Docked) */}
+            <div className="rounded-2xl bg-card border border-border overflow-hidden">
+              <AIAssistant mode="docked" />
+            </div>
 
             {/* Operational Recommendation */}
             <div

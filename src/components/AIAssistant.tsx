@@ -91,8 +91,8 @@ ${persona === "fan"
 }`;
 }
 
-export function AIAssistant() {
-  const [open, setOpen] = useState(false);
+export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked" }) {
+  const [open, setOpen] = useState(mode === "docked");
   const [persona, setPersona] = useState<Persona>("fan");
   const [lang, setLang] = useState<Language>("en");
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
@@ -232,49 +232,56 @@ export function AIAssistant() {
 
   return (
     <>
-      <AnimatePresence>
-        {!open && (
-          <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            className="fixed bottom-24 right-6 z-40 bg-white text-slate-900 px-4 py-3 rounded-2xl shadow-xl font-medium text-sm border border-slate-200 cursor-pointer origin-bottom-right"
-            onClick={() => setOpen(true)}
-          >
-            I am your buddy! Ask me for help 🤖
-            {/* little triangle pointer */}
-            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-slate-200 transform rotate-45"></div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {mode === "floating" && (
+        <>
+          <AnimatePresence>
+            {!open && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                className="fixed bottom-24 right-6 z-40 bg-white text-slate-900 px-4 py-3 rounded-2xl shadow-xl font-medium text-sm border border-slate-200 cursor-pointer origin-bottom-right"
+                onClick={() => setOpen(true)}
+              >
+                I am your buddy! Ask me for help 🤖
+                <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-slate-200 transform rotate-45"></div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      <motion.button
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.4, type: "spring" }}
-        onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 size-14 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer group"
-        style={{
-          background: "linear-gradient(135deg, #0E9F6E, #10B981)",
-          boxShadow: "0 0 30px rgba(14,159,110,0.50), inset 0 0 10px rgba(255,255,255,0.2)",
-        }}
-        aria-label="Open Arena IQ"
-      >
-        <span className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-emerald-400 opacity-50" />
-        {open ? <X className="size-6 relative z-10 transition-transform group-hover:rotate-90" /> : <Sparkles className="size-6 relative z-10 transition-transform group-hover:scale-110" />}
-      </motion.button>
+          <motion.button
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.4, type: "spring" }}
+            onClick={() => setOpen((v) => !v)}
+            className="fixed bottom-6 right-6 z-50 size-14 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer group"
+            style={{
+              background: "linear-gradient(135deg, #0E9F6E, #10B981)",
+              boxShadow: "0 0 30px rgba(14,159,110,0.50), inset 0 0 10px rgba(255,255,255,0.2)",
+            }}
+            aria-label="Open Arena IQ"
+          >
+            <span className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-emerald-400 opacity-50" />
+            {open ? <X className="size-6 relative z-10 transition-transform group-hover:rotate-90" /> : <Sparkles className="size-6 relative z-10 transition-transform group-hover:scale-110" />}
+          </motion.button>
+        </>
+      )}
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={mode === "floating" ? { opacity: 0, y: 20, scale: 0.95 } : { opacity: 1 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[440px] max-w-[calc(100vw-1.5rem)] h-[75vh] sm:h-[620px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl font-sans text-left"
+            exit={mode === "floating" ? { opacity: 0, y: 20, scale: 0.95 } : { opacity: 1 }}
+            className={
+              mode === "floating"
+                ? "fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[440px] max-w-[calc(100vw-1.5rem)] h-[75vh] sm:h-[620px] max-h-[calc(100vh-8rem)] rounded-2xl flex flex-col overflow-hidden shadow-2xl font-sans text-left"
+                : "w-full h-[600px] rounded-2xl flex flex-col overflow-hidden shadow-sm font-sans text-left relative"
+            }
             style={{
               background: "#0B1A23",
-              border: "2px solid rgba(14,159,110,0.25)",
-              boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(14,159,110,0.15)",
+              border: mode === "floating" ? "2px solid rgba(14,159,110,0.25)" : "1px solid rgba(14,159,110,0.25)",
+              boxShadow: mode === "floating" ? "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(14,159,110,0.15)" : "none",
             }}
           >
             {/* Header */}
