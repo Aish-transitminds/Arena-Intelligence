@@ -152,7 +152,6 @@ function Login() {
 
           {error ? <div className="p-3 bg-red-50 text-destructive text-sm rounded-lg border border-red-100">{error}</div> : null}
           
-          {import.meta.env.VITE_ENABLE_JUDGE_PREVIEW === "true" && (
             <>
               <button 
                 type="button"
@@ -169,7 +168,6 @@ function Login() {
                 <div className="relative flex justify-center text-xs"><span className="bg-white px-2 text-slate-500 uppercase tracking-widest">Or login normally</span></div>
               </div>
             </>
-          )}
 
           {!showSimulatedAuth ? (
             <button 

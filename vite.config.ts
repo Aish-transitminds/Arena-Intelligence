@@ -30,6 +30,7 @@ export default defineConfig({
   },
   nitro: {
     preset: (process.env.VERCEL || process.env.NOW_BUILDER) ? "vercel" : "node-server",
+    // @ts-expect-error - Nitro types in vite config are incomplete
     externals: {
       external: ["react-leaflet", "leaflet", "@react-leaflet/core"]
     }
