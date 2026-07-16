@@ -50,6 +50,11 @@ export function getStoredRole(): UserRole {
   } catch {}
 
   const storage = getStorage();
+  const expiry = storage?.getItem(ROLE_STORAGE_KEY + "-expiry");
+  if (expiry && parseInt(expiry, 10) < Date.now()) {
+    clearStoredRole();
+    return "guest";
+  }
   const role = storage?.getItem(ROLE_STORAGE_KEY);
   return role === "admin" || role === "manager" || role === "steward" || role === "security" || role === "fan" ? role as UserRole : "guest";
 }
@@ -57,10 +62,13 @@ export function getStoredRole(): UserRole {
 export function persistRole(role: UserRole): void {
   // persist both token and fallback storage
   try {
-    issueToken(role, 60 * 60); // 1 hour
+    issueToken(role, 45 * 60); // 45 minutes
   } catch {}
   const storage = getStorage();
-  if (storage) storage.setItem(ROLE_STORAGE_KEY, role);
+  if (storage) {
+    storage.setItem(ROLE_STORAGE_KEY, role);
+    storage.setItem(ROLE_STORAGE_KEY + "-expiry", (Date.now() + 45 * 60 * 1000).toString());
+  }
 }
 
 export function clearStoredRole(): void {
@@ -68,7 +76,10 @@ export function clearStoredRole(): void {
     clearToken();
   } catch {}
   const storage = getStorage();
-  if (storage) storage.removeItem(ROLE_STORAGE_KEY);
+  if (storage) {
+    storage.removeItem(ROLE_STORAGE_KEY);
+    storage.removeItem(ROLE_STORAGE_KEY + "-expiry");
+  }
 }
 
 export function canAccessRoute(pathname: string, role: UserRole): boolean {

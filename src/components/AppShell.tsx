@@ -1,5 +1,5 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { type ReactNode, useEffect } from "react";
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
+import { type ReactNode, useEffect, useState } from "react";
 import {
   LayoutDashboard,
   ShieldAlert,
@@ -59,12 +59,24 @@ export function AppShell({
 }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const activeItem = navSections.flatMap((s) => s.items).find((i) => pathname.startsWith(i.to));
-  const role = getStoredRole();
+  const [role, setRole] = useState(getStoredRole());
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (role === "guest") {
       persistRole("fan");
+      setRole("fan");
     }
+  }, [role]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentRole = getStoredRole();
+      if (currentRole !== role) {
+        setRole(currentRole);
+      }
+    }, 10000); // Check every 10 seconds for simulation purposes
+    return () => clearInterval(interval);
   }, [role]);
 
   if (!canAccessRoute(pathname, role)) {

@@ -9,6 +9,17 @@ import {
   clearStoredRole,
 } from "@/lib/security";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
   ShieldCheck,
   Camera,
   Users,
@@ -311,13 +322,30 @@ function Security() {
                 <span className="text-sm font-bold text-foreground">{buckets.length}</span>
               </div>
             </div>
-            <button
-              onClick={handleClearRole}
-              className="w-full mt-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.18em] text-foreground transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
-              style={{ background: "linear-gradient(135deg, #D92D20, #FF4D3D)", boxShadow: "0 0 16px rgba(217,45,32,0.20)" }}
-            >
-              Clear Role Token
-            </button>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <button
+                  className="w-full mt-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-[0.18em] text-foreground transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
+                  style={{ background: "linear-gradient(135deg, #D92D20, #FF4D3D)", boxShadow: "0 0 16px rgba(217,45,32,0.20)" }}
+                >
+                  Clear Role Token
+                </button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Clear Role Token?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will immediately revoke your current active role and session. You will be restricted to the Fan view until you re-authenticate.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={handleClearRole} className="bg-red-600 text-white hover:bg-red-700 border-red-600">
+                    Clear Token
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
 
           {/* Security Protocols */}

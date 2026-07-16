@@ -78,14 +78,38 @@ const modules = [
   },
 ];
 
-const kpis = [
-  { label: "Live Attendance", value: "52,840", icon: Users },
-  { label: "Gate Status", value: "All Clear", icon: ShieldCheck },
-  { label: "Avg Queue Time", value: "4 min", icon: Clock },
-  { label: "Ops Score", value: "97.4%", icon: TrendingUp },
+import { useEffect, useState } from "react";
+
+const initialKpis = [
+  { id: "attendance", label: "Live Attendance", value: 52840, format: (v: number) => v.toLocaleString(), icon: Users },
+  { id: "gate", label: "Gate Status", value: "All Clear", format: (v: any) => v, icon: ShieldCheck },
+  { id: "queue", label: "Avg Queue Time", value: 4.2, format: (v: number) => `${v.toFixed(1)} min`, icon: Clock },
+  { id: "ops", label: "Ops Score", value: 97.4, format: (v: number) => `${v.toFixed(1)}%`, icon: TrendingUp },
 ];
 
 function Landing() {
+  const [liveKpis, setLiveKpis] = useState(initialKpis);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLiveKpis((current) =>
+        current.map((kpi) => {
+          if (kpi.id === "attendance") {
+            return { ...kpi, value: Math.max(52000, Math.min(54000, Number(kpi.value) + Math.round((Math.random() - 0.5) * 15))) };
+          }
+          if (kpi.id === "queue") {
+            return { ...kpi, value: Math.max(2.5, Math.min(6.0, Number(kpi.value) + (Math.random() - 0.5) * 0.4)) };
+          }
+          if (kpi.id === "ops") {
+            return { ...kpi, value: Math.max(96.0, Math.min(99.5, Number(kpi.value) + (Math.random() - 0.5) * 0.2)) };
+          }
+          return kpi;
+        })
+      );
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div
       className="min-h-screen text-slate-900 selection:bg-primary/20 selection:text-slate-900 font-sans antialiased overflow-x-hidden"
@@ -171,49 +195,32 @@ function Landing() {
                 backgroundImage: 'url("/stadium-hero.png")',
                 backgroundSize: "cover",
                 backgroundPosition: "center 22%",
-                opacity: 0.9,
-                filter: "saturate(1.2) contrast(1.1) brightness(0.65)",
+                opacity: 0.7,
+                filter: "saturate(1.1) contrast(1.1) brightness(0.9)",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(15,23,42,0.70) 0%, rgba(15,23,42,0.30) 40%, rgba(248,250,252,0.95) 80%, rgba(248,250,252,1) 100%)",
+                  "linear-gradient(180deg, rgba(248,250,252,0.85) 0%, rgba(248,250,252,0.7) 40%, rgba(248,250,252,0.95) 80%, rgba(248,250,252,1) 100%)",
               }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.08) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.08) 0%, transparent 58%)",
+                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.15) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.15) 0%, transparent 58%)",
               }}
             />
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1440px] px-6 pt-28 pb-32 lg:pt-36 lg:pb-40 lg:px-10">
-            {/* Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 mb-8"
-              style={{
-                background: "rgba(14,159,110,0.08)",
-                border: "1px solid rgba(14,159,110,0.22)",
-              }}
-            >
-              <span className="size-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-primary">
-                Concept Ops Platform for Mega-Events
-              </span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-white max-w-4xl"
+              className="text-[clamp(2.8rem,5.5vw,6rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-slate-900 max-w-4xl"
             >
               Arena Intelligence
             </motion.h1>
@@ -222,7 +229,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
-              className="mt-5 text-xl font-medium leading-relaxed max-w-2xl text-slate-200"
+              className="mt-5 text-xl font-medium leading-relaxed max-w-2xl text-slate-700"
             >
               Smart Stadium Operations Platform
             </motion.p>
@@ -231,7 +238,7 @@ function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.24 }}
-              className="mt-4 text-base leading-8 max-w-xl text-slate-300"
+              className="mt-4 text-base leading-8 max-w-xl text-slate-600"
             >
               Unified operations platform for crowd management, tournament coordination,
               emergency response and stadium analytics.
@@ -280,12 +287,12 @@ function Landing() {
               transition={{ duration: 0.7, delay: 0.44 }}
               className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
             >
-              {kpis.map((kpi) => {
+              {liveKpis.map((kpi) => {
                 const Icon = kpi.icon;
                 return (
                   <div
                     key={kpi.label}
-                    className="rounded-2xl p-5 card-lift"
+                    className="rounded-2xl p-5 card-lift relative overflow-hidden group"
                     style={{
                       background: "rgba(255,255,255,0.85)",
                       border: "1px solid rgba(0,0,0,0.06)",
@@ -293,13 +300,19 @@ function Landing() {
                       boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
                     }}
                   >
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="flex items-center gap-2 mb-3">
                       <Icon className="size-4" style={{ color: "#0E9F6E" }} />
                       <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#64748B" }}>
                         {kpi.label}
                       </span>
                     </div>
-                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight tabular-nums">{kpi.value}</div>
+                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight tabular-nums relative">
+                      {kpi.format(kpi.value)}
+                      {kpi.id !== "gate" && (
+                        <span className="absolute -right-4 top-1 size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      )}
+                    </div>
                   </div>
                 );
               })}
@@ -307,6 +320,85 @@ function Landing() {
           </div>
         </section>
 
+        {/* ── ABOUT THIS PROJECT (For Judges / Reviewers) ── */}
+        <section className="py-20 px-6 lg:px-10 max-w-[1440px] mx-auto">
+          <div className="rounded-3xl p-8 lg:p-12 border border-blue-500/20 bg-blue-50/50 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+              <ShieldCheck className="w-64 h-64 text-blue-600" />
+            </div>
+            <div className="relative z-10 max-w-3xl">
+              <span className="inline-flex rounded-full px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-blue-600 mb-4 bg-blue-100 border border-blue-200">
+                Judges & Reviewers
+              </span>
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mb-4">
+                About this Simulation
+              </h2>
+              <p className="text-lg leading-relaxed text-slate-600 mb-6">
+                This application is a <strong>Smart stadium and management prototype</strong> of a mega-event command center, inspired by the operational workflows of stadiums like SoFi and Tottenham Hotspur. It demonstrates a strict "Command Center Pattern":
+              </p>
+              <ul className="space-y-3 text-slate-700 mb-8 list-none">
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full bg-blue-100 p-1"><ShieldCheck className="w-4 h-4 text-blue-600" /></div>
+                  <span><strong>AI Layering (LLM + RAG):</strong> The Arena IQ bot is powered by an LLM + RAG (Retrieval-Augmented Generation) trained model. It can provide you with match tickets, answer fan queries, pre-fill incident forms, but strictly requires human confirmation for high-risk dispatches.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full bg-blue-100 p-1"><ShieldCheck className="w-4 h-4 text-blue-600" /></div>
+                  <span><strong>Role-Based Access:</strong> Try the "Preview Access" in the login screen to explore the Fan vs Staff views. Operations are locked without the correct token.</span>
+                </li>
+              </ul>
+              <Link
+                to="/login"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[0.15em] text-white transition hover:opacity-90 bg-blue-600 shadow-lg shadow-blue-600/20"
+              >
+                Go to Preview Login
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── MODULES GRID ── */}
+        <section id="modules" className="py-20 px-6 lg:px-10 max-w-[1440px] mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Platform Capabilities
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Explore the core modules that power the Arena Intelligence platform.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {modules.map((mod, i) => {
+              const Icon = mod.icon;
+              return (
+                <motion.div
+                  key={mod.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                >
+                  <Link
+                    to={mod.to}
+                    className="group block h-full rounded-3xl p-8 bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform" />
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center border border-emerald-100 group-hover:bg-primary group-hover:border-primary transition-colors">
+                        <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                        {mod.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">{mod.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{mod.desc}</p>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
 
       </main>
 

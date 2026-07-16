@@ -3,6 +3,17 @@ import { Bus, Clock, MapPin, Navigation, AlertTriangle, ShieldCheck } from "luci
 
 import "leaflet/dist/leaflet.css";
 import { BusData, setGlobalBuses } from "@/lib/transportState";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const STADIUM_COORD: [number, number] = [12.9788, 77.5996];
 
@@ -188,14 +199,45 @@ export default function TransportMapInner({ role = "fan" }: { role?: string }) {
                 className="stadium-mask"
               />
               
-              {/* Inject CSS to mask the ImageOverlay */}
+              {/* Inject CSS to mask the ImageOverlay and animate radar */}
               <style>{`
                 .stadium-mask {
                   border-radius: 50%;
                   clip-path: circle(48% at 50% 50%);
                   -webkit-clip-path: circle(48% at 50% 50%);
                 }
+                .radar-pulse {
+                  transform-origin: center;
+                  animation: radar-pulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                @keyframes radar-pulse {
+                  0% {
+                    transform: scale(0.8);
+                    opacity: 0.8;
+                  }
+                  100% {
+                    transform: scale(2.5);
+                    opacity: 0;
+                  }
+                }
+                .radar-pulse-2 {
+                  transform-origin: center;
+                  animation: radar-pulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+                  animation-delay: 1.5s;
+                }
               `}</style>
+              
+              {/* Radar Pulsing Rings */}
+              <LeafletMap.Circle 
+                center={STADIUM_COORD} 
+                radius={80} 
+                pathOptions={{ fillColor: 'transparent', color: '#10b981', weight: 2, className: 'radar-pulse' }} 
+              />
+              <LeafletMap.Circle 
+                center={STADIUM_COORD} 
+                radius={80} 
+                pathOptions={{ fillColor: 'transparent', color: '#10b981', weight: 2, className: 'radar-pulse-2' }} 
+              />
               
               {/* Stadium Pitch Circle */}
               <LeafletMap.Circle 
@@ -314,9 +356,27 @@ export default function TransportMapInner({ role = "fan" }: { role?: string }) {
           {/* Action buttons (Staff only) */}
           {(role === "manager" || role === "steward") && (
             <div className="p-4 border-t border-slate-100 bg-slate-50 space-y-2">
-              <button className="w-full py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition">
-                Dispatch Extra Fleet
-              </button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <button className="w-full py-2.5 rounded-lg bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition">
+                    Dispatch Extra Fleet
+                  </button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Dispatch Extra Fleet?</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      You are about to dispatch 3 additional buses from the depot to handle excess capacity.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction className="bg-slate-900 text-white hover:bg-slate-800 border-slate-900">
+                      Confirm Dispatch
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
               {role === "manager" && (
                 <button className="w-full py-2.5 rounded-lg border border-slate-200 bg-white text-slate-700 text-sm font-semibold hover:bg-slate-50 transition">
                   Broadcast Delay Alert

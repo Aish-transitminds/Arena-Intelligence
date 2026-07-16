@@ -3,6 +3,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Send, X, Globe, UserCheck, Volume2, VolumeX, Mic } from "lucide-react";
 import { currentBuses } from "../lib/transportState";
 import { askGeminiRAG } from "../actions/chat.server";
+import { useNavigate } from "@tanstack/react-router";
+import { DigitalTicketCard } from "./DigitalTicketCard";
+import { AdminKpiCard } from "./AdminKpiCard";
+import { TransportMap } from "./TransportMap";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 type Persona = "staff" | "fan" | "volunteer";
 type Language = "en" | "es" | "fr" | "pt";
@@ -65,7 +80,15 @@ ${transportContext}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific. Use only the provided stadium and live-data facts; say when information is unavailable.
-Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
+Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.
+
+[GENERATIVE UI CAPABILITIES & SECURITY]:
+You have the ability to render complex interactive UI directly in the chat window using specific text tags.
+Security Rule: You MUST respect the current persona.
+${persona === "fan" 
+  ? "- For Fans: If they ask about their ticket or passes, output [RENDER_TICKET]. If they ask for the map, directions, or transit, output [RENDER_MAP]. NEVER output [RENDER_ADMIN]. If they ask for operations/security data, politely refuse as they are a fan." 
+  : "- For Staff/Volunteers: If they ask for live KPIs, stats, or dashboard, output [RENDER_ADMIN]. If they ask for the map, directions, or transit, output [RENDER_MAP]. NEVER output [RENDER_TICKET]. If they ask for a ticket, remind them that staff do not use digital tickets."
+}`;
 }
 
 export function AIAssistant() {
@@ -83,6 +106,7 @@ export function AIAssistant() {
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -147,6 +171,46 @@ export function AIAssistant() {
     }
 
     const nextHistory = [...messages, { role: "user" as const, text }];
+    
+    // Tier 1 (Read-only Data)
+    if (/bus eta|match time|queue time|queue|eta|fixture/i.test(text) && !/(dispatch|report|sos)/i.test(text)) {
+      const tier1Response = "The match starts at 19:30. The average queue time is 4 mins at Gate B. Bus BMTC-119 is arriving in 1 min.";
+      setMessages([...nextHistory, { role: "ai", text: tier1Response }]);
+      setInput("");
+      speakText(tier1Response);
+      return;
+    }
+
+    // Tier 2 (Navigate + Prefill)
+    const tier2Match = text.match(/(crowd|spill|fight|medical|emergency|overcrowding) (?:at|near|in) (Section \d+|Gate [A-Z]|VIP)/i);
+    if (tier2Match) {
+      const typeStr = tier2Match[1].toLowerCase();
+      const type = typeStr.includes('medical') ? 'Medical Emergency' : 
+                   (typeStr.includes('fight') || typeStr.includes('security')) ? 'Security Alert' : 
+                   typeStr.includes('spill') ? 'Hazard & Safety' : 'Overcrowding';
+      const area = tier2Match[2];
+      
+      const tier2Response = `I've prepared an incident report for ${type} at ${area}. Please review and submit it.`;
+      setMessages([...nextHistory, { role: "ai", text: tier2Response }]);
+      setInput("");
+      navigate({ to: "/emergency", search: { prefillArea: area, prefillType: type } as any });
+      speakText(tier2Response);
+      return;
+    }
+
+    // Tier 3 (Propose Action)
+    if (/(evacuate|trigger sos)/i.test(text)) {
+      setMessages([...nextHistory, { role: "ai", text: `[RENDER_SOS_CONFIRM] You requested an emergency action.` }]);
+      setInput("");
+      return;
+    }
+
+    if (/(dispatch|send).*(security|medic|crew)/i.test(text)) {
+      setMessages([...nextHistory, { role: "ai", text: `[RENDER_DISPATCH_CONFIRM] You requested to dispatch a team.` }]);
+      setInput("");
+      return;
+    }
+
     setMessages(nextHistory);
     setInput("");
     setIsTyping(true);
@@ -189,14 +253,15 @@ export function AIAssistant() {
         animate={{ scale: 1 }}
         transition={{ delay: 0.4, type: "spring" }}
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 size-14 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 size-14 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer group"
         style={{
-          background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
-          boxShadow: "0 0 24px rgba(14,159,110,0.40)",
+          background: "linear-gradient(135deg, #0E9F6E, #10B981)",
+          boxShadow: "0 0 30px rgba(14,159,110,0.50), inset 0 0 10px rgba(255,255,255,0.2)",
         }}
         aria-label="Open Arena IQ"
       >
-        {open ? <X className="size-6" /> : <Sparkles className="size-6" />}
+        <span className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-emerald-400 opacity-50" />
+        {open ? <X className="size-6 relative z-10 transition-transform group-hover:rotate-90" /> : <Sparkles className="size-6 relative z-10 transition-transform group-hover:scale-110" />}
       </motion.button>
 
       <AnimatePresence>
@@ -316,27 +381,92 @@ export function AIAssistant() {
                   <div
                     className="max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-6"
                     style={
-                      m.role === "user"
-                        ? {
-                            background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
-                            color: "#FFFFFF",
-                            fontWeight: 600,
-                            borderBottomRightRadius: "4px",
-                          }
-                        : {
-                            background: "#1A2E3D",
-                            color: "#E2E8F0",
-                            border: "1px solid rgba(255,255,255,0.10)",
-                            borderBottomLeftRadius: "4px",
-                          }
-                    }
-                  >
-                    {m.text}
-                  </div>
+                    m.role === "user"
+                      ? {
+                          background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
+                          color: "#FFFFFF",
+                          fontWeight: 600,
+                          borderBottomRightRadius: "6px",
+                        }
+                      : {
+                          background: "#1A2E3D",
+                          color: "#F8FAFC",
+                          border: "1px solid rgba(255,255,255,0.15)",
+                          borderBottomLeftRadius: "6px",
+                        }
+                  }
+                >
+                  {(() => {
+                    let text = m.text;
+                    const renderTicket = text.includes("[RENDER_TICKET]");
+                    const renderAdmin = text.includes("[RENDER_ADMIN]");
+                    const renderMap = text.includes("[RENDER_MAP]");
+                    const renderDispatchConfirm = text.includes("[RENDER_DISPATCH_CONFIRM]");
+                    const renderSosConfirm = text.includes("[RENDER_SOS_CONFIRM]");
+                    
+                    text = text.replace("[RENDER_TICKET]", "").replace("[RENDER_ADMIN]", "").replace("[RENDER_MAP]", "").replace("[RENDER_DISPATCH_CONFIRM]", "").replace("[RENDER_SOS_CONFIRM]", "");
+
+                    return (
+                      <>
+                        {text && <p className={renderTicket || renderAdmin || renderMap || renderDispatchConfirm || renderSosConfirm ? "mb-3" : ""}>{text}</p>}
+                        {renderTicket && persona === "fan" && <DigitalTicketCard />}
+                        {renderAdmin && persona !== "fan" && <AdminKpiCard />}
+                        {renderMap && (
+                          <div className="h-48 w-full rounded-xl overflow-hidden mt-3 border border-slate-700">
+                            <TransportMap role={persona} />
+                          </div>
+                        )}
+                        {renderDispatchConfirm && (
+                          <div className="mt-3">
+                            <p className="text-xs mb-2 text-slate-300">I can help with that. Please confirm the dispatch below:</p>
+                            <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <button className="w-full px-3 py-2 rounded-lg text-xs font-bold bg-amber-600 text-white hover:bg-amber-500 transition">Confirm Dispatch</button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent>
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>Confirm Dispatch?</AlertDialogTitle>
+                                  <AlertDialogDescription>Are you sure you want to proceed with this dispatch action?</AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction className="bg-amber-600 text-white hover:bg-amber-700 border-amber-600">Dispatch</AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </div>
+                        )}
+                        {renderSosConfirm && (
+                          <div className="mt-3">
+                            <p className="text-xs mb-2 text-slate-300">I can help with that. Please confirm the emergency action below:</p>
+                            <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <button className="w-full px-3 py-2 rounded-lg text-xs font-bold bg-red-600 text-white hover:bg-red-500 transition">Confirm SOS</button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent>
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>Trigger Stadium-Wide SOS?</AlertDialogTitle>
+                                  <AlertDialogDescription>This will activate emergency alarms across all screens and gates.</AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                  <AlertDialogAction className="bg-red-600 text-white hover:bg-red-700 border-red-600">Confirm SOS</AlertDialogAction>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                            </AlertDialog>
+                          </div>
+                        )}
+                      </>
+                    );
+                  })()}
+                </div>
                 </div>
               ))}
               {isTyping && (
-                <div className="flex justify-start">
+                <div className="flex justify-start mt-2">
+                  <div className="size-8 rounded-xl flex items-center justify-center shrink-0 mt-1 mr-2" style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)" }}>
+                    <Sparkles className="size-4 text-white" />
+                  </div>
                   <div
                     className="px-4 py-3 rounded-2xl flex items-center gap-2"
                     style={{
@@ -363,17 +493,35 @@ export function AIAssistant() {
               <div ref={messagesEndRef} />
             </div>
 
+            {/* Quick Action Buttons */}
+            <div className="px-4 py-2 flex flex-wrap gap-2 justify-center" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.15)" }}>
+              {persona === "fan" ? (
+                <>
+                  <button onClick={() => send("Show me my ticket")} disabled={isTyping} className="px-3 py-1.5 rounded-full text-[10px] font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50">🎟️ My Ticket</button>
+                  <button onClick={() => send("Show me the map")} disabled={isTyping} className="px-3 py-1.5 rounded-full text-[10px] font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50">🗺️ Transport Map</button>
+                </>
+              ) : (
+                <>
+                  <button onClick={() => send("Show me the ops console")} disabled={isTyping} className="px-3 py-1.5 rounded-full text-[10px] font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50">📊 Ops Console</button>
+                  <button onClick={() => send("Show me the map")} disabled={isTyping} className="px-3 py-1.5 rounded-full text-[10px] font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50">🗺️ Transport Map</button>
+                </>
+              )}
+            </div>
+
             {/* Suggestions + input */}
             <div
               className="p-3 space-y-2.5"
               style={{ borderTop: "2px solid rgba(14,159,110,0.15)", background: "#0D1E2A" }}
             >
               <div className="flex gap-1.5 overflow-x-auto pb-1 custom-scrollbar">
-                {activeSuggestions.map((s) => (
-                  <button
+                {activeSuggestions.map((s, i) => (
+                  <motion.button
                     key={s}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
                     onClick={() => send(s)}
-                    className="text-xs px-3 py-2 rounded-full whitespace-nowrap transition cursor-pointer font-semibold border"
+                    className="text-xs px-3 py-2 rounded-full whitespace-nowrap transition cursor-pointer font-semibold border hover:bg-emerald-500/20"
                     style={{
                       background: "rgba(14,159,110,0.08)",
                       borderColor: "rgba(14,159,110,0.25)",
@@ -381,7 +529,7 @@ export function AIAssistant() {
                     }}
                   >
                     {s}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
 

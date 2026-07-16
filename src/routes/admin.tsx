@@ -12,6 +12,17 @@ import { Logo } from "@/components/Logo";
 import { Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { generateAdminRecommendation } from "@/lib/ai";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -23,7 +34,7 @@ export const Route = createFileRoute("/admin")({
   component: Admin,
 });
 
-const attendanceTrend = [
+const initialAttendanceTrend = [
   { time: "18:00", current: 18200, forecast: 17800 },
   { time: "18:30", current: 28500, forecast: 26000 },
   { time: "19:00", current: 38800, forecast: 36000 },
@@ -72,10 +83,13 @@ function Admin() {
   const [occupiedSeats, setOccupiedSeats] = useState(97.8);
   const [avgQueueTime, setAvgQueueTime] = useState(4.2);
   const [opsScore, setOpsScore] = useState(97.4);
+  const [powerDraw, setPowerDraw] = useState(42.5); // Megawatts
+  const [sentiment, setSentiment] = useState(88.2); // Positive Sentiment %
   const [recommendation, setRecommendation] = useState("Elevated queue detected at Gate D. Redirect fans from Sector 14 ingress to Gate A to reduce peak load by an estimated 38%.");
   const [recommendationBusy, setRecommendationBusy] = useState(false);
   const [showRecommendationReasoning, setShowRecommendationReasoning] = useState(false);
   const [recommendationMeta, setRecommendationMeta] = useState<{prompt:string; rawResponse:string} | null>(null);
+  const [chartData, setChartData] = useState(initialAttendanceTrend);
 
   const handleAddIncident = (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,11 +148,26 @@ function Admin() {
   };
 
   useEffect(() => {
+    let tick = 0;
     const timer = window.setInterval(() => {
-      setLiveAttendance((current) => Math.max(50000, Math.min(54500, current + Math.round((Math.random() - 0.5) * 220))));
+      tick++;
+      setLiveAttendance((current) => {
+        const newVal = Math.max(50000, Math.min(54500, current + Math.round((Math.random() - 0.5) * 220)));
+        if (tick % 5 === 0) {
+          setChartData(prev => {
+            const now = new Date();
+            const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+            const newPoint = { time: timeStr, current: newVal, forecast: 52000 + Math.round((Math.random() - 0.5) * 500) };
+            return [...prev.slice(1), newPoint];
+          });
+        }
+        return newVal;
+      });
       setOccupiedSeats((current) => Math.max(94.5, Math.min(99.2, current + (Math.random() - 0.5) * 0.7)));
       setAvgQueueTime((current) => Math.max(2.4, Math.min(7.5, current + (Math.random() - 0.5) * 0.6)));
       setOpsScore((current) => Math.max(95.5, Math.min(99.1, current + (Math.random() - 0.5) * 0.35)));
+      setPowerDraw((current) => Math.max(38.0, Math.min(45.0, current + (Math.random() - 0.5) * 0.4)));
+      setSentiment((current) => Math.max(82.0, Math.min(96.0, current + (Math.random() - 0.5) * 1.2)));
     }, 1800);
     return () => window.clearInterval(timer);
   }, []);
@@ -198,11 +227,11 @@ function Admin() {
           />
         </div>
 
-        {/* ── SECONDARY ALERTS ── */}
+        {/* ── SECONDARY ALERTS (Industry standard additions) ── */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <AlertPill icon={<AlertCircle className="size-4" />} label="Medical Alerts" value="2 Active" tone="warning" />
-          <AlertPill icon={<ShieldCheck className="size-4" />} label="Security Status" value="All Clear" tone="success" />
-          <AlertPill icon={<Zap className="size-4" />} label="Crowd Forecast" value="Peak in 18 min" tone="info" />
+          <AlertPill icon={<Zap className="size-4" />} label="Grid Power Draw (IoT)" value={`${powerDraw.toFixed(1)} MW`} tone="warning" />
+          <AlertPill icon={<Users className="size-4" />} label="Social Sentiment (AI)" value={`${sentiment.toFixed(1)}% Positive`} tone="success" />
+          <AlertPill icon={<Target className="size-4" />} label="Crowd Forecast" value="Peak in 18 min" tone="info" />
         </div>
 
         {/* ── MAIN CONTENT GRID ── */}
@@ -236,7 +265,7 @@ function Admin() {
               </div>
               <div className="h-48 sm:h-64 w-full">
                 <ResponsiveContainer>
-                  <AreaChart data={attendanceTrend}>
+                  <AreaChart data={chartData}>
                     <defs>
                       <linearGradient id="attendGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="#0E9F6E" stopOpacity={0.30} />
@@ -541,13 +570,30 @@ function Admin() {
                   </p>
                 </div>
               ) : (
-                <button
-                  onClick={handleDeployRedirect}
-                  className="w-full py-3 rounded-xl text-sm font-bold uppercase tracking-[0.18em] text-foreground transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
-                  style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 0 20px rgba(14,159,110,0.20)" }}
-                >
-                  Dispatch Redirect Signal
-                </button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button
+                      className="w-full py-3 rounded-xl text-sm font-bold uppercase tracking-[0.18em] text-foreground transition hover:opacity-90 active:scale-[0.98] cursor-pointer"
+                      style={{ background: "linear-gradient(135deg, #0E9F6E, #3CB371)", boxShadow: "0 0 20px rgba(14,159,110,0.20)" }}
+                    >
+                      Dispatch Redirect Signal
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Deploy Redirect Signal?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This will activate digital signage to reroute ingress traffic from Gate D to Gate A. Are you sure you want to proceed?
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleDeployRedirect} className="bg-primary text-black hover:bg-primary/90 border-primary">
+                        Confirm Dispatch
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               )}
             </div>
 
@@ -581,12 +627,29 @@ function Admin() {
                         Crew En Route
                       </span>
                     ) : res.status === "Needs Service" ? (
-                      <button
-                        onClick={() => handleDispatchClean(res.id)}
-                        className="text-[9px] font-bold uppercase tracking-[0.16em] text-foreground bg-red-600 hover:bg-red-500 px-2.5 py-1.5 rounded-lg transition active:scale-95 cursor-pointer border-none outline-none"
-                      >
-                        Dispatch Crew
-                      </button>
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <button
+                            className="text-[9px] font-bold uppercase tracking-[0.16em] text-foreground bg-red-600 hover:bg-red-500 px-2.5 py-1.5 rounded-lg transition active:scale-95 cursor-pointer border-none outline-none"
+                          >
+                            Dispatch Crew
+                          </button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                          <AlertDialogHeader>
+                            <AlertDialogTitle>Dispatch Cleaning Crew?</AlertDialogTitle>
+                            <AlertDialogDescription>
+                              You are about to dispatch a cleaning crew to {res.location}. This action is logged.
+                            </AlertDialogDescription>
+                          </AlertDialogHeader>
+                          <AlertDialogFooter>
+                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                            <AlertDialogAction onClick={() => handleDispatchClean(res.id)} className="bg-red-600 text-white hover:bg-red-700 border-red-600">
+                              Confirm Dispatch
+                            </AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
                     ) : (
                       <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500 bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg cursor-default">
                         Nominal

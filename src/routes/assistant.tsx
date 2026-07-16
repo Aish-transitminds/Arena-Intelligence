@@ -4,6 +4,9 @@ import { AppShell } from "@/components/AppShell";
 import { Sparkles, Send, Globe, UserCheck } from "lucide-react";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { askGeminiRAG } from "../actions/chat.server";
+import { DigitalTicketCard } from "../components/DigitalTicketCard";
+import { AdminKpiCard } from "../components/AdminKpiCard";
+import { TransportMap } from "../components/TransportMap";
 
 export const Route = createFileRoute("/assistant")({
   head: () => ({
@@ -71,7 +74,15 @@ ${personaContext[persona]}
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific (invent plausible concrete details like wait times, gate numbers, or section numbers where useful).
-Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.`;
+Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.
+
+[GENERATIVE UI CAPABILITIES & SECURITY]:
+You have the ability to render complex interactive UI directly in the chat window using specific text tags.
+Security Rule: You MUST respect the current persona.
+${persona === "fan" 
+  ? "- For Fans: If they ask about their ticket or passes, output [RENDER_TICKET]. If they ask for the map, directions, or transit, output [RENDER_MAP]. NEVER output [RENDER_ADMIN]. If they ask for operations/security data, politely refuse as they are a fan." 
+  : "- For Staff/Volunteers: If they ask for live KPIs, stats, or dashboard, output [RENDER_ADMIN]. If they ask for the map, directions, or transit, output [RENDER_MAP]. NEVER output [RENDER_TICKET]. If they ask for a ticket, remind them that staff do not use digital tickets."
+}`;
 }
 
 function Assistant() {
@@ -224,7 +235,27 @@ function Assistant() {
                         }
                   }
                 >
-                  {m.text}
+                  {(() => {
+                    let text = m.text;
+                    const renderTicket = text.includes("[RENDER_TICKET]");
+                    const renderAdmin = text.includes("[RENDER_ADMIN]");
+                    const renderMap = text.includes("[RENDER_MAP]");
+                    
+                    text = text.replace("[RENDER_TICKET]", "").replace("[RENDER_ADMIN]", "").replace("[RENDER_MAP]", "");
+
+                    return (
+                      <>
+                        {text && <p className={renderTicket || renderAdmin || renderMap ? "mb-4" : ""}>{text}</p>}
+                        {renderTicket && persona === "fan" && <DigitalTicketCard />}
+                        {renderAdmin && persona !== "fan" && <AdminKpiCard />}
+                        {renderMap && (
+                          <div className="h-64 w-full sm:w-[400px] rounded-xl overflow-hidden mt-3 border border-slate-700">
+                            <TransportMap role={persona} />
+                          </div>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </motion.div>
             ))}
@@ -241,6 +272,45 @@ function Assistant() {
               </motion.div>
             )}
             <div ref={messagesEndRef} />
+          </div>
+
+          {/* Quick Action Buttons */}
+          <div className="px-6 py-3 flex flex-wrap gap-2 justify-center" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", background: "rgba(0,0,0,0.15)" }}>
+            {persona === "fan" ? (
+              <>
+                <button 
+                  onClick={() => send("Show me my ticket")}
+                  disabled={isTyping}
+                  className="px-4 py-2 rounded-full text-xs font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50"
+                >
+                  🎟️ My Ticket
+                </button>
+                <button 
+                  onClick={() => send("Show me the map")}
+                  disabled={isTyping}
+                  className="px-4 py-2 rounded-full text-xs font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50"
+                >
+                  🗺️ Transport Map
+                </button>
+              </>
+            ) : (
+              <>
+                <button 
+                  onClick={() => send("Show me the ops console")}
+                  disabled={isTyping}
+                  className="px-4 py-2 rounded-full text-xs font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50"
+                >
+                  📊 Ops Console
+                </button>
+                <button 
+                  onClick={() => send("Show me the map")}
+                  disabled={isTyping}
+                  className="px-4 py-2 rounded-full text-xs font-bold bg-[#1A2E3D] text-white border border-slate-700 hover:bg-[#253d52] transition disabled:opacity-50"
+                >
+                  🗺️ Transport Map
+                </button>
+              </>
+            )}
           </div>
 
           {/* Input text box */}

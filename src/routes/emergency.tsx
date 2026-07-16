@@ -5,6 +5,17 @@ import { Heart, Shield, PhoneCall, Route as RouteIcon, MapPin, Radio, Clock, Ale
 import { useEffect, useMemo, useState } from "react";
 import { checkRateLimit, recordAuditEvent } from "@/lib/security";
 import { generateEmergencyPlan } from "@/lib/ai";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export const Route = createFileRoute("/emergency")({
   head: () => ({
@@ -36,6 +47,13 @@ function Emergency() {
   const [aiBusy, setAiBusy] = useState(false);
   const [aiPlan, setAiPlan] = useState<Awaited<ReturnType<typeof generateEmergencyPlan>> | null>(null);
 
+  const search = Route.useSearch() as any;
+
+  useEffect(() => {
+    if (search?.prefillArea) setSelectedArea(search.prefillArea);
+    if (search?.prefillType) setIncidentType(search.prefillType);
+  }, [search?.prefillArea, search?.prefillType]);
+
   const handleSos = () => {
     const limit = checkRateLimit("emergency-sos", 1, 20000);
     if (!limit.allowed) {
@@ -52,8 +70,7 @@ function Emergency() {
     recordAuditEvent("emergency-sos", "Stadium-wide emergency response triggered");
   };
 
-  const handleAreaSos = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleAreaSos = async () => {
     if (!selectedArea) return;
 
     const limit = checkRateLimit("area-sos", 3, 20000);
@@ -167,40 +184,58 @@ function Emergency() {
               <div className="flex flex-col items-center justify-center p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(0,0,0,0.04)" }}>
                 <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "var(--muted-foreground)" }}>Stadium-Wide Alarm</p>
                 
-                <motion.button
-                  onClick={handleSos}
-                  whileTap={{ scale: 0.95 }}
-                  animate={sos ? { scale: [1, 1.04, 1] } : {}}
-                  transition={sos ? { repeat: Infinity, duration: 1.8, ease: "easeInOut" } : {}}
-                  disabled={sos}
-                  className="size-36 rounded-full flex flex-col items-center justify-center font-extrabold text-foreground cursor-pointer disabled:cursor-not-allowed relative"
-                  style={{
-                    background: sos
-                      ? "linear-gradient(145deg, #9B1E18, #D92D20)"
-                      : "linear-gradient(145deg, #D92D20, #FF4A3A)",
-                    boxShadow: sos
-                      ? "0 0 40px rgba(217,45,32,0.40)"
-                      : "0 0 20px rgba(217,45,32,0.25)",
-                  }}
-                >
-                  {sos && (
-                    <motion.div
-                      animate={{ scale: [1, 1.4], opacity: [0.4, 0] }}
-                      transition={{ repeat: Infinity, duration: 1.8 }}
-                      className="absolute inset-0 rounded-full"
-                      style={{ background: "rgba(217,45,32,0.20)" }}
-                    />
-                  )}
-                  <ShieldAlert className="size-10 mb-1.5" />
-                  <span className="text-lg font-black tracking-wider">{sos ? "ACTIVE" : "SOS"}</span>
-                </motion.button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      animate={sos ? { scale: [1, 1.04, 1] } : {}}
+                      transition={sos ? { repeat: Infinity, duration: 1.8, ease: "easeInOut" } : {}}
+                      disabled={sos}
+                      className="size-36 rounded-full flex flex-col items-center justify-center font-extrabold text-foreground cursor-pointer disabled:cursor-not-allowed relative"
+                      style={{
+                        background: sos
+                          ? "linear-gradient(145deg, #9B1E18, #D92D20)"
+                          : "linear-gradient(145deg, #D92D20, #FF4A3A)",
+                        boxShadow: sos
+                          ? "0 0 40px rgba(217,45,32,0.40)"
+                          : "0 0 20px rgba(217,45,32,0.25)",
+                      }}
+                    >
+                      {sos && (
+                        <motion.div
+                          animate={{ scale: [1, 1.4], opacity: [0.4, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.8 }}
+                          className="absolute inset-0 rounded-full"
+                          style={{ background: "rgba(217,45,32,0.20)" }}
+                        />
+                      )}
+                      <ShieldAlert className="size-10 mb-1.5" />
+                      <span className="text-lg font-black tracking-wider">{sos ? "ACTIVE" : "SOS"}</span>
+                    </motion.button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Trigger Stadium-Wide SOS?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This will activate emergency alarms across all screens and gates, and deploy all available response teams. This action cannot be undone and will be logged.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleSos} className="bg-red-600 text-white hover:bg-red-700 border-red-600">
+                        Confirm SOS
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+                
                 <p className="text-[10px] mt-4 text-center max-w-[200px]" style={{ color: "var(--muted-foreground)" }}>
                   Triggers immediate warning signal across all screens and gates.
                 </p>
               </div>
 
               {/* Right Column: Localized SOS Reporting */}
-              <form onSubmit={handleAreaSos} className="flex flex-col text-left p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(0,0,0,0.04)" }}>
+              <div className="flex flex-col text-left p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.01)", borderColor: "rgba(0,0,0,0.04)" }}>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">Report Localized Incident</h3>
                 
                 <div className="space-y-3.5 flex-1">
@@ -249,14 +284,32 @@ function Emergency() {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-2.5 mt-5 rounded-xl text-xs font-bold uppercase tracking-wider text-foreground hover:opacity-90 active:scale-95 transition cursor-pointer"
-                  style={{ background: "linear-gradient(135deg, #D92D20, #9B1E18)" }}
-                >
-                  Send SOS Report
-                </button>
-              </form>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button
+                      type="button"
+                      className="w-full py-2.5 mt-5 rounded-xl text-xs font-bold uppercase tracking-wider text-foreground hover:opacity-90 active:scale-95 transition cursor-pointer"
+                      style={{ background: "linear-gradient(135deg, #D92D20, #9B1E18)" }}
+                    >
+                      Send SOS Report
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Send Localized SOS Report?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        You are about to report a {incidentType} at {selectedArea}. This will alert response teams and dispatch personnel to the location.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleAreaSos} className="bg-red-600 text-white hover:bg-red-700 border-red-600">
+                        Confirm Dispatch
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
 
             </div>
 
