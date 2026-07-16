@@ -191,30 +191,45 @@ function Landing() {
           className="relative overflow-hidden"
           style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}
         >
-          {/* Hero background — stadium at night (now with light frosted glass over it) */}
-          <div className="absolute inset-0">
+          {/* Premium Hero Background with Animated Glass Orbs */}
+          <div className="absolute inset-0 bg-slate-50 overflow-hidden">
+            {/* Subtle stadium background */}
             <div
               className="absolute inset-0 scale-[1.04]"
               style={{
                 backgroundImage: 'url("/stadium-hero.png")',
                 backgroundSize: "cover",
                 backgroundPosition: "center 22%",
-                opacity: 0.7,
-                filter: "saturate(1.1) contrast(1.1) brightness(0.9)",
+                opacity: 0.85,
+                filter: "saturate(1.2) contrast(1.1)",
               }}
             />
+            {/* Animated Ambient Orbs */}
+            <motion.div
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -50, 0],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-400/30 blur-[120px] mix-blend-multiply"
+            />
+            <motion.div
+              animate={{
+                x: [0, -100, 0],
+                y: [0, 50, 0],
+                scale: [1, 1.3, 1],
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-teal-400/30 blur-[120px] mix-blend-multiply"
+            />
+            {/* Light frosted glass overlay so the stadium is visible but text is readable */}
             <div
               className="absolute inset-0"
               style={{
-                background:
-                  "linear-gradient(180deg, rgba(248,250,252,0.85) 0%, rgba(248,250,252,0.7) 40%, rgba(248,250,252,0.95) 80%, rgba(248,250,252,1) 100%)",
-              }}
-            />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse 50% 40% at 15% 5%, rgba(14,159,110,0.15) 0%, transparent 58%), radial-gradient(ellipse 50% 40% at 85% 5%, rgba(14,159,110,0.15) 0%, transparent 58%)",
+                background: "linear-gradient(180deg, rgba(248,250,252,0.4) 0%, rgba(248,250,252,0.6) 70%, rgba(248,250,252,1) 100%)",
+                backdropFilter: "blur(4px)",
+                WebkitBackdropFilter: "blur(4px)",
               }}
             />
           </div>
@@ -256,14 +271,17 @@ function Landing() {
             >
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
+                className="group relative inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
                 style={{
                   background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
                   boxShadow: "0 0 32px rgba(14,159,110,0.25)",
                 }}
               >
-                Sign In / Register
-                <ArrowUpRight className="size-4" />
+                <div className="absolute inset-0 bg-emerald-400 opacity-0 blur-xl group-hover:opacity-40 transition-opacity duration-500 rounded-full" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Sign In / Register
+                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
               </Link>
 
               <Link
@@ -292,43 +310,56 @@ function Landing() {
               className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4"
             >
               {/* Hero: Live Attendance Ring */}
-              <div className="md:row-span-2">
+              <motion.div 
+                className="md:row-span-2 relative z-10"
+                animate={{ y: [-4, 4, -4] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <LiveAttendanceRing
                   attendance={Number(liveKpis.find((k) => k.id === "attendance")?.value ?? 52840)}
                   capacity={54000}
                   sparklineData={attendanceSparkline}
                   variant="hero"
                 />
-              </div>
+              </motion.div>
 
-              {/* Remaining KPI cards */}
-              {liveKpis.filter((k) => k.id !== "attendance").map((kpi) => {
+              {/* Remaining KPI cards with premium deep glassmorphism */}
+              {liveKpis.filter((k) => k.id !== "attendance").map((kpi, idx) => {
                 const Icon = kpi.icon;
                 return (
-                  <div
+                  <motion.div
                     key={kpi.label}
-                    className="rounded-2xl p-5 card-lift relative overflow-hidden group"
+                    animate={{ y: [-4, 4, -4] }}
+                    transition={{ duration: 5 + idx, repeat: Infinity, ease: "easeInOut", delay: idx * 0.5 }}
+                    className="rounded-3xl p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
                     style={{
-                      background: "rgba(255,255,255,0.85)",
-                      border: "1px solid rgba(0,0,0,0.06)",
-                      backdropFilter: "blur(20px)",
-                      boxShadow: "0 8px 32px rgba(0,0,0,0.04)",
+                      background: "linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.75) 100%)",
+                      border: "1px solid rgba(255,255,255,1)",
+                      backdropFilter: "blur(40px)",
+                      WebkitBackdropFilter: "blur(40px)",
+                      boxShadow: "0 20px 40px -10px rgba(14,159,110,0.08), inset 0 1px 0 rgba(255,255,255,1)",
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="flex items-center gap-2 mb-3">
-                      <Icon className="size-4" style={{ color: "#0E9F6E" }} />
-                      <span className="text-[10px] uppercase tracking-[0.22em] font-semibold" style={{ color: "#64748B" }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Inner glowing orb effect on hover */}
+                    <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-400/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    <div className="flex items-center gap-3 mb-4 relative z-10">
+                      <div className="p-2 bg-emerald-50 rounded-xl">
+                        <Icon className="size-4 text-emerald-600" />
+                      </div>
+                      <span className="text-[10px] uppercase tracking-[0.22em] font-bold text-slate-500">
                         {kpi.label}
                       </span>
                     </div>
-                    <div className="text-2xl font-extrabold text-slate-900 tracking-tight tabular-nums relative">
+                    <div className="text-3xl font-black text-slate-900 tracking-tight tabular-nums relative z-10 drop-shadow-sm">
                       {kpi.format(kpi.value)}
                       {kpi.id !== "gate" && (
-                        <span className="absolute -right-4 top-1 size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="absolute -right-5 top-2 size-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </motion.div>
@@ -395,19 +426,24 @@ function Landing() {
                 >
                   <Link
                     to={mod.to}
-                    className="group block h-full rounded-3xl p-8 bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                    className="group block h-full rounded-[32px] p-8 bg-white/60 backdrop-blur-xl border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_-10px_rgba(14,159,110,0.15)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform" />
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center border border-emerald-100 group-hover:bg-primary group-hover:border-primary transition-colors">
-                        <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                    {/* Glowing hover background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Decorative element */}
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-100/50 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+
+                    <div className="flex items-center justify-between mb-8 relative z-10">
+                      <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-emerald-100/50 group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-colors duration-500">
+                        <Icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors duration-500" />
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-emerald-200/50 group-hover:bg-white group-hover:border-emerald-100 transition-colors">
                         {mod.tag}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{mod.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">{mod.desc}</p>
+                    <h3 className="text-xl font-extrabold text-slate-900 mb-3 relative z-10 group-hover:text-emerald-900 transition-colors">{mod.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed relative z-10 group-hover:text-slate-600 transition-colors">{mod.desc}</p>
                   </Link>
                 </motion.div>
               );
@@ -444,14 +480,17 @@ function Landing() {
             </div>
             <Link
               to="/login"
-              className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition hover:opacity-90"
+              className="group relative shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold uppercase tracking-[0.20em] text-white transition-all hover:scale-105 active:scale-95"
               style={{
                 background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
                 boxShadow: "0 0 32px rgba(14,159,110,0.25)",
               }}
             >
-              Launch Dashboard
-              <ArrowUpRight className="size-4" />
+              <div className="absolute inset-0 bg-emerald-400 opacity-0 blur-xl group-hover:opacity-40 transition-opacity duration-500 rounded-full" />
+              <span className="relative z-10 flex items-center gap-2">
+                Launch Dashboard
+                <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
             </Link>
           </div>
         </div>
