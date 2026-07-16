@@ -177,7 +177,7 @@ function FanTicketsPage() {
       event: "Royal Challengers vs Mumbai Indians",
       date: "Tomorrow",
       time: "18:00 IST",
-      venue: "M. Chinnaswamy Stadium · Gate 2",
+      venue: "Narendra Modi Stadium · Gate 2",
       section: "112",
       row: "G",
       seat: String(24 + i),
@@ -684,7 +684,7 @@ function FanTicketsPage() {
                   <div className="flex justify-between items-start mb-1">
                     <div>
                       <h4 className="font-bold text-foreground">Royal Challengers vs Mumbai Indians</h4>
-                      <p className="text-xs text-slate-500">M. Chinnaswamy Stadium</p>
+                      <p className="text-xs text-slate-500">Narendra Modi Stadium</p>
                     </div>
                   </div>
                   <p className="text-xs text-slate-500 font-mono">Tomorrow • 18:00 IST</p>

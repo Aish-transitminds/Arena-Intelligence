@@ -185,7 +185,7 @@ function Admin() {
   const opsScoreLabel = useMemo(() => `${opsScore.toFixed(1)}%`, [opsScore]);
 
   return (
-    <AppShell themeVariant="enterprise" title="Operations Console" subtitle="Concept Ops Platform · Stadium Alpha · Match Day Operations">
+    <AppShell themeVariant="enterprise" title="Operations Console" subtitle="Operations Center · Stadium Alpha · Match Day Operations">
       {/* Status indicators moved to EnvironmentPanel */}
 
 

@@ -21,7 +21,7 @@ function Tournament() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("fixtures");
 
   return (
-    <AppShell themeVariant="enterprise" title="Mega-Event Tournament" subtitle="48 teams · Group Stage · Concept Operations Workspace">
+    <AppShell themeVariant="enterprise" title="Mega-Event Tournament" subtitle="48 teams · Group Stage · Tournament Operations Workspace">
       {/* Tab bar */}
       <div
         className="flex flex-wrap gap-2 mb-6 p-1.5 rounded-2xl"

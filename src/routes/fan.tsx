@@ -62,7 +62,7 @@ function FanPage() {
           >
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/90">Digital Ticket</p>
-              <p className="text-sm font-extrabold text-white mt-0.5">Concept Event Night</p>
+              <p className="text-sm font-extrabold text-white mt-0.5">Live Event Night</p>
             </div>
             <div
               className="size-10 rounded-xl flex items-center justify-center"

@@ -160,8 +160,8 @@ export default function TransportMapInner({ role = "fan" }: { role?: string }) {
               <MapPin className="size-4 text-emerald-400" />
             </div>
             <div>
-              <h2 className="text-white font-bold tracking-tight">M. Chinnaswamy Stadium <span className="text-emerald-500 text-[10px] ml-2 border border-emerald-500/30 px-1 rounded bg-emerald-500/10">v2 Engine</span></h2>
-              <p className="text-slate-400 text-xs">Live Transport Grid • Cubbon Park, Bangalore</p>
+              <h2 className="text-white font-bold tracking-tight">Narendra Modi Stadium <span className="text-emerald-500 text-[10px] ml-2 border border-emerald-500/30 px-1 rounded bg-emerald-500/10">v2 Engine</span></h2>
+              <p className="text-slate-400 text-xs">Live Transport Grid • Ahmedabad, Gujarat</p>
             </div>
           </div>
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
@@ -246,7 +246,7 @@ export default function TransportMapInner({ role = "fan" }: { role?: string }) {
                 pathOptions={{ fillColor: '#10b981', fillOpacity: 0.15, color: '#10b981', weight: 2 }} 
               >
                 <LeafletMap.Popup className="bg-slate-900 border-none rounded">
-                  <span className="text-xs font-bold font-mono">M. Chinnaswamy Stadium</span>
+                  <span className="text-xs font-bold font-mono">Narendra Modi Stadium</span>
                 </LeafletMap.Popup>
               </LeafletMap.Circle>
 
