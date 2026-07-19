@@ -39,9 +39,9 @@ describe('Auth & Access Control Integration', () => {
     const role = getStoredRole();
     expect(role).toBe('admin');
     
-    // Test route access control — admin can access fan routes
+    // Test route access control — admin cannot access fan routes (role separation)
     expect(canAccessRoute('/admin', role)).toBe(true);
-    expect(canAccessRoute('/fan', role)).toBe(true);
+    expect(canAccessRoute('/fan', role)).toBe(false);
     expect(canAccessRoute('/assistant', role)).toBe(true);
   });
 
