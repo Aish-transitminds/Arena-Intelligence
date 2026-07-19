@@ -42,8 +42,8 @@ function Login() {
         throw new Error("Please enter a valid Google email address.");
       }
 
-      if (activeTab === "staff" && roleCode !== "OPS-2026") {
-        throw new Error("Invalid Staff Role Code. Please use OPS-2026 for simulation.");
+      if (activeTab === "staff" && roleCode.length < 4) {
+        throw new Error("Please enter a valid Unique Staff ID (min 4 characters).");
       }
 
       const email = simulatedEmail.toLowerCase();
@@ -209,7 +209,7 @@ function Login() {
                   required
                   value={roleCode}
                   onChange={(e) => setRoleCode(e.target.value)}
-                  placeholder="Staff Role Code (OPS-2026)"
+                  placeholder="Enter your Unique Staff ID"
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                 />
               )}
