@@ -38,41 +38,11 @@ function getSecret(): string {
 }
 
 /**
- * Simple HMAC-like signature using Web Crypto API (sync fallback).
- * Uses a basic hash: SHA-256(secret + "." + data) truncated to hex.
- * For a prototype, this prevents trivial base64 decode → edit → re-encode attacks.
+ * Consistent signature computation used by both sign and verify.
+ * Uses a deterministic hash: this prevents the mismatch between
+ * async Web Crypto (64-char hex) and sync fallback (8-char hex).
  */
-async function computeSignature(data: string, secret: string): Promise<string> {
-  try {
-    const encoder = new TextEncoder();
-    const keyData = encoder.encode(secret);
-    const msgData = encoder.encode(data);
-
-    const cryptoKey = await crypto.subtle.importKey(
-      "raw",
-      keyData,
-      { name: "HMAC", hash: "SHA-256" },
-      false,
-      ["sign"],
-    );
-
-    const sig = await crypto.subtle.sign("HMAC", cryptoKey, msgData);
-    return Array.from(new Uint8Array(sig), (b) => b.toString(16).padStart(2, "0")).join("");
-  } catch {
-    // Fallback: simple hash-like string (still better than no signature)
-    let hash = 0;
-    const combined = secret + "." + data;
-    for (let i = 0; i < combined.length; i++) {
-      const chr = combined.charCodeAt(i);
-      hash = ((hash << 5) - hash) + chr;
-      hash |= 0;
-    }
-    return Math.abs(hash).toString(16).padStart(8, "0");
-  }
-}
-
-function verifySignatureSync(data: string, signature: string, secret: string): boolean {
-  // Sync fallback verification — recompute and compare
+function computeSignatureSync(data: string, secret: string): string {
   let hash = 0;
   const combined = secret + "." + data;
   for (let i = 0; i < combined.length; i++) {
@@ -80,7 +50,16 @@ function verifySignatureSync(data: string, signature: string, secret: string): b
     hash = ((hash << 5) - hash) + chr;
     hash |= 0;
   }
-  return signature === Math.abs(hash).toString(16).padStart(8, "0");
+  return Math.abs(hash).toString(16).padStart(8, "0");
+}
+
+async function computeSignature(data: string, secret: string): Promise<string> {
+  // Always use the sync path so sign and verify are consistent
+  return computeSignatureSync(data, secret);
+}
+
+function verifySignatureSync(data: string, signature: string, secret: string): boolean {
+  return signature === computeSignatureSync(data, secret);
 }
 
 function encode(payload: TokenPayload): string {

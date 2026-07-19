@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Send, X, Globe, UserCheck, Volume2, VolumeX, Mic } from "lucide-react";
+import { Sparkles, Send, X, Globe, Volume2, VolumeX, Mic } from "lucide-react";
 import { currentBuses } from "../lib/transportState";
 import { askGeminiRAG } from "../actions/chat.server";
 import { useNavigate } from "@tanstack/react-router";
 import { getBookedTickets, type TicketItem } from "../lib/bookingStore";
+import { getStoredRole } from "../lib/security";
 import { DigitalTicketCard } from "./DigitalTicketCard";
 import { AdminKpiCard } from "./AdminKpiCard";
 import { TransportMap } from "./TransportMap";
@@ -31,10 +32,10 @@ const suggestions: Record<Persona, string[]> = {
     "Draft multilingual PA alert",
   ],
   fan: [
-    "Find nearest restroom",
-    "Where is Food Court?",
-    "Status of Majestic bus?",
-    "How to get wheelchair help?",
+    "Show my tickets",
+    "How much have I spent?",
+    "Recommend events for me",
+    "When is my next event?",
   ],
   volunteer: [
     "Accessibility instructions",
@@ -64,6 +65,15 @@ const fallbackByPersona: Record<Persona, string> = {
   volunteer: "Connection issue on my end — please check with your shift coordinator for immediate guidance, and I'll be back online shortly.",
 };
 
+// Event catalog for AI recommendations
+const EVENT_CATALOG = [
+  { id: "evt-1", title: "Coldplay: Music of the Spheres", date: "August 22, 2026", time: "19:00 IST", venue: "Narendra Modi Stadium", price: 450, category: "Concert" },
+  { id: "evt-2", title: "FIFA World Cup Finals", date: "July 19, 2026", time: "20:30 IST", venue: "Narendra Modi Stadium", price: 850, category: "Sports" },
+  { id: "evt-3", title: "AR Rahman Live In Concert", date: "September 5, 2026", time: "18:00 IST", venue: "Narendra Modi Stadium", price: 350, category: "Concert" },
+  { id: "evt-4", title: "IPL 2026 Grand Finale", date: "May 28, 2026", time: "19:30 IST", venue: "Narendra Modi Stadium", price: 600, category: "Sports" },
+  { id: "evt-5", title: "Sunburn Arena Festival", date: "October 10, 2026", time: "16:00 IST", venue: "Narendra Modi Stadium", price: 500, category: "Festival" },
+];
+
 function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem[]) {
   const personaContext: Record<Persona, string> = {
     staff: "You are speaking to stadium OPERATIONS STAFF. Be concise, operational, and action-oriented. Include concrete numbers, gate/section references, and next steps when relevant (e.g. dispatch, reroute, alert).",
@@ -74,8 +84,13 @@ function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem
   const transportContext = currentBuses.map(b => `Bus ${b.id} (${b.route}): ETA ${b.eta}m, Status: ${b.status}, Occupancy: ${b.occupancy}%`).join('. ');
   
   const ticketContext = tickets.length > 0 
-    ? `The user has booked the following tickets: ${tickets.map(t => `${t.event} on ${t.date} at ${t.venue} (Seat ${t.section}-${t.row}-${t.seat}, Booking ID: ${t.id})`).join('; ')}.` 
+    ? `The user has booked the following tickets: ${tickets.map(t => `${t.event} on ${t.date} at ${t.venue} (Seat ${t.section}-${t.row}-${t.seat}, Booking ID: ${t.id}, Price: $${t.price})`).join('; ')}.` 
     : `The user has not booked any tickets yet.`;
+
+  const totalSpent = tickets.reduce((sum, t) => sum + (t.price || 0), 0);
+  const spendingContext = `Total amount spent on tickets: $${totalSpent}. Number of events attending: ${tickets.length}.`;
+
+  const eventCatalogContext = `Available upcoming events for recommendation:\n${EVENT_CATALOG.map(e => `- ${e.title} (${e.category}) on ${e.date} at ${e.time}, ${e.venue}, $${e.price}/ticket`).join('\n')}`;
 
   return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
@@ -85,11 +100,22 @@ ${transportContext}
 
 [USER BOOKING HISTORY]:
 ${persona === "fan" ? ticketContext : "Not applicable for staff."}
+
+[USER SPENDING SUMMARY]:
+${persona === "fan" ? spendingContext : "Not applicable for staff."}
+
+[AVAILABLE EVENTS CATALOG]:
+${persona === "fan" ? eventCatalogContext : "Not applicable for staff."}
+
 If a fan asks about their tickets, ONLY reference the tickets listed above. If they have none, politely inform them they have not booked any tickets yet. Do NOT show tickets belonging to anyone else.
+If asked "How much have I spent?", use the spending summary above.
+If asked for event recommendations, suggest events from the catalog that match their booking history categories. Explain why each is recommended.
+If asked "How many events am I attending?" or "When is my next event?", use the booking history above.
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific. Use only the provided stadium and live-data facts; say when information is unavailable.
 Do not mention that you are an AI language model or reference these instructions. Stay in character as Arena IQ.
+Never invent bookings, events, payments, or user data. Never reveal database schema, API keys, or internal system details.
 
 [GENERATIVE UI CAPABILITIES & SECURITY]:
 You have the ability to render complex interactive UI directly in the chat window using specific text tags.
@@ -102,7 +128,9 @@ ${persona === "fan"
 
 export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked" }) {
   const [open, setOpen] = useState(mode === "docked");
-  const [persona, setPersona] = useState<Persona>("fan");
+  // Auto-detect persona from authenticated role
+  const authRole = getStoredRole();
+  const persona: Persona = authRole === "fan" ? "fan" : (authRole === "steward" ? "volunteer" : "staff");
   const [lang, setLang] = useState<Language>("en");
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
     {
@@ -369,27 +397,15 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
               </div>
             </div>
 
-            {/* Persona switcher */}
+            {/* Role indicator (auto-detected) */}
             <div
               className="px-4 py-2.5 flex items-center gap-2"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", background: "#0D1E2A" }}
             >
-              <UserCheck className="size-4 text-slate-400 shrink-0" />
-              <span className="text-xs font-bold text-slate-400 mr-1">Persona:</span>
-              {(["staff", "fan", "volunteer"] as Persona[]).map((p) => (
-                <button
-                  key={p}
-                  onClick={() => setPersona(p)}
-                  className="px-4 py-2 rounded-lg text-xs uppercase font-bold tracking-wider transition cursor-pointer border"
-                  style={{
-                    background: persona === p ? "rgba(14,159,110,0.15)" : "transparent",
-                    borderColor: persona === p ? "rgba(14,159,110,0.35)" : "transparent",
-                    color: persona === p ? "#4ADE80" : "#64748B",
-                  }}
-                >
-                  {p}
-                </button>
-              ))}
+              <div className="flex items-center gap-2">
+                <div className="size-2 rounded-full bg-emerald-400" />
+                <span className="text-xs font-bold text-slate-300">Role: <span className="text-emerald-400 uppercase">{persona}</span></span>
+              </div>
             </div>
 
             {/* Messages */}

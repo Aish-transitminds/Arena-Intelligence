@@ -21,27 +21,30 @@ type NavItem = {
   label: string;
   icon: typeof User;
   hint?: string;
+  roles: string[]; // Which roles can see this nav item
 };
 
-const navSections: { label: string; items: NavItem[] }[] = [
-  {
-    label: "Fan Experience",
-    items: [
-      { to: "/fan", label: "Fan Dashboard", icon: User, hint: "Ticket & seat" },
-      { to: "/fan/transport" as any, label: "Live Transport", icon: Radio, hint: "Buses" },
-    ],
-  },
-  {
-    label: "Operations",
-    items: [
-      { to: "/admin", label: "Admin Console", icon: LayoutDashboard, hint: "Live KPIs" },
-      { to: "/admin/transport" as any, label: "Transport Map", icon: Radio, hint: "Dispatch" },
-      { to: "/tournament", label: "Tournament", icon: Trophy, hint: "Fixtures" },
-      { to: "/emergency", label: "Emergency Center", icon: ShieldAlert, hint: "SOS" },
-      { to: "/security", label: "Security", icon: Settings, hint: "Platform" },
-    ],
-  },
+const allNavItems: NavItem[] = [
+  // Fan items
+  { to: "/fan", label: "Fan Dashboard", icon: User, hint: "Ticket & seat", roles: ["fan"] },
+  { to: "/fan/transport" as any, label: "Live Transport", icon: Radio, hint: "Buses", roles: ["fan"] },
+  // Operations items
+  { to: "/admin", label: "Admin Console", icon: LayoutDashboard, hint: "Live KPIs", roles: ["admin", "manager", "security"] },
+  { to: "/admin/transport" as any, label: "Transport Map", icon: Radio, hint: "Dispatch", roles: ["admin", "manager", "security", "steward"] },
+  { to: "/tournament", label: "Tournament", icon: Trophy, hint: "Fixtures", roles: ["admin", "manager", "security"] },
+  { to: "/emergency", label: "Emergency Center", icon: ShieldAlert, hint: "SOS", roles: ["admin", "manager", "security"] },
+  { to: "/security", label: "Security", icon: Settings, hint: "Platform", roles: ["admin", "manager", "security"] },
 ];
+
+function getNavForRole(role: string) {
+  const items = allNavItems.filter(item => item.roles.includes(role));
+  const fanItems = items.filter(i => (i.to as string).startsWith("/fan"));
+  const opsItems = items.filter(i => !(i.to as string).startsWith("/fan"));
+  const sections: { label: string; items: NavItem[] }[] = [];
+  if (fanItems.length > 0) sections.push({ label: "Fan Experience", items: fanItems });
+  if (opsItems.length > 0) sections.push({ label: "Operations", items: opsItems });
+  return sections;
+}
 
 const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -58,16 +61,16 @@ export function AppShell({
   themeVariant?: 'enterprise' | 'public-safety' | 'consumer';
 }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const activeItem = navSections.flatMap((s) => s.items).find((i) => pathname.startsWith(i.to));
   const [role, setRole] = useState(getStoredRole());
   const navigate = useNavigate();
+  const navSections = getNavForRole(role);
+  const activeItem = navSections.flatMap((s) => s.items).find((i) => pathname.startsWith(i.to));
 
   useEffect(() => {
     if (role === "guest") {
-      persistRole("fan");
-      setRole("fan");
+      navigate({ to: "/login" });
     }
-  }, [role]);
+  }, [role, navigate]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -218,8 +221,8 @@ export function AppShell({
               AI
             </div>
             <div className="min-w-0 flex-1 flex flex-col items-start text-left">
-              <div className="text-sm font-semibold truncate text-foreground">Aishwarya</div>
-              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Ops Manager</div>
+              <div className="text-sm font-semibold truncate text-foreground">Arena User</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{role === "fan" ? "Fan" : role === "manager" ? "Ops Manager" : role === "steward" ? "Steward" : role === "security" ? "Security" : "Admin"}</div>
             </div>
             <button
               type="button"

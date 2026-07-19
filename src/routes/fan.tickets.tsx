@@ -12,7 +12,8 @@ import {
   ShoppingBag,
   CheckCircle2,
   AlertCircle,
-  CreditCard
+  CreditCard,
+  Lock
 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { getBookedTickets, bookTicket, type TicketItem } from "@/lib/bookingStore";
@@ -39,6 +40,7 @@ const UPCOMING_EVENTS = [
     image: "https://images.unsplash.com/photo-1540039155733-d7696d4ebaf7?auto=format&fit=crop&q=80&w=1000",
     section: "A",
     row: "14",
+    category: "Concert",
   },
   {
     id: "evt-2",
@@ -51,6 +53,46 @@ const UPCOMING_EVENTS = [
     image: "https://images.unsplash.com/photo-1518605368461-1ee7c5332f7a?auto=format&fit=crop&q=80&w=1000",
     section: "VIP",
     row: "2",
+    category: "Sports",
+  },
+  {
+    id: "evt-3",
+    title: "AR Rahman Live In Concert",
+    date: "September 5, 2026",
+    time: "18:00 IST",
+    venue: "Narendra Modi Stadium",
+    price: 350,
+    availableSeats: 2300,
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=1000",
+    section: "B",
+    row: "8",
+    category: "Concert",
+  },
+  {
+    id: "evt-4",
+    title: "IPL 2026 Grand Finale",
+    date: "May 28, 2026",
+    time: "19:30 IST",
+    venue: "Narendra Modi Stadium",
+    price: 600,
+    availableSeats: 890,
+    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000",
+    section: "C",
+    row: "5",
+    category: "Sports",
+  },
+  {
+    id: "evt-5",
+    title: "Sunburn Arena Festival",
+    date: "October 10, 2026",
+    time: "16:00 IST",
+    venue: "Narendra Modi Stadium",
+    price: 500,
+    availableSeats: 3500,
+    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=1000",
+    section: "GA",
+    row: "1",
+    category: "Festival",
   }
 ];
 

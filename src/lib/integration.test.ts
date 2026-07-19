@@ -12,6 +12,9 @@ describe('Auth & Access Control Integration', () => {
     // Simulate fan login
     persistRole('fan');
     
+    // Wait for async token issuance
+    await new Promise(r => setTimeout(r, 10));
+    
     // Check that role is saved properly
     const role = getStoredRole();
     expect(role).toBe('fan');
@@ -26,16 +29,19 @@ describe('Auth & Access Control Integration', () => {
     expect(canAccessRoute('/admin', role)).toBe(false);
   });
 
-  it('allows an admin to access /admin and /fan', async () => {
+  it('allows an admin to access /admin but not /fan', async () => {
     // Simulate admin login
     persistRole('admin');
+    
+    // Wait for async token issuance
+    await new Promise(r => setTimeout(r, 10));
     
     const role = getStoredRole();
     expect(role).toBe('admin');
     
-    // Test route access control
+    // Test route access control — admin cannot access fan routes (role separation)
     expect(canAccessRoute('/admin', role)).toBe(true);
-    expect(canAccessRoute('/fan', role)).toBe(true);
+    expect(canAccessRoute('/fan', role)).toBe(false);
     expect(canAccessRoute('/assistant', role)).toBe(true);
   });
 
