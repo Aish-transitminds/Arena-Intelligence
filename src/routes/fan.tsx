@@ -22,7 +22,7 @@ export const Route = createFileRoute("/fan")({
 });
 
 const fanNav = [
-  { icon: ShoppingBag, label: "Buy Tickets", desc: "Get passes for new matches", href: "/fan/tickets?buy=true" },
+  { icon: ShoppingBag, label: "Buy Tickets", desc: "Get passes for new matches", href: "/fan/tickets" },
   { icon: Ticket, label: "My Tickets", desc: "Manage & transfer", href: "/fan/tickets" },
   { icon: UtensilsCrossed, label: "Food Courts", desc: "4 nearby, 3-5 min walk" },
   { icon: ShoppingBag, label: "Adidas Official Store", desc: "0.2 km · Proceed North" },
@@ -146,18 +146,11 @@ function FanPage() {
 
         {/* ── STAT CARDS ── */}
         <StatCard
-          label="Live Crowd"
-          value="52.8K"
-          sub="Est. peak at 19:30"
-          icon={<Users className="size-5" />}
-          index={0}
-        />
-        <StatCard
           label="Your Gate Wait"
           value="4 min"
-          sub="Gate B — shorter than avg"
+          sub="Gate B 📉 shorter than avg"
           icon={<Clock className="size-5" />}
-          index={1}
+          index={0}
           positive
         />
 
@@ -791,7 +784,7 @@ function StatCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.06, duration: 0.4 }}
       whileHover={{ y: -3 }}
-      className={`rounded-2xl p-6 relative overflow-hidden bg-card border border-border ${index === 0 ? "lg:row-span-2" : ""}`}
+      className={`rounded-2xl p-6 relative overflow-hidden bg-card border border-border`}
     >
       <div className="flex items-start justify-between mb-4">
         <span className="text-[10px] font-bold uppercase tracking-[0.20em]" style={{ color: "var(--muted-foreground)" }}>{label}</span>
