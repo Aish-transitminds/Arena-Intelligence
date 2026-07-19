@@ -91,7 +91,7 @@ export function canAccessRoute(pathname: string, role: UserRole): boolean {
     return role === "admin" || role === "manager" || role === "security";
   }
   if (pathname.startsWith("/fan")) {
-    return role === "fan";
+    return role === "fan" || role === "admin" || role === "manager" || role === "security";
   }
   if (pathname.startsWith("/assistant")) {
     return role === "admin" || role === "manager" || role === "security" || role === "fan";
