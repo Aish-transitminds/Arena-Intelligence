@@ -225,8 +225,16 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
     setIsTyping(true);
 
     try {
+      // Exclude the initial welcome message and the current message being sent
+      const historyToPass = nextHistory.slice(1, -1);
+      
       const { answer } = await askGeminiRAG({
-        data: { message: text, personaContext: buildSystemPrompt(persona, lang, getBookedTickets()), lang },
+        data: { 
+          message: text, 
+          personaContext: buildSystemPrompt(persona, lang, getBookedTickets()), 
+          lang,
+          conversationHistory: historyToPass
+        },
       });
       setMessages((m) => [...m, { role: "ai", text: answer }]);
       speakText(answer);

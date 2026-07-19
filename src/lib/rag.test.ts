@@ -7,6 +7,7 @@ describe("RAG helpers", () => {
       message: "Where is Gate 1?",
       personaContext: "",
       lang: "English",
+      conversationHistory: []
     });
     expect(() => validateRAGRequest({ message: "" })).toThrow("Missing 'message'");
     expect(() => validateRAGRequest({ message: "x".repeat(1001) })).toThrow("1000 characters");

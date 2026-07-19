@@ -3,15 +3,20 @@ import { describe, it, expect, vi } from 'vitest';
 import { AppShell } from './AppShell';
 
 // Mock tanstack router hooks
-vi.mock('@tanstack/react-router', () => ({
-  useRouterState: vi.fn((opts?: any) => {
-    if (opts && opts.select) {
-      return opts.select({ location: { pathname: '/admin' } });
-    }
-    return { location: { pathname: '/admin' } };
-  }),
-  Link: ({ children, to }: any) => <a href={to}>{children}</a>,
-}));
+vi.mock('@tanstack/react-router', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@tanstack/react-router')>();
+  return {
+    ...actual,
+    useRouterState: vi.fn((opts?: any) => {
+      if (opts && opts.select) {
+        return opts.select({ location: { pathname: '/admin' } });
+      }
+      return { location: { pathname: '/admin' } };
+    }),
+    useNavigate: vi.fn(),
+    Link: ({ children, to }: any) => <a href={to}>{children}</a>,
+  };
+});
 
 // Mock AIAssistant to avoid complex dependencies
 vi.mock('./AIAssistant', () => ({

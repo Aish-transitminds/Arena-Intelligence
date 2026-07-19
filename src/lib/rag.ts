@@ -9,6 +9,7 @@ export type RAGRequest = {
   message: string;
   personaContext?: string;
   lang?: string;
+  conversationHistory?: Array<{ role: "user" | "ai"; text: string }>;
 };
 
 export const DEFAULT_LANGUAGE = "English";
@@ -21,7 +22,7 @@ export function validateRAGRequest(data: unknown): Required<RAGRequest> {
     throw new Error("A chat request is required");
   }
 
-  const { message, personaContext = "", lang = DEFAULT_LANGUAGE } = data as RAGRequest;
+  const { message, personaContext = "", lang = DEFAULT_LANGUAGE, conversationHistory = [] } = data as RAGRequest;
   if (typeof message !== "string" || !message.trim()) {
     throw new Error("Missing 'message' in request");
   }
@@ -36,6 +37,9 @@ export function validateRAGRequest(data: unknown): Required<RAGRequest> {
     message: message.trim(),
     personaContext: personaContext.trim(),
     lang: lang.trim() || DEFAULT_LANGUAGE,
+    conversationHistory: Array.isArray(conversationHistory) 
+      ? conversationHistory.slice(-5) // Keep last 5 turns for context window efficiency
+      : [],
   };
 }
 

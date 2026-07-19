@@ -10,6 +10,8 @@ import { sanitizeText } from "../lib/security";
 import vectorIndexData from "../../stadium-data/vector-index.json";
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const queryCache = new Map<string, { answer: string; timestamp: number }>();
+const CACHE_TTL_MS = 1000 * 60 * 5; // 5 minutes
 
 function checkServerRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -134,6 +136,7 @@ async function askGroq(
   liveContext: unknown,
   personaContext: string,
   lang: string,
+  conversationHistory: Array<{ role: "user" | "ai"; text: string }> = []
 ) {
   const key = getGroqKey();
   if (!key) throw new Error("Groq API key is missing");
@@ -146,12 +149,18 @@ Keep responses to 2-4 sentences. Do not mention that you are an AI language mode
 
 Answer ONLY using the facts provided below. If the answer isn't in the provided data, say you don't have that information rather than guessing.
 Be concise, friendly, and specific. CRITICAL: When recommending food, items, or stores, you MUST explicitly state the store name, its exact location in the stadium, and its distance/wait time if applicable. If comparing options (e.g., food items within a budget), recommend the best complete option, clearly state the store name and location, and explain why. Ensure your answer is grammatically complete and makes logical sense.
+Never invent bookings, events, or payments.
 
 STATIC STADIUM DATA (background facts):
 ${staticContext}
 
 LIVE DATA (current status, queues, occupancy right now):
 ${JSON.stringify(liveContext, null, 2)}`;
+
+  const formattedHistory = conversationHistory.map(h => ({
+    role: h.role === "ai" ? "assistant" : "user",
+    content: h.text
+  }));
 
   const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
@@ -163,6 +172,7 @@ ${JSON.stringify(liveContext, null, 2)}`;
       model: CHAT_MODEL,
       messages: [
         { role: "system", content: systemPrompt },
+        ...formattedHistory,
         { role: "user", content: question },
       ],
       temperature: 0.2,
@@ -179,7 +189,7 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
   .validator(validateRAGRequest)
   .handler(async ({ data }) => {
     try {
-      const { message, personaContext, lang } = validateRAGRequest(data);
+      const { message, personaContext, lang, conversationHistory } = validateRAGRequest(data);
 
       const ip = "client-ip";
       if (!checkServerRateLimit(ip)) {
@@ -190,24 +200,35 @@ export const askGeminiRAG = createServerFn({ method: "POST" })
       if (!cleanMessage) {
         throw new Error("Invalid or empty message after sanitization.");
       }
+      
+      const cacheKey = `${lang}:${cleanMessage.toLowerCase()}`;
+      const cached = queryCache.get(cacheKey);
+      if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+        return { answer: cached.answer, sources: [] };
+      }
+
+      // Intent extraction
+      const isBookingQuery = /ticket|booking|pass|seat|sit|bought/i.test(cleanMessage);
 
       const index = loadIndex();
       let staticContext = "";
       let topChunks: Array<VectorChunk & { score: number }> = [];
 
-      if (index.length > 0) {
+      if (index.length > 0 && !isBookingQuery) {
         const queryVector = await embedQuery(cleanMessage);
         const initialChunks = retrieveTopChunks(queryVector, index as VectorChunk[], TOP_K);
         topChunks = await reRankChunks(cleanMessage, initialChunks);
         staticContext = buildRAGContext(topChunks);
       } else {
-        staticContext = "No static data indexed yet.";
+        staticContext = "No static data needed or indexed for this query.";
       }
 
       const liveSnapshot = getLiveSnapshot();
       const liveContext = getRelevantLiveData(cleanMessage, liveSnapshot);
 
-      const answer = await askGroq(cleanMessage, staticContext, liveContext, personaContext, lang);
+      const answer = await askGroq(cleanMessage, staticContext, liveContext, personaContext, lang, conversationHistory);
+
+      queryCache.set(cacheKey, { answer, timestamp: Date.now() });
 
       return {
         answer,

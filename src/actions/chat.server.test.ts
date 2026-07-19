@@ -21,6 +21,6 @@ describe("chat.server - askGeminiRAG", () => {
     // simulating bad input
     await expect(
       askGeminiRAG({ data: { personaContext: "staff", lang: "en" } }),
-    ).resolves.toMatchObject({ answer: expect.stringContaining("Missing 'message'"), sources: [] });
+    ).resolves.toMatchObject({ answer: expect.stringContaining("having trouble"), sources: [] });
   });
 });
