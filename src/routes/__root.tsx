@@ -6,7 +6,9 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  redirect,
 } from "@tanstack/react-router";
+import { getStoredRole, canAccessRoute } from "../lib/security";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -58,6 +60,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  beforeLoad: ({ location }) => {
+    // Global Route Protection (RBAC)
+    if (!canAccessRoute(location.pathname, getStoredRole())) {
+      throw redirect({ to: "/login" });
+    }
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },

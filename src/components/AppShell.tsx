@@ -311,7 +311,7 @@ export function AppShell({
       </div>
       </div>
 
-      {pathname !== "/assistant" && pathname !== "/admin" && <AIAssistant />}
+      {pathname !== "/login" && <AIAssistant />}
     </div>
   );
 }

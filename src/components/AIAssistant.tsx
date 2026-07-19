@@ -4,6 +4,7 @@ import { Sparkles, Send, X, Globe, UserCheck, Volume2, VolumeX, Mic } from "luci
 import { currentBuses } from "../lib/transportState";
 import { askGeminiRAG } from "../actions/chat.server";
 import { useNavigate } from "@tanstack/react-router";
+import { getBookedTickets, type TicketItem } from "../lib/bookingStore";
 import { DigitalTicketCard } from "./DigitalTicketCard";
 import { AdminKpiCard } from "./AdminKpiCard";
 import { TransportMap } from "./TransportMap";
@@ -63,7 +64,7 @@ const fallbackByPersona: Record<Persona, string> = {
   volunteer: "Connection issue on my end — please check with your shift coordinator for immediate guidance, and I'll be back online shortly.",
 };
 
-function buildSystemPrompt(persona: Persona, lang: Language) {
+function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem[]) {
   const personaContext: Record<Persona, string> = {
     staff: "You are speaking to stadium OPERATIONS STAFF. Be concise, operational, and action-oriented. Include concrete numbers, gate/section references, and next steps when relevant (e.g. dispatch, reroute, alert).",
     fan: "You are speaking to a FAN attending the match. Be warm, brief, and practical — directions, wait times, amenities, and accessibility help.",
@@ -71,12 +72,20 @@ function buildSystemPrompt(persona: Persona, lang: Language) {
   };
 
   const transportContext = currentBuses.map(b => `Bus ${b.id} (${b.route}): ETA ${b.eta}m, Status: ${b.status}, Occupancy: ${b.occupancy}%`).join('. ');
+  
+  const ticketContext = tickets.length > 0 
+    ? `The user has booked the following tickets: ${tickets.map(t => `${t.event} on ${t.date} at ${t.venue} (Seat ${t.section}-${t.row}-${t.seat}, Booking ID: ${t.id})`).join('; ')}.` 
+    : `The user has not booked any tickets yet.`;
 
   return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
 ${personaContext[persona]}
 
 [LIVE TRANSPORT DATA]:
 ${transportContext}
+
+[USER BOOKING HISTORY]:
+${persona === "fan" ? ticketContext : "Not applicable for staff."}
+If a fan asks about their tickets, ONLY reference the tickets listed above. If they have none, politely inform them they have not booked any tickets yet. Do NOT show tickets belonging to anyone else.
 
 Respond ONLY in ${languageNames[lang]}, regardless of what language the question is asked in.
 Keep responses to 2-4 sentences, stadium-operations-appropriate, and specific. Use only the provided stadium and live-data facts; say when information is unavailable.
@@ -217,7 +226,7 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
 
     try {
       const { answer } = await askGeminiRAG({
-        data: { message: text, personaContext: buildSystemPrompt(persona, lang), lang },
+        data: { message: text, personaContext: buildSystemPrompt(persona, lang, getBookedTickets()), lang },
       });
       setMessages((m) => [...m, { role: "ai", text: answer }]);
       speakText(answer);
@@ -254,15 +263,15 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
             animate={{ scale: 1 }}
             transition={{ delay: 0.4, type: "spring" }}
             onClick={() => setOpen((v) => !v)}
-            className="fixed bottom-6 right-6 z-50 size-14 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer group"
+            className="fixed bottom-6 right-6 z-50 size-16 rounded-full flex items-center justify-center text-white shadow-2xl border-none outline-none cursor-pointer group hover:scale-105 transition-transform"
             style={{
               background: "linear-gradient(135deg, #0E9F6E, #10B981)",
-              boxShadow: "0 0 30px rgba(14,159,110,0.50), inset 0 0 10px rgba(255,255,255,0.2)",
+              boxShadow: "0 0 40px rgba(14,159,110,0.60), inset 0 0 15px rgba(255,255,255,0.3)",
             }}
             aria-label="Open Arena IQ"
           >
-            <span className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-emerald-400 opacity-50" />
-            {open ? <X className="size-6 relative z-10 transition-transform group-hover:rotate-90" /> : <Sparkles className="size-6 relative z-10 transition-transform group-hover:scale-110" />}
+            <span className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-emerald-400 opacity-60" />
+            {open ? <X className="size-7 relative z-10 transition-transform group-hover:rotate-90" /> : <Sparkles className="size-7 relative z-10 transition-transform group-hover:scale-110" />}
           </motion.button>
         </>
       )}
