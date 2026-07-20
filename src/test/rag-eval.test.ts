@@ -63,7 +63,7 @@ describe('RAG System Upgrade & Evaluation Suite', () => {
     // Generate 40 test cases for Booking injection logic
     const bookingScenarios = Array.from({ length: 40 }, (_, i) => ({
       id: `BK${i}`,
-      event: i % 2 === 0 ? "Coldplay" : "FIFA World Cup",
+      event: i % 2 === 0 ? "Coldplay" : "ICC T20 World Cup",
       seat: `${i}A`,
       date: `2026-08-${(i % 30) + 1}`
     }));

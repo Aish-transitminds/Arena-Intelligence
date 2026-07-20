@@ -66,7 +66,7 @@ function TacticalPage() {
               ARENA<span className="text-primary">INTELLIGENCE</span>
             </h1>
             <p className="text-[9px] font-mono uppercase tracking-[0.25em] mt-1" style={{ color: "#64748B" }}>
-              Tactical Blueprint v4.2 · Narendra Modi FIFA Stadium
+              Tactical Blueprint v4.2 · Narendra Modi Stadium
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ function TacticalPage() {
           </div>
           <div className="text-right hidden md:block select-none">
             <p className="text-[10px] font-mono font-bold uppercase tracking-tight" style={{ color: "#64748B" }}>T: 18:42:05:22</p>
-             <p className="text-[9px] font-mono tracking-tighter" style={{ color: "rgba(170,184,194,0.40)" }}>COORDS: Narendra Modi FIFA Stadium, Gate B</p>
+             <p className="text-[9px] font-mono tracking-tighter" style={{ color: "rgba(170,184,194,0.40)" }}>COORDS: Narendra Modi Stadium, Gate B</p>
           </div>
           <div
             className="size-10 rounded-full flex items-center justify-center cursor-pointer transition-colors"

@@ -141,7 +141,7 @@ async function askGroq(
   const key = getGroqKey();
   if (!key) throw new Error("Groq API key is missing");
 
-  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
+  const systemPrompt = `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the 2026 ICC Men's T20 World Cup.
 ${personaContext}
 
 Respond ONLY in ${lang}, regardless of what language the question is asked in.

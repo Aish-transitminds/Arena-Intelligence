@@ -60,14 +60,14 @@ interface TicketItem {
 const MOCK_TICKETS: TicketItem[] = [
   {
     id: "TKT-001-2024",
-    event: "Team A vs Team B",
+    event: "India vs Australia",
     date: "Today",
-    time: "19:00 EST",
-    venue: "Stadium Alpha · Gate B",
+    time: "19:00 IST",
+    venue: "Narendra Modi Stadium · Gate B",
     section: "204",
     row: "12",
     seat: "7",
-    price: 150,
+    price: 1500,
     status: "active",
     qrCode: "ARENA-TKT-2891-7X",
     transferable: true,
@@ -77,20 +77,20 @@ const MOCK_TICKETS: TicketItem[] = [
     ticketType: "Premium VIP",
     transactionId: "TXN-20240709-001547",
     purchaseDate: "July 5, 2024",
-    entryTime: "17:30 EST",
-    exitTime: "22:30 EST",
+    entryTime: "17:30 IST",
+    exitTime: "22:30 IST",
     barcode: "|||||||||||||||||||",
   },
   {
     id: "TKT-002-2024",
-    event: "Championship Finals",
+    event: "RCB vs MI",
     date: "Next Friday",
-    time: "20:30 EST",
-    venue: "Narendra Modi FIFA Stadium · Gate C",
+    time: "20:30 IST",
+    venue: "Narendra Modi Stadium · Gate C",
     section: "108",
     row: "5",
     seat: "12",
-    price: 280,
+    price: 2800,
     status: "upcoming",
     qrCode: "ARENA-TKT-2892-8Y",
     transferable: true,
@@ -104,14 +104,14 @@ const MOCK_TICKETS: TicketItem[] = [
   },
   {
     id: "TKT-003-2024",
-    event: "Seasonal Playoff Round 2",
-    date: "2 weeks",
-    time: "18:00 EST",
-    venue: "Meadowlands Sports Complex",
+    event: "India vs England",
+    date: "In 2 weeks",
+    time: "18:00 IST",
+    venue: "Narendra Modi Stadium · Gate D",
     section: "215",
     row: "20",
     seat: "3",
-    price: 195,
+    price: 1950,
     status: "upcoming",
     qrCode: "ARENA-TKT-2893-9Z",
     transferable: true,
@@ -150,9 +150,9 @@ const MOCK_FAN_PROFILE: FanProfile = {
 };
 
 const TICKET_PRICES: Record<string, number> = {
-  Classic: 150,
-  Gold: 300,
-  Diamond: 600,
+  Classic: 1500,
+  Gold: 3000,
+  Diamond: 6000,
 };
 
 function FanTicketsPage() {
@@ -460,7 +460,7 @@ function FanTicketsPage() {
                             {statusConfig.label}
                           </span>
                           <span className="text-xs font-bold text-slate-900">
-                            ${ticket.price}
+                            ₹{ticket.price}
                           </span>
                         </div>
                       </div>
@@ -705,7 +705,7 @@ function FanTicketsPage() {
                         }`}
                       >
                         {type}
-                        <div className="text-[10px] font-normal opacity-80 mt-0.5">${TICKET_PRICES[type]}</div>
+                          <div className="text-[10px] font-normal opacity-80 mt-0.5">₹{TICKET_PRICES[type]}</div>
                       </button>
                     ))}
                   </div>
@@ -739,7 +739,7 @@ function FanTicketsPage() {
                 {/* Total */}
                 <div className="flex items-center justify-between pt-2 border-t border-slate-100">
                   <span className="text-slate-500 font-medium text-sm">Total Amount</span>
-                  <span className="text-2xl font-black text-slate-900">${TICKET_PRICES[buyType] * buyQuantity}</span>
+                  <span className="text-2xl font-black text-slate-900">₹{TICKET_PRICES[buyType] * buyQuantity}</span>
                 </div>
               </div>
 

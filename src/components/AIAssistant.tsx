@@ -6,6 +6,7 @@ import { askGeminiRAG } from "../actions/chat.server";
 import { useNavigate } from "@tanstack/react-router";
 import { getBookedTickets, type TicketItem } from "../lib/bookingStore";
 import { getStoredRole } from "../lib/security";
+import { buildTicketResponse } from "../lib/assistantHelpers";
 import { DigitalTicketCard } from "./DigitalTicketCard";
 import { AdminKpiCard } from "./AdminKpiCard";
 import { TransportMap } from "./TransportMap";
@@ -67,11 +68,11 @@ const fallbackByPersona: Record<Persona, string> = {
 
 // Event catalog for AI recommendations
 const EVENT_CATALOG = [
-  { id: "evt-1", title: "Coldplay: Music of the Spheres", date: "August 22, 2026", time: "19:00 IST", venue: "Narendra Modi Stadium", price: 450, category: "Concert" },
-  { id: "evt-2", title: "FIFA World Cup Finals", date: "July 19, 2026", time: "20:30 IST", venue: "Narendra Modi Stadium", price: 850, category: "Sports" },
-  { id: "evt-3", title: "AR Rahman Live In Concert", date: "September 5, 2026", time: "18:00 IST", venue: "Narendra Modi Stadium", price: 350, category: "Concert" },
-  { id: "evt-4", title: "IPL 2026 Grand Finale", date: "May 28, 2026", time: "19:30 IST", venue: "Narendra Modi Stadium", price: 600, category: "Sports" },
-  { id: "evt-5", title: "Sunburn Arena Festival", date: "October 10, 2026", time: "16:00 IST", venue: "Narendra Modi Stadium", price: 500, category: "Festival" },
+  { id: "evt-1", title: "India vs Australia Warm-up", date: "August 22, 2026", time: "19:00 IST", venue: "Narendra Modi Stadium", price: 450, category: "Sports" },
+  { id: "evt-2", title: "IPL 2026 Final: RCB vs MI", date: "July 19, 2026", time: "20:30 IST", venue: "Narendra Modi Stadium", price: 850, category: "Sports" },
+  { id: "evt-3", title: "India vs England Test Day 1", date: "September 5, 2026", time: "10:30 IST", venue: "Narendra Modi Stadium", price: 350, category: "Sports" },
+  { id: "evt-4", title: "India vs Pakistan Asia Cup Clash", date: "May 28, 2026", time: "19:30 IST", venue: "Narendra Modi Stadium", price: 600, category: "Sports" },
+  { id: "evt-5", title: "Legends XI vs All Stars Charity Match", date: "October 10, 2026", time: "16:00 IST", venue: "Narendra Modi Stadium", price: 500, category: "Sports" },
 ];
 
 function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem[]) {
@@ -84,15 +85,15 @@ function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem
   const transportContext = currentBuses.map(b => `Bus ${b.id} (${b.route}): ETA ${b.eta}m, Status: ${b.status}, Occupancy: ${b.occupancy}%`).join('. ');
   
   const ticketContext = tickets.length > 0 
-    ? `The user has booked the following tickets: ${tickets.map(t => `${t.event} on ${t.date} at ${t.venue} (Seat ${t.section}-${t.row}-${t.seat}, Booking ID: ${t.id}, Price: $${t.price})`).join('; ')}.` 
+    ? `The user has booked the following tickets: ${tickets.map(t => `${t.event} on ${t.date} at ${t.venue} (Seat ${t.section}-${t.row}-${t.seat}, Booking ID: ${t.id}, Price: ₹${t.price})`).join('; ')}.` 
     : `The user has not booked any tickets yet.`;
 
   const totalSpent = tickets.reduce((sum, t) => sum + (t.price || 0), 0);
-  const spendingContext = `Total amount spent on tickets: $${totalSpent}. Number of events attending: ${tickets.length}.`;
+  const spendingContext = `Total amount spent on tickets: ₹${totalSpent}. Number of events attending: ${tickets.length}.`;
 
-  const eventCatalogContext = `Available upcoming events for recommendation:\n${EVENT_CATALOG.map(e => `- ${e.title} (${e.category}) on ${e.date} at ${e.time}, ${e.venue}, $${e.price}/ticket`).join('\n')}`;
+  const eventCatalogContext = `Available upcoming events for recommendation:\n${EVENT_CATALOG.map(e => `- ${e.title} (${e.category}) on ${e.date} at ${e.time}, ${e.venue}, ₹${e.price}/ticket`).join('\n')}`;
 
-  return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the FIFA World Cup 2026.
+  return `You are Arena IQ, the intelligent operations assistant for Arena Intelligence Stadium during the 2026 ICC Men's T20 World Cup.
 ${personaContext[persona]}
 
 [LIVE TRANSPORT DATA]:
@@ -132,10 +133,10 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
   const authRole = getStoredRole();
   const persona: Persona = authRole === "fan" ? "fan" : (authRole === "steward" ? "volunteer" : "staff");
   const [lang, setLang] = useState<Language>("en");
-  const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
+  const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string; ticket?: TicketItem; washroom?: WashroomInfo }[]>([
     {
       role: "ai",
-      text: "Welcome to Arena IQ — your intelligent stadium assistant for FIFA World Cup 2026 at Arena Intelligence Stadium. Select your persona below and ask about operations, navigation, or match-day logistics.",
+      text: "Welcome to Arena IQ — your intelligent stadium assistant for ICC T20 World Cup 2026 at Arena Intelligence Stadium. Select your persona below and ask about operations, navigation, or match-day logistics.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -232,6 +233,27 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
       setInput("");
       navigate({ to: "/emergency", search: { prefillArea: area, prefillType: type } as any });
       speakText(tier2Response);
+      return;
+    }
+
+    const ticketResponse = buildTicketResponse(text, getBookedTickets());
+    if (ticketResponse) {
+      const renderedText = ticketResponse.text;
+      const replyTags = [ticketResponse.renderTicket ? "[RENDER_TICKET]" : null, ticketResponse.renderMap ? "[RENDER_MAP]" : null]
+        .filter(Boolean)
+        .join(" ");
+
+      setMessages([
+        ...nextHistory,
+        {
+          role: "ai",
+          text: `${renderedText}${replyTags ? ` ${replyTags}` : ""}`,
+          ticket: ticketResponse.ticket,
+          washroom: ticketResponse.washroom,
+        },
+      ]);
+      setInput("");
+      speakText(renderedText);
       return;
     }
 
@@ -347,7 +369,7 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
                   </div>
                   <div className="text-[11px] text-emerald-400 font-semibold tracking-wider flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                    FIFA WORLD CUP 2026 · LIVE
+                    ICC T20 WORLD CUP 2026 · LIVE
                   </div>
                 </div>
               </div>
@@ -449,7 +471,7 @@ export function AIAssistant({ mode = "floating" }: { mode?: "floating" | "docked
                     return (
                       <>
                         {text && <p className={renderTicket || renderAdmin || renderMap || renderDispatchConfirm || renderSosConfirm ? "mb-3" : ""}>{text}</p>}
-                        {renderTicket && persona === "fan" && <DigitalTicketCard />}
+                        {renderTicket && persona === "fan" && <DigitalTicketCard ticket={m.ticket} washroom={m.washroom} />}
                         {renderAdmin && persona !== "fan" && <AdminKpiCard />}
                         {renderMap && (
                           <div className="h-48 w-full rounded-xl overflow-hidden mt-3 border border-slate-700">

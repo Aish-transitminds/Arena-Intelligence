@@ -30,11 +30,11 @@ export const revenueData = [
 ];
 
 export const fixtures = [
-  { id: 1, home: "USA", away: "England", date: "Jun 12", time: "19:00", venue: "Narendra Modi FIFA Stadium", status: "Upcoming" },
-  { id: 2, home: "Mexico", away: "Brazil", date: "Jun 13", time: "17:30", venue: "Narendra Modi FIFA Stadium", status: "Upcoming" },
-  { id: 3, home: "Canada", away: "France", date: "Jun 14", time: "20:00", venue: "BC Place", status: "Upcoming" },
-  { id: 4, home: "Argentina", away: "Germany", date: "Jun 08", time: "19:00", venue: "Narendra Modi FIFA Stadium", status: "Live", homeScore: "2", awayScore: "1" },
-  { id: 5, home: "Brazil", away: "Spain", date: "Jun 05", time: "19:00", venue: "Narendra Modi FIFA Stadium", status: "Final", homeScore: "3", awayScore: "0" },
+  { id: 1, home: "India", away: "Australia", date: "Jun 12", time: "19:00", venue: "Narendra Modi Stadium", status: "Upcoming" },
+  { id: 2, home: "India", away: "Pakistan", date: "Jun 13", time: "17:30", venue: "Narendra Modi Stadium", status: "Upcoming" },
+  { id: 3, home: "England", away: "Australia", date: "Jun 14", time: "20:00", venue: "Eden Gardens", status: "Upcoming" },
+  { id: 4, home: "India", away: "England", date: "Jun 08", time: "19:00", venue: "Narendra Modi Stadium", status: "Live", homeScore: "2", awayScore: "1" },
+  { id: 5, home: "Mumbai Indians", away: "Chennai Super Kings", date: "Jun 05", time: "19:00", venue: "Narendra Modi Stadium", status: "Final", homeScore: "3", awayScore: "0" },
 ];
 
 export const leaderboard = [

@@ -32,7 +32,7 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "Arena Intelligence — Admin Operations Console" },
-      { name: "description", content: "FIFA-grade stadium operations dashboard. Real-time attendance, crowd flow, security, and analytics." },
+      { name: "description", content: "Cricket-grade stadium operations dashboard. Real-time attendance, crowd flow, security, and analytics." },
     ],
   }),
   component: Admin,

@@ -2,7 +2,7 @@
 
 ![Arena Intelligence](https://img.shields.io/badge/Status-Active-success) ![Vercel](https://img.shields.io/badge/Deployed-Vercel-black)
 
-Arena Intelligence is a next-generation smart-stadium operations platform, built specifically to handle the immense scale and complexity of the **FIFA World Cup 2026**. 
+Arena Intelligence is a next-generation smart-stadium operations platform, built specifically to handle the immense scale and complexity of the **2026 ICC Men's T20 World Cup**. 
 
 ## 🏆 Project Evaluation & Metrics
 This project has been rigorously evaluated and achieved an overall **90.97/100 AI Evaluation Score**.
