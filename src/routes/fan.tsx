@@ -8,7 +8,7 @@ import { crowdData, queueData, notifications } from "@/lib/mock-data";
 import {
   Users, Clock, MapPin, Ticket, CalendarDays, Bell,
   Crosshair, UtensilsCrossed, Car, AlertTriangle,
-  ChevronRight, ArrowRight, Navigation, ShoppingBag, Lock
+  ChevronRight, ArrowRight, Navigation, ShoppingBag, Lock, Sparkles, MessageCircle, Zap
 } from "lucide-react";
 
 export const Route = createFileRoute("/fan")({
@@ -153,6 +153,73 @@ function FanPage() {
           index={0}
           positive
         />
+
+        {/* ── AI ASSISTANT MAIN CTA ── */}
+        <motion.button
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12, duration: 0.4 }}
+          whileHover={{ y: -4, scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={() => {
+            // Find and click the AI FAB button to open it
+            const fab = document.querySelector('[aria-label="Open Arena IQ"]') as HTMLButtonElement;
+            if (fab) fab.click();
+          }}
+          className="lg:col-span-2 rounded-2xl p-6 relative overflow-hidden cursor-pointer group border-0 outline-none text-left"
+          style={{
+            background: "linear-gradient(135deg, #0B1A23 0%, #0E2A1F 50%, #0B1A23 100%)",
+            border: "2px solid rgba(14,159,110,0.3)",
+            boxShadow: "0 8px 32px rgba(14,159,110,0.15), inset 0 1px 0 rgba(255,255,255,0.05)",
+          }}
+        >
+          {/* Animated glow background */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
+            background: "radial-gradient(circle at 30% 50%, rgba(14,159,110,0.15) 0%, transparent 70%)"
+          }} />
+          
+          {/* Pulse ring */}
+          <div className="absolute top-4 right-4 size-3 rounded-full bg-emerald-400 animate-pulse" style={{
+            boxShadow: "0 0 12px rgba(16,185,129,0.8), 0 0 24px rgba(16,185,129,0.4)"
+          }} />
+
+          <div className="flex items-center gap-5 relative z-10">
+            {/* AI Icon */}
+            <div className="size-16 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3" style={{
+              background: "linear-gradient(135deg, #0E9F6E, #10B981)",
+              boxShadow: "0 0 30px rgba(14,159,110,0.5), inset 0 0 12px rgba(255,255,255,0.2)",
+            }}>
+              <Sparkles className="size-8 text-white" />
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="text-lg font-extrabold text-white tracking-tight">Arena IQ — AI Assistant</h3>
+                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{
+                  background: "rgba(14,159,110,0.2)",
+                  color: "#34D399",
+                  border: "1px solid rgba(14,159,110,0.3)",
+                }}>Live</span>
+              </div>
+              <p className="text-sm text-slate-400 font-medium">Ask about tickets, food courts, directions, events — your personal stadium guide</p>
+              <div className="flex items-center gap-4 mt-3">
+                <span className="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                  <MessageCircle className="size-3.5" /> Chat
+                </span>
+                <span className="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                  <Zap className="size-3.5" /> Instant answers
+                </span>
+              </div>
+            </div>
+
+            <div className="size-12 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-hover:translate-x-2" style={{
+              background: "rgba(14,159,110,0.15)",
+              border: "1px solid rgba(14,159,110,0.3)",
+            }}>
+              <ArrowRight className="size-5 text-emerald-400" />
+            </div>
+          </div>
+        </motion.button>
 
         {/* ── QUICK NAVIGATION ── */}
         <div
