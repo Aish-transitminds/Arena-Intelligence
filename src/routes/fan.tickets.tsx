@@ -156,13 +156,28 @@ const TICKET_PRICES: Record<string, number> = {
 };
 
 function FanTicketsPage() {
+  const [fanProfile, setFanProfile] = useState<FanProfile>(MOCK_FAN_PROFILE);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const email = window.localStorage.getItem("arena-user-email");
+      const name = window.localStorage.getItem("arena-user-name");
+      if (email && name) {
+        setFanProfile(prev => ({ ...prev, email, name }));
+      }
+    }
+  }, []);
+
   const [tickets, setTickets] = useState<TicketItem[]>(() => {
     if (typeof window !== "undefined") {
       const saved = window.localStorage.getItem("arena-booking-history");
+      const name = window.localStorage.getItem("arena-user-name");
       if (saved) {
-        try { return JSON.parse(saved); } catch (e) {}
+        try { const parsed = JSON.parse(saved); return name ? parsed.map((t: TicketItem) => ({ ...t, ownerName: name })) : parsed; } catch (e) {}
       }
-      window.localStorage.setItem("arena-booking-history", JSON.stringify(MOCK_TICKETS));
+      const initial = name ? MOCK_TICKETS.map(t => ({ ...t, ownerName: name })) : MOCK_TICKETS;
+      window.localStorage.setItem("arena-booking-history", JSON.stringify(initial));
+      return initial;
     }
     return MOCK_TICKETS;
   });
@@ -196,7 +211,7 @@ function FanTicketsPage() {
       transferable: true,
       resalable: true,
       upgradeable: true,
-      ownerName: MOCK_FAN_PROFILE.name,
+      ownerName: fanProfile.name,
       ticketType: buyType,
       transactionId: `TXN-${Date.now()}-${i}`,
       purchaseDate: new Date().toLocaleDateString(),
@@ -275,14 +290,14 @@ function FanTicketsPage() {
               background: "linear-gradient(135deg, #0E9F6E, #3CB371)",
             }}
           >
-            {MOCK_FAN_PROFILE.name.charAt(0)}
+            {fanProfile.name.charAt(0)}
           </div>
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-1">
-              {MOCK_FAN_PROFILE.name}
+              {fanProfile.name}
             </h2>
             <p className="text-sm mb-2" style={{ color: "var(--muted-foreground)" }}>
-              {MOCK_FAN_PROFILE.email}
+              {fanProfile.email}
             </p>
             <div className="flex items-center gap-3">
               <span
@@ -314,10 +329,10 @@ function FanTicketsPage() {
                       : "1px solid rgba(205,127,50,0.30)",
                 }}
               >
-                {MOCK_FAN_PROFILE.memberLevel} member
+                {fanProfile.memberLevel} member
               </span>
               <span style={{ color: "var(--muted-foreground)" }} className="text-xs">
-                Since {MOCK_FAN_PROFILE.joinDate}
+                Since {fanProfile.joinDate}
               </span>
             </div>
           </div>
@@ -336,7 +351,7 @@ function FanTicketsPage() {
             Member ID
           </p>
           <p className="text-lg font-mono font-bold text-white">
-            {MOCK_FAN_PROFILE.memberId}
+            {fanProfile.memberId}
           </p>
         </div>
         <div className="flex gap-3">

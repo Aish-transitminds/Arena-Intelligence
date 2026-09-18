@@ -57,6 +57,9 @@ function Login() {
       }
 
       persistRole(roleToSave);
+      const userName = email.split('@')[0].split(/[.\-_]/).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+      localStorage.setItem("arena-user-email", email);
+      localStorage.setItem("arena-user-name", userName);
       recordAuditEvent(isRegister ? "register-success" : "login-success", `${email} as ${roleToSave}`);
       
       if (roleToSave === "fan") nav({ to: "/fan" });
