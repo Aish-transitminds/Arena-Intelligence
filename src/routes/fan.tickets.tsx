@@ -143,10 +143,10 @@ const MOCK_FAN_PROFILE: FanProfile = {
   memberId: "FAN-2024-89472",
   memberLevel: "gold",
   joinDate: "2022",
-  totalTickets: 12,
-  totalSpent: 2840,
-  favoriteVenue: "Stadium Alpha",
-  upcomingEvents: 3,
+  totalTickets: 3,
+  totalSpent: 6250,
+  favoriteVenue: "Narendra Modi Stadium",
+  upcomingEvents: 2,
 };
 
 const TICKET_PRICES: Record<string, number> = {

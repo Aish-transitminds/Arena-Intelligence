@@ -89,7 +89,11 @@ function buildSystemPrompt(persona: Persona, lang: Language, tickets: TicketItem
     : `The user has not booked any tickets yet.`;
 
   const totalSpent = tickets.reduce((sum, t) => sum + (t.price || 0), 0);
-  const spendingContext = `Total amount spent on tickets: ₹${totalSpent}. Number of events attending: ${tickets.length}.`;
+  const activeTickets = tickets.filter(t => t.status === "active");
+  const upcomingTickets = tickets.filter(t => t.status === "upcoming");
+  const historyTickets = tickets.filter(t => t.status === "used");
+  const spendingContext = `Total amount spent on tickets so far (across all ${tickets.length} tickets): ₹${totalSpent}.
+Breakdown of events: ${activeTickets.length} active, ${upcomingTickets.length} upcoming, ${historyTickets.length} historical.`;
 
   const eventCatalogContext = `Available upcoming events for recommendation:\n${EVENT_CATALOG.map(e => `- ${e.title} (${e.category}) on ${e.date} at ${e.time}, ${e.venue}, ₹${e.price}/ticket`).join('\n')}`;
 
