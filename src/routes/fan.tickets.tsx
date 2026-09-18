@@ -156,8 +156,17 @@ const TICKET_PRICES: Record<string, number> = {
 };
 
 function FanTicketsPage() {
-  const [tickets, setTickets] = useState<TicketItem[]>(MOCK_TICKETS);
-  const [selectedTicket, setSelectedTicket] = useState<TicketItem | null>(MOCK_TICKETS[0]);
+  const [tickets, setTickets] = useState<TicketItem[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = window.localStorage.getItem("arena-booking-history");
+      if (saved) {
+        try { return JSON.parse(saved); } catch (e) {}
+      }
+      window.localStorage.setItem("arena-booking-history", JSON.stringify(MOCK_TICKETS));
+    }
+    return MOCK_TICKETS;
+  });
+  const [selectedTicket, setSelectedTicket] = useState<TicketItem | null>(tickets[0] || null);
   const [showQRModal, setShowQRModal] = useState(false);
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [activeTab, setActiveTab] = useState<"active" | "upcoming" | "history">("active");
@@ -194,7 +203,13 @@ function FanTicketsPage() {
       barcode: "|||||||||||||||||||",
     }));
 
-    setTickets([...newTickets, ...tickets]);
+    const updatedTickets = [...newTickets, ...tickets];
+    setTickets(updatedTickets);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("arena-booking-history", JSON.stringify(updatedTickets));
+      window.dispatchEvent(new Event("arena-tickets-updated"));
+    }
+    
     setSelectedTicket(newTickets[0]);
     setShowBuyModal(false);
     setActiveTab("active");
