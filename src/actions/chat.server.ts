@@ -182,7 +182,7 @@ ${JSON.stringify(liveContext, null, 2)}`;
 
   if (!res.ok) throw new Error(`Groq error: ${res.status} ${await res.text()}`);
   const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
-  return data.choices?.[0]?.message?.content || "I couldn't generate a response.";
+  return data.choices?.[0]?.message?.content || "I'm not quite sure how to answer that. Could you rephrase your question?";
 }
 
 export const askGeminiRAG = createServerFn({ method: "POST" })

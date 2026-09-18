@@ -81,7 +81,7 @@ export function buildTicketResponse(
 ): { text: string; renderTicket: boolean; renderMap: boolean; ticket?: TicketItem; washroom?: WashroomInfo } | null {
   const lowerQuestion = question.toLowerCase();
   const isTicketQuery = /(ticket|booking|pass|seat|my ticket|my seat|booking id|booked|show my tickets|ticket details|ticket status)/i.test(question);
-  const wantsWashroom = /(washroom|restroom|bathroom|closest restroom|nearest restroom|closest washroom|nearest washroom|toilet|restroom)/i.test(question);
+  const wantsWashroom = /(washroom|restroom|restrom|bathroom|bathrom|closest restroom|nearest restroom|closest washroom|nearest washroom|toilet|tolet)/i.test(question);
   const wantsMap = /(map|direction|navigate|route|way to)/i.test(question);
 
   if (!isTicketQuery && !wantsWashroom) {
