@@ -222,7 +222,7 @@ export function AppShell({
             </div>
             <div className="min-w-0 flex-1 flex flex-col items-start text-left">
               <div className="text-sm font-semibold truncate text-foreground">Arena User</div>
-              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{role === "fan" ? "Fan" : role === "manager" ? "Ops Manager" : role === "steward" ? "Steward" : role === "security" ? "Security" : "Admin"}</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{role === "fan" ? "Fan" : role === "manager" ? "Ops Manager" : role === "steward" ? "Steward" : role === "security" ? "Security" : role === "ai" ? "AI" : "Admin"}</div>
             </div>
             <button
               type="button"

@@ -23,7 +23,7 @@ function Login() {
   
   const [activeTab, setActiveTab] = useState<"fan" | "staff">("fan");
   const [isRegister, setIsRegister] = useState(false);
-  const [staffRole, setStaffRole] = useState<"manager" | "steward">("manager");
+  const [staffRole, setStaffRole] = useState<"manager" | "steward" | "security" | "ai">("manager");
 
   const [showSimulatedAuth, setShowSimulatedAuth] = useState(false);
   const [simulatedEmail, setSimulatedEmail] = useState("");
@@ -53,11 +53,7 @@ function Login() {
       if (activeTab === "fan") {
         roleToSave = "fan";
       } else {
-        if (isRegister) {
-          roleToSave = staffRole;
-        } else {
-          roleToSave = email.includes("admin") || email.includes("manager") ? "manager" : "steward";
-        }
+        roleToSave = staffRole;
       }
 
       persistRole(roleToSave);
@@ -117,13 +113,13 @@ function Login() {
 
         <div className="mt-8 space-y-4">
           <AnimatePresence>
-            {activeTab === "staff" && isRegister && (
+            {activeTab === "staff" && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}
                 className="overflow-hidden"
               >
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4 mb-2">Select Staff Role</p>
-                <div className="grid grid-cols-2 gap-3 mb-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4 mb-2">Select Your Staff Role</p>
+                <div className="grid grid-cols-4 gap-3 mb-6">
                   <div
                     onClick={() => setStaffRole("manager")}
                     className={`cursor-pointer rounded-xl p-3 border-2 transition-all ${staffRole === "manager" ? "border-primary bg-primary/5" : "border-slate-100 bg-slate-50 hover:border-slate-200"}`}
@@ -138,7 +134,23 @@ function Login() {
                   >
                     <ShieldAlert className={`size-5 mb-2 ${staffRole === "steward" ? "text-primary" : "text-slate-400"}`} />
                     <p className="text-sm font-semibold text-slate-900">Steward</p>
-                    <p className="text-[10px] text-slate-500 mt-0.5">Map & Transport only</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Map & transport only</p>
+                  </div>
+                  <div
+                    onClick={() => setStaffRole("security")}
+                    className={`cursor-pointer rounded-xl p-3 border-2 transition-all ${staffRole === "security" ? "border-primary bg-primary/5" : "border-slate-100 bg-slate-50 hover:border-slate-200"}`}
+                  >
+                    <Lock className={`size-5 mb-2 ${staffRole === "security" ? "text-primary" : "text-slate-400"}`} />
+                    <p className="text-sm font-semibold text-slate-900">Security</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Operations & safety access</p>
+                  </div>
+                  <div
+                    onClick={() => setStaffRole("ai")}
+                    className={`cursor-pointer rounded-xl p-3 border-2 transition-all ${staffRole === "ai" ? "border-primary bg-primary/5" : "border-slate-100 bg-slate-50 hover:border-slate-200"}`}
+                  >
+                    <UserPlus className={`size-5 mb-2 ${staffRole === "ai" ? "text-primary" : "text-slate-400"}`} />
+                    <p className="text-sm font-semibold text-slate-900">AI Assistant</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">Automated operations assistant</p>
                   </div>
                 </div>
               </motion.div>

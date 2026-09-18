@@ -1,4 +1,4 @@
-export type UserRole = "fan" | "admin" | "manager" | "steward" | "security" | "guest";
+export type UserRole = "fan" | "admin" | "manager" | "steward" | "security" | "ai" | "guest";
 
 const ROLE_STORAGE_KEY = "arena-role";
 import { getRoleFromToken, isTokenValid, issueToken, clearToken } from "./auth";
@@ -88,13 +88,14 @@ export function canAccessRoute(pathname: string, role: UserRole): boolean {
       // Steward is only allowed on the transport map
       return pathname.startsWith("/admin/transport");
     }
-    return role === "admin" || role === "manager" || role === "security";
+    // AI assistants are considered trusted staff for admin-level access
+    return role === "admin" || role === "manager" || role === "security" || role === "ai";
   }
   if (pathname.startsWith("/fan")) {
     return role === "fan";
   }
   if (pathname.startsWith("/assistant")) {
-    return role === "admin" || role === "manager" || role === "security" || role === "fan";
+    return role === "admin" || role === "manager" || role === "security" || role === "fan" || role === "ai";
   }
   // Public routes (e.g. index, /login)
   return true;

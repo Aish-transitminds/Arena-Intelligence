@@ -139,7 +139,7 @@ export function getRoleFromToken(): string | null {
   const p = parseToken();
   if (!p) return null;
   // Validate role is one of the known roles
-  const validRoles = ["fan", "admin", "manager", "steward", "security", "guest"];
+  const validRoles = ["fan", "admin", "manager", "steward", "security", "ai", "guest"];
   if (!validRoles.includes(p.role)) {
     console.warn(`[Arena Security] Unknown role in token: ${p.role}`);
     clearToken();

@@ -44,7 +44,7 @@ function getCohereKey() {
 }
 
 const EMBED_MODEL = "gemini-embedding-2";
-const CHAT_MODEL = "llama-3.3-70b-versatile"; // Groq model
+const CHAT_MODEL = "openai/gpt-oss-120b"; // Groq model
 const TOP_K = 20; // Fetch more chunks initially
 const TOP_N_RERANK = 4; // Top chunks to send to LLM after re-ranking
 

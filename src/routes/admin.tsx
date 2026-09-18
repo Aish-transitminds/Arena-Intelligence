@@ -74,8 +74,42 @@ const sectionOccupancy = [
   { name: "Press", value: 61 },
 ];
 
+const adminActions = [
+  {
+    id: "deploy-redirect",
+    label: "Gate Redirect",
+    description: "Reroute ingress from Gate D to Gate A.",
+    icon: ArrowUpRight,
+    tone: "info",
+  },
+  {
+    id: "dispatch-medical",
+    label: "Dispatch Medical",
+    description: "Send the nearest medical response team.",
+    icon: ShieldCheck,
+    tone: "warning",
+  },
+  {
+    id: "lock-vip",
+    label: "Secure VIP Access",
+    description: "Lock or inspect VIP entrance flow.",
+    icon: Bell,
+    tone: "critical",
+  },
+  {
+    id: "broadcast-alert",
+    label: "Stadium Broadcast",
+    description: "Send a public address advisory to fans.",
+    icon: Activity,
+    tone: "success",
+  },
+];
+
 function Admin() {
   const [isRedirected, setIsRedirected] = useState(false);
+  const [actionLogs, setActionLogs] = useState(
+    [{ time: "20:10", message: "Operational systems stable. No active escalations.", severity: "info" as const }]
+  );
   const [restrooms, setRestrooms] = useState([
     { id: "A-North", location: "Concourse North (Gate A)", load: "High", wait: "5 min", status: "Clean", cleanStatus: "Idle" },
     { id: "B-VIP", location: "VIP Club Level (Section 204)", load: "Low", wait: "0 min", status: "Needs Service", cleanStatus: "Idle" },
@@ -95,6 +129,7 @@ function Admin() {
   const [recommendationMeta, setRecommendationMeta] = useState<{prompt:string; rawResponse:string} | null>(null);
   const [chartData, setChartData] = useState(initialAttendanceTrend);
   const [attendanceSparkline, setAttendanceSparkline] = useState<number[]>([52840]);
+  const [lastActionResult, setLastActionResult] = useState<string>("");
 
   const handleAddIncident = (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,6 +165,8 @@ function Admin() {
       { time: timeStr, type: "success", msg: `Gate D redirect signal deployed. Ingress traffic rerouting to Gate A.` },
       ...incidentList,
     ]);
+    setLastActionResult("Gate redirect instruction has been issued.");
+    logAction("Gate D redirect signal deployed to Gate A.", "success");
     setRecommendationBusy(true);
     try {
       const result = await generateAdminRecommendation(
@@ -149,6 +186,53 @@ function Admin() {
       setRecommendation("Rebalance ingress toward Gate A and reduce the load around the East stand to maintain stable flow.");
     } finally {
       setRecommendationBusy(false);
+    }
+  };
+
+  const logAction = (message: string, severity: "info" | "success" | "warning" | "critical") => {
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    setActionLogs((prev) => [{ time: timeStr, message, severity }, ...prev].slice(0, 8));
+  };
+
+  const handleAdminAction = (actionId: string) => {
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+
+    switch (actionId) {
+      case "dispatch-medical":
+        setIncidentList((prev) => [
+          { time: timeStr, type: "success", msg: "Medical team dispatched to Section 22 West." },
+          ...prev,
+        ]);
+        setLastActionResult("Medical response activated.");
+        logAction("Dispatched medical team to Section 22 West.", "critical");
+        setRecommendation("Medical response teams are en route to the affected zone. Maintain clear passage.");
+        break;
+      case "lock-vip":
+        setIncidentList((prev) => [
+          { time: timeStr, type: "warning", msg: "VIP entrance security sweep initiated." },
+          ...prev,
+        ]);
+        setLastActionResult("VIP access is now under security screening.");
+        logAction("VIP access locked down and swept.", "warning");
+        setRecommendation("VIP entrance is secured. Monitor guest ingress and update signage accordingly.");
+        break;
+      case "broadcast-alert":
+        setIncidentList((prev) => [
+          { time: timeStr, type: "info", msg: "Stadium announcement issued: Please remain calm and follow staff instructions." },
+          ...prev,
+        ]);
+        setLastActionResult("Public announcement delivered.");
+        logAction("Broadcast advisory sent to stadium speakers.", "info");
+        setRecommendation("Audience advisories are live. Review crowd flow and pause any non-essential operations.");
+        break;
+      case "deploy-redirect":
+        handleDeployRedirect();
+        return;
+      default:
+        setLastActionResult("Action executed.");
+        logAction(`Executed ${actionId}.`, "info");
     }
   };
 
@@ -517,6 +601,105 @@ function Admin() {
 
           {/* ── RIGHT: Sidebar ── */}
           <div className="col-span-12 xl:col-span-4 space-y-6">
+
+            {/* Command Center */}
+            <div className="rounded-2xl p-6 bg-card border border-border">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-foreground">Command Center</h3>
+                  <p className="text-[10px] mt-1" style={{ color: "var(--muted-foreground)" }}>
+                    Operations actions, alerts, and live event log
+                  </p>
+                </div>
+                <span
+                  className="text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+                  style={{ background: "rgba(14,159,110,0.10)", border: "1px solid rgba(14,159,110,0.20)", color: "#0E9F6E" }}
+                >
+                  Active
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 mb-4">
+                {adminActions.map((action) => {
+                  const color =
+                    action.tone === "critical"
+                      ? "#D92D20"
+                      : action.tone === "warning"
+                      ? "#F4B400"
+                      : action.tone === "success"
+                      ? "#0E9F6E"
+                      : "#3B82F6";
+                  const Icon = action.icon;
+                  return (
+                    <button
+                      key={action.id}
+                      type="button"
+                      onClick={() => handleAdminAction(action.id)}
+                      className="w-full rounded-2xl border border-border p-4 text-left transition hover:bg-white/5"
+                      style={{ borderColor: "rgba(128,128,128,0.12)" }}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span className="size-9 rounded-2xl flex items-center justify-center" style={{ background: `${color}15`, color }}>
+                            <Icon className="size-4" />
+                          </span>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{action.label}</p>
+                            <p className="text-[10px] mt-1" style={{ color: "var(--muted-foreground)" }}>{action.description}</p>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.16em]" style={{ color }}>
+                          {action.tone}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {lastActionResult ? (
+                <div className="rounded-2xl bg-slate-50 p-4" style={{ border: "1px solid rgba(128,128,128,0.10)" }}>
+                  <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-muted-foreground">Last Action</p>
+                  <p className="mt-2 text-sm text-foreground">{lastActionResult}</p>
+                </div>
+              ) : null}
+
+              <div className="mt-5 rounded-2xl bg-background p-4" style={{ border: "1px solid rgba(128,128,128,0.10)" }}>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-muted-foreground">Action Log</p>
+                  <span className="text-[9px] uppercase tracking-[0.18em]" style={{ color: "var(--muted-foreground)" }}>{actionLogs.length} events</span>
+                </div>
+                <div className="space-y-2 max-h-52 overflow-y-auto pr-2">
+                  {actionLogs.map((log, index) => (
+                    <div
+                      key={`${log.message}-${index}`}
+                      className="rounded-2xl p-3"
+                      style={{
+                        background:
+                          log.severity === "critical"
+                            ? "rgba(217,45,32,0.10)"
+                            : log.severity === "warning"
+                            ? "rgba(244,180,0,0.10)"
+                            : "rgba(14,159,110,0.08)",
+                        border: `1px solid ${
+                          log.severity === "critical"
+                            ? "rgba(217,45,32,0.20)"
+                            : log.severity === "warning"
+                            ? "rgba(244,180,0,0.20)"
+                            : "rgba(14,159,110,0.18)"
+                        }`,
+                      }}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-[10px] font-semibold text-foreground">{log.message}</p>
+                        <span className="text-[9px] uppercase tracking-[0.16em]" style={{ color: log.severity === "critical" ? "#D92D20" : log.severity === "warning" ? "#F4B400" : "#0E9F6E" }}>{log.severity}</span>
+                      </div>
+                      <p className="text-[9px] mt-1" style={{ color: "var(--muted-foreground)" }}>{log.time}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             {/* Operational Recommendation */}
             <div
