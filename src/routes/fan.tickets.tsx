@@ -175,16 +175,20 @@ function FanTicketsPage() {
       if (saved) {
         try { const parsed = JSON.parse(saved); return name ? parsed.map((t: TicketItem) => ({ ...t, ownerName: name })) : parsed; } catch (e) {}
       }
-      const initial = name ? MOCK_TICKETS.map(t => ({ ...t, ownerName: name })) : MOCK_TICKETS;
+      const initial = [];
       window.localStorage.setItem("arena-booking-history", JSON.stringify(initial));
       return initial;
     }
-    return MOCK_TICKETS;
+    return [];
   });
   const [selectedTicket, setSelectedTicket] = useState<TicketItem | null>(tickets[0] || null);
   const [showQRModal, setShowQRModal] = useState(false);
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [activeTab, setActiveTab] = useState<"active" | "upcoming" | "history">("active");
+  const computedTotalTickets = tickets.length;
+  const computedTotalSpent = tickets.reduce((sum, t) => sum + (t.price || 0), 0);
+  const computedUpcomingEvents = tickets.filter(t => t.status === "upcoming").length;
+
 
   const [buyQuantity, setBuyQuantity] = useState(1);
   const [buyType, setBuyType] = useState<"Classic" | "Gold" | "Diamond">("Gold");
